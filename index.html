@@ -262,19 +262,13 @@
     mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%), linear-gradient(180deg, #000 74%, transparent 99%); mask-composite: intersect;
   }
   .scan img {
-    position: absolute; top: 3%; left: -20%; width: 128%; height: 128%; max-width: none; object-fit: cover; object-position: 50% 0%;
-    filter: brightness(1.13) contrast(1.24); mix-blend-mode: multiply;
+    position: absolute; top: 4%; left: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 50% 0%;
+    filter: brightness(1.08) contrast(1.12) saturate(.9); mix-blend-mode: multiply;
   }
   .beam { position: absolute; left: 0; right: 0; top: 12%; height: 110px; margin-top: -55px; z-index: 2; pointer-events: none; mix-blend-mode: lighten; animation: beam 4.4s cubic-bezier(.45, 0, .55, 1) infinite alternate; }
   .beam::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(234, 192, 152, 0), rgba(234, 192, 152, .5) 50%, rgba(234, 192, 152, 0)); }
   .beam::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; margin-top: -1px; background: #EEC9A3; box-shadow: 0 0 10px 2px rgba(238, 201, 163, .9); }
   @keyframes beam { from { top: 10%; } to { top: 72%; } }
-  .bracket { position: absolute; z-index: 3; left: 31%; right: 31%; top: 13%; height: 41%; }
-  .bracket i { position: absolute; width: 18px; height: 18px; border: 1.5px solid rgba(33, 26, 21, .42); }
-  .bracket i:nth-child(1) { left: 0; top: 0; border-right: 0; border-bottom: 0; border-top-left-radius: 7px; }
-  .bracket i:nth-child(2) { right: 0; top: 0; border-left: 0; border-bottom: 0; border-top-right-radius: 7px; }
-  .bracket i:nth-child(3) { left: 0; bottom: 0; border-right: 0; border-top: 0; border-bottom-left-radius: 7px; }
-  .bracket i:nth-child(4) { right: 0; bottom: 0; border-left: 0; border-top: 0; border-bottom-right-radius: 7px; }
 
   .proof { margin: clamp(64px, 7vw, 96px) auto 0; max-width: 560px; }
   .proof h3 { margin-top: 20px; }
@@ -309,22 +303,25 @@
     transition: background-color .5s var(--ease), color .5s, border-color .5s, box-shadow .5s;
   }
   .step.done .step-dot { color: var(--accent); border-color: rgba(154, 106, 72, .35); }
-  .step.active .step-dot { background: var(--ink); color: #F8F3EC; border-color: var(--ink); box-shadow: 0 0 0 6px var(--bg), 0 0 0 7px var(--line); }
+  .step.active .step-dot { background: var(--ink); color: #F8F3EC; border-color: var(--ink); box-shadow: 0 0 0 8px var(--bg); }
+  .step-dot .ring { position: absolute; left: -7px; top: -7px; width: 58px; height: 58px; transform: rotate(-90deg); opacity: 0; transition: opacity .4s var(--ease); pointer-events: none; overflow: visible; }
+  .step-dot .ring circle { fill: none; stroke-width: 2; }
+  .step-dot .ring .trk { stroke: var(--line); }
+  .step-dot .ring .prg { stroke: var(--accent); stroke-linecap: round; stroke-dasharray: 169.65; stroke-dashoffset: 169.65; }
+  .step.active .step-dot .ring { opacity: 1; }
+  .step.active .step-dot .ring .prg { animation: ring var(--dur, 6s) linear forwards; }
+  .steps.paused .step.active .step-dot .ring .prg { animation-play-state: paused; }
+  @keyframes ring { to { stroke-dashoffset: 0; } }
   .step-title { display: block; padding-top: 9px; font-size: clamp(19px, 1.6vw, 22px); font-weight: 400; letter-spacing: -0.022em; color: var(--ink-3); transition: color .4s; }
   .step.active .step-title, .step:hover .step-title { color: var(--ink); }
   .step-more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .7s var(--ease); }
   .step.active .step-more { grid-template-rows: 1fr; }
   .step-more > span { overflow: hidden; }
   .step-desc { display: block; padding-top: 8px; color: var(--ink-2); font-size: 16px; line-height: 1.62; max-width: 40ch; }
-  .step-prog { display: block; margin-top: 18px; height: 2px; border-radius: 2px; background: var(--line); overflow: hidden; max-width: 260px; }
-  .step-prog i { display: block; height: 100%; width: 0; background: var(--accent); }
-  .step.active .step-prog i { animation: fill var(--dur, 6s) linear forwards; }
-  .steps.paused .step.active .step-prog i { animation-play-state: paused; }
-  @keyframes fill { to { width: 100%; } }
-  .how-left .btn { margin-top: 40px; margin-left: 64px; }
+  .how-left .btn { margin-top: 36px; }
 
   .stage {
-    position: relative; border-radius: var(--r-xl); overflow: hidden; aspect-ratio: 7 / 5.6;
+    position: relative; border-radius: var(--r-xl); overflow: hidden; aspect-ratio: 7 / 6;
     background:
       radial-gradient(60% 50% at 18% 12%, rgba(255, 255, 255, .7), transparent 70%),
       radial-gradient(50% 50% at 90% 90%, rgba(154, 106, 72, .14), transparent 70%),
@@ -335,19 +332,19 @@
     background-image: radial-gradient(rgba(33, 26, 21, .09) 1px, transparent 1.2px); background-size: 22px 22px;
     -webkit-mask-image: radial-gradient(70% 70% at 50% 50%, #000, transparent); mask-image: radial-gradient(70% 70% at 50% 50%, #000, transparent);
   }
-  .scene { position: absolute; inset: 0; display: grid; place-items: center; padding: 8%; opacity: 0; transform: translateY(18px) scale(.98); transition: opacity .7s var(--ease), transform .9s var(--ease); pointer-events: none; }
+  .scene { position: absolute; inset: 0; display: grid; place-items: center; padding: 6%; opacity: 0; transform: translateY(18px) scale(.98); transition: opacity .7s var(--ease), transform .9s var(--ease); pointer-events: none; }
   .scene.on { opacity: 1; transform: none; pointer-events: auto; }
-  .ui { width: 100%; max-width: 420px; background: var(--paper); border-radius: 24px; box-shadow: var(--shadow-lg); padding: 26px; }
+  .ui { width: 100%; max-width: 400px; background: var(--paper); border-radius: 24px; box-shadow: var(--shadow-lg); padding: 24px; }
   .ui-head { display: flex; align-items: center; gap: 14px; }
   .ui-head .t { font-size: 17px; font-weight: 500; letter-spacing: -0.02em; }
-  .field { margin-top: 18px; }
+  .field { margin-top: 14px; }
   .field label { display: block; font-size: 13px; font-weight: 500; color: var(--ink-2); margin-bottom: 8px; }
-  .field .box { height: 46px; border-radius: 13px; background: var(--bg); border: 1px solid var(--line-2); display: flex; align-items: center; padding: 0 14px; }
-  .field .box.tall { height: 72px; align-items: flex-start; padding-top: 16px; flex-direction: column; gap: 9px; }
+  .field .box { height: 42px; border-radius: 13px; background: var(--bg); border: 1px solid var(--line-2); display: flex; align-items: center; padding: 0 14px; }
+  .field .box.tall { height: 62px; align-items: flex-start; padding-top: 14px; flex-direction: column; gap: 9px; }
   .field .sk { background: var(--tint-2); width: 0; }
   .scene.on .field .sk { animation: type 1.2s var(--ease) forwards; animation-delay: var(--dl, .3s); }
   @keyframes type { to { width: var(--w, 60%); } }
-  .ui .btn { width: 100%; justify-content: space-between; margin-top: 22px; height: 50px; }
+  .ui .btn { width: 100%; justify-content: space-between; margin-top: 20px; height: 48px; }
   .ui .btn .arw { width: 36px; height: 36px; }
 
   .flow { position: relative; width: 100%; max-width: 520px; aspect-ratio: 52 / 36; }
@@ -388,64 +385,73 @@
   .results-head { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 48px; align-items: end; }
   .results-head h2 { margin-top: 26px; max-width: 24ch; }
   .results-head .lede { max-width: 32ch; justify-self: end; }
-  .reels { display: flex; gap: 12px; margin-top: clamp(48px, 5vw, 72px); height: clamp(420px, 44vw, 580px); }
-  .reel { position: relative; flex: 1; min-width: 0; border-radius: var(--r-xl); overflow: hidden; cursor: pointer; transition: flex 1s var(--ease); isolation: isolate; color: #FBF7F2; }
-  .reel.active { flex: 2.7; }
-  .reel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; filter: saturate(.86); transition: transform 1.8s var(--ease); }
-  .reel:hover img { transform: scale(1.04); }
-  .reel::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 50%, rgba(25, 18, 13, .6)); }
-  .reel-info { position: absolute; left: 24px; right: 22px; bottom: 22px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .reel-name { font-size: clamp(24px, 2vw, 32px); font-weight: 300; letter-spacing: -0.035em; }
-  .reel .pb { width: 52px; height: 52px; border-radius: 99px; display: grid; place-items: center; flex: none; background: rgba(251, 247, 242, .92); color: var(--ink); transition: transform .5s var(--ease); }
-  .reel .pb svg { width: 15px; height: 15px; margin-left: 2px; }
-  .reel:hover .pb { transform: scale(1.08); }
-  .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
-  .q { margin: 0; background: var(--tint); border-radius: var(--r-lg); padding: 32px 30px 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
-  .q .ph-fill { font-size: 26px; color: var(--accent); }
-  .q blockquote { margin: 18px 0 0; font-size: clamp(18px, 1.4vw, 20px); line-height: 1.5; font-weight: 400; letter-spacing: -0.018em; color: var(--ink); }
-  .q figcaption { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; letter-spacing: -0.01em; }
-  .mono { width: 38px; height: 38px; border-radius: 99px; background: var(--paper); display: grid; place-items: center; font-size: 12.5px; font-weight: 600; color: var(--accent); letter-spacing: .02em; }
+  .results-body { margin-top: clamp(48px, 5vw, 72px); display: grid; gap: 12px; }
+  .vid { position: relative; border-radius: var(--r-xl); overflow: hidden; isolation: isolate; aspect-ratio: 16 / 7.2; color: #FBF7F2; background: #2A211B; }
+  .slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 1.1s var(--ease); }
+  .slide.on { opacity: 1; }
+  .slide img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.86); transform: scale(1.06); transition: transform 7s linear; }
+  .slide.on img { transform: scale(1); }
+  .vid::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(25, 18, 13, 0) 45%, rgba(25, 18, 13, .62)); }
+  .vid-who { display: flex; align-items: center; gap: 16px; }
+  .vid-play {
+    flex: none; width: 60px; height: 60px; border-radius: 99px; display: grid; place-items: center;
+    background: rgba(251, 247, 242, .94); color: var(--ink); transition: transform .5s var(--ease);
+  }
+  .vid-play:hover { transform: scale(1.06); }
+  .vid-play svg { width: 18px; height: 18px; margin-left: 3px; }
+  .vid-bar { position: absolute; z-index: 2; left: 24px; right: 24px; bottom: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .vid-name { font-size: clamp(28px, 2.4vw, 36px); font-weight: 300; letter-spacing: -0.035em; line-height: 1; }
+  .vid-tabs { display: flex; gap: 6px; padding: 5px; border-radius: 99px; background: rgba(30, 22, 16, .3); border: 1px solid rgba(251, 247, 242, .16); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+  .vt { position: relative; overflow: hidden; height: 34px; padding: 0 16px; border-radius: 99px; font-size: 13.5px; font-weight: 500; color: rgba(251, 247, 242, .78); transition: color .3s, background-color .3s; }
+  .vt:hover { color: #FBF7F2; }
+  .vt.active { background: rgba(251, 247, 242, .95); color: var(--ink); }
+  .vt i { position: absolute; left: 14px; right: 14px; bottom: 6px; height: 2px; border-radius: 2px; background: rgba(33, 26, 21, .12); overflow: hidden; opacity: 0; }
+  .vt i::after { content: ""; position: absolute; inset: 0; width: 0; background: var(--accent); }
+  .vt.active i { opacity: 1; }
+  .vt.active i::after { animation: fill 5.5s linear forwards; }
+  .vid.paused .vt.active i::after { animation-play-state: paused; }
+  @keyframes fill { to { width: 100%; } }
+  .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .q { margin: 0; background: var(--tint); border-radius: var(--r-lg); padding: 26px 28px 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 22px; }
+  .q .ph-fill { font-size: 22px; color: var(--accent); }
+  .q blockquote { margin: 12px 0 0; font-size: clamp(16.5px, 1.25vw, 18.5px); line-height: 1.5; font-weight: 400; letter-spacing: -0.016em; color: var(--ink); }
+  .q figcaption { display: flex; align-items: center; gap: 12px; font-size: 14.5px; font-weight: 500; letter-spacing: -0.01em; }
+  .mono { width: 34px; height: 34px; border-radius: 99px; background: var(--paper); display: grid; place-items: center; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .02em; }
   .results-foot { display: flex; justify-content: center; margin-top: 44px; }
 
   /* ============ 9. Is this for you? ============ */
   .fit-head h2 { margin-top: 26px; max-width: 30ch; }
   .fit-card {
-    position: relative; margin-top: clamp(40px, 4vw, 56px); display: grid; grid-template-columns: 42% 1fr;
+    position: relative; margin-top: clamp(40px, 4vw, 56px); display: grid; grid-template-columns: 46% 1fr;
     background: var(--paper); border-radius: var(--r-xl); box-shadow: var(--shadow-lg); overflow: hidden; isolation: isolate;
   }
-  .fit-img { position: absolute; top: 0; bottom: 0; left: 0; width: 50%; z-index: -1; transform: scaleX(-1); }
+  .fit-img { position: absolute; top: 0; bottom: 0; left: 0; width: 47%; z-index: -1; transform: scaleX(-1); }
   .fit-img img {
     width: 100%; height: 100%; object-fit: cover; object-position: 30% 30%;
-    -webkit-mask-image: linear-gradient(270deg, #000 0%, #000 58%, rgba(0, 0, 0, .5) 78%, transparent 98%);
-    mask-image: linear-gradient(270deg, #000 0%, #000 58%, rgba(0, 0, 0, .5) 78%, transparent 98%);
+    -webkit-mask-image: linear-gradient(270deg, #000 0%, #000 56%, rgba(0, 0, 0, .45) 78%, transparent 100%);
+    mask-image: linear-gradient(270deg, #000 0%, #000 56%, rgba(0, 0, 0, .45) 78%, transparent 100%);
   }
-  .fit-main { grid-column: 2; padding: clamp(28px, 3vw, 44px) clamp(24px, 3.2vw, 44px) clamp(24px, 2.6vw, 36px) clamp(4px, 1vw, 12px); }
+  .fit-main { grid-column: 2; padding: clamp(32px, 3.6vw, 52px) clamp(28px, 4vw, 60px) clamp(32px, 3.4vw, 48px) clamp(40px, 4vw, 60px); display: flex; flex-direction: column; justify-content: center; }
   .fit-main h3 { font-size: clamp(19px, 1.5vw, 22px); font-weight: 450; letter-spacing: -0.025em; }
-  .checks { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .checks { margin-top: 12px; display: grid; }
   .check {
-    display: grid; grid-template-columns: 26px 1fr; gap: 14px; align-items: start; width: 100%;
-    padding: 16px 16px 16px 14px; border-radius: 16px; background: var(--bg); border: 1px solid transparent;
-    font-size: 15.5px; line-height: 1.42; letter-spacing: -0.012em; color: var(--ink);
-    transition: background-color .35s var(--ease), border-color .35s;
+    display: grid; grid-template-columns: 24px 1fr; gap: 14px; align-items: start; width: 100%;
+    padding: 10px 0; font-size: clamp(16px, 1.2vw, 17px); line-height: 1.45; letter-spacing: -0.012em; color: var(--ink);
   }
-  .check:hover { border-color: rgba(154, 106, 72, .28); }
-  .check[aria-pressed="true"] { background: var(--accent-soft); }
-  .box-c { width: 26px; height: 26px; border-radius: 8px; border: 1.5px solid rgba(33, 26, 21, .22); display: grid; place-items: center; color: transparent; transition: all .45s var(--ease); background: var(--paper); margin-top: -1px; }
-  .box-c svg { width: 13px; height: 13px; transform: scale(.4); transition: transform .45s var(--ease); }
+  .box-c { width: 24px; height: 24px; border-radius: 7px; border: 1.5px solid rgba(33, 26, 21, .22); display: grid; place-items: center; color: transparent; transition: all .45s var(--ease); background: var(--paper); margin-top: 0; }
+  .box-c svg { width: 12px; height: 12px; transform: scale(.4); transition: transform .45s var(--ease); }
   .check:hover .box-c { border-color: var(--accent); }
   .check[aria-pressed="true"] .box-c { background: var(--ink); border-color: var(--ink); color: #F8F3EC; }
   .check[aria-pressed="true"] .box-c svg { transform: none; }
-  .fit-not { margin-top: 22px; display: grid; grid-template-columns: auto 1fr; gap: 12px 20px; align-items: center; }
-  .fit-not .lbl { font-size: 15px; font-weight: 500; letter-spacing: -0.01em; }
-  .nots { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; }
-  .nots li { display: inline-flex; align-items: center; gap: 9px; font-size: 14.5px; line-height: 1.4; color: var(--ink-2); }
-  .nots .x { flex: none; width: 22px; height: 22px; border-radius: 99px; background: var(--tint); display: grid; place-items: center; color: var(--ink-3); }
+  .fit-not { margin: 22px -16px 0; padding: 16px 16px 16px; border-radius: 16px; background: var(--bg); }
+  .fit-not .lbl { display: block; font-size: 14px; font-weight: 500; letter-spacing: -0.005em; color: var(--ink-2); }
+  .nots { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
+  .nots li { display: grid; grid-template-columns: 24px 1fr; gap: 14px; align-items: center; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+  .nots .x { width: 24px; height: 24px; border-radius: 7px; background: var(--tint-2); display: grid; place-items: center; color: var(--ink-2); }
   .nots .x svg { width: 9px; height: 9px; }
-  .fit-foot { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--line-2); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-  .meter { display: flex; gap: 6px; }
-  .meter i { width: 26px; height: 4px; border-radius: 4px; background: var(--tint-2); transition: background-color .5s var(--ease); }
-  .meter i.on { background: var(--accent); }
-  .fit-card.all .btn { box-shadow: 0 0 0 6px rgba(154, 106, 72, .16), 0 18px 36px -18px rgba(33, 26, 21, .6); }
+  .fit-foot { margin-top: 28px; display: flex; justify-content: flex-end; }
+  .fit-card.all .btn { animation: glow 2.4s var(--ease) infinite; }
+  @keyframes glow { 0%, 100% { box-shadow: 0 0 0 5px rgba(154, 106, 72, .18), 0 0 28px 4px rgba(200, 150, 110, .35); } 50% { box-shadow: 0 0 0 9px rgba(154, 106, 72, .1), 0 0 44px 10px rgba(200, 150, 110, .45); } }
 
   /* ============ 10. Autonomic Wellness ============ */
   .aw {
@@ -525,7 +531,10 @@
   @media (max-width: 1100px) {
     .nav-links { display: none; }
     .menu-btn { display: grid; }
+    .nav-inner { gap: 10px; }
+    .nav-inner .btn { margin-left: auto; }
     .justin, .problem-head, .how, .faq, .results-head, .aw { grid-template-columns: 1fr; }
+    .vid { aspect-ratio: 16 / 10; }
     .results-head .lede { justify-self: start; }
     .scan-layout { grid-template-columns: 1fr 1fr; }
     .scan { grid-column: 1 / -1; grid-row: 1; width: min(440px, 100%); justify-self: center; }
@@ -533,11 +542,29 @@
     .pillars.r .pillar p { margin-left: 0; }
     .pillars.r .pillar-top { flex-direction: row; }
     .pillar-top .wire { display: none; }
-    .stage { order: -1; }
+    .how-left { display: contents; }
+    .steps { order: 1; }
+    .stage { order: 2; }
+    .how-left > div:last-child { order: 3; }
+    .how-left .btn { margin-top: 4px; }
     .how { gap: 28px; }
     .faq-left { position: static; }
     .foot-top { grid-template-columns: 1fr 1fr; }
     .foot-top > :first-child { grid-column: 1 / -1; }
+  }
+  @media (max-width: 900px) {
+    .quotes {
+      grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(62%, 340px);
+      overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;
+      margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); scroll-padding: 0 var(--gutter);
+    }
+    .quotes::-webkit-scrollbar { display: none; }
+    .q { scroll-snap-align: start; }
+    .fit-card { grid-template-columns: 1fr; }
+    .fit-img { position: relative; width: 100%; height: clamp(280px, 46vw, 380px); }
+    .fit-img img { object-position: 40% 30%; -webkit-mask-image: linear-gradient(180deg, #000 50%, transparent 100%); mask-image: linear-gradient(180deg, #000 50%, transparent 100%); }
+    .fit-main { grid-column: 1; padding: 6px clamp(24px, 5vw, 44px) 28px; }
+    .fit-not { margin: 22px -14px 0; padding: 14px; }
   }
   @media (max-width: 720px) {
     body { font-size: 16px; }
@@ -559,7 +586,6 @@
     .rl > img { height: 420px; transform: none !important; }
     .rl::after { background: linear-gradient(180deg, rgba(36, 27, 21, 0) 180px, #241B15 420px); }
     .rl-card { margin: 8px; }
-    .how-left .btn { margin-left: 0; }
     .stage { aspect-ratio: auto; height: 500px; }
     .scene { padding: 6%; }
     .ui { padding: 20px; }
@@ -568,19 +594,13 @@
     .sink { padding: 16px 10px; }
     .sink .ring { width: 42px; height: 42px; font-size: 20px; }
     .sink .t { font-size: 14px; }
-    .reels { flex-direction: column; height: auto; }
-    .reel { flex: none !important; height: 240px; }
-    .reel.active { height: 420px; }
-    .quotes { grid-template-columns: 1fr; }
-    .fit-card { grid-template-columns: 1fr; }
-    .fit-img { position: relative; width: 100%; height: 300px; }
-    .fit-img img { object-position: 40% 30%; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); }
-    .fit-main { grid-column: 1; padding: 0 20px 24px; margin-top: -28px; }
-    .checks { grid-template-columns: 1fr; }
-    .fit-not { grid-template-columns: 1fr; }
-    .nots { flex-direction: column; }
+    .vid { aspect-ratio: 4 / 5; }
+    .vid-bar { left: 16px; right: 16px; bottom: 16px; flex-direction: column; align-items: flex-start; gap: 14px; }
+    .vt { padding: 0 13px; }
+    .nots li { align-items: start; }
+    .quotes { grid-auto-columns: 84%; }
     .problem-side .body { padding-left: 0; }
-      .faq-a p { padding-right: 28px; }
+    .faq-a p { padding-right: 28px; }
     .foot-top { grid-template-columns: 1fr; }
     .foot-mid { flex-direction: column-reverse; align-items: flex-start; }
     .mark-xl { font-size: 9.2vw; letter-spacing: -0.05em; }
@@ -725,9 +745,8 @@
         </div>
 
         <div class="scan" data-r aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1634136933697-b1adb1545135?w=1100&q=82&auto=format" alt="">
+          <img src="https://images.unsplash.com/photo-1719603785926-fa6c6e10fb90?w=1300&q=82&auto=format" alt="">
           <div class="beam"></div>
-          <div class="bracket"><i></i><i></i><i></i><i></i></div>
         </div>
 
         <div class="pillars r">
@@ -778,20 +797,20 @@
       <div class="how-left">
         <div class="steps paused" id="steps" data-r style="--d:.12s">
           <button class="step active" data-i="0">
-            <span class="step-dot">01</span>
-            <span><span class="step-title">Request coaching.</span><span class="step-more"><span><span class="step-desc">Share your health history, symptoms and goals.</span><span class="step-prog"><i></i></span></span></span></span>
+            <span class="step-dot"><svg class="ring" viewBox="0 0 58 58" aria-hidden="true"><circle class="trk" cx="29" cy="29" r="27"/><circle class="prg" cx="29" cy="29" r="27"/></svg>01</span>
+            <span><span class="step-title">Request coaching.</span><span class="step-more"><span><span class="step-desc">Share your health history, symptoms and goals.</span></span></span></span>
           </button>
           <button class="step" data-i="1">
-            <span class="step-dot">02</span>
-            <span><span class="step-title">Deep assessment.</span><span class="step-more"><span><span class="step-desc">We review your labs, symptoms and nervous system patterns to find root causes.</span><span class="step-prog"><i></i></span></span></span></span>
+            <span class="step-dot"><svg class="ring" viewBox="0 0 58 58" aria-hidden="true"><circle class="trk" cx="29" cy="29" r="27"/><circle class="prg" cx="29" cy="29" r="27"/></svg>02</span>
+            <span><span class="step-title">Deep assessment.</span><span class="step-more"><span><span class="step-desc">We review your labs, symptoms and nervous system patterns to find root causes.</span></span></span></span>
           </button>
           <button class="step" data-i="2">
-            <span class="step-dot">03</span>
-            <span><span class="step-title">Your personalised protocol.</span><span class="step-more"><span><span class="step-desc">You get clear daily actions across nutrition, supplementation, nervous system work and lifestyle.</span><span class="step-prog"><i></i></span></span></span></span>
+            <span class="step-dot"><svg class="ring" viewBox="0 0 58 58" aria-hidden="true"><circle class="trk" cx="29" cy="29" r="27"/><circle class="prg" cx="29" cy="29" r="27"/></svg>03</span>
+            <span><span class="step-title">Your personalised protocol.</span><span class="step-more"><span><span class="step-desc">You get clear daily actions across nutrition, supplementation, nervous system work and lifestyle.</span></span></span></span>
           </button>
           <button class="step" data-i="3">
-            <span class="step-dot">04</span>
-            <span><span class="step-title">Weekly coaching.</span><span class="step-more"><span><span class="step-desc">We track your progress, adjust your plan and keep you moving forward.</span><span class="step-prog"><i></i></span></span></span></span>
+            <span class="step-dot"><svg class="ring" viewBox="0 0 58 58" aria-hidden="true"><circle class="trk" cx="29" cy="29" r="27"/><circle class="prg" cx="29" cy="29" r="27"/></svg>04</span>
+            <span><span class="step-title">Weekly coaching.</span><span class="step-more"><span><span class="step-desc">We track your progress, adjust your plan and keep you moving forward.</span></span></span></span>
           </button>
         </div>
         <div data-r style="--d:.18s"><a href="#request" class="btn">Request Coaching <span class="arw"><svg><use href="#arrow"/></svg><svg><use href="#arrow"/></svg></span></a></div>
@@ -866,24 +885,28 @@
         </div>
         <p class="lede" data-r style="--d:.12s">Better energy, sleep, hormones and performance, in their own words.</p>
       </div>
-      <div class="reels" id="reels" data-r>
-        <button class="reel active" aria-label="Play Shirley’s video testimonial">
-          <img src="https://images.unsplash.com/photo-1532560460156-99a8b937ee8c?w=1400&q=80&auto=format&fit=crop&crop=faces" alt="">
-          <span class="reel-info"><span class="reel-name">Shirley</span><span class="pb"><svg><use href="#play"/></svg></span></span>
-        </button>
-        <button class="reel" aria-label="Play Carl’s video testimonial">
-          <img src="https://images.unsplash.com/photo-1788055650503-84b6361002d3?w=1400&q=80&auto=format&fit=crop&crop=faces" alt="">
-          <span class="reel-info"><span class="reel-name">Carl</span><span class="pb"><svg><use href="#play"/></svg></span></span>
-        </button>
-        <button class="reel" aria-label="Play Vasilis’s video testimonial">
-          <img src="https://images.unsplash.com/photo-1606510236980-c7cc4e05012a?w=1400&q=80&auto=format&fit=crop&crop=faces" alt="">
-          <span class="reel-info"><span class="reel-name">Vasilis</span><span class="pb"><svg><use href="#play"/></svg></span></span>
-        </button>
-      </div>
-      <div class="quotes">
-        <figure class="q" data-r><div><span class="ph-fill ph-quotes"></span><blockquote>Justin figured out what several other practitioners couldn’t. I finally healed after years of frustration.</blockquote></div><figcaption><span class="mono">JK</span>Julianne Keehan</figcaption></figure>
-        <figure class="q" data-r style="--d:.08s"><div><span class="ph-fill ph-quotes"></span><blockquote>Being in the medical field myself, I was blown away by how detailed and accurate Justin’s approach was.</blockquote></div><figcaption><span class="mono">JT</span>IFBB Pro Joe Tong</figcaption></figure>
-        <figure class="q" data-r style="--d:.16s"><div><span class="ph-fill ph-quotes"></span><blockquote>My energy, body composition and stress levels transformed. The best investment I’ve ever made.</blockquote></div><figcaption><span class="mono">MK</span>Mete Karan</figcaption></figure>
+      <div class="results-body">
+        <div class="vid" id="vid" data-r>
+          <figure class="slide on"><img src="https://images.unsplash.com/photo-1532560460156-99a8b937ee8c?w=1800&h=820&q=80&auto=format&fit=crop&crop=faces" alt="Shirley"></figure>
+          <figure class="slide"><img src="https://images.unsplash.com/photo-1788055650503-84b6361002d3?w=1800&h=820&q=80&auto=format&fit=crop&crop=faces" alt="Carl"></figure>
+          <figure class="slide"><img src="https://images.unsplash.com/photo-1606510236980-c7cc4e05012a?w=1800&h=820&q=80&auto=format&fit=crop&crop=faces" alt="Vasilis"></figure>
+          <div class="vid-bar">
+            <div class="vid-who">
+              <button class="vid-play" id="vidPlay" aria-label="Play Shirley’s video testimonial"><svg><use href="#play"/></svg></button>
+              <span class="vid-name" id="vidName">Shirley</span>
+            </div>
+            <div class="vid-tabs" role="tablist">
+              <button class="vt active" role="tab" aria-selected="true">Shirley<i></i></button>
+              <button class="vt" role="tab" aria-selected="false">Carl<i></i></button>
+              <button class="vt" role="tab" aria-selected="false">Vasilis<i></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="quotes">
+          <figure class="q" data-r><div><span class="ph-fill ph-quotes"></span><blockquote>Justin figured out what several other practitioners couldn’t. I finally healed after years of frustration.</blockquote></div><figcaption><span class="mono">JK</span>Julianne Keehan</figcaption></figure>
+          <figure class="q" data-r style="--d:.08s"><div><span class="ph-fill ph-quotes"></span><blockquote>Being in the medical field myself, I was blown away by how detailed and accurate Justin’s approach was.</blockquote></div><figcaption><span class="mono">JT</span>IFBB Pro Joe Tong</figcaption></figure>
+          <figure class="q" data-r style="--d:.16s"><div><span class="ph-fill ph-quotes"></span><blockquote>My energy, body composition and stress levels transformed. The best investment I’ve ever made.</blockquote></div><figcaption><span class="mono">MK</span>Mete Karan</figcaption></figure>
+        </div>
       </div>
       <div class="results-foot" data-r><a href="#" class="link">See all results <svg><use href="#arrow"/></svg></a></div>
     </div>
@@ -914,7 +937,6 @@
             </ul>
           </div>
           <div class="fit-foot">
-            <span class="meter" id="meter" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
             <a href="#request" class="btn">Request Coaching <span class="arw"><svg><use href="#arrow"/></svg><svg><use href="#arrow"/></svg></span></a>
           </div>
         </div>
@@ -1016,13 +1038,31 @@
   rail.innerHTML += rail.innerHTML;
   Array.prototype.slice.call(rail.children, rail.children.length / 2).forEach(function (n) { n.setAttribute('aria-hidden', 'true'); });
 
-  // Reels
-  var reels = document.querySelectorAll('.reel');
-  reels.forEach(function (r) {
-    function on() { reels.forEach(function (x) { x.classList.toggle('active', x === r); }); }
-    r.addEventListener('mouseenter', function () { if (window.matchMedia('(hover: hover)').matches) on(); });
-    r.addEventListener('click', on); r.addEventListener('focus', on);
+  // Video testimonials: one at a time, rotating
+  var vid = document.getElementById('vid');
+  var slides = Array.prototype.slice.call(vid.querySelectorAll('.slide'));
+  var tabs = Array.prototype.slice.call(vid.querySelectorAll('.vt'));
+  var vidName = document.getElementById('vidName');
+  var vidPlay = document.getElementById('vidPlay');
+  var vCur = 0;
+  function show(n) {
+    vCur = (n + slides.length) % slides.length;
+    var name = tabs[vCur].textContent;
+    slides.forEach(function (sl, i) { sl.classList.toggle('on', i === vCur); });
+    tabs.forEach(function (t, i) {
+      t.classList.toggle('active', i === vCur); t.setAttribute('aria-selected', i === vCur ? 'true' : 'false');
+      var bar = t.querySelector('i'); bar.style.display = 'none'; void bar.offsetWidth; bar.style.display = '';
+    });
+    vidName.textContent = name;
+    vidPlay.setAttribute('aria-label', 'Play ' + name + '’s video testimonial');
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(i); });
+    t.querySelector('i').addEventListener('animationend', function () { if (!reduce) show(vCur + 1); });
   });
+  vid.addEventListener('mouseenter', function () { vid.classList.add('paused'); });
+  vid.addEventListener('mouseleave', function () { vid.classList.remove('paused'); });
+  if (reduce) vid.classList.add('paused');
 
   // Steps
   var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
@@ -1035,7 +1075,7 @@
       s.classList.toggle('active', i === current);
       s.classList.toggle('done', i < current);
       s.setAttribute('aria-current', i === current ? 'step' : 'false');
-      var p = s.querySelector('.step-prog i'); p.style.animation = 'none'; void p.offsetWidth; p.style.animation = '';
+      var p = s.querySelector('.ring .prg'); p.style.animation = 'none'; void p.getBoundingClientRect(); p.style.animation = '';
     });
     scenes.forEach(function (sc, i) {
       sc.classList.remove('on');
@@ -1044,7 +1084,7 @@
   }
   steps.forEach(function (s, i) {
     s.addEventListener('click', function () { go(i); });
-    s.querySelector('.step-prog i').addEventListener('animationend', function () { if (!reduce) go(current + 1); });
+    s.querySelector('.ring .prg').addEventListener('animationend', function () { if (!reduce) go(current + 1); });
   });
   var how = document.querySelector('.how');
   how.addEventListener('mouseenter', function () { stepsEl.classList.add('paused'); });
@@ -1052,14 +1092,12 @@
 
   // Self-check
   var checks = document.querySelectorAll('.check');
-  var meter = document.querySelectorAll('#meter i');
   var fitCard = document.getElementById('fitCard');
   checks.forEach(function (c) {
     c.addEventListener('click', function () {
       c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
       var n = document.querySelectorAll('.check[aria-pressed="true"]').length;
-      meter.forEach(function (m, i) { m.classList.toggle('on', i < n); });
-      fitCard.classList.toggle('all', n === checks.length);
+      fitCard.classList.toggle('all', n > 0);
     });
   });
 
