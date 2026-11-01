@@ -19,16 +19,16 @@
 .ab-sign { margin-top: 40px; display: flex; align-items: center; gap: 18px; }
 .ab-sign::before { content: ""; flex: none; width: 44px; height: 1px; background: rgba(143, 239, 202, .6); }
 .ab-sign h1 { font-size: 22px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 500; color: #fff; }
-.ab-sign p { margin-top: 4px; font-size: 15px; color: var(--g-200); }
-.ab-intro { margin-top: 28px; max-width: 46ch; font-size: 16.5px; line-height: 1.65; color: rgba(255, 255, 255, .66); }
+.ab-sign p { margin-top: 4px; font-size: 16px; color: var(--g-200); line-height: 20px;}
+.ab-intro { margin-top: 28px; max-width: 46ch; font-size: 16px; line-height: 20px; color: rgba(255, 255, 255, .66); }
 .ab-copy .btn { margin-top: 32px; }
 .ab-person { position: relative; z-index: 1; min-width: 0; }
 .ab-person img { position: absolute; bottom: 0; left: 50%; height: 92%; width: auto; max-width: none; transform: translateX(-50%); filter: drop-shadow(0 40px 60px rgba(0, 0, 0, .4)); }
 .ab-person::after { content: ""; position: absolute; left: -30%; right: -30%; bottom: 0; height: 30%; z-index: 2; background: linear-gradient(180deg, rgba(1, 19, 15, 0), #01130f); }
 .creds { position: relative; z-index: 3; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.creds li { padding: 26px 24px 30px 0; border-top: 1px solid rgba(255, 255, 255, .14); font-size: 14.5px; line-height: 1.45; color: rgba(255, 255, 255, .82); }
+.creds li { padding: 26px 24px 30px 0; border-top: 1px solid rgba(255, 255, 255, .14); font-size: 14px; line-height: 18px; color: rgba(255, 255, 255, .82); }
 .creds li + li { padding-left: 24px; border-left: 1px solid rgba(255, 255, 255, .14); }
-.creds li span { display: block; margin-bottom: 8px; font-size: 11px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--g-300); }
+.creds li span { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--g-300); line-height: 16px;}
 
 /* ============ 2. How I look at health ============ */
 .look { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
@@ -37,7 +37,7 @@
 .venn::before { content: ""; position: absolute; left: 50%; top: 51%; width: 116%; aspect-ratio: 1; margin: -58% 0 0 -58%; border-radius: 50%; background: radial-gradient(closest-side, rgba(198, 245, 226, .55), rgba(198, 245, 226, 0)); }
 .venn svg { position: relative; width: 100%; height: 100%; overflow: visible; }
 .venn .orbit { fill: none; stroke: rgba(2, 10, 29, .1); stroke-width: 1; stroke-dasharray: 2 6; }
-.venn .sys { position: absolute; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px 7px 7px; border-radius: 99px; background: #fff; box-shadow: 0 1px 2px rgba(2, 10, 29, .06), 0 10px 24px -12px rgba(2, 10, 29, .3); font-size: 14.5px; font-weight: 500; white-space: nowrap; }
+.venn .sys { position: absolute; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px 7px 7px; border-radius: 99px; background: #fff; box-shadow: 0 1px 2px rgba(2, 10, 29, .06), 0 10px 24px -12px rgba(2, 10, 29, .3); font-size: 14px; font-weight: 500; white-space: nowrap; }
 .venn .sys i { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 99px; color: #fff; font-size: 16px; }
 .venn .sys.n { left: 50%; top: 18%; } .venn .sys.n i { background: #169d69; }
 .venn .sys.i { left: 26%; top: 72%; } .venn .sys.i i { background: #1d55d6; }
@@ -60,34 +60,22 @@
 .qcard { position: relative; display: flex; flex-direction: column; padding: 28px 26px 30px; border-radius: 22px; background: #fff; border: 1px solid var(--line-2); min-height: 320px; }
 .qcard .n { font-size: 56px; line-height: 1; letter-spacing: -0.05em; color: var(--g-100); }
 .qcard h3 { margin-top: auto; padding-top: 32px; font-size: 22px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.22; }
-.qcard p { margin-top: 12px; font-size: 15.5px; line-height: 1.6; color: var(--ink-2); }
+.qcard p { margin-top: 12px; font-size: 16px; line-height: 20px; color: var(--ink-2); }
 .qcard:last-child { background: var(--g-900); border-color: var(--g-900); }
 .qcard:last-child .n { color: rgba(143, 239, 202, .28); }
 .qcard:last-child h3 { color: #fff; }
 .qcard:last-child p { color: rgba(255, 255, 255, .72); }
 .head-act { justify-self: end; align-self: end; }
 
-/* ============ 4. Qualifications and training (zig-zag timeline, oldest to newest) ============ */
-.tl { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); grid-template-rows: auto 2px auto; }
-.tl::before { content: ""; grid-row: 2; grid-column: 1 / -1; border-radius: 2px; background: linear-gradient(90deg, var(--g-100), var(--g-600)); }
-.tl li { position: relative; padding: 0 14px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.tl li:nth-child(odd) { grid-row: 1; align-self: end; padding-bottom: 40px; }
-.tl li:nth-child(even) { grid-row: 3; align-self: start; padding-top: 40px; }
-.tl li:nth-child(1) { grid-column: 1 / span 2; } .tl li:nth-child(2) { grid-column: 2 / span 2; }
-.tl li:nth-child(3) { grid-column: 3 / span 2; } .tl li:nth-child(4) { grid-column: 4 / span 2; }
-.tl li:nth-child(5) { grid-column: 5 / span 2; } .tl li:nth-child(6) { grid-column: 6 / span 2; }
-.tl li:nth-child(7) { grid-column: 7 / span 2; } .tl li:nth-child(8) { grid-column: 8 / span 2; }
-.tl li::before { content: ""; position: absolute; left: 50%; width: 1px; height: 28px; background: var(--g-300); }
-.tl li:nth-child(odd)::before { bottom: 1px; }
-.tl li:nth-child(even)::before { top: 1px; }
-.tl li::after { content: ""; position: absolute; left: 50%; width: 13px; height: 13px; margin-left: -6.5px; border-radius: 99px; background: #fff; border: 2px solid var(--g-600); box-sizing: border-box; }
-.tl li:nth-child(odd)::after { bottom: -7.5px; }
-.tl li:nth-child(even)::after { top: -7.5px; }
-.tl li.now::after { background: var(--g-600); box-shadow: 0 0 0 5px rgba(22, 157, 105, .18); }
-.tl .y { font-size: 22px; letter-spacing: -0.02em; color: var(--g-700); font-variant-numeric: tabular-nums; }
-.tl .now .y { display: inline-flex; padding: 3px 12px; border-radius: 99px; background: var(--g-50); font-size: 15px; font-weight: 500; }
-.tl strong { font-size: 15.5px; font-weight: 500; line-height: 1.35; letter-spacing: -0.01em; max-width: 26ch; }
-.tl small { font-size: 13.5px; line-height: 1.4; color: var(--ink-3); max-width: 28ch; }
+/* ============ 4. Qualifications and training (one line, one node per qualification) ============ */
+.tl { list-style: none; margin: 0; padding: 0; position: relative; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 0 20px; }
+.tl::before { content: ""; position: absolute; left: 0; right: 0; top: 6px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--g-100), var(--g-600)); }
+.tl li { position: relative; padding-top: 32px; display: flex; flex-direction: column; gap: 8px; }
+.tl li::before { content: ""; position: absolute; left: 0; top: 0; width: 14px; height: 14px; border-radius: 99px; background: #fff; border: 2px solid var(--g-600); box-sizing: border-box; }
+.tl li.now::before { background: var(--g-600); box-shadow: 0 0 0 5px rgba(22, 157, 105, .18); }
+.tl .y { font-size: 16px; line-height: 20px; font-weight: 500; color: var(--g-700); }
+.tl strong { font-size: 14px; line-height: 18px; font-weight: 500; }
+.tl small { font-size: 12px; line-height: 16px; color: var(--ink-3); }
 .bridge { margin-top: clamp(64px, 7vw, 104px); text-align: center; font-size: clamp(24px, 2.6vw, 38px); line-height: 1.3; letter-spacing: -0.025em; text-wrap: balance; }
 .bridge span { color: var(--g-700); }
 
@@ -97,10 +85,10 @@
 .rec { margin-top: 28px; display: grid; grid-template-columns: 1.3fr 1fr 1.5fr 1fr; gap: 12px; }
 .rec > div { display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 18px; background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .1); }
 .rec .k { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--g-200); }
-.rec .k .pi { font-size: 18px; }
-.rec .v { font-size: 15.5px; line-height: 1.55; color: rgba(255, 255, 255, .82); display: grid; gap: 10px; }
+.rec .k .pi { font-size: 16px; }
+.rec .v { font-size: 16px; line-height: 20px; color: rgba(255, 255, 255, .82); display: grid; gap: 10px; }
 .rec .v b { font-weight: 500; color: #fff; }
-.rec .v a { display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin-top: 4px; font-size: 14.5px; font-weight: 500; color: var(--g-200); text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+.rec .v a { display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin-top: 4px; font-size: 14px; font-weight: 500; color: var(--g-200); text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 .rec .v a svg { width: 14px; height: 14px; }
 
 /* ============ 6. Why I do this work ============ */
@@ -109,7 +97,7 @@
 .why-ph img { object-position: 50% 16%; }
 .why-copy .statement { margin-top: 28px; font-size: clamp(21px, 2vw, 29px); line-height: 1.45; text-wrap: pretty; }
 .why-copy .statement a { color: var(--g-700); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
-.sig { margin-top: 32px; display: flex; align-items: center; gap: 14px; font-size: 15px; font-weight: 500; color: var(--ink-2); }
+.sig { margin-top: 32px; display: flex; align-items: center; gap: 14px; font-size: 16px; font-weight: 500; color: var(--ink-2); }
 .sig::before { content: ""; width: 32px; height: 1px; background: var(--ink-3); }
 
 /* ============ 7. Who I work with ============ */
@@ -117,8 +105,8 @@
 .who .lead { font-size: clamp(20px, 1.9vw, 27px); line-height: 1.62; letter-spacing: -0.02em; }
 .who .lead .chip { font-size: .78em; padding-top: .08em; padding-bottom: .08em; }
 .who .body { margin-top: 24px; max-width: 62ch; }
-.priv { margin-top: 24px; display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; color: var(--g-700); }
-.priv .pi { font-size: 18px; }
+.priv { margin-top: 24px; display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; color: var(--g-700); }
+.priv .pi { font-size: 16px; }
 
 /* ============ 8. Request coaching with me ============ */
 .req .wrap { align-items: stretch; text-align: left; }
@@ -127,13 +115,13 @@
 .req .lede { margin-top: 20px; margin-left: 0; }
 .req .btn { margin-top: 36px; align-self: flex-start; }
 .rsteps { list-style: none; margin: 0; padding: 0; counter-reset: rs; border-top: 1px solid rgba(255, 255, 255, .14); }
-.rsteps li { counter-increment: rs; display: grid; grid-template-columns: 48px 1fr; gap: 12px; padding: 22px 0; border-bottom: 1px solid rgba(255, 255, 255, .14); font-size: 17px; line-height: 1.5; color: rgba(255, 255, 255, .86); }
-.rsteps li::before { content: "0" counter(rs); font-size: 14px; font-weight: 500; color: var(--g-200); padding-top: 2px; }
+.rsteps li { counter-increment: rs; display: grid; grid-template-columns: 48px 1fr; gap: 12px; padding: 22px 0; border-bottom: 1px solid rgba(255, 255, 255, .14); font-size: 16px; line-height: 20px; color: rgba(255, 255, 255, .86); }
+.rsteps li::before { content: "0" counter(rs); font-size: 14px; font-weight: 500; color: var(--g-200); padding-top: 2px; line-height: 18px;}
 .alts { margin-top: clamp(64px, 7vw, 96px); display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(255, 255, 255, .14); }
 .alt { padding: 32px 40px 0 0; display: grid; gap: 16px; align-content: start; }
 .alt + .alt { padding-left: 40px; padding-right: 0; border-left: 1px solid rgba(255, 255, 255, .14); }
-.alt p { font-size: 17px; line-height: 1.5; color: rgba(255, 255, 255, .78); max-width: 40ch; }
-.alt a { display: inline-flex; align-items: center; gap: 8px; width: fit-content; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+.alt p { font-size: 16px; line-height: 20px; color: rgba(255, 255, 255, .78); max-width: 40ch; }
+.alt a { display: inline-flex; align-items: center; gap: 8px; width: fit-content; font-size: 16px; font-weight: 500; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
 .alt a svg { width: 14px; height: 14px; }
 .alt.aw a { color: var(--b-150); }
 .alt.bk a { color: var(--g-200); }
@@ -153,11 +141,10 @@
   .creds li:nth-child(3) { padding-left: 0; border-left: 0; }
 }
 @media (max-width: 900px) {
-  .tl { grid-template-columns: 1fr 1fr; grid-template-rows: none; gap: 0 32px; position: relative; }
+  .tl { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px 20px; }
   .tl::before { display: none; }
-  .tl li, .tl li:nth-child(odd), .tl li:nth-child(even) { grid-row: auto; grid-column: auto; align-self: stretch; align-items: flex-start; text-align: left; padding: 20px 0 22px 28px; border-left: 2px solid var(--g-100); }
-  .tl li::before { display: none; }
-  .tl li::after, .tl li:nth-child(odd)::after, .tl li:nth-child(even)::after { left: -1px; top: 26px; bottom: auto; }
+  .tl li { border-top: 2px solid var(--g-100); padding-top: 26px; }
+  .tl li::before { top: -8px; }
   .ab-stage { grid-template-columns: 1fr; min-height: 0; gap: 0; }
   .ab-copy { padding: 40px 0 8px; }
   .ab-person { height: clamp(380px, 70vw, 560px); }
@@ -171,9 +158,9 @@
   .creds { grid-template-columns: 1fr; }
   .creds li, .creds li + li { padding: 18px 0; border-left: 0; }
   .qgrid, .rec { grid-template-columns: 1fr; }
-  .tl { grid-template-columns: 1fr; }
-  .venn .sys { font-size: 12.5px; gap: 7px; padding: 5px 11px 5px 5px; }
-  .venn .sys i { width: 24px; height: 24px; font-size: 13px; }
+  .tl { grid-template-columns: 1fr 1fr; }
+  .venn .sys { font-size: 12px; gap: 7px; padding: 5px 11px 5px 5px; }
+  .venn .sys i { width: 24px; height: 24px; font-size: 14px; }
   .venn .core { width: 58px; height: 58px; margin: -29px 0 0 -29px; }
   .venn .core img { width: 32px; }
   .qcard { min-height: 0; }

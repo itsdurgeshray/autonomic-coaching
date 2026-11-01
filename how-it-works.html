@@ -13,23 +13,23 @@
 .how-hero h1 { max-width: 13ch; }
 .scene { position: relative; aspect-ratio: 1 / .92; border-radius: 28px; background: radial-gradient(70% 60% at 80% 10%, rgba(143, 239, 202, .5), rgba(143, 239, 202, 0) 70%), var(--mist); }
 .ui { position: absolute; background: #fff; border-radius: 20px; border: 1px solid var(--line-2); box-shadow: var(--shadow-lg); padding: 24px; }
-.ui-h { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 500; }
-.ui-h small { font-size: 12.5px; font-weight: 400; color: var(--ink-3); }
+.ui-h { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 16px; font-weight: 500; }
+.ui-h small { font-size: 12px; font-weight: 400; color: var(--ink-3); line-height: 16px;}
 .ui-week { left: 9%; right: 9%; top: 11%; }
 .sess { margin-top: 18px; display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 14px; background: var(--forest); color: #fff; }
 .sess img { flex: none; width: 52px; height: 52px; border-radius: 99px; object-fit: cover; object-position: 50% 8%; background: #2f5850; }
 .sess strong { display: block; font-size: 16px; font-weight: 500; }
-.sess small { display: block; font-size: 13px; color: rgba(255, 255, 255, .7); }
+.sess small { display: block; font-size: 14px; color: rgba(255, 255, 255, .7); line-height: 18px;}
 .sess .cam { margin-left: auto; flex: none; width: 40px; height: 40px; border-radius: 99px; display: grid; place-items: center; background: rgba(255, 255, 255, .12); color: var(--g-200); font-size: 19px; }
 .wk { margin-top: 16px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
-.wk span { height: 40px; border-radius: 10px; display: grid; place-items: center; font-size: 13px; font-weight: 500; color: var(--ink-3); background: var(--page); }
+.wk span { height: 40px; border-radius: 10px; display: grid; place-items: center; font-size: 14px; font-weight: 500; color: var(--ink-3); background: var(--page); }
 .wk span.on { background: var(--g-700); color: #fff; }
 .ui-log { left: 4%; bottom: 8%; width: 54%; }
-.logrow { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 12px; margin-top: 14px; font-size: 13.5px; color: var(--ink-2); }
+.logrow { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 12px; margin-top: 14px; font-size: 14px; color: var(--ink-2); }
 .logrow b { height: 8px; border-radius: 9px; background: var(--g-50); position: relative; overflow: hidden; }
 .logrow b::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--v); border-radius: 9px; background: var(--g-600); }
 .ui-tag { right: 6%; bottom: 14%; padding: 14px 18px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; border-radius: 99px; }
-.ui-tag .pi { font-size: 18px; color: var(--g-700); }
+.ui-tag .pi { font-size: 16px; color: var(--g-700); }
 
 /* ============ 2. The process at a glance ============ */
 .proc { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; }
@@ -39,12 +39,12 @@
 .proc .rail::before { content: ""; position: absolute; left: 0; top: -5px; width: 11px; height: 11px; border-radius: 99px; background: var(--g-600); box-shadow: 0 0 0 5px var(--g-50); }
 .proc li:not(:last-child) .rail { margin-right: -40px; }
 .proc h3 { font-size: 22px; font-weight: 400; letter-spacing: -0.02em; }
-.proc p { margin-top: 12px; color: var(--ink-2); font-size: 16px; line-height: 1.65; max-width: 34ch; }
+.proc p { margin-top: 12px; color: var(--ink-2); font-size: 16px; line-height: 20px; max-width: 34ch; }
 
 /* ============ 3. Applying for coaching ============ */
 .apply { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(36px, 6vw, 104px); align-items: center; padding: clamp(36px, 5.6vw, 88px); }
 .apply .lede { margin-top: 20px; max-width: 46ch; color: var(--ink); }
-.apply .note { margin-top: 18px; max-width: 46ch; color: var(--ink-2); font-size: 16px; line-height: 1.65; }
+.apply .note { margin-top: 18px; max-width: 46ch; color: var(--ink-2); font-size: 16px; line-height: 20px; }
 .apply .btn { margin-top: 36px; }
 .tbc { display: inline-block; padding: 0 6px; border-radius: 6px; border: 1px dashed currentColor; background: transparent; color: inherit; font-weight: 500; }
 .formcard { background: #fff; border-radius: 20px; border: 1px solid var(--line-2); box-shadow: var(--shadow-lg); padding: 10px 24px 20px; }
@@ -52,16 +52,16 @@
 .formcard .ck { flex: none; width: 22px; height: 22px; border-radius: 99px; display: grid; place-items: center; background: var(--g-700); color: #fff; }
 .formcard .ck svg { width: 11px; height: 11px; }
 .formcard .time { margin-top: 16px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-3); }
-.formcard .time .pi { font-size: 17px; color: var(--g-700); }
+.formcard .time .pi { font-size: 16px; color: var(--g-700); }
 
 /* ============ 4. The first call and your Assessment ============ */
 .call { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
 .call h2 { margin-bottom: 28px; }
 .qs { padding: clamp(24px, 2.8vw, 36px); border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
-.qs-top { padding-bottom: 8px; font-size: 13px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
+.qs-top { padding-bottom: 8px; font-size: 14px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
 .qs ol { list-style: none; margin: 0; padding: 0; counter-reset: q; }
 .qs li { counter-increment: q; display: flex; align-items: center; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line-2); font-size: clamp(18px, 1.5vw, 21px); letter-spacing: -0.015em; }
-.qs li::before { content: "0" counter(q); flex: none; font-size: 13px; font-weight: 500; color: var(--g-700); width: 22px; }
+.qs li::before { content: "0" counter(q); flex: none; font-size: 14px; font-weight: 500; color: var(--g-700); width: 22px; line-height: 18px;}
 .qs li:last-child { border-bottom: 0; padding-bottom: 4px; }
 .from { margin-top: clamp(64px, 7vw, 104px); padding-top: clamp(56px, 6vw, 88px); border-top: 1px solid var(--line); text-align: center; }
 .from .statement { max-width: 30ch; margin: 0 auto; }
@@ -83,8 +83,8 @@
 .day.s { background: var(--forest); color: #fff; }
 .day.s b { color: var(--g-200); }
 .day.s img { width: 42px; height: 42px; border-radius: 99px; object-fit: cover; object-position: 50% 8%; background: #2f5850; border: 2px solid rgba(143, 239, 202, .5); }
-.day.s span { font-size: 11.5px; line-height: 1.25; text-align: center; color: rgba(255, 255, 255, .86); }
-.cal-legend { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13.5px; color: var(--ink-2); }
+.day.s span { font-size: 12px; line-height: 1.25; text-align: center; color: rgba(255, 255, 255, .86); }
+.cal-legend { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px; color: var(--ink-2); }
 .cal-legend span { display: inline-flex; align-items: center; gap: 8px; }
 .cal-legend i { width: 8px; height: 8px; border-radius: 99px; background: var(--g-300); }
 .cal-legend span:nth-child(2) i { background: var(--g-600); }
@@ -94,7 +94,7 @@
 .dur { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(36px, 6vw, 104px); align-items: center; padding: clamp(36px, 5vw, 72px); }
 .dur .lede { margin-top: 18px; color: var(--ink); }
 .months { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; padding-top: 50px; }
-.months span { height: 72px; border-radius: 12px; background: var(--page); display: flex; align-items: flex-end; padding: 10px 12px; font-size: 12.5px; font-weight: 500; color: var(--ink-3); }
+.months span { height: 72px; border-radius: 12px; background: var(--page); display: flex; align-items: flex-end; padding: 10px 12px; font-size: 12px; font-weight: 500; color: var(--ink-3); }
 .months span.in { background: var(--g-700); color: #fff; }
 .months span.in + span.in { background: var(--g-600); }
 .months .br { position: absolute; top: 0; left: calc((100% - 40px) / 6 * 2 + 16px); right: 0; height: 38px; text-align: center; font-size: 14px; font-weight: 500; line-height: 1; color: var(--g-700); }
@@ -106,14 +106,14 @@
 .ask + .ask { padding-left: clamp(24px, 3vw, 48px); border-left: 1px solid var(--line); }
 .ask h3 { font-size: clamp(24px, 2.2vw, 30px); font-weight: 400; letter-spacing: -0.02em; }
 .ask ul { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 14px; }
-.ask li { position: relative; padding-left: 20px; font-size: 16px; line-height: 1.65; color: var(--ink-2); }
+.ask li { position: relative; padding-left: 20px; font-size: 16px; line-height: 20px; color: var(--ink-2); }
 .ask li::before { content: ""; position: absolute; left: 0; top: 10px; width: 7px; height: 7px; border-radius: 99px; background: var(--g-600); }
 .support { margin-top: clamp(48px, 5vw, 72px); text-align: center; font-size: clamp(18px, 1.6vw, 22px); letter-spacing: -0.015em; color: var(--g-700); }
 
 /* ============ 8. Who coaching is for ============ */
 .suit { overflow: hidden; border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); }
 .suit-row { display: grid; grid-template-columns: minmax(0, .62fr) minmax(0, 1fr) minmax(0, 1fr); }
-.suit-row > * { padding: 24px clamp(20px, 2.6vw, 36px); border-top: 1px solid var(--line-2); font-size: 16px; line-height: 1.55; }
+.suit-row > * { padding: 24px clamp(20px, 2.6vw, 36px); border-top: 1px solid var(--line-2); font-size: 16px; line-height: 20px; }
 .suit-row:first-child > * { border-top: 0; padding-top: 24px; padding-bottom: 22px; }
 .suit-row:first-child { background: var(--page); }
 .suit-row .k { font-weight: 500; color: var(--ink); }
@@ -123,7 +123,7 @@
 .suit-row .y .tk { background: var(--g-700); color: #fff; }
 .suit-row .n .tk { border: 1.5px solid rgba(2, 10, 29, .22); color: var(--ink-3); }
 .suit-row .tk svg { width: 11px; height: 11px; }
-.suit-h { font-size: 15px; font-weight: 500; }
+.suit-h { font-size: 16px; font-weight: 500; }
 .suit-h.y { color: var(--g-700); }
 .suit-row .lbl { display: none; }
 .awstrip { margin-top: 20px; }
@@ -150,7 +150,7 @@
   .sess img { width: 44px; height: 44px; }
   .wk span { height: 34px; font-size: 12px; }
   .ui-log { left: 5%; bottom: 6%; width: 74%; }
-  .logrow { grid-template-columns: 84px 1fr; font-size: 12.5px; margin-top: 12px; }
+  .logrow { grid-template-columns: 84px 1fr; font-size: 12px; margin-top: 12px; }
   .ui-tag { display: none; }
   .proc { grid-template-columns: 1fr; gap: 36px; }
   .proc .num { font-size: 44px; }
