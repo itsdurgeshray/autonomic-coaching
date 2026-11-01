@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Responsive Living · Autonomic Coaching</title>
+<meta name="description" content="Responsive Living follows one man who learned to widen the space between stress and response, and explains the biology of what happens when it closes.">
+<link rel="icon" href="assets/mark.png">
+<script>if (/[?&]figma\b/.test(location.search)) document.documentElement.classList.add('figma');</script>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ============ 1. Hero (warm sand, echoes the cover) ============ */
+.rl-hero { background: linear-gradient(180deg, var(--sand) 0%, var(--sand) 78%, var(--page) 100%); }
+.rl-hero .phero-in { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); }
+.rl-hero h1 { max-width: 12ch; }
+.rl-hero .sub { color: var(--ink); max-width: 44ch; }
+.cover-stage { position: relative; display: grid; place-items: center; padding: 8px 0 36px; }
+.cover-stage .sun { position: absolute; z-index: 0; left: 50%; top: 46%; width: 118%; aspect-ratio: 1; margin: -59% 0 0 -59%; border-radius: 50%; background: radial-gradient(closest-side, rgba(246, 196, 160, .62), rgba(246, 196, 160, .22) 55%, rgba(246, 196, 160, 0)); pointer-events: none; }
+.cover-stage .floor { position: absolute; z-index: 0; left: 50%; bottom: 14px; width: 76%; height: 44px; margin-left: -38%; border-radius: 50%; background: radial-gradient(closest-side, rgba(80, 52, 30, .32), rgba(80, 52, 30, 0)); }
+.cover { position: relative; z-index: 1; width: min(100%, 410px); aspect-ratio: 1004 / 1500; border-radius: 3px 8px 8px 3px; overflow: hidden; background: #e9d6c4; box-shadow: 0 2px 4px rgba(40, 26, 12, .12), 0 36px 70px -24px rgba(60, 38, 18, .5); }
+.cover img { width: 100%; height: 100%; object-fit: cover; }
+.cover::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(0, 0, 0, .22) 0%, rgba(255, 255, 255, .22) 1.4%, rgba(255, 255, 255, 0) 3.4%, rgba(0, 0, 0, .1) 4.4%, rgba(0, 0, 0, 0) 8%); }
+
+/* ============ 2. Endorsed by (open grid, no boxes) ============ */
+.endorse { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+.endorse figure { margin: 0; display: flex; flex-direction: column; padding: clamp(32px, 3.4vw, 52px) clamp(28px, 3.6vw, 64px) clamp(32px, 3.4vw, 52px) 0; border-bottom: 1px solid var(--line); }
+.endorse figure:nth-child(even) { padding-left: clamp(28px, 3.6vw, 64px); padding-right: 0; border-left: 1px solid var(--line); }
+.endorse .qm { width: 22px; height: 22px; color: var(--g-600); }
+.endorse blockquote { margin: 22px 0 0; font-size: clamp(19px, 1.75vw, 25px); line-height: 1.42; letter-spacing: -0.02em; }
+.endorse figcaption { margin-top: auto; padding-top: 30px; }
+.endorse figcaption strong { display: block; font-size: 15.5px; font-weight: 500; }
+.endorse figcaption small { display: block; margin-top: 4px; max-width: 46ch; font-size: 14px; line-height: 1.5; color: var(--ink-3); }
+
+/* ============ 3. The problem (pill statements) ============ */
+.prob { text-align: center; }
+.prob h2 { max-width: 19ch; margin-left: auto; margin-right: auto; }
+.sym { list-style: none; margin: clamp(44px, 5vw, 72px) auto 0; padding: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.sym li { display: inline-flex; align-items: center; gap: 14px; padding: 12px 26px 12px 12px; border-radius: 99px; background: #fff; border: 1px solid var(--line); font-size: clamp(16px, 1.35vw, 20px); line-height: 1.35; letter-spacing: -0.015em; text-align: left; }
+.sym .ci { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 99px; background: var(--g-50); color: var(--g-700); font-size: 19px; }
+.familiar { margin-top: clamp(44px, 5vw, 72px); }
+.familiar strong { display: block; font-size: clamp(22px, 2vw, 28px); font-weight: 400; letter-spacing: -0.02em; color: var(--g-700); }
+.familiar p { margin: 12px auto 0; max-width: 44ch; font-size: clamp(16px, 1.25vw, 18px); color: var(--ink-2); }
+
+/* ============ 4. What is Responsive Living ============ */
+.what { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
+.what h2 { margin-bottom: 28px; }
+.gapviz { padding: clamp(24px, 2.6vw, 36px); border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
+.seg { display: inline-flex; padding: 4px; border-radius: 12px; background: var(--page); border: 1px solid var(--line); }
+.seg button { height: 38px; padding: 0 16px; border-radius: 9px; font-size: 14px; font-weight: 500; color: var(--ink-2); transition: background-color .3s, color .3s, box-shadow .3s; }
+.seg button[aria-pressed="true"] { background: #fff; color: var(--ink); box-shadow: 0 1px 3px rgba(2, 10, 29, .12); }
+.gv { position: relative; margin-top: 28px; height: 220px; display: flex; align-items: stretch; }
+.gv-side { flex: 1; min-width: 0; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: flex-basis .9s var(--ease), background-color .6s, border-color .6s; }
+.gv-side .lbl { font-size: 13px; font-weight: 500; line-height: 1.35; }
+.gv-side.l { background: var(--sand); color: var(--ink); }
+.gv-side.r { background: var(--g-50); border: 1px solid var(--g-100); color: var(--g-900); }
+.gv-side svg { width: 100%; height: 54px; overflow: visible; }
+.gv-side .wave { fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.gv-side.l .wave { stroke: var(--ink-2); }
+.gv-side.r .wave { stroke: var(--g-700); transition: d .9s var(--ease); }
+.gv-gap { flex: none; width: 34%; position: relative; display: grid; place-items: center; transition: width .9s var(--ease); }
+.gv-gap i { position: absolute; top: 14px; bottom: 14px; left: 50%; border-left: 1.5px dashed rgba(22, 157, 105, .55); transition: opacity .6s; }
+.gv-gap span { position: relative; padding: 6px 12px; border-radius: 99px; background: #fff; border: 1px solid var(--g-100); color: var(--g-700); font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: opacity .4s, transform .6s var(--ease); }
+.gapviz[data-state="stress"] .gv-gap { width: 6px; }
+.gapviz[data-state="stress"] .gv-gap span { opacity: 0; transform: scale(.6); }
+.gapviz[data-state="stress"] .gv-gap i { opacity: 0; }
+.gapviz[data-state="stress"] .gv-side.r { background: #fff4ec; border-color: #fbd9c3; color: #7a3410; }
+.gapviz[data-state="stress"] .gv-side.r .wave { stroke: #c2410c; }
+.gv-cap { margin-top: 20px; min-height: 26px; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.gv-cap [data-for] { display: none; }
+.gapviz[data-state="stress"] .gv-cap [data-for="stress"], .gapviz[data-state="rl"] .gv-cap [data-for="rl"] { display: block; }
+
+/* Frankl: the one dark moment mid-page */
+.frankl { margin: 0; text-align: center; color: #fff; background: radial-gradient(70% 90% at 50% 0%, rgba(22, 157, 105, .3), rgba(22, 157, 105, 0) 70%), var(--g-950); }
+.frankl .wrap { padding-top: clamp(96px, 11vw, 160px); padding-bottom: clamp(96px, 11vw, 160px); display: flex; flex-direction: column; align-items: center; }
+.frankl .qm { width: 34px; height: 34px; color: var(--g-300); }
+.frankl blockquote { margin: 32px 0 0; max-width: 34ch; font-size: clamp(25px, 2.8vw, 40px); line-height: 1.28; letter-spacing: -0.025em; }
+.frankl cite { display: block; margin-top: 28px; font-size: 15px; font-weight: 500; color: var(--g-200); }
+.frankl .after { margin-top: clamp(48px, 5vw, 72px); padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .14); width: min(100%, 560px); font-size: clamp(16px, 1.3vw, 18px); color: rgba(255, 255, 255, .72); }
+
+/* ============ 5. Meet James ============ */
+.james { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
+.james h2 { margin-bottom: 28px; }
+.jcard { padding: clamp(28px, 3vw, 40px); border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
+.jcard-top { display: flex; align-items: center; gap: 14px; padding-bottom: 24px; border-bottom: 1px solid var(--line-2); }
+.jcard-top .av { flex: none; width: 46px; height: 46px; border-radius: 99px; display: grid; place-items: center; background: var(--g-900); color: var(--g-200); font-size: 18px; }
+.jcard-top strong { display: block; font-size: 18px; font-weight: 500; letter-spacing: -0.01em; }
+.jcard-top small { display: block; font-size: 13.5px; color: var(--ink-3); }
+.jline { list-style: none; margin: 26px 0 0; padding: 0; display: grid; gap: 22px; position: relative; }
+.jline::before { content: ""; position: absolute; left: 9px; top: 10px; bottom: 10px; width: 1px; background: var(--line); }
+.jline li { position: relative; display: flex; align-items: center; gap: 18px; font-size: 16.5px; line-height: 1.4; color: var(--ink-2); }
+.jline li::before { content: ""; position: relative; flex: none; width: 19px; height: 19px; border-radius: 99px; background: #fff; border: 1.5px solid rgba(2, 10, 29, .2); box-sizing: border-box; }
+.jline li:last-child { color: var(--ink); font-weight: 500; }
+.jline li:last-child::before { background: var(--g-700); border-color: var(--g-700); box-shadow: 0 0 0 5px var(--g-50); }
+
+/* ============ 7. About the author ============ */
+.author { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
+.author-ph { aspect-ratio: 4 / 4.5; background: #dfe0e4; }
+.author-ph img { object-position: 50% 16%; }
+.author h2 { margin-top: 16px; max-width: 16ch; }
+.author .body { margin-top: 24px; max-width: 58ch; }
+.author .btn { margin-top: 36px; }
+
+/* ============ 9. Read the first chapter free ============ */
+.chapter { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 96px); align-items: center; padding: clamp(36px, 5.6vw, 88px); }
+.chapter-art { position: relative; height: 420px; }
+.chapter-art .page { position: absolute; left: 50%; top: 50%; width: 230px; height: 340px; margin: -170px 0 0 -40px; transform: rotate(5deg); border-radius: 6px; background: #fff; box-shadow: var(--shadow-md); padding: 34px 26px; }
+.chapter-art .page .eyebrow { font-size: 10.5px; }
+.chapter-art .page h4 { margin: 12px 0 18px; font-size: 16px; line-height: 1.3; font-weight: 400; letter-spacing: -0.01em; }
+.chapter-art .page i { display: block; height: 6px; margin-top: 10px; border-radius: 6px; background: rgba(2, 10, 29, .07); }
+.chapter-art .cover { position: absolute; left: 50%; top: 50%; width: 230px; margin: -172px 0 0 -190px; transform: rotate(-4deg); }
+.chapter-copy h2 { max-width: 16ch; }
+.chapter-copy .lede { margin-top: 20px; max-width: 54ch; }
+.chapter-copy .rform { margin-top: 32px; }
+.chapter-copy .rf input { background: #fff; }
+.fine { font-size: 13.5px; color: var(--ink-3); }
+.chapter-copy .fdone { margin-top: 32px; }
+
+/* ============ 10. Get Responsive Living ============ */
+.fmts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.fmt { padding: clamp(28px, 3vw, 44px) clamp(24px, 3vw, 48px) 0 0; }
+.fmt + .fmt { padding-left: clamp(24px, 3vw, 48px); border-left: 1px solid var(--line); }
+.fmt h3 { font-size: clamp(24px, 2.2vw, 30px); font-weight: 400; letter-spacing: -0.02em; }
+.fmt .wb { display: block; margin-top: 22px; font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
+.shops { margin-top: 10px; display: grid; }
+.shop { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--line-2); font-size: 16px; transition: color .2s, padding .3s var(--ease); }
+.shop svg { width: 14px; height: 14px; color: var(--ink-3); }
+.shop:hover { color: var(--g-700); padding-left: 4px; }
+.shop:hover svg { color: var(--g-700); }
+.pub { margin-top: 44px; font-size: 14px; color: var(--ink-3); }
+
+/* ============ Tablet ============ */
+@media (max-width: 1100px) {
+  .what, .james, .author { grid-template-columns: 1fr; }
+  .what h2, .james h2 { max-width: 20ch; }
+  .gapviz, .jcard { max-width: 640px; }
+  .author-ph { aspect-ratio: 16 / 10; }
+  .author-ph img { object-position: 50% 22%; }
+  .chapter { grid-template-columns: 1fr; }
+  .chapter-art { height: 380px; }
+}
+@media (max-width: 900px) {
+  .rl-hero .phero-in { grid-template-columns: 1fr; }
+  .cover { width: min(64vw, 360px); }
+}
+/* ============ Phone ============ */
+@media (max-width: 720px) {
+  .endorse { grid-template-columns: 1fr; }
+  .endorse figure, .endorse figure:nth-child(even) { padding: 30px 0; border-left: 0; }
+  .sym { align-items: stretch; gap: 10px; }
+  .sym li { border-radius: 18px; padding: 12px 16px 12px 12px; gap: 12px; font-size: 16px; }
+  .sym .ci { width: 34px; height: 34px; font-size: 17px; }
+  .gv { height: 196px; }
+  .gv-side { padding: 12px; }
+  .gv-side .lbl { font-size: 12px; }
+  .seg { display: flex; }
+  .seg button { flex: 1; padding: 0 6px; font-size: 12.5px; white-space: nowrap; }
+  .author-ph { aspect-ratio: 4 / 4.2; }
+  .chapter { padding: 28px 20px 32px; border-radius: 18px; }
+  .chapter-art { height: 300px; }
+  .chapter-art .page { width: 170px; height: 252px; margin: -126px 0 0 -26px; padding: 24px 18px; }
+  .chapter-art .page h4 { font-size: 13px; }
+  .chapter-art .cover { width: 170px; margin: -128px 0 0 -144px; }
+  .fmts { grid-template-columns: 1fr; }
+  .fmt, .fmt + .fmt { padding: 30px 0 8px; border-left: 0; }
+  .fmt + .fmt { border-top: 1px solid var(--line); }
+}
+</style>
+</head>
+<body data-page="rl">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<!--SPRITE-->
+    <symbol id="arrow" viewBox="0 0 16 16"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow-ur" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="plus" viewBox="0 0 16 16"><path d="M8 2.5v11M2.5 8h11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="x" viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-coffee" viewBox="0 0 256 256"><path d="M82,56V24a6,6,0,0,1,12,0V56a6,6,0,0,1-12,0Zm38,6a6,6,0,0,0,6-6V24a6,6,0,0,0-12,0V56A6,6,0,0,0,120,62Zm32,0a6,6,0,0,0,6-6V24a6,6,0,0,0-12,0V56A6,6,0,0,0,152,62Zm94,58v8a38,38,0,0,1-36.94,38,94.55,94.55,0,0,1-31.13,44H208a6,6,0,0,1,0,12H32a6,6,0,0,1,0-12H62.07A94.34,94.34,0,0,1,26,136V88a6,6,0,0,1,6-6H208A38,38,0,0,1,246,120Zm-44,16V94H38v42a82.27,82.27,0,0,0,46.67,74h70.66A82.27,82.27,0,0,0,202,136Zm32-16a26,26,0,0,0-20-25.29V136a93.18,93.18,0,0,1-1.69,17.64A26,26,0,0,0,234,128Z"/></symbol>
+    <symbol id="i-facebook-logo" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V150h26a6,6,0,0,0,0-12H134V112a18,18,0,0,1,18-18h16a6,6,0,0,0,0-12H152a30,30,0,0,0-30,30v26H96a6,6,0,0,0,0,12h26v67.8a90,90,0,1,1,12,0Z"/></symbol>
+    <symbol id="i-heartbeat" viewBox="0 0 256 256"><path d="M72,142H32a6,6,0,0,1,0-12H68.79L83,108.67a6,6,0,0,1,10,0l27,40.51,11-16.51a6,6,0,0,1,5-2.67h24a6,6,0,0,1,0,12H139.21L125,163.33a6,6,0,0,1-10,0L88,122.82,77,139.33A6,6,0,0,1,72,142ZM178,42c-21,0-39.26,9.47-50,25.34C117.26,51.47,99,42,78,42a60.07,60.07,0,0,0-60,60q0,1.09,0,2.19a6,6,0,0,0,12-.38c0-.6,0-1.21,0-1.81A48.05,48.05,0,0,1,78,54c20.28,0,37.31,10.83,44.45,28.27a6,6,0,0,0,11.1,0C140.69,64.83,157.72,54,178,54a48.05,48.05,0,0,1,48,48c0,55.73-81.61,105.65-98,115.11-9.84-5.66-43.09-25.82-68.16-53.16a6,6,0,1,0-8.84,8.1c30.94,33.77,72.41,56.29,74.16,57.23a6,6,0,0,0,5.68,0,334.68,334.68,0,0,0,53.06-37C219.8,161.59,238,131.2,238,102A60.07,60.07,0,0,0,178,42Z"/></symbol>
+    <symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128ZM40,70H216a6,6,0,0,0,0-12H40a6,6,0,0,0,0,12ZM216,186H40a6,6,0,0,0,0,12H216a6,6,0,0,0,0-12Z"/></symbol>
+    <symbol id="i-moon-stars" viewBox="0 0 256 256"><path d="M238,96a6,6,0,0,1-6,6H214v18a6,6,0,0,1-12,0V102H184a6,6,0,0,1,0-12h18V72a6,6,0,0,1,12,0V90h18A6,6,0,0,1,238,96ZM144,54h10V64a6,6,0,0,0,12,0V54h10a6,6,0,0,0,0-12H166V32a6,6,0,0,0-12,0V42H144a6,6,0,0,0,0,12Zm71.25,100.28a6,6,0,0,1,1.07,6A94,94,0,1,1,95.76,39.68a6,6,0,0,1,7.94,6.79A90.11,90.11,0,0,0,192,154a90.9,90.9,0,0,0,17.53-1.7A6,6,0,0,1,215.25,154.28Zm-14.37,11.34q-4.42.38-8.88.38A102.12,102.12,0,0,1,90,64q0-4.45.38-8.88a82,82,0,1,0,110.5,110.5Z"/></symbol>
+    <symbol id="i-power" viewBox="0 0 256 256"><path d="M122,128V48a6,6,0,0,1,12,0v80a6,6,0,0,1-12,0Zm57.28-77A6,6,0,0,0,172.72,61C196.41,76.47,210,100.88,210,128a82,82,0,0,1-164,0c0-27.12,13.59-51.53,37.28-67A6,6,0,0,0,76.72,51C49.57,68.68,34,96.75,34,128a94,94,0,0,0,188,0C222,96.75,206.43,68.68,179.28,51Z"/></symbol>
+    <symbol id="i-shuffle" viewBox="0 0 256 256"><path d="M236.24,179.76a6,6,0,0,1,0,8.48l-24,24a6,6,0,0,1-8.48-8.48L217.52,190H200.94a70.16,70.16,0,0,1-57-29.31l-41.71-58.4A58.11,58.11,0,0,0,55.06,78H32a6,6,0,0,1,0-12H55.06a70.16,70.16,0,0,1,57,29.31l41.71,58.4A58.11,58.11,0,0,0,200.94,178h16.58l-13.76-13.76a6,6,0,0,1,8.48-8.48Zm-92.06-74.41a5.91,5.91,0,0,0,3.48,1.12,6,6,0,0,0,4.89-2.51l1.19-1.67A58.11,58.11,0,0,1,200.94,78h16.58L203.76,91.76a6,6,0,1,0,8.48,8.48l24-24a6,6,0,0,0,0-8.48l-24-24a6,6,0,0,0-8.48,8.48L217.52,66H200.94a70.16,70.16,0,0,0-57,29.31L142.78,97A6,6,0,0,0,144.18,105.35Zm-32.36,45.3a6,6,0,0,0-8.37,1.39l-1.19,1.67A58.11,58.11,0,0,1,55.06,178H32a6,6,0,0,0,0,12H55.06a70.16,70.16,0,0,0,57-29.31l1.19-1.67A6,6,0,0,0,111.82,150.65Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 256 256"><path d="M204.24,195.76a6,6,0,1,1-8.48,8.48L128,136.49,60.24,204.24a6,6,0,0,1-8.48-8.48L119.51,128,51.76,60.24a6,6,0,0,1,8.48-8.48L128,119.51l67.76-67.75a6,6,0,0,1,8.48,8.48L136.49,128Z"/></symbol>
+    <symbol id="i-youtube-logo" viewBox="0 0 256 256"><path d="M163.33,123l-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128ZM232.4,70a22,22,0,0,0-13.28-15C185,41.79,130.27,42,128,42s-57-.21-91.16,13A22,22,0,0,0,23.6,70C21.05,79.89,18,98,18,128s3.05,48.11,5.6,58a22,22,0,0,0,13.28,15C71,214.21,125.72,214,128,214h.71c6.91,0,58-.44,90.45-13a22,22,0,0,0,13.28-15c2.55-9.87,5.6-27.93,5.6-58S235,79.89,232.4,70ZM220.78,183a10,10,0,0,1-6,6.86C182.78,202.19,128.58,202,128,202s-54.71.2-86.75-12.17a10,10,0,0,1-6-6.86C32.84,173.78,30,156.78,30,128s2.84-45.78,5.22-55a10,10,0,0,1,6-6.86C72.06,54.26,123.53,54,127.76,54H128c.54,0,54.71-.2,86.75,12.17a10,10,0,0,1,6,6.86c2.38,9.19,5.22,26.19,5.22,55S223.16,173.78,220.78,183Z"/></symbol>
+    <symbol id="if-quotes" viewBox="0 0 256 256"><path d="M116,72v88a48.05,48.05,0,0,1-48,48,8,8,0,0,1,0-16,32,32,0,0,0,32-32v-8H40a16,16,0,0,1-16-16V72A16,16,0,0,1,40,56h60A16,16,0,0,1,116,72ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Z"/></symbol>
+    <!--/SPRITE-->
+</defs></svg>
+
+<!--HEADER-->
+<header class="hdr" id="nav">
+  <div class="in">
+    <a href="index.html" class="brand" aria-label="Autonomic Coaching home"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+    <nav aria-label="Primary">
+      <a href="responsive-living.html" aria-current="page">Responsive Living</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About Justin</a>
+      <a href="testimonials.html">Results</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <button class="menu-btn close" id="sheetClose" aria-label="Close menu" style="display:grid"><svg class="pi"><use href="#i-x"/></svg></button>
+  <nav>
+    <a href="responsive-living.html" aria-current="page">Responsive Living<svg><use href="#arrow"/></svg></a>
+    <a href="how-it-works.html">How It Works<svg><use href="#arrow"/></svg></a>
+    <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
+    <a href="testimonials.html">Results<svg><use href="#arrow"/></svg></a>
+    <a href="blog.html">Blog<svg><use href="#arrow"/></svg></a>
+    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
+    <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness<svg><use href="#arrow-ur"/></svg></a>
+  </nav>
+  <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
+</div>
+<!--/HEADER-->
+
+<main id="top">
+  <!-- 1. Hero -->
+  <section class="phero rl-hero">
+    <div class="phero-in">
+      <div class="phero-copy">
+        <h1>Between stress and response, there’s a space.</h1>
+        <p class="sub">Responsive Living follows one man who learned to widen that space and explains the biology of what happens when it closes.</p>
+        <p class="kicker">If you’re exhausted, wired, and told your labs are normal, this is the space your body lost.</p>
+        <div class="ctas">
+          <a href="#buy" class="btn btn-primary">Buy the Book <svg><use href="#arrow"/></svg></a>
+          <a href="#chapter" class="u-link">Read the first chapter free <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="cover-stage">
+        <div class="sun"></div>
+        <div class="floor"></div>
+        <div class="cover"><img src="assets/rl-cover.jpg" alt="Responsive Living by Justin Maguire, book cover"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Endorsed by -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="head"><h2>Endorsed by</h2></div>
+      <div class="endorse">
+        <figure>
+          <svg class="qm"><use href="#if-quotes"/></svg>
+          <blockquote>“This isn’t a quick fix or another trendy protocol; it’s a roadmap that can help you understand your body at a deeper level.”</blockquote>
+          <figcaption><strong>Kris Gethin</strong><small>Voted World #1 Transformation Expert. Co-founder, Unmatched Supplements and Kris Gethin Gyms.</small></figcaption>
+        </figure>
+        <figure>
+          <svg class="qm"><use href="#if-quotes"/></svg>
+          <blockquote>“The immune system is not broken. It is responding appropriately to a world that has changed faster than our biology.”</blockquote>
+          <figcaption><strong>Dr. Dominik Nischwitz</strong><small>World-leading biological dentist. Founder, Biodentistry Global Standard.</small></figcaption>
+        </figure>
+        <figure>
+          <svg class="qm"><use href="#if-quotes"/></svg>
+          <blockquote>“It’s a framework for understanding how mitochondria, hormones, and immune pathways interlock, and how to respond when the body’s signals get out of rhythm.”</blockquote>
+          <figcaption><strong>Tim Gray</strong><small>UK’s leading biohacker. Founder, Health Optimisation Summit. 400M+ annual content views.</small></figcaption>
+        </figure>
+        <figure>
+          <svg class="qm"><use href="#if-quotes"/></svg>
+          <blockquote>“It bridges the divide between molecular science and lived human experience.”</blockquote>
+          <figcaption><strong>Dr. Ahmed Haffejie</strong><small>Integrative and functional medicine practitioner. MBBCH (Wits), ABAARM.</small></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. The problem -->
+  <section class="sec pt0">
+    <div class="wrap prob">
+      <span class="eyebrow">The problem</span>
+      <h2>Why do I still feel tired after a full night’s sleep?</h2>
+      <ul class="sym">
+        <li><span class="ci"><svg class="pi"><use href="#i-moon-stars"/></svg></span>You sleep eight hours and wake up already tired.</li>
+        <li><span class="ci"><svg class="pi"><use href="#i-coffee"/></svg></span>Your focus is gone by mid-afternoon, and more coffee only makes you jittery.</li>
+        <li><span class="ci"><svg class="pi"><use href="#i-power"/></svg></span>You can’t switch off, even when the day is over.</li>
+        <li><span class="ci"><svg class="pi"><use href="#i-shuffle"/></svg></span>Every protocol you try contradicts the last one.</li>
+        <li><span class="ci"><svg class="pi"><use href="#i-heartbeat"/></svg></span>You’ve stopped trusting your body to cope the way it used to.</li>
+      </ul>
+      <div class="familiar">
+        <strong>Sound familiar?</strong>
+        <p>If so, there’s a reason, and it starts with a gap most of us never learn to see.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. What is Responsive Living -->
+  <section class="sec pt0" id="what">
+    <div class="wrap what">
+      <div>
+        <h2>What is Responsive Living?</h2>
+        <p class="body">Responsive Living is the practice of reading your biology, your psychology, and your daily life together, and adjusting as each one changes. There’s a gap between what happens to you and how your body responds. Under constant stress, that gap closes, and the body stays on alert. Responsive Living widens it again.</p>
+        <p class="body">For most of human history, stress was physical. You ran, fought, or hid, and the stress response burned itself out in the action. Today’s stress is mental: deadlines, money, a phone that never stops. The alarm goes off, and nothing moves. Justin Maguire calls this static physiology, and the book traces how a body stuck in it can stay in defense mode for years: tired, inflamed, and slow to recover.</p>
+      </div>
+      <div class="gapviz" id="gapviz" data-state="rl">
+        <div class="seg" role="group" aria-label="Compare">
+          <button type="button" data-set="stress" aria-pressed="false">Under constant stress</button>
+          <button type="button" data-set="rl" aria-pressed="true">Responsive Living</button>
+        </div>
+        <div class="gv">
+          <div class="gv-side l">
+            <span class="lbl">What happens to you</span>
+            <svg viewBox="0 0 120 54" preserveAspectRatio="none" aria-hidden="true"><path class="wave" d="M0 27 L14 27 L20 8 L28 46 L36 14 L44 40 L52 27 L120 27"/></svg>
+          </div>
+          <div class="gv-gap"><i></i><span>Space</span></div>
+          <div class="gv-side r">
+            <span class="lbl">How your body responds</span>
+            <svg viewBox="0 0 120 54" preserveAspectRatio="none" aria-hidden="true"><path class="wave" d="M0 27 C 20 27, 26 16, 40 16 S 60 38, 76 38 S 100 27, 120 27"/></svg>
+          </div>
+        </div>
+        <div class="gv-cap" aria-live="polite">
+          <p data-for="stress">Under constant stress, that gap closes, and the body stays on alert.</p>
+          <p data-for="rl">Responsive Living widens it again.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <figure class="frankl">
+    <div class="wrap">
+      <svg class="qm"><use href="#if-quotes"/></svg>
+      <blockquote>“Between stimulus and response, there is a space. In that space is our power to choose our response. In our response lies our growth and our freedom.”</blockquote>
+      <cite>Viktor E. Frankl</cite>
+      <p class="after">The book shows how this plays out in a real body, through one man’s story.</p>
+    </div>
+  </figure>
+
+  <!-- 5. Meet James -->
+  <section class="sec">
+    <div class="wrap james">
+      <div>
+        <h2>Meet James: why this book is told as a story</h2>
+        <p class="body">Immunology is hard to follow in a textbook. It gets easier when you watch it happen to someone, so Justin wrote this book as a story.</p>
+        <p class="body">James is not a real person. He’s the embodiment of many people with similar struggles, and the book follows him from childhood eczema and constant fatigue through to understanding why his body behaved the way it did. His symptoms lean toward allergies, gut trouble, and skin flares. Yours may look different. The pattern underneath is the one the book teaches you to read.</p>
+      </div>
+      <div class="jcard">
+        <div class="jcard-top"><span class="av">J</span><div><strong>James</strong><small>The embodiment of many people with similar struggles</small></div></div>
+        <ol class="jline">
+          <li>Childhood eczema</li>
+          <li>Constant fatigue</li>
+          <li>Allergies, gut trouble, and skin flares</li>
+          <li>Understanding why his body behaved the way it did</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. What you'll understand -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="head"><h2>What you’ll understand by the end of the book</h2></div>
+      <ol class="rows">
+        <li><span class="n">01</span><h3>Why your body ends up here</h3><p>How mitochondria, immune balance, and a lifetime of exposures set the stage.</p></li>
+        <li><span class="n">02</span><h3>Where it hides and how it shows up</h3><p>From the mouth to your hormones and thyroid, and how to recognize the signs.</p></li>
+        <li><span class="n">03</span><h3>What shifts the pattern</h3><p>The ideas behind the clinical options practitioners use to support energy, hormone, and immune balance, and why each is matched to the person. These chapters are for understanding and for better conversations with your doctor.</p></li>
+        <li><span class="n">04</span><h3>How to sustain it and measure it</h3><p>Fasting, calming the nervous system, what lab work can and can’t tell you, and how food affects immune balance.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 7. About the author -->
+  <section class="sec pt0">
+    <div class="wrap author">
+      <div class="media author-ph"><img src="assets/justin-coat.png" alt="Justin Maguire"></div>
+      <div>
+        <span class="eyebrow">Meet the author</span>
+        <h2>About the author, Justin Maguire</h2>
+        <p class="body">Justin Maguire is a nutritional scientist and health coach, and both Dr. Dominik Nischwitz and Tim Gray call him a “blood detective.” He holds a BSc (Hons) in Nutritional Science, a Diploma in Functional Blood Chemistry and certifications in hormone therapy and nutrigenomics, and is completing an MSc in Neuroscience and Psychology of Mental Health.</p>
+        <a href="about.html" class="btn btn-light">Meet Justin <svg><use href="#arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Is Responsive Living right for you? -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="head c">
+        <h2>Is Responsive Living right for you?</h2>
+        <p class="lede">The book suits some readers better than others.</p>
+      </div>
+      <div class="cmp">
+        <div class="cmp-col">
+          <h3>This book is for you if</h3>
+          <ul class="ticks">
+            <li><span class="tk"><svg><use href="#check"/></svg></span>You’re exhausted and nobody can tell you why.</li>
+            <li><span class="tk"><svg><use href="#check"/></svg></span>You’ve tried a lot and nothing has lasted.</li>
+            <li><span class="tk"><svg><use href="#check"/></svg></span>You want to understand your own biology rather than follow instructions.</li>
+            <li><span class="tk"><svg><use href="#check"/></svg></span>You learn better from a story than from a textbook.</li>
+          </ul>
+        </div>
+        <div class="cmp-col">
+          <h3>This book isn’t for you if</h3>
+          <ul class="ticks no">
+            <li><span class="tk"><svg><use href="#x"/></svg></span>You want a supplement list or a quick fix.</li>
+            <li><span class="tk"><svg><use href="#x"/></svg></span>You want a personal treatment plan.</li>
+            <li><span class="tk"><svg><use href="#x"/></svg></span>You want a diagnosis or a replacement for medical care.</li>
+            <li><span class="tk"><svg><use href="#x"/></svg></span>You want a one-size-fits-all plan.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Read the first chapter free -->
+  <section class="sec pt0" id="chapter">
+    <div class="wrap">
+      <div class="panel chapter">
+        <div class="chapter-art" aria-hidden="true">
+          <div class="page">
+            <span class="eyebrow">Chapter 1</span>
+            <h4>Mitochondria: the unseen engine of immunity and energy</h4>
+            <i></i><i style="width:92%"></i><i></i><i style="width:78%"></i><i></i><i style="width:64%"></i><i></i><i style="width:84%"></i>
+          </div>
+          <div class="cover"><img src="assets/rl-cover.jpg" alt=""></div>
+        </div>
+        <div class="chapter-copy" id="chapterBox">
+          <h2>Read the first chapter free</h2>
+          <p class="lede">If that sounds like you, start with the introduction and Chapter 1, “Mitochondria: the unseen engine of immunity and energy.” Enter your email and we’ll send it straight to you.</p>
+          <form class="rform" data-form="chapter" novalidate>
+            <label class="rf"><span>First name <small>(optional)</small></span><input type="text" name="first_name" autocomplete="given-name" placeholder="First name"></label>
+            <label class="rf"><span>Email</span><input type="email" name="email" autocomplete="email" placeholder="you@example.com" data-req data-msg="Please add a valid email address."></label>
+            <div class="rform-foot full"><span class="err" role="alert"></span><button class="btn btn-primary" type="submit">Send me the chapter <svg><use href="#arrow"/></svg></button></div>
+            <p class="fine full">We’ll send the chapter and occasional notes from Justin. Unsubscribe any time.</p>
+          </form>
+          <div class="fdone" role="status">
+            <span class="ok"><svg><use href="#check"/></svg></span>
+            <strong>Thank you. The chapter is on its way.</strong>
+            <p>We’ll send the chapter and occasional notes from Justin. Unsubscribe any time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Get Responsive Living -->
+  <section class="sec pt0" id="buy">
+    <div class="wrap">
+      <div class="head shead-row">
+        <div><span class="eyebrow">Buy the book</span><h2>Get Responsive Living</h2></div>
+        <p class="lede">Ready to read the whole book?</p>
+      </div>
+      <div class="fmts">
+        <div class="fmt">
+          <h3>Paperback</h3>
+          <span class="wb">Where to buy</span>
+          <div class="shops">
+            <a class="shop" href="#">Amazon <svg><use href="#arrow-ur"/></svg></a>
+            <a class="shop" href="#">Barnes &amp; Noble <svg><use href="#arrow-ur"/></svg></a>
+            <a class="shop" href="#">Target <svg><use href="#arrow-ur"/></svg></a>
+            <a class="shop" href="#">Walmart <svg><use href="#arrow-ur"/></svg></a>
+            <a class="shop" href="#">Independent booksellers <svg><use href="#arrow-ur"/></svg></a>
+          </div>
+        </div>
+        <div class="fmt">
+          <h3>Kindle</h3>
+          <span class="wb">Where to buy</span>
+          <div class="shops"><a class="shop" href="#">Amazon <svg><use href="#arrow-ur"/></svg></a></div>
+        </div>
+        <div class="fmt">
+          <h3>Audiobook</h3>
+          <span class="wb">Where to buy</span>
+          <div class="shops">
+            <a class="shop" href="#">Audible <svg><use href="#arrow-ur"/></svg></a>
+            <a class="shop" href="#">Spotify <svg><use href="#arrow-ur"/></svg></a>
+            <a class="shop" href="#">Apple <svg><use href="#arrow-ur"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <p class="pub">Published by Golden Ray Books. ISBN 979-8-9945080-2-2 (paperback).</p>
+    </div>
+  </section>
+
+  <!-- 11. FAQs -->
+  <section class="sec pt0">
+    <div class="wrap faq">
+      <div class="faq-left">
+        <h2>FAQs</h2>
+        <p class="lede">Still deciding? These are the questions readers ask most.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>What is Responsive Living?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>Responsive Living is the practice of reading your biology, your psychology and your daily life together, and adjusting as each one changes. It’s also the title of Justin Maguire’s book, which explains the idea through one man’s story.</p></div></details>
+        <details><summary>Is this book medical advice?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. It’s written for information and understanding, and the author isn’t a medical professional. Talk to a qualified healthcare provider before making decisions about your health. If you need a doctor’s review or testing, see <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness</a>. For anything urgent, contact your own doctor or emergency services.</p></div></details>
+        <details><summary>Is the book only about allergies?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. The story follows a man whose symptoms lean toward allergies, gut and skin trouble, but it covers energy, thyroid, hormones, stress, and the nervous system too.</p></div></details>
+        <details><summary>Does the book tell me what to take?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>It explains how different approaches work and includes reference notes on protocols. None of it is a personal plan, and what suits you depends on your lab results, your history, and a qualified clinician.</p></div></details>
+        <details><summary>Do I need lab work to read the book?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. You can read the book without it. Lab work helps once you want to apply the ideas, and the later chapters explain what it can and can’t tell you.</p></div></details>
+        <details><summary>How is this different from biohacking?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>Biohacking often starts with a tool or a protocol. Responsive Living starts with how your body responds to stress and why, then lets that shape every choice.</p></div></details>
+        <details><summary>Is there an audiobook?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>Yes. It’s available on Audible, Spotify, and Apple.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Final CTA -->
+  <section class="final dark">
+    <div class="wrap">
+      <h2>The book explains the system. Coaching applies it to your biology.</h2>
+      <p class="lede">Autonomic Coaching is scientist-led, one-to-one health coaching that reads your lab results, your daily tracking and your psychology together, week by week, and adjusts the plan as your life changes. You learn to understand your own biology, so you lead the decisions.</p>
+      <div class="ctas">
+        <a href="how-it-works.html" class="btn btn-ghost">See how coaching works <svg><use href="#arrow"/></svg></a>
+        <a href="#request" class="btn btn-pill">Request Coaching <svg><use href="#arrow"/></svg></a>
+      </div>
+      <div class="final-aw">
+        <p>Looking for testing or a licensed doctor’s review? That’s Autonomic Wellness.</p>
+        <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Visit Autonomic Wellness <svg><use href="#arrow-ur"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="brand"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+        <div><a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <nav class="foot-col foot-links" aria-label="Footer">
+        <a href="responsive-living.html">Responsive Living</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="about.html">About Justin</a>
+        <a href="testimonials.html">Results</a>
+        <a href="blog.html">Blog</a>
+        <a href="concierge.html">Concierge</a>
+        <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+      <div class="foot-col socials">
+        <a href="#"><svg class="pi"><use href="#i-instagram-logo"/></svg>Instagram</a>
+        <a href="#"><svg class="pi"><use href="#i-youtube-logo"/></svg>YouTube</a>
+        <a href="#"><svg class="pi"><use href="#i-facebook-logo"/></svg>Facebook</a>
+      </div>
+    </div>
+    <div class="foot-mid">
+      <div class="notes"><span>Coaching is not a substitute for medical diagnosis or treatment.</span></div>
+      <a href="#top" class="totop" aria-label="Back to top"><svg><use href="#arrow"/></svg></a>
+    </div>
+    <div class="mark-xl" aria-hidden="true">Autonomic Coaching</div>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  // Space between stress and response: compare the two states
+  var gv = document.getElementById('gapviz');
+  var btns = gv.querySelectorAll('[data-set]');
+  var resp = gv.querySelector('.gv-side.r .wave');
+  var calm = 'M0 27 C 20 27, 26 16, 40 16 S 60 38, 76 38 S 100 27, 120 27';
+  var alert = 'M0 27 L10 27 L16 6 L24 48 L32 10 L40 44 L48 12 L56 42 L64 16 L72 38 L80 27 L120 27';
+  function set(s) {
+    gv.setAttribute('data-state', s);
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-set') === s ? 'true' : 'false'); });
+    resp.setAttribute('d', s === 'stress' ? alert : calm);
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { auto = false; set(b.getAttribute('data-set')); }); });
+  var auto = true;
+  if (!AC.figma) {
+    set('stress');
+    var io = new IntersectionObserver(function (en) {
+      if (!en[0].isIntersecting) return;
+      io.disconnect();
+      setTimeout(function () { if (auto) set('rl'); }, AC.reduce ? 0 : 1400);
+    }, { threshold: .5 });
+    io.observe(gv);
+  }
+})();
+</script>
+</body>
+</html>

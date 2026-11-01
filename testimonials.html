@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Results · Autonomic Coaching</title>
+<meta name="description" content="Clients describe what changed and what working with Justin Maguire was like, in their own words.">
+<link rel="icon" href="assets/mark.png">
+<script>if (/[?&]figma\b/.test(location.search)) document.documentElement.classList.add('figma');</script>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ============ 1. Hero (centered, the video carries the visual) ============ */
+.t-hero .phero-in { grid-template-columns: 1fr; justify-items: center; text-align: center; padding-bottom: clamp(56px, 6vw, 88px); }
+.t-hero h1 { max-width: 17ch; margin: 0 auto; }
+.t-hero .sub { margin-left: auto; margin-right: auto; max-width: 46ch; }
+
+/* ============ 3. In their own words ============ */
+.feat { margin: 0; padding-bottom: clamp(40px, 4.4vw, 64px); border-bottom: 1px solid var(--line); }
+.feat .qm { width: 30px; height: 30px; color: var(--g-600); }
+.feat blockquote { margin: 24px 0 0; max-width: 30ch; font-size: clamp(28px, 3.4vw, 48px); line-height: 1.16; letter-spacing: -0.03em; }
+.who-line { margin-top: 28px; display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; }
+.pair figure { margin: 0; padding: clamp(32px, 3.6vw, 52px) clamp(28px, 3.6vw, 64px) clamp(32px, 3.6vw, 52px) 0; display: flex; flex-direction: column; }
+.pair figure + figure { padding-left: clamp(28px, 3.6vw, 64px); padding-right: 0; border-left: 1px solid var(--line); }
+.pair .qm { width: 22px; height: 22px; color: var(--g-600); }
+.pair blockquote { margin: 20px 0 0; font-size: clamp(19px, 1.7vw, 24px); line-height: 1.42; letter-spacing: -0.02em; }
+.pair .who-line { margin-top: auto; padding-top: 28px; }
+.review { margin-top: clamp(48px, 5vw, 72px); }
+
+/* ============ Phone ============ */
+@media (max-width: 720px) {
+  .pair { grid-template-columns: 1fr; }
+  .pair figure, .pair figure + figure { padding: 30px 0; border-left: 0; }
+  .pair figure + figure { border-top: 1px solid var(--line); }
+}
+</style>
+</head>
+<body data-page="results" data-note="Disclaimer: Testimonials reflect individual experiences and aren’t a guarantee of results.">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<!--SPRITE-->
+    <symbol id="arrow" viewBox="0 0 16 16"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow-ur" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="play" viewBox="0 0 16 16"><path d="M4.5 2.9v10.2c0 .6.7 1 1.2.7l8.2-5.1c.5-.3.5-1.1 0-1.4L5.7 2.2c-.5-.3-1.2.1-1.2.7z" fill="currentColor"/></symbol>
+    <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-facebook-logo" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V150h26a6,6,0,0,0,0-12H134V112a18,18,0,0,1,18-18h16a6,6,0,0,0,0-12H152a30,30,0,0,0-30,30v26H96a6,6,0,0,0,0,12h26v67.8a90,90,0,1,1,12,0Z"/></symbol>
+    <symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128ZM40,70H216a6,6,0,0,0,0-12H40a6,6,0,0,0,0,12ZM216,186H40a6,6,0,0,0,0,12H216a6,6,0,0,0,0-12Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 256 256"><path d="M204.24,195.76a6,6,0,1,1-8.48,8.48L128,136.49,60.24,204.24a6,6,0,0,1-8.48-8.48L119.51,128,51.76,60.24a6,6,0,0,1,8.48-8.48L128,119.51l67.76-67.75a6,6,0,0,1,8.48,8.48L136.49,128Z"/></symbol>
+    <symbol id="i-youtube-logo" viewBox="0 0 256 256"><path d="M163.33,123l-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128ZM232.4,70a22,22,0,0,0-13.28-15C185,41.79,130.27,42,128,42s-57-.21-91.16,13A22,22,0,0,0,23.6,70C21.05,79.89,18,98,18,128s3.05,48.11,5.6,58a22,22,0,0,0,13.28,15C71,214.21,125.72,214,128,214h.71c6.91,0,58-.44,90.45-13a22,22,0,0,0,13.28-15c2.55-9.87,5.6-27.93,5.6-58S235,79.89,232.4,70ZM220.78,183a10,10,0,0,1-6,6.86C182.78,202.19,128.58,202,128,202s-54.71.2-86.75-12.17a10,10,0,0,1-6-6.86C32.84,173.78,30,156.78,30,128s2.84-45.78,5.22-55a10,10,0,0,1,6-6.86C72.06,54.26,123.53,54,127.76,54H128c.54,0,54.71-.2,86.75,12.17a10,10,0,0,1,6,6.86c2.38,9.19,5.22,26.19,5.22,55S223.16,173.78,220.78,183Z"/></symbol>
+    <symbol id="if-quotes" viewBox="0 0 256 256"><path d="M116,72v88a48.05,48.05,0,0,1-48,48,8,8,0,0,1,0-16,32,32,0,0,0,32-32v-8H40a16,16,0,0,1-16-16V72A16,16,0,0,1,40,56h60A16,16,0,0,1,116,72ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Z"/></symbol>
+    <symbol id="if-star" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></symbol>
+    <!--/SPRITE-->
+</defs></svg>
+
+<!--HEADER-->
+<header class="hdr" id="nav">
+  <div class="in">
+    <a href="index.html" class="brand" aria-label="Autonomic Coaching home"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+    <nav aria-label="Primary">
+      <a href="responsive-living.html">Responsive Living</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About Justin</a>
+      <a href="testimonials.html" aria-current="page">Results</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <button class="menu-btn close" id="sheetClose" aria-label="Close menu" style="display:grid"><svg class="pi"><use href="#i-x"/></svg></button>
+  <nav>
+    <a href="responsive-living.html">Responsive Living<svg><use href="#arrow"/></svg></a>
+    <a href="how-it-works.html">How It Works<svg><use href="#arrow"/></svg></a>
+    <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
+    <a href="testimonials.html" aria-current="page">Results<svg><use href="#arrow"/></svg></a>
+    <a href="blog.html">Blog<svg><use href="#arrow"/></svg></a>
+    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
+    <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness<svg><use href="#arrow-ur"/></svg></a>
+  </nav>
+  <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
+</div>
+<!--/HEADER-->
+
+<main id="top">
+  <!-- 1. What clients say -->
+  <section class="phero t-hero">
+    <div class="phero-in">
+      <div class="phero-copy">
+        <h1>What clients say about working with Justin Maguire</h1>
+        <p class="sub">Clients describe what changed and what working with Justin was like, in their own words.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Hear it from clients -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="head"><h2>Hear it from clients</h2></div>
+      <div class="vid">
+        <figure class="slide on"><img src="https://images.unsplash.com/photo-1612374375733-a68c227b72df?w=1800&h=820&q=80&auto=format&fit=crop&crop=faces" alt="Shirley"></figure>
+        <figure class="slide"><img src="https://images.unsplash.com/photo-1788055650503-84b6361002d3?w=1800&h=820&q=80&auto=format&fit=crop&crop=faces" alt="Carl"></figure>
+        <figure class="slide"><img src="https://images.unsplash.com/photo-1606510236980-c7cc4e05012a?w=1800&h=820&q=80&auto=format&fit=crop&crop=faces" alt="Vasilis"></figure>
+        <div class="vid-bar">
+          <div class="vid-who">
+            <button class="vid-play" aria-label="Play Shirley’s video testimonial"><svg><use href="#play"/></svg></button>
+            <span class="vid-name">Shirley</span>
+          </div>
+          <div class="vid-tabs" role="tablist" aria-label="Video testimonials">
+            <button class="vt active" role="tab" aria-selected="true">Shirley<i></i></button>
+            <button class="vt" role="tab" aria-selected="false">Carl<i></i></button>
+            <button class="vt" role="tab" aria-selected="false">Vasilis<i></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. In their own words -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="head"><h2>In their own words</h2></div>
+      <figure class="feat">
+        <svg class="qm"><use href="#if-quotes"/></svg>
+        <blockquote>“My energy, body composition and stress levels transformed. The best investment I’ve ever made.”</blockquote>
+        <figcaption class="who-line"><span class="mono">MK</span>Mete Karan</figcaption>
+      </figure>
+      <div class="pair">
+        <figure>
+          <svg class="qm"><use href="#if-quotes"/></svg>
+          <blockquote>“Justin figured out what several other practitioners couldn’t. I finally healed after years of frustration.”</blockquote>
+          <figcaption class="who-line"><span class="mono g">JK</span>Julianne Keehan</figcaption>
+        </figure>
+        <figure>
+          <svg class="qm"><use href="#if-quotes"/></svg>
+          <blockquote>“Being in the medical field myself, I was blown away by how detailed and accurate Justin’s approach was.”</blockquote>
+          <figcaption class="who-line"><span class="mono">JT</span>IFBB Pro Joe Tong</figcaption>
+        </figure>
+      </div>
+
+      <div class="review">
+        <div class="review-intro">
+          <span class="eyebrow">Leave a review</span>
+          <h3>Worked with Justin? Share your experience.</h3>
+          <p>Your words help the next person who has tried everything else find a way forward.</p>
+          <div class="review-note"><svg><use href="#lock"/></svg>Your email stays private. Only your name, rating and review may be shown.</div>
+        </div>
+        <form class="rform" data-form="review" novalidate>
+          <label class="rf"><span>Full name</span><input type="text" name="name" autocomplete="name" placeholder="Your name"eq data-msg="Please add your name."></label>
+          <label class="rf"><span>Email</span><input type="email" name="email" autocomplete="email" placeholder="you@example.com"eq data-msg="Please add a valid email address."></label>
+          <fieldset class="rf full">
+            <legend>Your rating</legend>
+            <div class="stars">
+              <input type="radio" id="tr5" name="rating" value="5"eq data-msg="Please choose a rating."><label for="tr5" title="5 stars"><svg class="pi"><use href="#if-star"/></svg><span class="sr">5 stars</span></label>
+              <input type="radio" id="tr4" name="rating" value="4"><label for="tr4" title="4 stars"><svg class="pi"><use href="#if-star"/></svg><span class="sr">4 stars</span></label>
+              <input type="radio" id="tr3" name="rating" value="3"><label for="tr3" title="3 stars"><svg class="pi"><use href="#if-star"/></svg><span class="sr">3 stars</span></label>
+              <input type="radio" id="tr2" name="rating" value="2"><label for="tr2" title="2 stars"><svg class="pi"><use href="#if-star"/></svg><span class="sr">2 stars</span></label>
+              <input type="radio" id="tr1" name="rating" value="1"><label for="tr1" title="1 star"><svg class="pi"><use href="#if-star"/></svg><span class="sr">1 star</span></label>
+            </div>
+          </fieldset>
+          <label class="rf full"><span>Your review</span><textarea name="review" placeholder="What changed for you?"eq data-msg="Please write a few words about your experience."></textarea></label>
+          <label class="consent full"><input type="checkbox" name="consent" value="yes"eq data-msg="Please confirm we may publish your review.">I’m happy for my review to be published on this website.</label>
+          <div class="rform-foot full"><span class="err" role="alert"></span><button class="btn btn-primary" type="submit">Submit review <svg><use href="#arrow"/></svg></button></div>
+        </form>
+        <div class="fdone" role="status">
+          <span class="ok"><svg><use href="#check"/></svg></span>
+          <strong>Thank you for sharing your experience.</strong>
+          <p>Your review has been received and will appear once it has been approved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. What colleagues and practitioners say -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="head"><h2>What colleagues and practitioners say</h2></div>
+      <div class="oq light">
+        <figure><svg class="qm"><use href="#if-quotes"/></svg><blockquote>“His ability to translate complex immunological and biochemical science into practical solutions is nothing short of extraordinary.”</blockquote><figcaption><span class="mono">KG</span><div>Kris Gethin<small>Voted World #1 Transformation Expert</small></div></figcaption></figure>
+        <figure><svg class="qm"><use href="#if-quotes"/></svg><blockquote>“His perspective comes from thousands of hours working with hundreds of the world’s most optimised humans, including myself.”</blockquote><figcaption><span class="mono">TG</span><div>Tim Gray<small>Founder, Health Optimisation Summit</small></div></figcaption></figure>
+        <figure><svg class="qm"><use href="#if-quotes"/></svg><blockquote>“...has earned him the reputation of a true blood detective.”</blockquote><figcaption><span class="mono">DN</span><div>Dr. Dominik Nischwitz<small>Founder, Biodentistry Global Standard</small></div></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Request CTA -->
+  <section class="final dark">
+    <div class="wrap">
+      <h2>Request one-to-one coaching</h2>
+      <p class="lede">Coaching is private and by application. Each application is reviewed before a call is booked.</p>
+      <div class="ctas">
+        <a href="how-it-works.html" class="btn btn-ghost">See how coaching works <svg><use href="#arrow"/></svg></a>
+        <a href="#request" class="btn btn-pill">Request Coaching <svg><use href="#arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="brand"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+        <div><a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <nav class="foot-col foot-links" aria-label="Footer">
+        <a href="responsive-living.html">Responsive Living</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="about.html">About Justin</a>
+        <a href="testimonials.html">Results</a>
+        <a href="blog.html">Blog</a>
+        <a href="concierge.html">Concierge</a>
+        <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+      <div class="foot-col socials">
+        <a href="#"><svg class="pi"><use href="#i-instagram-logo"/></svg>Instagram</a>
+        <a href="#"><svg class="pi"><use href="#i-youtube-logo"/></svg>YouTube</a>
+        <a href="#"><svg class="pi"><use href="#i-facebook-logo"/></svg>Facebook</a>
+      </div>
+    </div>
+    <div class="foot-mid">
+      <div class="notes"><span>Disclaimer: Testimonials reflect individual experiences and aren’t a guarantee of results.</span><span>Coaching is not a substitute for medical diagnosis or treatment.</span></div>
+      <a href="#top" class="totop" aria-label="Back to top"><svg><use href="#arrow"/></svg></a>
+    </div>
+    <div class="mark-xl" aria-hidden="true">Autonomic Coaching</div>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How It Works · Autonomic Coaching</title>
+<meta name="description" content="Coaching starts with an application. After review, we book a call and begin weekly one-to-one sessions with Justin.">
+<link rel="icon" href="assets/mark.png">
+<script>if (/[?&]figma\b/.test(location.search)) document.documentElement.classList.add('figma');</script>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ============ 1. Hero ============ */
+.how-hero h1 { max-width: 13ch; }
+.scene { position: relative; aspect-ratio: 1 / .92; border-radius: 28px; background: radial-gradient(70% 60% at 80% 10%, rgba(143, 239, 202, .5), rgba(143, 239, 202, 0) 70%), var(--mist); }
+.ui { position: absolute; background: #fff; border-radius: 20px; border: 1px solid var(--line-2); box-shadow: var(--shadow-lg); padding: 24px; }
+.ui-h { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 500; }
+.ui-h small { font-size: 12.5px; font-weight: 400; color: var(--ink-3); }
+.ui-week { left: 9%; right: 9%; top: 11%; }
+.sess { margin-top: 18px; display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 14px; background: var(--forest); color: #fff; }
+.sess img { flex: none; width: 52px; height: 52px; border-radius: 99px; object-fit: cover; object-position: 50% 8%; background: #2f5850; }
+.sess strong { display: block; font-size: 16px; font-weight: 500; }
+.sess small { display: block; font-size: 13px; color: rgba(255, 255, 255, .7); }
+.sess .cam { margin-left: auto; flex: none; width: 40px; height: 40px; border-radius: 99px; display: grid; place-items: center; background: rgba(255, 255, 255, .12); color: var(--g-200); font-size: 19px; }
+.wk { margin-top: 16px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.wk span { height: 40px; border-radius: 10px; display: grid; place-items: center; font-size: 13px; font-weight: 500; color: var(--ink-3); background: var(--page); }
+.wk span.on { background: var(--g-700); color: #fff; }
+.ui-log { left: 4%; bottom: 8%; width: 54%; }
+.logrow { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 12px; margin-top: 14px; font-size: 13.5px; color: var(--ink-2); }
+.logrow b { height: 8px; border-radius: 9px; background: var(--g-50); position: relative; overflow: hidden; }
+.logrow b::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--v); border-radius: 9px; background: var(--g-600); }
+.ui-tag { right: 6%; bottom: 14%; padding: 14px 18px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; border-radius: 99px; }
+.ui-tag .pi { font-size: 18px; color: var(--g-700); }
+
+/* ============ 2. The process at a glance ============ */
+.proc { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; }
+.proc li { position: relative; }
+.proc .num { display: block; font-size: clamp(48px, 4.4vw, 64px); line-height: 1; letter-spacing: -0.04em; color: var(--g-700); }
+.proc .rail { position: relative; display: block; height: 1px; margin: 28px 0 28px; background: var(--line); }
+.proc .rail::before { content: ""; position: absolute; left: 0; top: -5px; width: 11px; height: 11px; border-radius: 99px; background: var(--g-600); box-shadow: 0 0 0 5px var(--g-50); }
+.proc li:not(:last-child) .rail { margin-right: -40px; }
+.proc h3 { font-size: 22px; font-weight: 400; letter-spacing: -0.02em; }
+.proc p { margin-top: 12px; color: var(--ink-2); font-size: 16px; line-height: 1.65; max-width: 34ch; }
+
+/* ============ 3. Applying for coaching ============ */
+.apply { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(36px, 6vw, 104px); align-items: center; padding: clamp(36px, 5.6vw, 88px); }
+.apply .lede { margin-top: 20px; max-width: 46ch; color: var(--ink); }
+.apply .note { margin-top: 18px; max-width: 46ch; color: var(--ink-2); font-size: 16px; line-height: 1.65; }
+.apply .btn { margin-top: 36px; }
+.tbc { display: inline-block; padding: 0 6px; border-radius: 6px; border: 1px dashed currentColor; background: transparent; color: inherit; font-weight: 500; }
+.formcard { background: #fff; border-radius: 20px; border: 1px solid var(--line-2); box-shadow: var(--shadow-lg); padding: 10px 24px 20px; }
+.formcard .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 17px 0; border-bottom: 1px solid var(--line-2); font-size: 16px; }
+.formcard .ck { flex: none; width: 22px; height: 22px; border-radius: 99px; display: grid; place-items: center; background: var(--g-700); color: #fff; }
+.formcard .ck svg { width: 11px; height: 11px; }
+.formcard .time { margin-top: 16px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-3); }
+.formcard .time .pi { font-size: 17px; color: var(--g-700); }
+
+/* ============ 4. The first call and your Assessment ============ */
+.call { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
+.call h2 { margin-bottom: 28px; }
+.qs { padding: clamp(24px, 2.8vw, 36px); border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
+.qs-top { padding-bottom: 8px; font-size: 13px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
+.qs ol { list-style: none; margin: 0; padding: 0; counter-reset: q; }
+.qs li { counter-increment: q; display: flex; align-items: center; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line-2); font-size: clamp(18px, 1.5vw, 21px); letter-spacing: -0.015em; }
+.qs li::before { content: "0" counter(q); flex: none; font-size: 13px; font-weight: 500; color: var(--g-700); width: 22px; }
+.qs li:last-child { border-bottom: 0; padding-bottom: 4px; }
+.from { margin-top: clamp(64px, 7vw, 104px); padding-top: clamp(56px, 6vw, 88px); border-top: 1px solid var(--line); text-align: center; }
+.from .statement { max-width: 30ch; margin: 0 auto; }
+.from .body { margin: 28px auto 0; max-width: 66ch; }
+
+/* ============ 5. What a typical week looks like ============ */
+.week { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
+.week h2 { margin-bottom: 28px; }
+.cal { padding: clamp(22px, 2.6vw, 32px); border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
+.cal-h { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.cal-h strong { font-size: 16px; font-weight: 500; }
+.days { margin-top: 22px; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
+.day { border-radius: 12px; background: var(--page); padding: 12px 4px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px; min-height: 172px; }
+.day b { font-size: 12px; font-weight: 500; color: var(--ink-3); }
+.day .lg { margin-top: auto; display: grid; gap: 7px; }
+.day .lg i { display: block; width: 8px; height: 8px; border-radius: 99px; background: var(--g-300); }
+.day .lg i:nth-child(2) { background: var(--g-600); }
+.day .lg i:nth-child(3) { background: var(--b-300); }
+.day.s { background: var(--forest); color: #fff; }
+.day.s b { color: var(--g-200); }
+.day.s img { width: 42px; height: 42px; border-radius: 99px; object-fit: cover; object-position: 50% 8%; background: #2f5850; border: 2px solid rgba(143, 239, 202, .5); }
+.day.s span { font-size: 11.5px; line-height: 1.25; text-align: center; color: rgba(255, 255, 255, .86); }
+.cal-legend { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13.5px; color: var(--ink-2); }
+.cal-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.cal-legend i { width: 8px; height: 8px; border-radius: 99px; background: var(--g-300); }
+.cal-legend span:nth-child(2) i { background: var(--g-600); }
+.cal-legend span:nth-child(3) i { background: var(--b-300); }
+
+/* ============ 6. How long coaching lasts ============ */
+.dur { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(36px, 6vw, 104px); align-items: center; padding: clamp(36px, 5vw, 72px); }
+.dur .lede { margin-top: 18px; color: var(--ink); }
+.months { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; padding-top: 50px; }
+.months span { height: 72px; border-radius: 12px; background: var(--page); display: flex; align-items: flex-end; padding: 10px 12px; font-size: 12.5px; font-weight: 500; color: var(--ink-3); }
+.months span.in { background: var(--g-700); color: #fff; }
+.months span.in + span.in { background: var(--g-600); }
+.months .br { position: absolute; top: 0; left: calc((100% - 40px) / 6 * 2 + 16px); right: 0; height: 38px; text-align: center; font-size: 14px; font-weight: 500; line-height: 1; color: var(--g-700); }
+.months .br::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 12px; border: 1.5px solid var(--g-600); border-bottom: 0; border-radius: 8px 8px 0 0; }
+
+/* ============ 7. What coaching asks of you ============ */
+.asks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.ask { padding: clamp(28px, 3vw, 44px) clamp(24px, 3vw, 48px) 0 0; }
+.ask + .ask { padding-left: clamp(24px, 3vw, 48px); border-left: 1px solid var(--line); }
+.ask h3 { font-size: clamp(24px, 2.2vw, 30px); font-weight: 400; letter-spacing: -0.02em; }
+.ask ul { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 14px; }
+.ask li { position: relative; padding-left: 20px; font-size: 16px; line-height: 1.65; color: var(--ink-2); }
+.ask li::before { content: ""; position: absolute; left: 0; top: 10px; width: 7px; height: 7px; border-radius: 99px; background: var(--g-600); }
+.support { margin-top: clamp(48px, 5vw, 72px); text-align: center; font-size: clamp(18px, 1.6vw, 22px); letter-spacing: -0.015em; color: var(--g-700); }
+
+/* ============ 8. Who coaching is for ============ */
+.suit { overflow: hidden; border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); }
+.suit-row { display: grid; grid-template-columns: minmax(0, .62fr) minmax(0, 1fr) minmax(0, 1fr); }
+.suit-row > * { padding: 24px clamp(20px, 2.6vw, 36px); border-top: 1px solid var(--line-2); font-size: 16px; line-height: 1.55; }
+.suit-row:first-child > * { border-top: 0; padding-top: 24px; padding-bottom: 22px; }
+.suit-row:first-child { background: var(--page); }
+.suit-row .k { font-weight: 500; color: var(--ink); }
+.suit-row .y { display: flex; gap: 14px; }
+.suit-row .n { display: flex; gap: 14px; color: var(--ink-2); }
+.suit-row .tk { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 99px; margin-top: 1px; }
+.suit-row .y .tk { background: var(--g-700); color: #fff; }
+.suit-row .n .tk { border: 1.5px solid rgba(2, 10, 29, .22); color: var(--ink-3); }
+.suit-row .tk svg { width: 11px; height: 11px; }
+.suit-h { font-size: 15px; font-weight: 500; }
+.suit-h.y { color: var(--g-700); }
+.suit-row .lbl { display: none; }
+.awstrip { margin-top: 20px; }
+
+/* ============ Tablet ============ */
+@media (max-width: 1100px) {
+  .proc { grid-template-columns: 1fr 1fr; gap: 48px 40px; }
+  .proc li:not(:last-child) .rail { margin-right: 0; }
+  .call, .week { grid-template-columns: 1fr; }
+  .call h2, .week h2 { max-width: 20ch; }
+  .qs, .cal { max-width: 640px; }
+  .week > div:last-child { order: -1; }
+  .apply, .dur { grid-template-columns: 1fr; }
+  .formcard { max-width: 520px; }
+}
+@media (max-width: 900px) {
+  .scene { max-width: 560px; }
+}
+/* ============ Phone ============ */
+@media (max-width: 720px) {
+  .scene { aspect-ratio: auto; height: 400px; border-radius: 20px; }
+  .ui { padding: 18px; border-radius: 16px; }
+  .ui-week { left: 5%; right: 5%; top: 6%; }
+  .sess img { width: 44px; height: 44px; }
+  .wk span { height: 34px; font-size: 12px; }
+  .ui-log { left: 5%; bottom: 6%; width: 74%; }
+  .logrow { grid-template-columns: 84px 1fr; font-size: 12.5px; margin-top: 12px; }
+  .ui-tag { display: none; }
+  .proc { grid-template-columns: 1fr; gap: 36px; }
+  .proc .num { font-size: 44px; }
+  .proc .rail { margin: 20px 0; }
+  .apply, .dur { padding: 28px 20px 32px; border-radius: 18px; }
+  .apply .btn { width: 100%; }
+  .qs li { padding: 16px 0; }
+  .cal { padding: 16px; }
+  .days { gap: 4px; }
+  .day { min-height: 132px; padding: 10px 2px; border-radius: 9px; }
+  .day.s img { width: 30px; height: 30px; }
+  .day.s span { font-size: 9.5px; }
+  .months { grid-template-columns: repeat(3, 1fr); padding-top: 0; }
+  .months .br { position: static; grid-column: 1 / -1; order: -1; height: auto; text-align: left; font-size: 14px; }
+  .months .br::before { display: none; }
+  .months span { height: 54px; }
+  .asks { grid-template-columns: 1fr; }
+  .ask, .ask + .ask { padding: 28px 0; border-left: 0; }
+  .ask + .ask { border-top: 1px solid var(--line); }
+  .suit-row:first-child { display: none; }
+  .suit-row { grid-template-columns: 1fr; padding: 22px 20px; border-top: 1px solid var(--line-2); }
+  .suit-row:nth-child(2) { border-top: 0; }
+  .suit-row > * { padding: 0; border-top: 0; }
+  .suit-row .k { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .suit-row .n { margin-top: 12px; }
+}
+</style>
+</head>
+<body data-page="how">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<!--SPRITE-->
+    <symbol id="arrow" viewBox="0 0 16 16"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow-ur" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="plus" viewBox="0 0 16 16"><path d="M8 2.5v11M2.5 8h11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="x" viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrows-clockwise" viewBox="0 0 256 256"><path d="M222,48V96a6,6,0,0,1-6,6H168a6,6,0,0,1,0-12h33.52L183.47,72a81.51,81.51,0,0,0-57.53-24h-.46A81.5,81.5,0,0,0,68.19,71.28a6,6,0,1,1-8.38-8.58,93.38,93.38,0,0,1,65.67-26.76H126a93.45,93.45,0,0,1,66,27.53l18,18V48a6,6,0,0,1,12,0ZM187.81,184.72a81.5,81.5,0,0,1-57.29,23.34h-.46a81.51,81.51,0,0,1-57.53-24L54.48,166H88a6,6,0,0,0,0-12H40a6,6,0,0,0-6,6v48a6,6,0,0,0,12,0V174.48l18,18.05a93.45,93.45,0,0,0,66,27.53h.52a93.38,93.38,0,0,0,65.67-26.76,6,6,0,1,0-8.38-8.58Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm62-90a6,6,0,0,1-6,6H128a6,6,0,0,1-6-6V72a6,6,0,0,1,12,0v50h50A6,6,0,0,1,190,128Z"/></symbol>
+    <symbol id="i-dna" viewBox="0 0 256 256"><path d="M198,204.5V232a6,6,0,0,1-12,0V204.5a65.64,65.64,0,0,0-36.48-59l-48.4-24.2A77.57,77.57,0,0,1,58,51.5V24a6,6,0,0,1,12,0V51.5a65.64,65.64,0,0,0,36.48,59l48.4,24.2A77.57,77.57,0,0,1,198,204.5ZM160,202H70.05A66,66,0,0,1,74,182h74.13a6,6,0,0,0,0-12H79.77a65.85,65.85,0,0,1,17.16-18.7,6,6,0,0,0-7.1-9.67A78.27,78.27,0,0,0,58,204.5V232a6,6,0,0,0,12,0V214h90a6,6,0,0,0,0-12ZM192,18a6,6,0,0,0-6,6V42H96a6,6,0,0,0,0,12H186A66,66,0,0,1,182,74H107.89a6,6,0,1,0,0,12h68.34a65.85,65.85,0,0,1-17.16,18.7,6,6,0,0,0,7.1,9.67A78.27,78.27,0,0,0,198,51.5V24A6,6,0,0,0,192,18Z"/></symbol>
+    <symbol id="i-drop-half" viewBox="0 0 256 256"><path d="M172.53,49.06a251.42,251.42,0,0,0-41.09-38,6,6,0,0,0-6.88,0,251.42,251.42,0,0,0-41.09,38C56.34,80.26,42,113.09,42,144a86,86,0,0,0,172,0C214,113.09,199.66,80.26,172.53,49.06ZM202,144a75,75,0,0,1-.69,10H134V134h67.44A92.09,92.09,0,0,1,202,144ZM186.8,90H134V70h39.89A176,176,0,0,1,186.8,90ZM134,198h44.52A73.76,73.76,0,0,1,134,217.74Zm0-12V166h64.66a74.05,74.05,0,0,1-9.78,20Zm0-64V102h58.7a117.43,117.43,0,0,1,6.69,20Zm30.29-64H134V28.3A257.09,257.09,0,0,1,164.29,58ZM54,144c0-53.42,47.35-98.56,68-115.7V217.74A74.09,74.09,0,0,1,54,144Z"/></symbol>
+    <symbol id="i-facebook-logo" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V150h26a6,6,0,0,0,0-12H134V112a18,18,0,0,1,18-18h16a6,6,0,0,0,0-12H152a30,30,0,0,0-30,30v26H96a6,6,0,0,0,0,12h26v67.8a90,90,0,1,1,12,0Z"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 256 256"><path d="M220,200.8,158,97.48V38h10a6,6,0,0,0,0-12H88a6,6,0,0,0,0,12H98V97.48L36,200.8A14,14,0,0,0,48,222H208a14,14,0,0,0,12-21.2ZM109.15,102.23a6,6,0,0,0,.85-3.09V38h36V99.14a6,6,0,0,0,.85,3.09l39.65,66.08c-12.41,3.16-30.86,3-55.79-9.66-16.94-8.58-33-12.8-47.83-12.64ZM209.72,209a2,2,0,0,1-1.74,1H48a2,2,0,0,1-1.71-3l29-48.41c14.89-2.08,31.68,1.55,49.94,10.79C144,178.8,159.67,182,172.42,182A67.89,67.89,0,0,0,192.89,179l16.8,28A2,2,0,0,1,209.72,209Z"/></symbol>
+    <symbol id="i-globe-hemisphere-west" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm90,102a89.55,89.55,0,0,1-7.46,35.86l-46.69-28.71a13.94,13.94,0,0,0-5.46-2l-22.82-3.07A14.06,14.06,0,0,0,121.06,138h-9.92a2,2,0,0,1-1.8-1.13l-3.8-7.86a13.94,13.94,0,0,0-9.66-7.59l-10.71-2.3L94.4,103a2,2,0,0,1,1.74-1h16.71a13.9,13.9,0,0,0,6.76-1.75l12.25-6.75a14.73,14.73,0,0,0,2.62-1.88l26.91-24.33a13.93,13.93,0,0,0,2.83-17.21L161,44.25A90.16,90.16,0,0,1,218,128ZM144.6,39.54l9.15,16.39a2,2,0,0,1-.41,2.46L126.43,82.72a1.84,1.84,0,0,1-.37.27l-12.25,6.76a2,2,0,0,1-1,.25H96.14A14,14,0,0,0,84,97L73.18,115.91a2,2,0,0,1-.19-.35L61.5,84.89a2,2,0,0,1,0-1.48L72.68,57.06A89.9,89.9,0,0,1,144.6,39.54ZM38,128A89.52,89.52,0,0,1,49.38,84.23a13.85,13.85,0,0,0,.89,4.87l11.49,30.67a13.94,13.94,0,0,0,10.16,8.78l21.44,4.6a2,2,0,0,1,1.38,1.09l3.8,7.86a14.07,14.07,0,0,0,12.6,7.9h4.56l-8.49,19a14,14,0,0,0,2.51,15.2l.1.11,19.68,20.26a2,2,0,0,1,.46,1.7L127.7,218A90.1,90.1,0,0,1,38,128Zm102.08,89.19,1.67-8.6a14.07,14.07,0,0,0-3.47-12.16l-.1-.11L118.5,176.06a2,2,0,0,1-.33-2.14l13.7-30.73A2,2,0,0,1,134,142l22.82,3.08a2,2,0,0,1,.78.27L205,174.55A90.18,90.18,0,0,1,140.08,217.19Z"/></symbol>
+    <symbol id="i-heartbeat" viewBox="0 0 256 256"><path d="M72,142H32a6,6,0,0,1,0-12H68.79L83,108.67a6,6,0,0,1,10,0l27,40.51,11-16.51a6,6,0,0,1,5-2.67h24a6,6,0,0,1,0,12H139.21L125,163.33a6,6,0,0,1-10,0L88,122.82,77,139.33A6,6,0,0,1,72,142ZM178,42c-21,0-39.26,9.47-50,25.34C117.26,51.47,99,42,78,42a60.07,60.07,0,0,0-60,60q0,1.09,0,2.19a6,6,0,0,0,12-.38c0-.6,0-1.21,0-1.81A48.05,48.05,0,0,1,78,54c20.28,0,37.31,10.83,44.45,28.27a6,6,0,0,0,11.1,0C140.69,64.83,157.72,54,178,54a48.05,48.05,0,0,1,48,48c0,55.73-81.61,105.65-98,115.11-9.84-5.66-43.09-25.82-68.16-53.16a6,6,0,1,0-8.84,8.1c30.94,33.77,72.41,56.29,74.16,57.23a6,6,0,0,0,5.68,0,334.68,334.68,0,0,0,53.06-37C219.8,161.59,238,131.2,238,102A60.07,60.07,0,0,0,178,42Z"/></symbol>
+    <symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128ZM40,70H216a6,6,0,0,0,0-12H40a6,6,0,0,0,0,12ZM216,186H40a6,6,0,0,0,0,12H216a6,6,0,0,0,0-12Z"/></symbol>
+    <symbol id="i-video-camera" viewBox="0 0 256 256"><path d="M250.83,74.71a6,6,0,0,0-6.16.3L206,100.79V72a14,14,0,0,0-14-14H32A14,14,0,0,0,18,72V184a14,14,0,0,0,14,14H192a14,14,0,0,0,14-14V155.21L244.67,181a6,6,0,0,0,9.33-5V80A6,6,0,0,0,250.83,74.71ZM194,184a2,2,0,0,1-2,2H32a2,2,0,0,1-2-2V72a2,2,0,0,1,2-2H192a2,2,0,0,1,2,2Zm48-19.21-36-24V115.21l36-24Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 256 256"><path d="M204.24,195.76a6,6,0,1,1-8.48,8.48L128,136.49,60.24,204.24a6,6,0,0,1-8.48-8.48L119.51,128,51.76,60.24a6,6,0,0,1,8.48-8.48L128,119.51l67.76-67.75a6,6,0,0,1,8.48,8.48L136.49,128Z"/></symbol>
+    <symbol id="i-youtube-logo" viewBox="0 0 256 256"><path d="M163.33,123l-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128ZM232.4,70a22,22,0,0,0-13.28-15C185,41.79,130.27,42,128,42s-57-.21-91.16,13A22,22,0,0,0,23.6,70C21.05,79.89,18,98,18,128s3.05,48.11,5.6,58a22,22,0,0,0,13.28,15C71,214.21,125.72,214,128,214h.71c6.91,0,58-.44,90.45-13a22,22,0,0,0,13.28-15c2.55-9.87,5.6-27.93,5.6-58S235,79.89,232.4,70ZM220.78,183a10,10,0,0,1-6,6.86C182.78,202.19,128.58,202,128,202s-54.71.2-86.75-12.17a10,10,0,0,1-6-6.86C32.84,173.78,30,156.78,30,128s2.84-45.78,5.22-55a10,10,0,0,1,6-6.86C72.06,54.26,123.53,54,127.76,54H128c.54,0,54.71-.2,86.75,12.17a10,10,0,0,1,6,6.86c2.38,9.19,5.22,26.19,5.22,55S223.16,173.78,220.78,183Z"/></symbol>
+    <!--/SPRITE-->
+</defs></svg>
+
+<!--HEADER-->
+<header class="hdr" id="nav">
+  <div class="in">
+    <a href="index.html" class="brand" aria-label="Autonomic Coaching home"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+    <nav aria-label="Primary">
+      <a href="responsive-living.html">Responsive Living</a>
+      <a href="how-it-works.html" aria-current="page">How It Works</a>
+      <a href="about.html">About Justin</a>
+      <a href="testimonials.html">Results</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <button class="menu-btn close" id="sheetClose" aria-label="Close menu" style="display:grid"><svg class="pi"><use href="#i-x"/></svg></button>
+  <nav>
+    <a href="responsive-living.html">Responsive Living<svg><use href="#arrow"/></svg></a>
+    <a href="how-it-works.html" aria-current="page">How It Works<svg><use href="#arrow"/></svg></a>
+    <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
+    <a href="testimonials.html">Results<svg><use href="#arrow"/></svg></a>
+    <a href="blog.html">Blog<svg><use href="#arrow"/></svg></a>
+    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
+    <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness<svg><use href="#arrow-ur"/></svg></a>
+  </nav>
+  <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
+</div>
+<!--/HEADER-->
+
+<main id="top">
+  <!-- 1. Hero -->
+  <section class="phero how-hero">
+    <div class="phero-in">
+      <div class="phero-copy">
+        <h1>How private health coaching works with Justin Maguire</h1>
+        <p class="sub">Coaching starts with an application. After review, we book a call and begin weekly one-to-one sessions with Justin. We read your biology, your psychology and your daily life together, because each one affects the other two.</p>
+        <div class="ctas">
+          <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
+          <a href="#process" class="u-link">The process at a glance <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true">
+        <div class="ui ui-week">
+          <div class="ui-h">Weekly coaching<small>Online, worldwide</small></div>
+          <div class="sess"><img src="assets/justin.png" alt=""><div><strong>Justin Maguire</strong><small>One-to-one, online</small></div><span class="cam"><svg class="pi"><use href="#i-video-camera"/></svg></span></div>
+          <div class="wk"><span>M</span><span class="on">T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+        </div>
+        <div class="ui ui-log">
+          <div class="ui-h">Daily log</div>
+          <div class="logrow">Sleep<b style="--v:72%"></b></div>
+          <div class="logrow">Food<b style="--v:58%"></b></div>
+          <div class="logrow">How you feel<b style="--v:66%"></b></div>
+        </div>
+        <div class="ui ui-tag"><svg class="pi"><use href="#i-arrows-clockwise"/></svg>Your personalized plan</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. The process at a glance -->
+  <section class="sec pt0" id="process">
+    <div class="wrap">
+      <div class="head"><h2>The process at a glance</h2></div>
+      <ol class="proc">
+        <li><span class="num">01</span><span class="rail"></span><h3>Request coaching</h3><p>Tell us about your main health concern, what you’ve tried and your goals in a short online form. We review your application and, if coaching looks right for you, invite you to a call.</p></li>
+        <li><span class="num">02</span><span class="rail"></span><h3>Assessment</h3><p>We review your lab results, symptoms and nervous system patterns to see what is driving them.</p></li>
+        <li><span class="num">03</span><span class="rail"></span><h3>Your personalized plan</h3><p>You get clear daily actions across nutrition, supplementation, nervous system work and lifestyle.</p></li>
+        <li><span class="num">04</span><span class="rail"></span><h3>Weekly coaching</h3><p>One session a week, plus a short daily log of sleep, food and how you feel. We track your progress and adjust your plan.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 3. Applying for coaching -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="panel apply">
+        <div>
+          <h2>Applying for coaching</h2>
+          <p class="lede">The form asks for your name, email, main health concern, what you’ve tried and your goals. It takes about <mark class="tbc">[X]</mark> minutes.</p>
+          <p class="note">Coaching is by application so we can confirm it’s right for you before you commit money or time.</p>
+          <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
+        </div>
+        <div class="formcard" aria-hidden="true">
+          <div class="row">Name<span class="ck"><svg><use href="#check"/></svg></span></div>
+          <div class="row">Email<span class="ck"><svg><use href="#check"/></svg></span></div>
+          <div class="row">Main health concern<span class="ck"><svg><use href="#check"/></svg></span></div>
+          <div class="row">What you’ve tried<span class="ck"><svg><use href="#check"/></svg></span></div>
+          <div class="row">Your goals<span class="ck"><svg><use href="#check"/></svg></span></div>
+          <div class="time"><svg class="pi"><use href="#i-clock"/></svg>About <mark class="tbc">[X]</mark> minutes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. The first call and your Assessment -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="call">
+        <div>
+          <h2>The first call and your Assessment</h2>
+          <p class="body">On the first call, we talk through what you’re dealing with and what you’ve already tried, and we decide together whether to go ahead.</p>
+          <p class="body">If we do, the assessment begins. We work through four questions with you: what your symptoms are, which patterns sit behind them, what is driving those patterns, and what plan follows.</p>
+        </div>
+        <div class="qs" aria-hidden="true">
+          <div class="qs-top">We work through four questions with you</div>
+          <ol>
+            <li>What your symptoms are</li>
+            <li>Which patterns sit behind them</li>
+            <li>What is driving those patterns</li>
+            <li>What plan follows</li>
+          </ol>
+        </div>
+      </div>
+      <div class="from">
+        <p class="statement">We work from your <span class="nw"><span class="chip"><span class="ci"><svg class="pi"><use href="#i-drop-half"/></svg></span>blood work</span>,</span> <span class="nw"><span class="chip"><span class="ci"><svg class="pi"><use href="#i-dna"/></svg></span>genetics</span>,</span> <span class="chip"><span class="ci"><svg class="pi"><use href="#i-flask"/></svg></span>hormones</span> and <span class="nw"><span class="chip"><span class="ci"><svg class="pi"><use href="#i-heartbeat"/></svg></span>symptom patterns</span>.</span></p>
+        <p class="body">We go through any lab results you already have, recommend further tests, and explain what each one shows. A lab result reads differently depending on how you’re sleeping, eating and coping with stress, so we look at those too, including your nervous system patterns and mental wellbeing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. What a typical week looks like -->
+  <section class="sec pt0">
+    <div class="wrap week">
+      <div class="cal" aria-hidden="true">
+        <div class="cal-h"><strong>Weekly coaching</strong><span class="pill line"><svg class="pi"><use href="#i-globe-hemisphere-west"/></svg>Online, worldwide</span></div>
+        <div class="days">
+          <div class="day"><b>Mon</b><div class="lg"><i></i><i></i><i></i></div></div>
+          <div class="day s"><b>Tue</b><img src="assets/justin.png" alt=""><span>Weekly session</span></div>
+          <div class="day"><b>Wed</b><div class="lg"><i></i><i></i><i></i></div></div>
+          <div class="day"><b>Thu</b><div class="lg"><i></i><i></i><i></i></div></div>
+          <div class="day"><b>Fri</b><div class="lg"><i></i><i></i><i></i></div></div>
+          <div class="day"><b>Sat</b><div class="lg"><i></i><i></i><i></i></div></div>
+          <div class="day"><b>Sun</b><div class="lg"><i></i><i></i><i></i></div></div>
+        </div>
+        <div class="cal-legend"><span><i></i>Sleep</span><span><i></i>Food</span><span><i></i>How you feel</span></div>
+      </div>
+      <div>
+        <h2>What a typical week looks like</h2>
+        <p class="body">We meet once a week, one-to-one and online, so you can work with us from anywhere in the world. Between sessions, you fill in a short daily log of your sleep, food and how you feel. That way we work from what happened that week, not from memory.</p>
+        <p class="body">In each session, we go through the log, see what changed, and decide what to adjust. We explain the reasoning behind each adjustment, and you make the decisions.</p>
+        <p class="body">Travel, deadlines, training and stress all shift what your body needs, so the plan shifts with them, week by week instead of at a three-month check-in.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. How long coaching lasts -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="card dur">
+        <div>
+          <h2>How long coaching lasts</h2>
+          <p class="lede">Most clients work with us for at least 3 to 6 months.</p>
+        </div>
+        <div class="months" aria-hidden="true">
+          <div class="br">3 to 6 months</div>
+          <span>Month 1</span><span>Month 2</span><span class="in">Month 3</span><span class="in">Month 4</span><span class="in">Month 5</span><span class="in">Month 6</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. What coaching asks of you -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="head"><h2>What coaching asks of you</h2></div>
+      <div class="asks">
+        <div class="ask">
+          <h3>Time</h3>
+          <ul><li>The weekly session, the daily log, and putting each adjustment into practice between sessions.</li><li>A change only counts once it’s part of your week, so most of the work happens outside the call.</li></ul>
+        </div>
+        <div class="ask">
+          <h3>Money</h3>
+          <ul><li>Coaching is a paid, private program that continues over months.</li><li>The work is built around you alone, from the first review of your history to each weekly session.</li></ul>
+        </div>
+        <div class="ask">
+          <h3>Emotional energy</h3>
+          <ul><li>Looking closely at your sleep, stress, relationships and habits.</li><li>Seeing those patterns plainly can be demanding.</li></ul>
+        </div>
+      </div>
+      <p class="support">Having people around you who support those changes makes them easier.</p>
+    </div>
+  </section>
+
+  <!-- 8. Who coaching is for -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="head c"><h2>Who coaching is for, and who it isn’t</h2></div>
+      <div class="suit">
+        <div class="suit-row">
+          <span></span>
+          <span class="suit-h y">Coaching suits you if</span>
+          <span class="suit-h">Coaching doesn’t suit you if</span>
+        </div>
+        <div class="suit-row">
+          <span class="k">What you want</span>
+          <span class="y"><span class="tk"><svg><use href="#check"/></svg></span>You want to understand why you feel the way you do, across body and mind.</span>
+          <span class="n"><span class="tk"><svg><use href="#x"/></svg></span>You want a diagnosis or a prescription.</span>
+        </div>
+        <div class="suit-row">
+          <span class="k">How you want support</span>
+          <span class="y"><span class="tk"><svg><use href="#check"/></svg></span>You want weekly sessions over months.</span>
+          <span class="n"><span class="tk"><svg><use href="#x"/></svg></span>You want a quick fix or a single review at one point in time.</span>
+        </div>
+        <div class="suit-row">
+          <span class="k">Who decides</span>
+          <span class="y"><span class="tk"><svg><use href="#check"/></svg></span>You want to make the decisions, using guidance based on your own data.</span>
+          <span class="n"><span class="tk"><svg><use href="#x"/></svg></span>You’d rather be handed a fixed set of instructions.</span>
+        </div>
+        <div class="suit-row">
+          <span class="k">Your situation</span>
+          <span class="y"><span class="tk"><svg><use href="#check"/></svg></span>You’re feeling unwell and want your sleep, stress, food and lab results looked at together.</span>
+          <span class="n"><span class="tk"><svg><use href="#x"/></svg></span>You need urgent medical attention.</span>
+        </div>
+      </div>
+      <div class="awstrip">
+        <div class="t"><span class="aw-badge"><img src="assets/aw-logo.png" alt="Autonomic Wellness"></span><p>If you want in-depth testing or a licensed doctor’s review at one point in time, Autonomic Wellness is a separate service. You can use it on its own or alongside coaching.</p></div>
+        <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener" class="btn btn-blue">Learn about Autonomic Wellness <svg><use href="#arrow-ur"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FAQ -->
+  <section class="sec pt0">
+    <div class="wrap faq">
+      <div class="faq-left"><h2>Frequently asked questions</h2></div>
+      <div class="faq-list">
+        <details open><summary>Do I need lab tests to start coaching?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>In most cases, yes. Blood work is the starting point for the assessment, and we recommend the tests that apply to you.</p></div></details>
+        <details><summary>Is coaching the same as therapy?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. Therapy is treatment you receive, while coaching is learning you do. Some countries, including South Africa, regulate the two differently.</p></div></details>
+        <details><summary>Does coaching replace my doctor?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. Anything urgent should go to your own doctor or emergency services.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Request CTA -->
+  <section class="final dark">
+    <div class="wrap">
+      <h2>Request one-to-one coaching</h2>
+      <p class="lede">Coaching is private and by application. Each application is reviewed before a call is booked.</p>
+      <a href="#request" class="btn btn-pill">Request Coaching <svg><use href="#arrow"/></svg></a>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="brand"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+        <div><a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <nav class="foot-col foot-links" aria-label="Footer">
+        <a href="responsive-living.html">Responsive Living</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="about.html">About Justin</a>
+        <a href="testimonials.html">Results</a>
+        <a href="blog.html">Blog</a>
+        <a href="concierge.html">Concierge</a>
+        <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+      <div class="foot-col socials">
+        <a href="#"><svg class="pi"><use href="#i-instagram-logo"/></svg>Instagram</a>
+        <a href="#"><svg class="pi"><use href="#i-youtube-logo"/></svg>YouTube</a>
+        <a href="#"><svg class="pi"><use href="#i-facebook-logo"/></svg>Facebook</a>
+      </div>
+    </div>
+    <div class="foot-mid">
+      <div class="notes"><span>Coaching is not a substitute for medical diagnosis or treatment.</span></div>
+      <a href="#top" class="totop" aria-label="Back to top"><svg><use href="#arrow"/></svg></a>
+    </div>
+    <div class="mark-xl" aria-hidden="true">Autonomic Coaching</div>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog · Autonomic Coaching</title>
+<meta name="description" content="Science-led health articles across body and mind: how your biology, your psychology and your daily life connect.">
+<link rel="icon" href="assets/mark.png">
+<script>if (/[?&]figma\b/.test(location.search)) document.documentElement.classList.add('figma');</script>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ============ Topic covers (drawn as inline SVG so they import into Figma as vectors) ============ */
+.cv { position: relative; overflow: hidden; aspect-ratio: 16 / 10; border-radius: 16px; }
+.cv > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cv .lbl { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 99px; font-size: 13px; font-weight: 500; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .22); color: #fff; }
+.t-exh { background: linear-gradient(160deg, #0e7a52 0%, #022721 100%); color: #8fefca; }
+.t-slp { background: linear-gradient(170deg, #020a1d 0%, #2c4278 100%); color: #bfd2fe; }
+.t-hor { background: linear-gradient(160deg, #f6f2ec 0%, #e6dccb 100%); color: #0e7a52; }
+.t-lab { background: linear-gradient(160deg, #f3f6fe 0%, #d9e3fb 100%); color: #1d55d6; }
+.t-gut { background: linear-gradient(160deg, #f2fdf8 0%, #c6f5e2 100%); color: #0e7a52; }
+.t-ner { background: linear-gradient(160deg, #06352c 0%, #01130f 100%); color: #4fd1a0; }
+.t-hor .lbl, .t-lab .lbl, .t-gut .lbl { background: #fff; border-color: rgba(2, 10, 29, .06); color: var(--ink); }
+
+/* ============ Hero ============ */
+.b-hero h1 { max-width: 14ch; }
+.mosaic { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.mosaic .cv { aspect-ratio: 1 / .8; border-radius: 20px; }
+
+/* ============ Article cards (editorial, no box) ============ */
+.art { display: flex; flex-direction: column; }
+.art .cv { transition: transform .6s var(--ease); }
+.art:hover .cv { transform: scale(.985); }
+.art .meta { margin-top: 20px; display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 500; color: var(--g-700); }
+.art .meta .num { color: var(--ink-3); }
+.art h3 { margin-top: 10px; font-size: 21px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.3; max-width: 26ch; }
+.art .go { margin-top: 16px; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--ink); text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgba(2, 10, 29, .25); }
+.art .go svg { width: 14px; height: 14px; transition: transform .4s var(--ease); }
+.art:hover .go svg { transform: translateX(3px); }
+.start { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 28px; }
+.start .art h3 { font-size: clamp(21px, 1.8vw, 25px); }
+
+/* ============ Topics ============ */
+.topics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px; border-top: 1px solid var(--line); }
+.topic { display: flex; align-items: center; gap: 16px; padding: 26px 0; border-bottom: 1px solid var(--line); font-size: clamp(20px, 1.8vw, 26px); letter-spacing: -0.02em; text-align: left; transition: color .2s, padding .3s var(--ease); }
+.topic i { flex: none; width: 12px; height: 12px; border-radius: 99px; }
+.topic svg { margin-left: auto; width: 16px; height: 16px; color: var(--ink-3); transition: transform .3s var(--ease), color .2s; }
+.topic:hover { color: var(--g-700); }
+.topic:hover svg { color: var(--g-700); transform: translateX(4px); }
+
+/* ============ Latest ============ */
+.latest-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip-f { height: 38px; padding: 0 15px; border-radius: 99px; border: 1px solid var(--line); background: #fff; font-size: 14px; font-weight: 500; color: var(--ink-2); transition: background-color .2s, color .2s, border-color .2s; }
+.chip-f:hover { border-color: var(--g-300); color: var(--ink); }
+.chip-f[aria-pressed="true"] { background: var(--g-900); border-color: var(--g-900); color: #fff; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px 28px; }
+.grid .art[hidden] { display: none; }
+
+/* ============ Responsive ============ */
+@media (max-width: 1100px) {
+  .grid, .start { grid-template-columns: 1fr 1fr; }
+  .start .art:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 28px; align-content: start; }
+  .start .art:last-child .cv { grid-row: span 4; }
+  .start .art:last-child .meta { margin-top: 4px; }
+  .topics { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .mosaic { max-width: 560px; }
+}
+@media (max-width: 720px) {
+  .mosaic { gap: 10px; }
+  .mosaic .cv { border-radius: 14px; }
+  .mosaic .lbl { left: 10px; bottom: 10px; height: 26px; padding: 0 10px; font-size: 12px; }
+  .grid, .start { grid-template-columns: 1fr; gap: 44px; }
+  .start .art:last-child { display: flex; grid-column: auto; }
+  .start .art:last-child .meta { margin-top: 20px; }
+  .topics { grid-template-columns: 1fr; }
+  .topic { padding: 20px 0; font-size: 21px; }
+  .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); width: calc(100% + 2 * var(--gutter)); }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip-f { flex: none; }
+}
+</style>
+</head>
+<body data-page="blog">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<!--SPRITE-->
+    <symbol id="arrow" viewBox="0 0 16 16"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow-ur" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-facebook-logo" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V150h26a6,6,0,0,0,0-12H134V112a18,18,0,0,1,18-18h16a6,6,0,0,0,0-12H152a30,30,0,0,0-30,30v26H96a6,6,0,0,0,0,12h26v67.8a90,90,0,1,1,12,0Z"/></symbol>
+    <symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128ZM40,70H216a6,6,0,0,0,0-12H40a6,6,0,0,0,0,12ZM216,186H40a6,6,0,0,0,0,12H216a6,6,0,0,0,0-12Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 256 256"><path d="M204.24,195.76a6,6,0,1,1-8.48,8.48L128,136.49,60.24,204.24a6,6,0,0,1-8.48-8.48L119.51,128,51.76,60.24a6,6,0,0,1,8.48-8.48L128,119.51l67.76-67.75a6,6,0,0,1,8.48,8.48L136.49,128Z"/></symbol>
+    <symbol id="i-youtube-logo" viewBox="0 0 256 256"><path d="M163.33,123l-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128ZM232.4,70a22,22,0,0,0-13.28-15C185,41.79,130.27,42,128,42s-57-.21-91.16,13A22,22,0,0,0,23.6,70C21.05,79.89,18,98,18,128s3.05,48.11,5.6,58a22,22,0,0,0,13.28,15C71,214.21,125.72,214,128,214h.71c6.91,0,58-.44,90.45-13a22,22,0,0,0,13.28-15c2.55-9.87,5.6-27.93,5.6-58S235,79.89,232.4,70ZM220.78,183a10,10,0,0,1-6,6.86C182.78,202.19,128.58,202,128,202s-54.71.2-86.75-12.17a10,10,0,0,1-6-6.86C32.84,173.78,30,156.78,30,128s2.84-45.78,5.22-55a10,10,0,0,1,6-6.86C72.06,54.26,123.53,54,127.76,54H128c.54,0,54.71-.2,86.75,12.17a10,10,0,0,1,6,6.86c2.38,9.19,5.22,26.19,5.22,55S223.16,173.78,220.78,183Z"/></symbol>
+    <!--/SPRITE-->
+</defs></svg>
+
+<!--HEADER-->
+<header class="hdr" id="nav">
+  <div class="in">
+    <a href="index.html" class="brand" aria-label="Autonomic Coaching home"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+    <nav aria-label="Primary">
+      <a href="responsive-living.html">Responsive Living</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About Justin</a>
+      <a href="testimonials.html">Results</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+    </nav>
+    <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <button class="menu-btn close" id="sheetClose" aria-label="Close menu" style="display:grid"><svg class="pi"><use href="#i-x"/></svg></button>
+  <nav>
+    <a href="responsive-living.html">Responsive Living<svg><use href="#arrow"/></svg></a>
+    <a href="how-it-works.html">How It Works<svg><use href="#arrow"/></svg></a>
+    <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
+    <a href="testimonials.html">Results<svg><use href="#arrow"/></svg></a>
+    <a href="blog.html" aria-current="page">Blog<svg><use href="#arrow"/></svg></a>
+    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
+    <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness<svg><use href="#arrow-ur"/></svg></a>
+  </nav>
+  <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
+</div>
+<!--/HEADER-->
+
+<main id="top">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="cv-exh" viewBox="0 0 320 200"><circle cx="262" cy="34" r="92" fill="currentColor" opacity=".12"/><path d="M-10 62 C 60 58, 96 64, 132 92 S 200 168, 330 160" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="168" cy="133" r="5" fill="currentColor"/></symbol>
+    <symbol id="cv-slp" viewBox="0 0 320 200"><path d="M246 36a34 34 0 1 0 34 46 28 28 0 0 1-34-46z" fill="currentColor" opacity=".9"/><g fill="#fff"><circle cx="40" cy="30" r="1.4" opacity=".7"/><circle cx="92" cy="58" r="1.1" opacity=".5"/><circle cx="150" cy="24" r="1.5" opacity=".8"/><circle cx="196" cy="70" r="1" opacity=".5"/><circle cx="66" cy="96" r="1.2" opacity=".45"/><circle cx="122" cy="120" r="1" opacity=".35"/><circle cx="296" cy="128" r="1.3" opacity=".5"/><circle cx="214" cy="18" r="1" opacity=".6"/></g></symbol>
+    <symbol id="cv-hor" viewBox="0 0 320 200"><g fill="none" stroke="currentColor" stroke-width="1.2" opacity=".35"><circle cx="262" cy="40" r="26"/><circle cx="262" cy="40" r="52"/><circle cx="262" cy="40" r="78"/><circle cx="262" cy="40" r="104"/><circle cx="262" cy="40" r="130"/></g><circle cx="262" cy="40" r="9" fill="currentColor"/></symbol>
+    <symbol id="cv-lab" viewBox="0 0 320 200"><g fill="currentColor"><rect x="168" y="112" width="22" height="88" rx="4" opacity=".3"/><rect x="200" y="70" width="22" height="130" rx="4" opacity=".45"/><rect x="232" y="94" width="22" height="106" rx="4" opacity=".3"/></g><rect x="264" y="40" width="22" height="160" rx="4" fill="#0e7a52" opacity=".7"/><path d="M150 60 H 300" stroke="currentColor" stroke-width="1" stroke-dasharray="3 5" opacity=".5"/></symbol>
+    <symbol id="cv-gut" viewBox="0 0 320 200"><g fill="none" stroke="currentColor" stroke-width="1.2" opacity=".3"><circle cx="270" cy="190" r="30"/><circle cx="270" cy="190" r="60"/><circle cx="270" cy="190" r="90"/><circle cx="270" cy="190" r="120"/><circle cx="270" cy="190" r="150"/></g><circle cx="270" cy="190" r="12" fill="currentColor" opacity=".8"/></symbol>
+    <symbol id="cv-ner" viewBox="0 0 320 200"><g stroke="currentColor" stroke-width="1" opacity=".1"><path d="M0 40H320M0 80H320M0 120H320M0 160H320"/></g><path d="M-10 100 H 120 L 134 62 L 150 138 L 166 76 L 180 120 L 192 100 H 330" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <!-- 1. Hero -->
+  <section class="phero b-hero">
+    <div class="phero-in">
+      <div class="phero-copy">
+        <h1>Science-led health articles across body and mind</h1>
+        <p class="sub">Most health advice treats symptoms one at a time. These articles look at how your biology, your psychology, and your daily life connect, from exhaustion and broken sleep to hormone shifts and lab results that don’t add up.</p>
+        <div class="ctas">
+          <a href="#start" class="btn btn-primary">Start here <svg><use href="#arrow"/></svg></a>
+          <a href="#topics" class="u-link">Browse articles by topic <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="mosaic" aria-hidden="true">
+        <div class="cv t-exh"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-exh"/></svg><span class="lbl">Exhaustion</span></div>
+        <div class="cv t-slp"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-slp"/></svg><span class="lbl">Sleep</span></div>
+        <div class="cv t-hor"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-hor"/></svg><span class="lbl">Hormones</span></div>
+        <div class="cv t-lab"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-lab"/></svg><span class="lbl">Lab results</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Start here -->
+  <section class="sec pt0" id="start">
+    <div class="wrap">
+      <div class="head shead-row">
+        <h2>Start here</h2>
+        <p class="lede">If you’re new here, these three cover the questions people ask first.</p>
+      </div>
+      <div class="start">
+        <a href="#" class="art">
+          <div class="cv t-slp"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-slp"/></svg></div>
+          <div class="meta"><span>Sleep</span><span class="num">01</span></div>
+          <h3>Why do I still feel tired after a full night’s sleep?</h3>
+          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+        </a>
+        <a href="#" class="art">
+          <div class="cv t-lab"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-lab"/></svg></div>
+          <div class="meta"><span>Lab results</span><span class="num">02</span></div>
+          <h3>“Normal” labs don’t mean you’re well</h3>
+          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+        </a>
+        <a href="#" class="art">
+          <div class="cv t-ner"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-ner"/></svg></div>
+          <div class="meta"><span>Nervous system</span><span class="num">03</span></div>
+          <h3>What is Responsive Living?</h3>
+          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Browse articles by topic -->
+  <section class="sec pt0" id="topics">
+    <div class="wrap">
+      <div class="head shead-row">
+        <h2>Browse articles by topic</h2>
+        <p class="lede">Articles are grouped by the questions readers bring most often. New topics are added as the library grows.</p>
+      </div>
+      <div class="topics">
+        <button type="button" class="topic" data-topic="exh"><i style="background:#0e7a52"></i>Exhaustion<svg><use href="#arrow"/></svg></button>
+        <button type="button" class="topic" data-topic="slp"><i style="background:#2c4278"></i>Sleep<svg><use href="#arrow"/></svg></button>
+        <button type="button" class="topic" data-topic="hor"><i style="background:#c9b48f"></i>Hormones<svg><use href="#arrow"/></svg></button>
+        <button type="button" class="topic" data-topic="lab"><i style="background:#1d55d6"></i>Lab results<svg><use href="#arrow"/></svg></button>
+        <button type="button" class="topic" data-topic="gut"><i style="background:#4fd1a0"></i>Gut health<svg><use href="#arrow"/></svg></button>
+        <button type="button" class="topic" data-topic="ner"><i style="background:#022721"></i>Nervous system<svg><use href="#arrow"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Latest articles -->
+  <section class="sec pt0" id="latest">
+    <div class="wrap">
+      <div class="head latest-head">
+        <h2>Latest articles</h2>
+        <div class="chips" role="group" aria-label="Filter by topic">
+          <button type="button" class="chip-f" data-f="all" aria-pressed="true">All</button>
+          <button type="button" class="chip-f" data-f="exh" aria-pressed="false">Exhaustion</button>
+          <button type="button" class="chip-f" data-f="slp" aria-pressed="false">Sleep</button>
+          <button type="button" class="chip-f" data-f="hor" aria-pressed="false">Hormones</button>
+          <button type="button" class="chip-f" data-f="lab" aria-pressed="false">Lab results</button>
+          <button type="button" class="chip-f" data-f="gut" aria-pressed="false">Gut health</button>
+          <button type="button" class="chip-f" data-f="ner" aria-pressed="false">Nervous system</button>
+        </div>
+      </div>
+      <div class="grid" id="grid">
+        <a href="#" class="art" data-t="exh">
+          <div class="cv t-exh"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-exh"/></svg></div>
+          <div class="meta"><span>Exhaustion</span></div>
+          <h3>Energy that crashes mid-afternoon</h3>
+          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+        </a>
+        <a href="#" class="art" data-t="slp">
+          <div class="cv t-slp"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-slp"/></svg></div>
+          <div class="meta"><span>Sleep</span></div>
+          <h3>You can’t switch off, even when the day is over</h3>
+          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+        </a>
+        <a href="#" class="art" data-t="lab">
+          <div class="cv t-lab"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-lab"/></svg></div>
+          <div class="meta"><span>Lab results</span></div>
+          <h3>What lab work can and can’t tell you</h3>
+          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+        </a>
+        <a href="#" class="art" data-t="hor">
+          <div class="cv t-hor"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-hor"/></svg></div>
+          <div class="meta"><span>Hormones</span></div>
+          <h3>Where it hides and how it shows up: from the mouth to your hormones and thyroid</h3>
+          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+        </a>
+        <a href="#" class="art" data-t="gut">
+          <div class="cv t-gut"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-gut"/></svg></div>
+          <div class="meta"><span>Gut health</span></div>
+          <h3>How food affects immune balance</h3>
+          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+        </a>
+        <a href="#" class="art" data-t="ner">
+          <div class="cv t-ner"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-ner"/></svg></div>
+          <div class="meta"><span>Nervous system</span></div>
+          <h3>Static physiology: the alarm goes off, and nothing moves</h3>
+          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Request Coaching -->
+  <section class="final dark">
+    <div class="wrap">
+      <h2>Request one-to-one coaching</h2>
+      <p class="lede">Coaching is private and by application. Each application is reviewed before a call is booked.</p>
+      <a href="#request" class="btn btn-pill">Request Coaching <svg><use href="#arrow"/></svg></a>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="brand"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+        <div><a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <nav class="foot-col foot-links" aria-label="Footer">
+        <a href="responsive-living.html">Responsive Living</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="about.html">About Justin</a>
+        <a href="testimonials.html">Results</a>
+        <a href="blog.html">Blog</a>
+        <a href="concierge.html">Concierge</a>
+        <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+      <div class="foot-col socials">
+        <a href="#"><svg class="pi"><use href="#i-instagram-logo"/></svg>Instagram</a>
+        <a href="#"><svg class="pi"><use href="#i-youtube-logo"/></svg>YouTube</a>
+        <a href="#"><svg class="pi"><use href="#i-facebook-logo"/></svg>Facebook</a>
+      </div>
+    </div>
+    <div class="foot-mid">
+      <div class="notes"><span>Coaching is not a substitute for medical diagnosis or treatment.</span></div>
+      <a href="#top" class="totop" aria-label="Back to top"><svg><use href="#arrow"/></svg></a>
+    </div>
+    <div class="mark-xl" aria-hidden="true">Autonomic Coaching</div>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  var chips = document.querySelectorAll('.chip-f');
+  var cards = document.querySelectorAll('#grid .art');
+  function filter(t) {
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-f') === t ? 'true' : 'false'); });
+    cards.forEach(function (a) { a.hidden = t !== 'all' && a.getAttribute('data-t') !== t; });
+  }
+  chips.forEach(function (c) { c.addEventListener('click', function () { filter(c.getAttribute('data-f')); }); });
+  document.querySelectorAll('.topic').forEach(function (b) {
+    b.addEventListener('click', function () {
+      filter(b.getAttribute('data-topic'));
+      document.getElementById('latest').scrollIntoView({ behavior: AC.reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+})();
+</script>
+</body>
+</html>

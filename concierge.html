@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>International Concierge Programme · Autonomic Coaching</title>
+<meta name="description" content="A bespoke international concierge programme for high-profile patients and families who benefit from periodic in-person engagement.">
+<link rel="icon" href="assets/mark.png">
+<script>
+  /* ?figma = static mode for Figma import: no hidden pre-animation states, no motion */
+  if (/[?&]figma\b/.test(location.search)) document.documentElement.classList.add('figma');
+ 
+</script>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ============ Hero ============ */
+.hero { position: relative; overflow: hidden; isolation: isolate; color: #fff; background: var(--g-950); }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; z-index: -3; filter: saturate(.6) brightness(.92); transform: scale(1.06); animation: settle 3s var(--ease) forwards; }
+@keyframes settle { to { transform: scale(1); } }
+.hero .tint { position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg, rgba(1, 19, 15, .82) 0%, rgba(1, 19, 15, .3) 38%, rgba(1, 19, 15, .5) 68%, rgba(1, 19, 15, .95) 100%), linear-gradient(90deg, rgba(1, 19, 15, .72) 0%, rgba(1, 19, 15, 0) 66%); }
+.hero .dots { }
+.hero .glow { position: absolute; z-index: -1; right: 4%; top: 18%; width: 46%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgba(22, 157, 105, .32), rgba(22, 157, 105, 0)); pointer-events: none; }
+.hero-in { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); min-height: clamp(640px, calc(100svh - 76px), 860px); display: flex; flex-direction: column; justify-content: space-between; }
+.hero-top { display: flex; align-items: center; gap: 24px; padding-top: clamp(28px, 3.4vw, 44px); }
+.hero-top .eyebrow { color: rgba(255, 255, 255, .62); }
+.hero-top .rule { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(255, 255, 255, .26), rgba(255, 255, 255, .04)); }
+.hero-body { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 48px; align-items: end; padding: 64px 0 clamp(44px, 5vw, 72px); }
+.hero-body .eyebrow { color: var(--g-200); }
+.hero h1 { color: #fff; margin-top: 20px; max-width: 16ch; }
+.hero-sub { margin-top: 20px; max-width: 50ch; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.6; color: rgba(255, 255, 255, .74); }
+.hero-ctas { margin-top: 34px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
+.hero-ctas .u-link { color: #fff; }
+.plate {
+  justify-self: end; width: min(100%, 360px); padding: 14px; border-radius: 14px; color: #fff;
+  background: rgba(10, 22, 20, .42); border: 1px solid rgba(255, 255, 255, .16); box-shadow: var(--shadow-glass), inset 0 0 0 1.5px rgba(255, 255, 255, .05);
+  -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px);
+}
+.plate-row { display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: center; padding: 14px 16px; border-radius: 9px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .08); }
+.plate-row + .plate-row { margin-top: 8px; }
+.plate-num { font-size: 44px; line-height: 1; letter-spacing: -0.04em; color: var(--g-200); font-variant-numeric: tabular-nums; }
+.plate-row span:last-child { font-size: 14px; line-height: 1.4; color: rgba(255, 255, 255, .8); }
+
+/* ============ Philosophy ============ */
+.philo { max-width: 1000px; margin: 0 auto; }
+.philo .quote { margin-top: 22px; font-size: clamp(24px, 2.5vw, 36px); line-height: 1.32; letter-spacing: -0.02em; color: var(--ink); text-wrap: balance; }
+.philo .quote b { font-weight: 400; color: var(--g-700); }
+.philo .src { margin-top: 30px; display: inline-flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
+.philo .src::before, .philo .src::after { content: ""; width: 40px; height: 1px; background: var(--line); }
+
+/* ============ Inclusions (two people) ============ */
+.incl-head { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; align-items: end; }
+.incl-head h2 { margin-top: 14px; max-width: 24ch; }
+.incl-head .lede { max-width: 44ch; justify-self: end; }
+.incl { margin-top: clamp(40px, 4.4vw, 64px); display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.person { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line-2); border-radius: var(--r-xl); box-shadow: var(--shadow-md); overflow: hidden; }
+.person-top { position: relative; isolation: isolate; height: clamp(300px, 27vw, 390px); overflow: hidden; background: linear-gradient(180deg, #e2e2e4 0%, #d1d1d4 100%); }
+.person-top img { position: absolute; z-index: -1; top: 0; right: -4%; width: 86%; height: auto; max-width: none; transition: transform 1.6s var(--ease); }
+.person:hover .person-top img { transform: scale(1.03); }
+.person-top .num { position: absolute; left: clamp(24px, 3vw, 40px); top: clamp(22px, 2.6vw, 34px); font-size: clamp(110px, 11vw, 168px); line-height: .82; letter-spacing: -0.06em; color: var(--g-800); }
+.person-top .lbl { position: absolute; left: clamp(20px, 2.6vw, 32px); bottom: clamp(20px, 2.6vw, 32px); display: inline-flex; align-items: center; gap: 8px; padding: 9px 13px 9px 10px; border-radius: 10px; background: rgba(255, 255, 255, .84); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: var(--shadow-sm); font-size: 13px; font-weight: 500; color: var(--ink); }
+.person-top .lbl .pi { font-size: 16px; color: var(--g-700); }
+.person-body { flex: 1; display: flex; flex-direction: column; padding: clamp(24px, 3vw, 36px); }
+.who { display: grid; gap: 4px; padding-bottom: 18px; border-bottom: 1px solid var(--line-2); }
+.who h3 { font-size: clamp(21px, 1.7vw, 24px); letter-spacing: -0.02em; }
+.who .role { font-size: 14px; font-weight: 500; color: var(--g-700); }
+.person-body .body { margin-top: 18px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 24px; }
+.tag { display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 13px 0 5px; border-radius: 99px; background: var(--page); border: 1px solid var(--line-2); font-size: 13.5px; font-weight: 500; color: var(--ink-2); }
+.tag .ci { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 99px; background: var(--g-50); color: var(--g-700); }
+.tag .ci .pi { width: 14px; height: 14px; }
+
+/* ============ Group (parent organisation) ============ */
+.group { position: relative; border-radius: var(--r-xl); background: var(--g-50); border: 1px solid var(--g-100); padding: clamp(40px, 5.4vw, 80px) clamp(20px, 4vw, 64px); }
+.group-head h2 { margin-top: 14px; max-width: 30ch; }
+.tree { margin-top: clamp(40px, 4.4vw, 64px); position: relative; }
+.root { position: relative; z-index: 1; margin: 0 auto; width: fit-content; display: flex; align-items: center; gap: 14px; padding: 8px 24px 8px 8px; border-radius: 99px; background: var(--g-900); color: #fff; box-shadow: var(--shadow-md); }
+.root .rm { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 99px; background: #fff; }
+.root .rm img { width: 30px; height: auto; }
+.root small { display: block; font-size: 11px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--g-200); }
+.root strong { display: block; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; }
+.branches { position: relative; height: 56px; }
+.branches::before { content: ""; position: absolute; left: 50%; top: 0; height: 28px; width: 1px; background: var(--g-300); }
+.branches::after { content: ""; position: absolute; left: calc(100% / 6); right: calc(100% / 6); top: 28px; height: 28px; border: 1px solid var(--g-300); border-bottom: 0; border-radius: 14px 14px 0 0; }
+.branches i { position: absolute; left: 50%; top: 28px; width: 1px; height: 28px; background: var(--g-300); }
+.units { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.unit { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line-2); border-radius: var(--r-lg); padding: clamp(24px, 2.4vw, 32px); box-shadow: var(--shadow-sm); }
+.unit.here { border-color: transparent; box-shadow: 0 0 0 1.5px var(--g-600), var(--shadow-md); }
+.unit-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.unit.aw .ic { color: var(--b-700); }
+.unit.nu .ic { color: var(--ink-2); }
+.status { display: inline-flex; align-items: center; gap: 8px; height: 28px; padding: 0 12px; border-radius: 99px; font-size: 12px; font-weight: 500; letter-spacing: .02em; }
+.status::before { content: ""; width: 6px; height: 6px; border-radius: 99px; background: currentColor; }
+.status.est { background: var(--g-50); color: var(--g-700); }
+.status.soon { background: var(--b-25); color: var(--b-700); }
+.status.later { background: var(--sand); color: var(--ink-2); }
+.unit h3 { margin-top: 24px; font-size: clamp(20px, 1.6vw, 22px); }
+.unit p { margin-top: 10px; color: var(--ink-2); font-size: 15px; line-height: 1.65; }
+
+/* ============ International (blue, secondary) ============ */
+.intl { position: relative; overflow: hidden; isolation: isolate; border-radius: var(--r-xl); color: #fff; background: linear-gradient(180deg, #020a1d 0%, #1b294b 62%, #2c4278 100%); display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 380px); gap: 48px; align-items: center; padding: clamp(40px, 6vw, 88px) clamp(24px, 5vw, 80px); }
+.intl > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; opacity: .24; mix-blend-mode: luminosity; }
+.intl .eyebrow { color: var(--b-300); }
+.intl h2 { color: #fff; margin-top: 14px; max-width: 28ch; }
+.intl .lede { color: rgba(255, 255, 255, .66); margin-top: 20px; max-width: 50ch; }
+.globe { justify-self: center; width: 100%; aspect-ratio: 1; }
+.globe svg { width: 100%; height: 100%; overflow: visible; }
+.globe .g-line { fill: none; stroke: rgba(191, 210, 254, .18); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.globe .g-edge { fill: rgba(128, 152, 209, .08); stroke: rgba(191, 210, 254, .36); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.globe .g-ring { fill: none; stroke: rgba(128, 152, 209, .5); stroke-width: 1; stroke-dasharray: 2 7; vector-effect: non-scaling-stroke; transform-origin: 200px 200px; animation: spin 50s linear infinite; }
+.globe .arc { fill: none; stroke: var(--g-200); stroke-width: 1.4; stroke-linecap: round; stroke-dasharray: 5 9; vector-effect: non-scaling-stroke; animation: flow 2.2s linear infinite; }
+.globe .city { fill: #fff; }
+.globe .halo { fill: none; stroke: var(--g-200); stroke-width: 1; transform-box: fill-box; transform-origin: center; animation: halo 2.8s var(--ease) infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes flow { to { stroke-dashoffset: -28; } }
+@keyframes halo { 0% { transform: scale(.6); opacity: 1; } 100% { transform: scale(2.6); opacity: 0; } }
+
+/* ============ Investment (forest, primary) ============ */
+.invest { position: relative; overflow: hidden; isolation: isolate; border-radius: var(--r-xl); color: #fff; background: radial-gradient(50% 60% at 85% 0%, rgba(22, 157, 105, .3), transparent 70%), radial-gradient(40% 50% at 0% 100%, rgba(22, 157, 105, .14), transparent 70%), var(--g-950); padding: clamp(40px, 6vw, 88px) clamp(20px, 5vw, 80px); }
+.invest .dots { }
+.invest-head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: end; }
+.invest .eyebrow { color: var(--g-200); }
+.invest h2 { color: #fff; margin-top: 14px; max-width: 20ch; }
+.invest-head p { color: rgba(255, 255, 255, .66); justify-self: end; max-width: 42ch; }
+.tiers { margin-top: clamp(36px, 4.4vw, 56px); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.tier { position: relative; border-radius: var(--r-lg); padding: clamp(24px, 3vw, 40px); background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02)); }
+.tier { border: 1px solid rgba(143, 239, 202, .28); }
+.tier::before { display: none;
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(140deg, rgba(143, 239, 202, .6), rgba(255, 255, 255, .08) 45%, rgba(143, 239, 202, .22));
+}
+.tier .eyebrow { color: rgba(255, 255, 255, .55); }
+.tier h3 { color: #fff; margin-top: 12px; font-size: clamp(20px, 1.6vw, 22px); font-weight: 400; }
+.price { margin-top: clamp(28px, 3.6vw, 48px); display: flex; align-items: flex-start; gap: 6px; letter-spacing: -0.05em; line-height: .9; }
+.price .cur { font-size: clamp(24px, 2.2vw, 32px); margin-top: .3em; color: var(--g-200); }
+.price .amt { font-size: clamp(54px, 6.2vw, 92px); font-variant-numeric: tabular-nums; }
+.per { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .1); display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; font-size: 14px; color: rgba(255, 255, 255, .62); }
+.per b { font-weight: 500; color: #fff; }
+.calc { margin-top: 16px; border-radius: var(--r-lg); background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .1); padding: clamp(20px, 2.4vw, 28px) clamp(20px, 3vw, 40px); display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; }
+.calc-label { font-size: 15px; color: #fff; }
+.calc-label small { display: block; margin-top: 4px; font-size: 13px; color: rgba(255, 255, 255, .6); }
+.stepper { justify-self: start; display: inline-flex; align-items: center; gap: 4px; padding: 4px; border-radius: 12px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .1); }
+.stepper button { width: 40px; height: 40px; border-radius: 9px; display: grid; place-items: center; color: #fff; transition: background-color .2s; }
+.stepper button svg { width: 16px; height: 16px; }
+.stepper button:hover { background: rgba(255, 255, 255, .1); }
+.stepper button:disabled { opacity: .3; cursor: default; background: none; }
+.stepper output { min-width: 44px; text-align: center; font-size: 20px; font-variant-numeric: tabular-nums; }
+.total { justify-self: end; text-align: right; }
+.total .eyebrow { color: rgba(255, 255, 255, .55); }
+.total strong { display: block; margin-top: 8px; font-size: clamp(30px, 3vw, 42px); font-weight: 400; letter-spacing: -0.04em; line-height: 1; color: #fff; font-variant-numeric: tabular-nums; }
+.total span { display: block; margin-top: 6px; font-size: 13px; color: rgba(255, 255, 255, .6); }
+.invest-foot { margin-top: clamp(32px, 4vw, 48px); display: flex; align-items: center; justify-content: space-between; gap: 24px 32px; flex-wrap: wrap; }
+.invest-foot p { max-width: 62ch; font-size: 15px; line-height: 1.65; color: rgba(255, 255, 255, .62); }
+
+/* ============ Closing letter ============ */
+.letter-wrap { position: relative; overflow: hidden; isolation: isolate; border-radius: var(--r-xl); padding: clamp(56px, 9vw, 128px) 16px; }
+.letter-wrap > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; filter: saturate(.7) brightness(1.02); }
+.letter-wrap::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(250, 250, 248, .25), rgba(250, 250, 248, .7)); }
+.letter { max-width: 760px; margin: 0 auto; background: rgba(255, 255, 255, .92); border: 1px solid var(--line-2); border-radius: var(--r-xl); padding: clamp(28px, 5vw, 60px); box-shadow: var(--shadow-md); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+.letter .quote { margin-top: 20px; font-size: clamp(20px, 2vw, 28px); line-height: 1.42; letter-spacing: -0.015em; color: var(--ink); }
+.sign { margin-top: 36px; padding-top: 26px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.sign-who { display: flex; align-items: center; gap: 14px; }
+.sign-who img { width: 56px; height: 56px; border-radius: 99px; object-fit: cover; object-position: 50% 12%; background: var(--g-50); border: 1px solid var(--g-100); }
+.sign-who .muted { display: block; font-size: 13px; color: var(--ink-2); }
+.sign-who strong { display: block; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; }
+
+/* ============ Static modes (page specific) ============ */
+.figma .hero > img { transform: none; }
+@media (prefers-reduced-motion: reduce) { .hero > img { transform: none; } }
+
+/* ============ Tablet ============ */
+@media (max-width: 1100px) {
+  .hdr nav { display: none; }
+  .menu-btn { display: grid; }
+  .hdr .in { gap: 10px; }
+  .hdr .in > .btn { margin-left: auto; }
+  .hero-body, .incl-head, .invest-head, .intl { grid-template-columns: 1fr; }
+  .hero-body { gap: 36px; }
+  .plate { justify-self: start; }
+  .incl-head { gap: 20px; }
+  .incl-head .lede, .invest-head p { justify-self: start; }
+  .invest-head { gap: 18px; }
+  .intl { gap: 24px; }
+  .globe { width: min(100%, 280px); justify-self: start; }
+  .foot-top { grid-template-columns: 1fr 1fr; }
+  .foot-top > :first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 900px) {
+  .hero-in { min-height: 0; }
+  .incl, .tiers, .units { grid-template-columns: 1fr; }
+  .person-top { height: clamp(300px, 52vw, 400px); }
+  .person-top img { width: 64%; right: 0; }
+  .branches { display: none; }
+  .root { margin-bottom: 20px; }
+  .calc { grid-template-columns: 1fr auto; }
+  .total { grid-column: 1 / -1; justify-self: start; text-align: left; width: 100%; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .1); }
+}
+/* ============ Phone ============ */
+@media (max-width: 720px) {
+  .hdr .in { height: 64px; }
+  .hdr .in > .btn { display: none; }
+  .brand img { height: 36px; }
+  .brand { font-size: 17px; }
+  h2 { font-size: 26px; line-height: 31px; }
+  .hero-top .eyebrow:last-child, .hero-top .rule { display: none; }
+  .hero-body { padding-top: 64px; }
+  .hero h1 { font-size: 38px; }
+  .hero-ctas .btn { flex: 1 1 100%; }
+  .plate { width: 100%; }
+  .person-top { height: 300px; }
+  .person-top img { width: 86%; right: -10%; }
+  .person-top .num { font-size: 104px; }
+  .group, .intl, .invest, .letter-wrap, .person { border-radius: 18px; }
+  .unit { padding: 22px; }
+  .unit h3 { margin-top: 18px; }
+  .globe { width: min(100%, 260px); justify-self: center; }
+  .tier { padding: 24px 22px; }
+  .calc { grid-template-columns: 1fr; padding: 18px; gap: 16px; }
+  .philo .src { white-space: nowrap; gap: 10px; letter-spacing: .8px; }
+  .philo .src::before, .philo .src::after { width: 20px; }
+  .invest-foot .btn { width: 100%; }
+  .letter-wrap { padding: 40px 10px; }
+  .sign .btn { width: 100%; }
+  .foot-top { grid-template-columns: 1fr; gap: 32px; }
+  .foot-mid { flex-direction: column-reverse; align-items: flex-start; }
+  .mark-xl { font-size: 10.4vw; }
+}
+</style>
+</head>
+<body data-page="concierge" data-cta-href="#enquire" data-cta-label="Explore a family package">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+<!--SPRITE-->
+    <symbol id="arrow" viewBox="0 0 16 16"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow-ur" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="plus" viewBox="0 0 16 16"><path d="M8 2.5v11M2.5 8h11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="minus" viewBox="0 0 16 16"><path d="M3 8h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-airplane-tilt" viewBox="0 0 256 256"><path d="M183,113.65l30.1-28.32.13-.13A30,30,0,0,0,170.8,42.77l-.13.13L142.35,73,58.05,42.35a6,6,0,0,0-6.29,1.39l-24,24A6,6,0,0,0,28.67,77l65.92,43.94L77.52,138H56a6,6,0,0,0-4.24,1.76l-24,24a6,6,0,0,0,2,9.82l37.62,15,15,37.56,0,.12a6,6,0,0,0,7.81,3.27,5.94,5.94,0,0,0,2.07-1.41l23.91-23.91A6,6,0,0,0,118,200V178.48l17.07-17.07L179,227.33a6,6,0,0,0,9.23.91l24-24a6,6,0,0,0,1.39-6.29Zm1.94,100.93L141,148.66a6,6,0,0,0-4.4-2.64l-.59,0a6,6,0,0,0-4.24,1.76l-24,24A6,6,0,0,0,106,176v21.52L90.2,213.32,77.57,181.77a6,6,0,0,0-3.34-3.35L42.68,165.8,58.49,150H80a6,6,0,0,0,4.25-1.76l24-24a6,6,0,0,0-.92-9.23L41.42,71.06,57.54,54.93,142,85.63a6,6,0,0,0,6.42-1.53l31-32.9A18,18,0,0,1,204.8,76.66l-32.9,31a6,6,0,0,0-1.53,6.42l30.7,84.41Z"/></symbol>
+    <symbol id="i-chart-line-up" viewBox="0 0 256 256"><path d="M230,208a6,6,0,0,1-6,6H32a6,6,0,0,1-6-6V48a6,6,0,0,1,12,0V161.52l53.76-53.76a6,6,0,0,1,8.48,0L128,135.51,185.52,78H160a6,6,0,0,1,0-12h40a6,6,0,0,1,6,6v40a6,6,0,0,1-12,0V86.48l-61.76,61.76a6,6,0,0,1-8.48,0L96,120.49l-58,58V202H224A6,6,0,0,1,230,208Z"/></symbol>
+    <symbol id="i-clipboard-text" viewBox="0 0 256 256"><path d="M166,152a6,6,0,0,1-6,6H96a6,6,0,0,1,0-12h64A6,6,0,0,1,166,152Zm-6-38H96a6,6,0,0,0,0,12h64a6,6,0,0,0,0-12Zm54-66V216a14,14,0,0,1-14,14H56a14,14,0,0,1-14-14V48A14,14,0,0,1,56,34H93.17a45.91,45.91,0,0,1,69.66,0H200A14,14,0,0,1,214,48ZM94,64v2h68V64a34,34,0,0,0-68,0ZM202,48a2,2,0,0,0-2-2H170.33A45.77,45.77,0,0,1,174,64v8a6,6,0,0,1-6,6H88a6,6,0,0,1-6-6V64a45.77,45.77,0,0,1,3.67-18H56a2,2,0,0,0-2,2V216a2,2,0,0,0,2,2H200a2,2,0,0,0,2-2Z"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218ZM173.32,74.63l-64,32a6,6,0,0,0-2.69,2.69l-32,64A6,6,0,0,0,80,182a6.06,6.06,0,0,0,2.68-.63l64-32a6,6,0,0,0,2.69-2.69l32-64a6,6,0,0,0-8.05-8.05Zm-33.79,64.9L93.42,162.58l23-46.11,46.11-23Z"/></symbol>
+    <symbol id="i-facebook-logo" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V150h26a6,6,0,0,0,0-12H134V112a18,18,0,0,1,18-18h16a6,6,0,0,0,0-12H152a30,30,0,0,0-30,30v26H96a6,6,0,0,0,0,12h26v67.8a90,90,0,1,1,12,0Z"/></symbol>
+    <symbol id="i-first-aid-kit" viewBox="0 0 256 256"><path d="M216,58H174V48a22,22,0,0,0-22-22H104A22,22,0,0,0,82,48V58H40A14,14,0,0,0,26,72V200a14,14,0,0,0,14,14H216a14,14,0,0,0,14-14V72A14,14,0,0,0,216,58ZM94,48a10,10,0,0,1,10-10h48a10,10,0,0,1,10,10V58H94ZM218,200a2,2,0,0,1-2,2H40a2,2,0,0,1-2-2V72a2,2,0,0,1,2-2H216a2,2,0,0,1,2,2Zm-60-64a6,6,0,0,1-6,6H134v18a6,6,0,0,1-12,0V142H104a6,6,0,0,1,0-12h18V112a6,6,0,0,1,12,0v18h18A6,6,0,0,1,158,136Z"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 256 256"><path d="M220,200.8,158,97.48V38h10a6,6,0,0,0,0-12H88a6,6,0,0,0,0,12H98V97.48L36,200.8A14,14,0,0,0,48,222H208a14,14,0,0,0,12-21.2ZM109.15,102.23a6,6,0,0,0,.85-3.09V38h36V99.14a6,6,0,0,0,.85,3.09l39.65,66.08c-12.41,3.16-30.86,3-55.79-9.66-16.94-8.58-33-12.8-47.83-12.64ZM209.72,209a2,2,0,0,1-1.74,1H48a2,2,0,0,1-1.71-3l29-48.41c14.89-2.08,31.68,1.55,49.94,10.79C144,178.8,159.67,182,172.42,182A67.89,67.89,0,0,0,192.89,179l16.8,28A2,2,0,0,1,209.72,209Z"/></symbol>
+    <symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 256 256"><path d="M221.45,40.19a6,6,0,0,0-5.64-5.64C140.43,30.11,80.14,52.71,54.53,95c-17.44,28.79-16.76,62.8,1.79,96.2L35.76,211.76a6,6,0,1,0,8.48,8.48L64.8,199.68c17.27,9.59,34.7,14.41,51.49,14.41A85.38,85.38,0,0,0,161,201.47C203.29,175.86,225.88,115.57,221.45,40.19Zm-66.66,151c-24.08,14.58-52.64,14.37-81.13-.39l90.59-90.59a6,6,0,0,0-8.48-8.48L65.18,182.34c-14.76-28.49-15-57-.39-81.13,22.68-37.43,76.63-57.8,145-54.95C212.59,114.58,192.22,168.54,154.79,191.21Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128ZM40,70H216a6,6,0,0,0,0-12H40a6,6,0,0,0,0,12ZM216,186H40a6,6,0,0,0,0,12H216a6,6,0,0,0,0-12Z"/></symbol>
+    <symbol id="i-stethoscope" viewBox="0 0 256 256"><path d="M218,160a10,10,0,1,1-10-10A10,10,0,0,1,218,160Zm-4.35,37.58A46.05,46.05,0,0,1,168,238H144a46.06,46.06,0,0,1-46-46V149.71A62,62,0,0,1,42,88V40a6,6,0,0,1,6-6H72a6,6,0,0,1,0,12H54V88a50,50,0,0,0,50,50h.67c27.2-.36,49.33-23.16,49.33-50.83V46H136a6,6,0,0,1,0-12h24a6,6,0,0,1,6,6V87.17c0,32.43-24.68,59.44-56,62.52V192a34,34,0,0,0,34,34h24a34.05,34.05,0,0,0,33.56-28.56,38,38,0,1,1,12.09.14ZM234,160a26,26,0,1,0-26,26A26,26,0,0,0,234,160Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 256 256"><path d="M204.24,195.76a6,6,0,1,1-8.48,8.48L128,136.49,60.24,204.24a6,6,0,0,1-8.48-8.48L119.51,128,51.76,60.24a6,6,0,0,1,8.48-8.48L128,119.51l67.76-67.75a6,6,0,0,1,8.48,8.48L136.49,128Z"/></symbol>
+    <symbol id="i-youtube-logo" viewBox="0 0 256 256"><path d="M163.33,123l-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128ZM232.4,70a22,22,0,0,0-13.28-15C185,41.79,130.27,42,128,42s-57-.21-91.16,13A22,22,0,0,0,23.6,70C21.05,79.89,18,98,18,128s3.05,48.11,5.6,58a22,22,0,0,0,13.28,15C71,214.21,125.72,214,128,214h.71c6.91,0,58-.44,90.45-13a22,22,0,0,0,13.28-15c2.55-9.87,5.6-27.93,5.6-58S235,79.89,232.4,70ZM220.78,183a10,10,0,0,1-6,6.86C182.78,202.19,128.58,202,128,202s-54.71.2-86.75-12.17a10,10,0,0,1-6-6.86C32.84,173.78,30,156.78,30,128s2.84-45.78,5.22-55a10,10,0,0,1,6-6.86C72.06,54.26,123.53,54,127.76,54H128c.54,0,54.71-.2,86.75,12.17a10,10,0,0,1,6,6.86c2.38,9.19,5.22,26.19,5.22,55S223.16,173.78,220.78,183Z"/></symbol>
+    <!--/SPRITE-->
+</defs>
+</svg>
+
+<!--HEADER-->
+<header class="hdr" id="nav">
+  <div class="in">
+    <a href="index.html" class="brand" aria-label="Autonomic Coaching home"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+    <nav aria-label="Primary">
+      <a href="responsive-living.html">Responsive Living</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About Justin</a>
+      <a href="testimonials.html">Results</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <a href="#enquire" class="btn btn-primary btn-sm">Explore a family package <svg><use href="#arrow"/></svg></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <button class="menu-btn close" id="sheetClose" aria-label="Close menu" style="display:grid"><svg class="pi"><use href="#i-x"/></svg></button>
+  <nav>
+    <a href="responsive-living.html">Responsive Living<svg><use href="#arrow"/></svg></a>
+    <a href="how-it-works.html">How It Works<svg><use href="#arrow"/></svg></a>
+    <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
+    <a href="testimonials.html">Results<svg><use href="#arrow"/></svg></a>
+    <a href="blog.html">Blog<svg><use href="#arrow"/></svg></a>
+    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
+    <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness<svg><use href="#arrow-ur"/></svg></a>
+  </nav>
+  <a href="#enquire" class="btn btn-primary">Explore a family package <svg><use href="#arrow"/></svg></a>
+</div>
+<!--/HEADER-->
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1604457397594-4061e4f5d7d1?w=2400&q=80&auto=format&fit=crop" alt="A still, misty lake at dawn">
+    <div class="tint"></div>
+    <div class="dots"></div>
+    <div class="glow"></div>
+    <div class="hero-in">
+      <div class="hero-top">
+        <span class="eyebrow">Autonomic Tone Holdings</span>
+        <span class="rule"></span>
+        <span class="eyebrow">International concierge</span>
+      </div>
+      <div class="hero-body">
+        <div>
+          <span class="eyebrow">Bespoke international concierge programme</span>
+          <h1>In-person care for families, wherever in the world they are.</h1>
+          <p class="hero-sub">For our high-profile patients and families who benefit from periodic in-person engagement, a separate programme extending beyond the scope of our standard service offering.</p>
+          <div class="hero-ctas">
+            <a href="#enquire" class="btn btn-primary">Explore a bespoke family package <svg><use href="#arrow"/></svg></a>
+            <a href="#investment" class="u-link">View programme investment <svg><use href="#arrow"/></svg></a>
+          </div>
+        </div>
+        <div class="plate" aria-label="Programme at a glance">
+          <div class="plate-row"><span class="plate-num">02</span><span>Annual in-person visits from our Founder and Lead Scientist</span></div>
+          <div class="plate-row"><span class="plate-num">04</span><span>Annual in-person consultations with our Medical Director</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="philo center">
+        <span class="eyebrow">Our philosophy</span>
+        <p class="quote">To cultivate greater health autonomy by integrating <b>biomedical science</b>, <b>personalised clinical oversight</b>, and <b>the individual’s lived experience</b> into a coordinated, evolving approach to care.</p>
+        <span class="src">Consistent across our group</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inclusions -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="incl-head">
+        <div>
+          <span class="eyebrow">The programme</span>
+          <h2>Six in-person engagements a year, with our founder and our Medical Director.</h2>
+        </div>
+        <p class="lede">A more comprehensive and personally engaged model of care, combining scientific leadership with ongoing medical oversight.</p>
+      </div>
+
+      <div class="incl">
+        <article class="person">
+          <div class="person-top">
+            <img src="assets/justin-coat.png" alt="Justin Gregory Maguire">
+            <span class="num">2</span>
+            <span class="lbl"><svg class="pi"><use href="#i-airplane-tilt"/></svg>Annual in-person visits</span>
+          </div>
+          <div class="person-body">
+            <div class="who"><h3>Justin Gregory Maguire</h3><span class="role">Founder &amp; Lead Scientist, Autonomic Tone Holdings</span></div>
+            <p class="body">Two annual in-person visits from our founder and Lead Scientist of Autonomic Tone Holdings, our parent organisation overseeing three complementary healthcare initiatives.</p>
+            <div class="tags">
+              <span class="tag"><span class="ci"><svg class="pi"><use href="#i-airplane-tilt"/></svg></span>In person, internationally</span>
+              <span class="tag"><span class="ci"><svg class="pi"><use href="#i-flask"/></svg></span>Scientific leadership</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="person">
+          <div class="person-top">
+            <img src="assets/bernardo.png" alt="Dr Bernardo Ngoie">
+            <span class="num">4</span>
+            <span class="lbl"><svg class="pi"><use href="#i-stethoscope"/></svg>Annual in-person consultations</span>
+          </div>
+          <div class="person-body">
+            <div class="who"><h3>Dr Bernardo Ngoie</h3><span class="role">Medical Director</span></div>
+            <p class="body">Four annual in-person consultations with our Medical Director, providing clinical oversight, medical review, and further evaluation of therapeutic progress.</p>
+            <div class="tags">
+              <span class="tag"><span class="ci"><svg class="pi"><use href="#i-stethoscope"/></svg></span>Clinical oversight</span>
+              <span class="tag"><span class="ci"><svg class="pi"><use href="#i-clipboard-text"/></svg></span>Medical review</span>
+              <span class="tag"><span class="ci"><svg class="pi"><use href="#i-chart-line-up"/></svg></span>Therapeutic progress</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Group -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="group">
+        <div class="center group-head">
+          <span class="eyebrow">Autonomic Tone Holdings</span>
+          <h2>One parent organisation, overseeing three complementary healthcare initiatives.</h2>
+        </div>
+
+        <div class="tree">
+          <div class="root">
+            <span class="rm"><img src="assets/mark.png" alt=""></span>
+            <span><small>Parent organisation</small><strong>Autonomic Tone Holdings</strong></span>
+          </div>
+          <div class="branches" aria-hidden="true"><i></i></div>
+          <div class="units">
+            <article class="unit here">
+              <div class="unit-top"><span class="ic"><svg class="pi"><use href="#i-compass"/></svg></span><span class="status est">Established</span></div>
+              <h3>Autonomic Coaching</h3>
+              <p>Our established concierge-level health coaching service, dedicated to cultivating the greatest possible degree of health autonomy through individualised, interdisciplinary support.</p>
+            </article>
+            <article class="unit aw">
+              <div class="unit-top"><span class="ic"><svg class="pi"><use href="#i-first-aid-kit"/></svg></span><span class="status soon">Forthcoming</span></div>
+              <h3>Autonomic Wellness</h3>
+              <p>Our forthcoming public-facing medical service, integrating pathophysiological assessment with medically supervised hormone and peptide therapies, where clinically appropriate, using medicines sourced through government-registered compounding pharmacies.</p>
+            </article>
+            <article class="unit nu">
+              <div class="unit-top"><span class="ic"><svg class="pi"><use href="#i-leaf"/></svg></span><span class="status later">Anticipated Q3 2027</span></div>
+              <h3>Autonomic Nutraceuticals</h3>
+              <p>Our developing nutraceutical division, focused on targeted nutritional support informed by algorithmic symptom analysis, individual physiological requirements, and evidence-based considerations.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- International -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="intl">
+        <img src="https://images.unsplash.com/photo-1550188225-af2e1c2529b2?w=2200&q=80&auto=format&fit=crop" alt="">
+        <div class="dots"></div>
+        <div>
+          <span class="eyebrow">International by design</span>
+          <h2>Accommodating patients and families internationally, irrespective of geographical location.</h2>
+          <p class="lede">Bespoke pricing is structured to incorporate the associated professional attendance and travel requirements, subject to applicable clinical and regulatory arrangements.</p>
+        </div>
+        <div class="globe" aria-hidden="true">
+          <svg viewBox="0 0 400 400">
+            <circle class="g-ring" cx="200" cy="200" r="186"/>
+            <circle class="g-edge" cx="200" cy="200" r="150"/>
+            <ellipse class="g-line" cx="200" cy="200" rx="150" ry="52"/>
+            <ellipse class="g-line" cx="200" cy="200" rx="150" ry="104"/>
+            <line class="g-line" x1="50" y1="200" x2="350" y2="200"/>
+            <ellipse class="g-line" cx="200" cy="200" rx="40" ry="150"/>
+            <ellipse class="g-line" cx="200" cy="200" rx="88" ry="150"/>
+            <ellipse class="g-line" cx="200" cy="200" rx="128" ry="150"/>
+            <line class="g-line" x1="200" y1="50" x2="200" y2="350"/>
+            <path class="arc" d="M128 160 Q 190 70, 268 138"/>
+            <path class="arc" d="M268 138 Q 320 220, 250 286"/>
+            <path class="arc" d="M128 160 Q 120 250, 250 286"/>
+            <circle class="city" cx="128" cy="160" r="4"/><circle class="halo" cx="128" cy="160" r="4"/>
+            <circle class="city" cx="268" cy="138" r="4"/><circle class="halo" cx="268" cy="138" r="4" style="animation-delay:.9s"/>
+            <circle class="city" cx="250" cy="286" r="4"/><circle class="halo" cx="250" cy="286" r="4" style="animation-delay:1.8s"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment -->
+  <section class="sec" id="investment" style="padding-top:0">
+    <div class="wrap">
+      <div class="invest">
+        <div class="dots"></div>
+        <div class="invest-head">
+          <div>
+            <span class="eyebrow">Programme investment</span>
+            <h2>Annual investment, tailored to your family.</h2>
+          </div>
+          <p>Bespoke family packages are tailored to your family’s specific requirements, location, and anticipated scope of support.</p>
+        </div>
+
+        <div class="tiers">
+          <div class="tier">
+            <span class="eyebrow">Individual</span>
+            <h3>The concierge programme</h3>
+            <div class="price"><span class="cur">$</span><span class="amt" data-count="144444">144,444</span></div>
+            <div class="per"><span><b>USD</b> annually</span><span>Two visits · Four consultations</span></div>
+          </div>
+          <div class="tier">
+            <span class="eyebrow">Family add-on</span>
+            <h3>Additional family member, same site</h3>
+            <div class="price"><span class="cur">$</span><span class="amt" data-count="55555">55,555</span></div>
+            <div class="per"><span><b>USD</b> annually</span><span>Per additional family member</span></div>
+          </div>
+        </div>
+
+        <div class="calc">
+          <div class="calc-label">Family members at the same site<small>Including the primary individual</small></div>
+          <div class="stepper">
+            <button type="button" id="famMinus" aria-label="Remove a family member"><svg><use href="#minus"/></svg></button>
+            <output id="count" aria-live="polite">1</output>
+            <button type="button" id="famPlus" aria-label="Add a family member"><svg><use href="#plus"/></svg></button>
+          </div>
+          <div class="total">
+            <span class="eyebrow">Indicative annual investment</span>
+            <strong id="total">$144,444</strong>
+            <span>USD annually</span>
+          </div>
+        </div>
+
+        <div class="invest-foot">
+          <p>Pricing is structured to incorporate the associated professional attendance and travel requirements, subject to applicable clinical and regulatory arrangements.</p>
+          <a href="#enquire" class="btn btn-pill">Explore a bespoke family package <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="sec" id="enquire" style="padding-top:0">
+    <div class="wrap">
+      <div class="letter-wrap">
+        <img src="https://images.unsplash.com/photo-1634023233766-0c16b151bfb0?w=2200&q=80&auto=format&fit=crop" alt="">
+        <div class="letter">
+          <span class="eyebrow">A personal invitation</span>
+          <p class="quote">Should this more comprehensive and personally engaged model better align with what you envision for your family, I would be delighted to explore a bespoke family package, with pricing tailored to your family’s specific requirements, location, and anticipated scope of support.</p>
+          <div class="sign">
+            <div class="sign-who">
+              <img src="assets/justin.webp" alt="">
+              <div><span class="muted">Warm regards,</span><strong>Justin Gregory Maguire</strong><span class="muted">Founder &amp; Lead Scientist, Autonomic Tone Holdings</span></div>
+            </div>
+            <a href="#" class="btn btn-primary">Begin the conversation <svg><use href="#arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="brand"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+        <div><a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <nav class="foot-col foot-links" aria-label="Footer">
+        <a href="responsive-living.html">Responsive Living</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="about.html">About Justin</a>
+        <a href="testimonials.html">Results</a>
+        <a href="blog.html">Blog</a>
+        <a href="concierge.html">Concierge</a>
+        <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+      <div class="foot-col socials">
+        <a href="#"><svg class="pi"><use href="#i-instagram-logo"/></svg>Instagram</a>
+        <a href="#"><svg class="pi"><use href="#i-youtube-logo"/></svg>YouTube</a>
+        <a href="#"><svg class="pi"><use href="#i-facebook-logo"/></svg>Facebook</a>
+      </div>
+    </div>
+    <div class="foot-mid">
+      <div class="notes"><span>Coaching is not a substitute for medical diagnosis or treatment.</span></div>
+      <a href="#top" class="totop" aria-label="Back to top"><svg><use href="#arrow"/></svg></a>
+    </div>
+    <div class="mark-xl" aria-hidden="true">Autonomic Coaching</div>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  // Family calculator
+  var BASE = 144444, ADD = 55555, MAX = 8, n = 1;
+  var countEl = document.getElementById('count'), totalEl = document.getElementById('total');
+  var minus = document.getElementById('famMinus'), plus = document.getElementById('famPlus');
+  function fmt(v) { return '$' + v.toLocaleString('en-US'); }
+  function render() {
+    countEl.textContent = n;
+    totalEl.textContent = fmt(BASE + (n - 1) * ADD);
+    minus.disabled = n <= 1; plus.disabled = n >= MAX;
+  }
+  minus.addEventListener('click', function () { if (n > 1) { n--; render(); } });
+  plus.addEventListener('click', function () { if (n < MAX) { n++; render(); } });
+  render();
+
+  if (AC.figma) return;
+
+  // Count up prices when seen
+  function countUp(el) {
+    var target = +el.dataset.count, start = null, dur = 1600;
+    if (AC.reduce) { el.textContent = target.toLocaleString('en-US'); return; }
+    function step(t) {
+      if (!start) start = t;
+      var p = Math.min(1, (t - start) / dur), e = 1 - Math.pow(1 - p, 4);
+      el.textContent = Math.round(target * e).toLocaleString('en-US');
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll('[data-count]').forEach(countUp);
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.2 });
+  io.observe(document.querySelector('.invest'));
+})();
+</script>
+</body>
+</html>
