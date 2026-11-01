@@ -154,20 +154,20 @@
 .invest-foot p { max-width: 62ch; font-size: 15px; line-height: 1.65; color: rgba(255, 255, 255, .62); }
 
 /* ============ Closing letter (a physical letter on a desk) ============ */
-.letter-wrap { position: relative; overflow: hidden; isolation: isolate; border-radius: var(--r-xl); padding: clamp(64px, 9vw, 128px) 16px clamp(80px, 10vw, 140px); background: radial-gradient(60% 70% at 50% 35%, #f3ebdd 0%, #e7dbc6 70%, #dccdb3 100%); }
-.envelope { position: absolute; z-index: 0; left: 50%; top: 50%; width: min(86%, 800px); height: 62%; transform: translate(-46%, -30%) rotate(-5deg); border-radius: 6px; background: linear-gradient(170deg, #d9c7a6 0%, #c9b28b 100%); box-shadow: 0 30px 60px -30px rgba(70, 48, 20, .55); }
+.letter-wrap { position: relative; overflow: hidden; isolation: isolate; border-radius: var(--r-xl); padding: clamp(64px, 9vw, 128px) 16px clamp(80px, 10vw, 140px); background: radial-gradient(60% 70% at 50% 35%, #f1f4f2 0%, #e3e9e5 70%, #d6ded9 100%); }
+.envelope { position: absolute; z-index: 0; left: 50%; top: 50%; width: min(86%, 800px); height: 62%; transform: translate(-46%, -30%) rotate(-5deg); border-radius: 6px; background: linear-gradient(170deg, #eef1ef 0%, #dde4df 100%); box-shadow: 0 30px 60px -30px rgba(2, 10, 29, .55); }
 .envelope svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.letter { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; padding: clamp(36px, 6vw, 72px) clamp(26px, 6vw, 76px) clamp(40px, 6vw, 72px); border-radius: 2px; transform: rotate(.8deg); color: #2a2418;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 32.8%, rgba(120, 96, 60, .09) 33.2%, rgba(255, 255, 255, .35) 33.6%, rgba(0, 0, 0, 0) 34.4%, rgba(0, 0, 0, 0) 65.8%, rgba(120, 96, 60, .08) 66.2%, rgba(255, 255, 255, .35) 66.6%, rgba(0, 0, 0, 0) 67.4%), linear-gradient(160deg, #fffdf8 0%, #fbf6ea 100%);
-  box-shadow: 0 1px 1px rgba(70, 48, 20, .12), 0 6px 12px -6px rgba(70, 48, 20, .25), 0 40px 70px -30px rgba(70, 48, 20, .55); }
-.letterhead { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid rgba(70, 48, 20, .16); }
+.letter { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; padding: clamp(36px, 6vw, 72px) clamp(26px, 6vw, 76px) clamp(40px, 6vw, 72px); border-radius: 2px; transform: rotate(.8deg); color: #020a1d;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 32.8%, rgba(2, 10, 29, .09) 33.2%, rgba(255, 255, 255, .35) 33.6%, rgba(0, 0, 0, 0) 34.4%, rgba(0, 0, 0, 0) 65.8%, rgba(2, 10, 29, .08) 66.2%, rgba(255, 255, 255, .35) 66.6%, rgba(0, 0, 0, 0) 67.4%), linear-gradient(160deg, #ffffff 0%, #fbfcfb 100%);
+  box-shadow: 0 1px 1px rgba(2, 10, 29, .12), 0 6px 12px -6px rgba(2, 10, 29, .25), 0 40px 70px -30px rgba(2, 10, 29, .55); }
+.letterhead { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid rgba(2, 10, 29, .16); }
 .letterhead img { height: 38px; width: auto; }
-.letter .eyebrow { color: #8a6a37; }
-.letter .quote { margin-top: 30px; font-family: "Newsreader", Georgia, serif; font-size: clamp(21px, 2.1vw, 28px); line-height: 1.5; letter-spacing: -0.005em; color: #2a2418; }
+.letter .eyebrow { color: #0e7a52; }
+.letter .quote { margin-top: 30px; font-family: "Newsreader", Georgia, serif; font-size: clamp(21px, 2.1vw, 28px); line-height: 1.5; letter-spacing: -0.005em; color: #020a1d; }
 .sign { margin-top: 40px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-.sign-who .muted { display: block; font-family: "Newsreader", Georgia, serif; font-size: 18px; color: #5b4d36; }
-.sign-who strong { display: block; margin-top: 18px; font-family: "Newsreader", Georgia, serif; font-size: 24px; font-weight: 500; letter-spacing: -0.01em; color: #2a2418; }
-.sign-who .role { display: block; margin-top: 4px; font-size: 13px; color: #7a6a4e; }
+.sign-who .muted { display: block; font-family: "Newsreader", Georgia, serif; font-size: 18px; color: #4f596d; }
+.sign-who strong { display: block; margin-top: 18px; font-family: "Newsreader", Georgia, serif; font-size: 24px; font-weight: 500; letter-spacing: -0.01em; color: #020a1d; }
+.sign-who .role { display: block; margin-top: 4px; font-size: 13px; color: #7d8494; }
 .seal { position: absolute; z-index: 2; right: clamp(-18px, -1vw, 0px); bottom: clamp(-26px, -2vw, -14px); width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; transform: rotate(-12deg);
   background: radial-gradient(circle at 36% 30%, #2fae7c 0%, #0e7a52 38%, #06352c 100%); box-shadow: 0 0 0 5px rgba(14, 122, 82, .9), 0 0 0 7px rgba(6, 53, 44, .55), 0 14px 24px -8px rgba(1, 19, 15, .6), inset 0 -6px 12px rgba(0, 0, 0, .3), inset 0 4px 8px rgba(255, 255, 255, .2); }
 .seal::before { content: ""; position: absolute; inset: 10px; border-radius: 50%; border: 1.5px solid rgba(198, 245, 226, .45); }
@@ -524,7 +524,7 @@
   <section class="sec" id="enquire" style="padding-top:0">
     <div class="wrap">
       <div class="letter-wrap">
-        <div class="envelope" aria-hidden="true"><svg viewBox="0 0 800 400" preserveAspectRatio="none"><path d="M0 0 L400 230 L800 0" fill="none" stroke="#b39b72" stroke-width="2"/><path d="M0 400 L330 190 M800 400 L470 190" fill="none" stroke="#b39b72" stroke-opacity=".6" stroke-width="1.5"/></svg></div>
+        <div class="envelope" aria-hidden="true"><svg viewBox="0 0 800 400" preserveAspectRatio="none"><path d="M0 0 L400 230 L800 0" fill="none" stroke="#b9c5bd" stroke-width="2"/><path d="M0 400 L330 190 M800 400 L470 190" fill="none" stroke="#b9c5bd" stroke-opacity=".6" stroke-width="1.5"/></svg></div>
         <div class="letter">
           <div class="letterhead"><img src="assets/mark.png" alt=""><span class="eyebrow">A personal invitation</span></div>
           <p class="quote">Should this more comprehensive and personally engaged model better align with what you envision for your family, I would be delighted to explore a bespoke family package, with pricing tailored to your family’s specific requirements, location, and anticipated scope of support.</p>

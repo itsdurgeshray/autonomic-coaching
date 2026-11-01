@@ -9,15 +9,15 @@
 <script>if (/[?&]figma\b/.test(location.search)) document.documentElement.classList.add('figma');</script>
 <link rel="stylesheet" href="assets/site.css">
 <style>
-/* ============ 1. Hero (warm sand, echoes the cover) ============ */
-.rl-hero { background: linear-gradient(180deg, var(--sand) 0%, var(--sand) 78%, var(--page) 100%); }
+/* ============ 1. Hero ============ */
+.rl-hero { background: linear-gradient(180deg, var(--mist) 0%, var(--mist) 78%, var(--page) 100%); }
 .rl-hero .phero-in { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); }
 .rl-hero h1 { max-width: 12ch; }
 .rl-hero .sub { color: var(--ink); max-width: 44ch; }
 .cover-stage { position: relative; display: grid; place-items: center; padding: 8px 0 36px; }
-.cover-stage .sun { position: absolute; z-index: 0; left: 50%; top: 46%; width: 118%; aspect-ratio: 1; margin: -59% 0 0 -59%; border-radius: 50%; background: radial-gradient(closest-side, rgba(246, 196, 160, .62), rgba(246, 196, 160, .22) 55%, rgba(246, 196, 160, 0)); pointer-events: none; }
-.cover-stage .floor { position: absolute; z-index: 0; left: 50%; bottom: 14px; width: 76%; height: 44px; margin-left: -38%; border-radius: 50%; background: radial-gradient(closest-side, rgba(80, 52, 30, .32), rgba(80, 52, 30, 0)); }
-.cover { position: relative; z-index: 1; width: min(100%, 410px); aspect-ratio: 1004 / 1500; border-radius: 3px 8px 8px 3px; overflow: hidden; background: #e9d6c4; box-shadow: 0 2px 4px rgba(40, 26, 12, .12), 0 36px 70px -24px rgba(60, 38, 18, .5); }
+.cover-stage .sun { position: absolute; z-index: 0; left: 50%; top: 46%; width: 118%; aspect-ratio: 1; margin: -59% 0 0 -59%; border-radius: 50%; background: radial-gradient(closest-side, rgba(143, 239, 202, .55), rgba(143, 239, 202, .18) 55%, rgba(143, 239, 202, 0)); pointer-events: none; }
+.cover-stage .floor { position: absolute; z-index: 0; left: 50%; bottom: 14px; width: 76%; height: 44px; margin-left: -38%; border-radius: 50%; background: radial-gradient(closest-side, rgba(2, 10, 29, .22), rgba(2, 10, 29, 0)); }
+.cover { position: relative; z-index: 1; width: min(100%, 410px); aspect-ratio: 1004 / 1500; border-radius: 3px 8px 8px 3px; overflow: hidden; background: #d9dfe6; box-shadow: 0 2px 4px rgba(2, 10, 29, .1), 0 36px 70px -24px rgba(2, 10, 29, .45); }
 .cover img { width: 100%; height: 100%; object-fit: cover; }
 .cover::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(0, 0, 0, .22) 0%, rgba(255, 255, 255, .22) 1.4%, rgba(255, 255, 255, 0) 3.4%, rgba(0, 0, 0, .1) 4.4%, rgba(0, 0, 0, 0) 8%); }
 
