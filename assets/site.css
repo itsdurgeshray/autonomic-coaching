@@ -46,6 +46,7 @@ em, i, address, cite { font-style: normal; }
 ::selection { background: var(--g-100); }
 :focus-visible { outline: 3px solid rgba(22, 157, 105, .4); outline-offset: 2px; border-radius: 8px; }
 .pi { width: 1em; height: 1em; flex: none; fill: currentColor; }
+svg.qm { fill: currentColor; flex: none; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .nw { white-space: nowrap; }
 
@@ -62,7 +63,7 @@ em, i, address, cite { font-style: normal; }
 
 /* ============ Type ============ */
 h1, h2, h3 { margin: 0; font-weight: 400; color: var(--ink); text-wrap: balance; }
-h1 { font-size: clamp(40px, 5vw, 72px); line-height: 1.02; letter-spacing: -0.03em; }
+h1 { font-size: clamp(40px, 4.6vw, 64px); line-height: 1.04; letter-spacing: -0.03em; }
 h2 { font-size: 30px; line-height: 1.12; letter-spacing: -0.025em; }
 @media (min-width: 640px) { h2 { font-size: 38px; } }
 @media (min-width: 1024px) { h2 { font-size: 48px; line-height: 1.08; } }
@@ -212,9 +213,16 @@ p { margin: 0; text-wrap: pretty; }
 .oq.light .mono { background: var(--g-50); border-color: var(--g-100); color: var(--g-700); }
 
 /* ============ Header ============ */
-.hdr { position: sticky; top: 0; z-index: 50; background: rgba(250, 250, 248, .9); -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); border-bottom: 1px solid transparent; transition: border-color .3s, box-shadow .3s; }
-.hdr.scrolled { border-color: var(--line); }
-.figma .hdr { position: relative; background: var(--page); -webkit-backdrop-filter: none; backdrop-filter: none; }
+/* Transparent header over the hero; it takes the page colour once you scroll */
+:root { --hdr: 76px; }
+.hdr { position: fixed; top: 0; left: 0; right: 0; max-width: 1440px; margin: 0 auto; z-index: 50; background: rgba(250, 250, 248, 0); border-bottom: 1px solid transparent; transition: background-color .35s, border-color .35s, color .35s; }
+.hdr.scrolled { background: rgba(250, 250, 248, .92); -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); border-color: var(--line); }
+.figma .hdr { position: absolute; }
+main > section:first-of-type { padding-top: var(--hdr); }
+[data-hdr="dark"] .hdr:not(.scrolled) .brand, [data-hdr="dark"] .hdr:not(.scrolled) nav a { color: rgba(255, 255, 255, .78); }
+[data-hdr="dark"] .hdr:not(.scrolled) .brand, [data-hdr="dark"] .hdr:not(.scrolled) nav a:hover, [data-hdr="dark"] .hdr:not(.scrolled) nav a[aria-current="page"] { color: #fff; }
+[data-hdr="dark"] .hdr:not(.scrolled) nav a[aria-current="page"]::after { background: var(--g-300); }
+[data-hdr="dark"] .hdr:not(.scrolled) .menu-btn { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .24); color: #fff; }
 .hdr .in { max-width: var(--max); margin: 0 auto; height: 76px; padding: 0 var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 500; letter-spacing: -0.02em; color: var(--ink); white-space: nowrap; }
 .brand img { height: 42px; width: auto; }
@@ -414,6 +422,7 @@ html.locked, html.locked body { overflow: hidden; }
 /* ============ Phone ============ */
 @media (max-width: 720px) {
   .inset { padding: 0 8px; }
+  :root { --hdr: 64px; }
   .hdr .in { height: 64px; }
   .hdr .in > .btn { display: none; }
   .brand img { height: 36px; }

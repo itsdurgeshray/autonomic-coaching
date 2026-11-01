@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why do I still feel tired after a full night’s sleep? · Autonomic Coaching</title>
+<meta name="description" content="Why do I still feel tired after a full night’s sleep? The space between stress and response, and what your labs can and can’t show.">
+<link rel="icon" href="assets/mark.png">
+<script>if (/[?&]figma\b/.test(location.search)) document.documentElement.classList.add('figma');</script>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ============ Topic covers (drawn as inline SVG so they import into Figma as vectors) ============ */
+.cv { position: relative; overflow: hidden; aspect-ratio: 16 / 10; border-radius: 16px; }
+.cv > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cv .lbl { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 99px; font-size: 13px; font-weight: 500; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .22); color: #fff; }
+.t-exh { background: linear-gradient(160deg, #0e7a52 0%, #022721 100%); color: #8fefca; }
+.t-slp { background: linear-gradient(170deg, #020a1d 0%, #2c4278 100%); color: #bfd2fe; }
+.t-hor { background: linear-gradient(160deg, #f6f2ec 0%, #e6dccb 100%); color: #0e7a52; }
+.t-lab { background: linear-gradient(160deg, #f3f6fe 0%, #d9e3fb 100%); color: #1d55d6; }
+.t-gut { background: linear-gradient(160deg, #f2fdf8 0%, #c6f5e2 100%); color: #0e7a52; }
+.t-ner { background: linear-gradient(160deg, #06352c 0%, #01130f 100%); color: #4fd1a0; }
+.t-hor .lbl, .t-lab .lbl, .t-gut .lbl { background: #fff; border-color: rgba(2, 10, 29, .06); color: var(--ink); }
+
+/* ============ Reading progress ============ */
+.progress { position: fixed; z-index: 55; top: 0; left: 0; right: 0; max-width: 1440px; margin: 0 auto; height: 3px; pointer-events: none; }
+.progress i { display: block; height: 100%; width: 0; background: var(--g-600); }
+.figma .progress { display: none; }
+
+/* ============ Article header ============ */
+.a-head { max-width: 860px; margin: 0 auto; padding: clamp(40px, 5vw, 72px) var(--gutter) 0; text-align: center; }
+.crumbs { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-3); }
+.crumbs a:hover { color: var(--ink); }
+.crumbs svg { width: 12px; height: 12px; }
+.crumbs .cat { color: var(--g-700); font-weight: 500; }
+.a-head h1 { margin: 22px auto 0; max-width: 18ch; font-size: clamp(36px, 4.2vw, 56px); }
+.a-head .dek { margin: 22px auto 0; max-width: 56ch; }
+.byline { margin-top: 32px; display: flex; align-items: center; justify-content: center; gap: 14px 28px; flex-wrap: wrap; font-size: 14.5px; color: var(--ink-2); }
+.byline .who { display: flex; align-items: center; gap: 12px; text-align: left; color: var(--ink); font-weight: 500; }
+.byline .who img { width: 44px; height: 44px; border-radius: 99px; object-fit: cover; object-position: 50% 10%; background: #dfe0e4; }
+.byline .who small { display: block; font-weight: 400; color: var(--ink-3); font-size: 13px; }
+.byline .m { display: inline-flex; align-items: center; gap: 8px; }
+.byline .m .pi { font-size: 18px; color: var(--g-700); }
+.a-cover { max-width: var(--max); margin: clamp(40px, 4.4vw, 64px) auto 0; padding: 0 var(--gutter); }
+.a-cover .cv { aspect-ratio: 21 / 8.4; border-radius: 28px; }
+
+/* ============ Layout: TOC + article ============ */
+.a-body { max-width: var(--max); margin: 0 auto; padding: clamp(56px, 6vw, 88px) var(--gutter) 0; display: grid; grid-template-columns: 260px minmax(0, 720px); justify-content: center; gap: clamp(40px, 6vw, 104px); }
+.rail { position: sticky; top: 108px; align-self: start; }
+.figma .rail { position: static; }
+.toc-t { font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
+.toc { list-style: none; margin: 16px 0 0; padding: 0; border-left: 1px solid var(--line); }
+.toc a { display: block; margin-left: -1px; padding: 9px 0 9px 18px; border-left: 2px solid transparent; font-size: 14.5px; line-height: 1.4; color: var(--ink-2); transition: color .2s, border-color .2s; }
+.toc a:hover { color: var(--ink); }
+.toc a.on { color: var(--g-700); border-left-color: var(--g-600); font-weight: 500; }
+.share { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line); }
+.share .row { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.share a, .share button { width: 40px; height: 40px; border-radius: 99px; display: grid; place-items: center; background: #fff; border: 1px solid var(--line); color: var(--ink-2); font-size: 18px; transition: color .2s, border-color .2s, background-color .2s; }
+.share a:hover, .share button:hover { color: var(--g-700); border-color: var(--g-300); background: var(--g-50); }
+.share .copied { margin-top: 10px; min-height: 18px; font-size: 13px; color: var(--g-700); }
+
+/* ============ Prose ============ */
+.prose { font-size: 18px; line-height: 1.75; color: #2a3346; }
+.prose > * + * { margin-top: 24px; }
+.prose h2 { margin-top: 64px; scroll-margin-top: 110px; font-size: clamp(26px, 2.4vw, 34px); line-height: 1.15; color: var(--ink); }
+.prose h2:first-child { margin-top: 0; }
+.prose ul { padding: 0; list-style: none; display: grid; gap: 12px; }
+.prose ul li { position: relative; padding-left: 30px; }
+.prose ul li::before { content: ""; position: absolute; left: 4px; top: 11px; width: 8px; height: 8px; border-radius: 99px; background: var(--g-600); box-shadow: 0 0 0 4px var(--g-50); }
+.prose .lead-p { font-size: 21px; line-height: 1.6; color: var(--ink); }
+.prose strong { font-weight: 500; color: var(--ink); }
+.prose p a { color: var(--g-700); text-decoration: underline; text-underline-offset: 4px; }
+.pull { margin: 48px 0; padding: 36px 0 36px 32px; border-left: 3px solid var(--g-600); }
+.pull .qm { width: 28px; height: 28px; color: var(--g-600); }
+.pull blockquote { margin: 16px 0 0; font-size: clamp(23px, 2.2vw, 30px); line-height: 1.32; letter-spacing: -0.02em; color: var(--ink); }
+.pull cite { display: block; margin-top: 18px; font-size: 15px; font-weight: 500; color: var(--g-700); }
+.callout { padding: 28px 30px; border-radius: 20px; background: var(--mist); font-size: 17px; line-height: 1.65; }
+.callout .statement { font-size: 22px; line-height: 1.6; color: var(--ink); }
+.tbl { overflow-x: auto; border-radius: 18px; border: 1px solid var(--line); background: #fff; }
+.tbl table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 15.5px; line-height: 1.5; }
+.tbl caption { padding: 18px 20px; text-align: left; font-size: 15px; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--line); }
+.tbl th, .tbl td { padding: 15px 20px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line-2); }
+.tbl thead th { font-size: 12px; font-weight: 500; letter-spacing: 1.1px; text-transform: uppercase; color: var(--ink-3); background: var(--page); }
+.tbl tbody th { font-weight: 500; color: var(--ink); width: 26%; }
+.tbl td:last-child { color: var(--g-800); background: rgba(237, 252, 247, .5); }
+.tbl tr:last-child th, .tbl tr:last-child td { border-bottom: 0; }
+.cta-box { margin-top: 56px; padding: 36px; border-radius: 24px; background: radial-gradient(80% 90% at 100% 0%, rgba(22, 157, 105, .4), rgba(22, 157, 105, 0) 70%), var(--g-900); color: #fff; }
+.cta-box h3 { color: #fff; font-size: 26px; font-weight: 400; letter-spacing: -0.02em; }
+.cta-box p { margin-top: 12px; color: rgba(255, 255, 255, .72); font-size: 16.5px; }
+.cta-box .btn { margin-top: 24px; }
+.tags { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 8px; }
+.author { margin-top: 32px; padding: 28px; border-radius: 22px; background: #fff; border: 1px solid var(--line-2); display: grid; grid-template-columns: 88px 1fr; gap: 22px; align-items: start; }
+.author img { width: 88px; height: 88px; border-radius: 99px; object-fit: cover; object-position: 50% 12%; background: #dfe0e4; }
+.author .k { font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
+.author strong { display: block; margin-top: 6px; font-size: 20px; font-weight: 500; letter-spacing: -0.01em; }
+.author .t { font-size: 14.5px; color: var(--g-700); }
+.author p { margin-top: 12px; font-size: 15.5px; line-height: 1.65; color: var(--ink-2); }
+.author .u-link { margin-top: 14px; }
+
+/* ============ Recommended ============ */
+.art { display: flex; flex-direction: column; }
+.art .meta { margin-top: 18px; font-size: 13px; font-weight: 500; color: var(--g-700); }
+.art h3 { margin-top: 10px; font-size: 21px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.3; }
+.art .go { margin-top: 14px; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgba(2, 10, 29, .25); }
+.art .go svg { width: 14px; height: 14px; }
+.recs-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.recs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+
+@media (max-width: 1100px) {
+  .a-body { grid-template-columns: minmax(0, 720px); }
+  .rail { position: static; }
+  .toc-wrap { padding: 20px 22px; border-radius: 18px; background: #fff; border: 1px solid var(--line-2); }
+  .recs { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .a-cover .cv { aspect-ratio: 16 / 10; border-radius: 18px; }
+  .byline { gap: 12px 18px; }
+  .prose { font-size: 17px; }
+  .prose .lead-p { font-size: 19px; }
+  .pull { padding: 24px 0 24px 20px; }
+  .callout, .cta-box { padding: 24px 20px; }
+  .cta-box .btn { width: 100%; }
+  .author { grid-template-columns: 1fr; padding: 22px; }
+  .recs { grid-template-columns: 1fr; gap: 44px; }
+}
+</style>
+</head>
+<body data-page="blog">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<!--SPRITE-->
+    <symbol id="arrow" viewBox="0 0 16 16"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow-ur" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,34H182V24a6,6,0,0,0-12,0V34H86V24a6,6,0,0,0-12,0V34H48A14,14,0,0,0,34,48V208a14,14,0,0,0,14,14H208a14,14,0,0,0,14-14V48A14,14,0,0,0,208,34ZM48,46H74V56a6,6,0,0,0,12,0V46h84V56a6,6,0,0,0,12,0V46h26a2,2,0,0,1,2,2V82H46V48A2,2,0,0,1,48,46ZM208,210H48a2,2,0,0,1-2-2V94H210V208A2,2,0,0,1,208,210Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm62-90a6,6,0,0,1-6,6H128a6,6,0,0,1-6-6V72a6,6,0,0,1,12,0v50h50A6,6,0,0,1,190,128Z"/></symbol>
+    <symbol id="i-drop-half" viewBox="0 0 256 256"><path d="M172.53,49.06a251.42,251.42,0,0,0-41.09-38,6,6,0,0,0-6.88,0,251.42,251.42,0,0,0-41.09,38C56.34,80.26,42,113.09,42,144a86,86,0,0,0,172,0C214,113.09,199.66,80.26,172.53,49.06ZM202,144a75,75,0,0,1-.69,10H134V134h67.44A92.09,92.09,0,0,1,202,144ZM186.8,90H134V70h39.89A176,176,0,0,1,186.8,90ZM134,198h44.52A73.76,73.76,0,0,1,134,217.74Zm0-12V166h64.66a74.05,74.05,0,0,1-9.78,20Zm0-64V102h58.7a117.43,117.43,0,0,1,6.69,20Zm30.29-64H134V28.3A257.09,257.09,0,0,1,164.29,58ZM54,144c0-53.42,47.35-98.56,68-115.7V217.74A74.09,74.09,0,0,1,54,144Z"/></symbol>
+    <symbol id="i-envelope-simple" viewBox="0 0 256 256"><path d="M224,50H32a6,6,0,0,0-6,6V192a14,14,0,0,0,14,14H216a14,14,0,0,0,14-14V56A6,6,0,0,0,224,50ZM208.58,62,128,135.86,47.42,62ZM216,194H40a2,2,0,0,1-2-2V69.64l86,78.78a6,6,0,0,0,8.1,0L218,69.64V192A2,2,0,0,1,216,194Z"/></symbol>
+    <symbol id="i-facebook-logo" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V150h26a6,6,0,0,0,0-12H134V112a18,18,0,0,1,18-18h16a6,6,0,0,0,0-12H152a30,30,0,0,0-30,30v26H96a6,6,0,0,0,0,12h26v67.8a90,90,0,1,1,12,0Z"/></symbol>
+    <symbol id="i-fire" viewBox="0 0 256 256"><path d="M181.92,153A55.58,55.58,0,0,1,137,197.92a7,7,0,0,1-1,.08,6,6,0,0,1-1-11.92c17.38-2.92,32.13-17.68,35.08-35.08a6,6,0,1,1,11.84,2ZM214,144a86,86,0,0,1-172,0c0-27.47,10.85-55.61,32.25-83.64a6,6,0,0,1,9-.67l26.34,25.56,23.09-63.31a6,6,0,0,1,9.47-2.56C163.72,37.33,214,85.4,214,144Zm-12,0c0-48.4-38.65-89.84-61.07-109.8L117.64,98.06a6,6,0,0,1-9.82,2.25l-28-27.22C62.67,97.13,54,121,54,144a74,74,0,0,0,148,0Z"/></symbol>
+    <symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></symbol>
+    <symbol id="i-link-simple" viewBox="0 0 256 256"><path d="M164.25,91.75a6,6,0,0,1,0,8.49l-64,64a6,6,0,0,1-8.49-8.48l64-64A6,6,0,0,1,164.25,91.75ZM214.2,41.8a54.07,54.07,0,0,0-76.38,0L107.75,71.85a6,6,0,0,0,8.49,8.49l30.07-30.06a42,42,0,0,1,59.41,59.41l-30.08,30.07a6,6,0,1,0,8.49,8.49l30.07-30.07A54,54,0,0,0,214.2,41.8ZM139.76,175.64l-30.07,30.08a42,42,0,0,1-59.41-59.41l30.06-30.07a6,6,0,0,0-8.49-8.49l-30,30.07a54,54,0,0,0,76.38,76.39l30.07-30.08a6,6,0,0,0-8.49-8.49Z"/></symbol>
+    <symbol id="i-linkedin-logo" viewBox="0 0 256 256"><path d="M216,26H40A14,14,0,0,0,26,40V216a14,14,0,0,0,14,14H216a14,14,0,0,0,14-14V40A14,14,0,0,0,216,26Zm2,190a2,2,0,0,1-2,2H40a2,2,0,0,1-2-2V40a2,2,0,0,1,2-2H216a2,2,0,0,1,2,2ZM94,112v64a6,6,0,0,1-12,0V112a6,6,0,0,1,12,0Zm88,28v36a6,6,0,0,1-12,0V140a22,22,0,0,0-44,0v36a6,6,0,0,1-12,0V112a6,6,0,0,1,12,0v2.11A34,34,0,0,1,182,140ZM98,84A10,10,0,1,1,88,74,10,10,0,0,1,98,84Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128ZM40,70H216a6,6,0,0,0,0-12H40a6,6,0,0,0,0,12ZM216,186H40a6,6,0,0,0,0,12H216a6,6,0,0,0,0-12Z"/></symbol>
+    <symbol id="i-plant" viewBox="0 0 256 256"><path d="M245.63,48A6,6,0,0,0,240,42.37c-51-3-91.88,12.42-109.35,41.26-11.63,19.21-11.38,42.68.53,65a69.42,69.42,0,0,0-15.48,30.59L95.9,159.41c8.15-16.1,8.1-32.95-.32-46.85C82.77,91.41,53,80.07,15.9,82.27a6,6,0,0,0-5.63,5.64C8.09,125,19.41,154.77,40.56,167.58A43.75,43.75,0,0,0,63.44,174a53.17,53.17,0,0,0,24-6L114,194.48V224a6,6,0,0,0,12,0V194.51A57.55,57.55,0,0,1,139.76,157c11.21,5.93,22.72,8.91,33.82,8.91a58.9,58.9,0,0,0,30.79-8.57C233.21,139.89,248.63,99,245.63,48ZM46.78,157.31C30.47,147.44,21.39,124,22,94c30-.65,53.41,8.44,63.28,24.75,5.68,9.37,6.16,20.38,1.54,31.59L60.24,123.75a6,6,0,0,0-8.49,8.49l26.62,26.61C67.16,163.47,56.15,163,46.78,157.31Zm151.38-10.22c-14.74,8.92-32.14,9.18-49.67.9l55.76-55.75a6,6,0,0,0-8.49-8.49L140,139.51c-8.28-17.53-8-34.93.9-49.66,14.52-24,49.06-37.18,93-35.75C235.33,98,222.14,132.56,198.16,147.09Z"/></symbol>
+    <symbol id="i-wave-sine" viewBox="0 0 256 256"><path d="M237.43,130.55C215.84,176.57,197,198,178,198c-23.83,0-39.2-32.76-55.47-67.45C109.26,102.17,94.17,70,78,70c-9.18,0-25,10.5-48.53,60.55a6,6,0,0,1-10.86-5.1C40.16,79.43,59,58,78,58c23.83,0,39.2,32.76,55.47,67.45C146.74,153.83,161.83,186,178,186c9.18,0,25.05-10.5,48.53-60.55a6,6,0,0,1,10.86,5.1Z"/></symbol>
+    <symbol id="i-whatsapp-logo" viewBox="0 0 256 256"><path d="M186.68,146.63l-32-16a6,6,0,0,0-6,.38L133,141.46A42.49,42.49,0,0,1,114.54,123L125,107.33a6,6,0,0,0,.38-6l-16-32A6,6,0,0,0,104,66a38,38,0,0,0-38,38,86.1,86.1,0,0,0,86,86,38,38,0,0,0,38-38A6,6,0,0,0,186.68,146.63ZM152,178a74.09,74.09,0,0,1-74-74,26,26,0,0,1,22.42-25.75l12.66,25.32-10.39,15.58a6,6,0,0,0-.54,5.63,54.43,54.43,0,0,0,29.07,29.07,6,6,0,0,0,5.63-.54l15.58-10.39,25.32,12.66A26,26,0,0,1,152,178ZM128,26A102,102,0,0,0,38.35,176.69L26.73,211.56a14,14,0,0,0,17.71,17.71l34.87-11.62A102,102,0,1,0,128,26Zm0,192a90,90,0,0,1-45.06-12.08,6.09,6.09,0,0,0-3-.81,6.2,6.2,0,0,0-1.9.31L40.65,217.88a2,2,0,0,1-2.53-2.53L50.58,178a6,6,0,0,0-.5-4.91A90,90,0,1,1,128,218Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 256 256"><path d="M204.24,195.76a6,6,0,1,1-8.48,8.48L128,136.49,60.24,204.24a6,6,0,0,1-8.48-8.48L119.51,128,51.76,60.24a6,6,0,0,1,8.48-8.48L128,119.51l67.76-67.75a6,6,0,0,1,8.48,8.48L136.49,128Z"/></symbol>
+    <symbol id="i-x-logo" viewBox="0 0 256 256"><path d="M213.06,212.78l-63.42-99.66L212.44,44A6,6,0,1,0,203.56,36L143,102.62l-41.9-65.84A6,6,0,0,0,96,34H48a6,6,0,0,0-5.06,9.22l63.42,99.66L43.56,212A6,6,0,0,0,52.44,220L113,153.38l41.9,65.84A6,6,0,0,0,160,222h48a6,6,0,0,0,5.06-9.22ZM163.29,210,58.93,46H92.71L197.07,210Z"/></symbol>
+    <symbol id="i-youtube-logo" viewBox="0 0 256 256"><path d="M163.33,123l-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128ZM232.4,70a22,22,0,0,0-13.28-15C185,41.79,130.27,42,128,42s-57-.21-91.16,13A22,22,0,0,0,23.6,70C21.05,79.89,18,98,18,128s3.05,48.11,5.6,58a22,22,0,0,0,13.28,15C71,214.21,125.72,214,128,214h.71c6.91,0,58-.44,90.45-13a22,22,0,0,0,13.28-15c2.55-9.87,5.6-27.93,5.6-58S235,79.89,232.4,70ZM220.78,183a10,10,0,0,1-6,6.86C182.78,202.19,128.58,202,128,202s-54.71.2-86.75-12.17a10,10,0,0,1-6-6.86C32.84,173.78,30,156.78,30,128s2.84-45.78,5.22-55a10,10,0,0,1,6-6.86C72.06,54.26,123.53,54,127.76,54H128c.54,0,54.71-.2,86.75,12.17a10,10,0,0,1,6,6.86c2.38,9.19,5.22,26.19,5.22,55S223.16,173.78,220.78,183Z"/></symbol>
+    <symbol id="if-quotes" viewBox="0 0 256 256"><path d="M116,72v88a48.05,48.05,0,0,1-48,48,8,8,0,0,1,0-16,32,32,0,0,0,32-32v-8H40a16,16,0,0,1-16-16V72A16,16,0,0,1,40,56h60A16,16,0,0,1,116,72ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Z"/></symbol>
+    <!--/SPRITE-->
+</defs></svg>
+
+<!--HEADER-->
+<header class="hdr" id="nav">
+  <div class="in">
+    <a href="index.html" class="brand" aria-label="Autonomic Coaching home"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+    <nav aria-label="Primary">
+      <a href="responsive-living.html">Responsive Living</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About Justin</a>
+      <a href="testimonials.html">Results</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+    </nav>
+    <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <button class="menu-btn close" id="sheetClose" aria-label="Close menu" style="display:grid"><svg class="pi"><use href="#i-x"/></svg></button>
+  <nav>
+    <a href="responsive-living.html">Responsive Living<svg><use href="#arrow"/></svg></a>
+    <a href="how-it-works.html">How It Works<svg><use href="#arrow"/></svg></a>
+    <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
+    <a href="testimonials.html">Results<svg><use href="#arrow"/></svg></a>
+    <a href="blog.html" aria-current="page">Blog<svg><use href="#arrow"/></svg></a>
+    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
+    <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness<svg><use href="#arrow-ur"/></svg></a>
+  </nav>
+  <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
+</div>
+<!--/HEADER-->
+
+<div class="progress" aria-hidden="true"><i id="prog"></i></div>
+<main id="top">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="cv-exh" viewBox="0 0 320 200"><circle cx="262" cy="34" r="92" fill="currentColor" opacity=".12"/><path d="M-10 62 C 60 58, 96 64, 132 92 S 200 168, 330 160" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="168" cy="133" r="5" fill="currentColor"/></symbol>
+    <symbol id="cv-slp" viewBox="0 0 320 200"><path d="M246 36a34 34 0 1 0 34 46 28 28 0 0 1-34-46z" fill="currentColor" opacity=".9"/><g fill="#fff"><circle cx="40" cy="30" r="1.4" opacity=".7"/><circle cx="92" cy="58" r="1.1" opacity=".5"/><circle cx="150" cy="24" r="1.5" opacity=".8"/><circle cx="196" cy="70" r="1" opacity=".5"/><circle cx="66" cy="96" r="1.2" opacity=".45"/><circle cx="122" cy="120" r="1" opacity=".35"/><circle cx="296" cy="128" r="1.3" opacity=".5"/><circle cx="214" cy="18" r="1" opacity=".6"/></g></symbol>
+    <symbol id="cv-hor" viewBox="0 0 320 200"><g fill="none" stroke="currentColor" stroke-width="1.2" opacity=".35"><circle cx="262" cy="40" r="26"/><circle cx="262" cy="40" r="52"/><circle cx="262" cy="40" r="78"/><circle cx="262" cy="40" r="104"/><circle cx="262" cy="40" r="130"/></g><circle cx="262" cy="40" r="9" fill="currentColor"/></symbol>
+    <symbol id="cv-lab" viewBox="0 0 320 200"><g fill="currentColor"><rect x="168" y="112" width="22" height="88" rx="4" opacity=".3"/><rect x="200" y="70" width="22" height="130" rx="4" opacity=".45"/><rect x="232" y="94" width="22" height="106" rx="4" opacity=".3"/></g><rect x="264" y="40" width="22" height="160" rx="4" fill="#0e7a52" opacity=".7"/><path d="M150 60 H 300" stroke="currentColor" stroke-width="1" stroke-dasharray="3 5" opacity=".5"/></symbol>
+    <symbol id="cv-gut" viewBox="0 0 320 200"><g fill="none" stroke="currentColor" stroke-width="1.2" opacity=".3"><circle cx="270" cy="190" r="30"/><circle cx="270" cy="190" r="60"/><circle cx="270" cy="190" r="90"/><circle cx="270" cy="190" r="120"/><circle cx="270" cy="190" r="150"/></g><circle cx="270" cy="190" r="12" fill="currentColor" opacity=".8"/></symbol>
+    <symbol id="cv-ner" viewBox="0 0 320 200"><g stroke="currentColor" stroke-width="1" opacity=".1"><path d="M0 40H320M0 80H320M0 120H320M0 160H320"/></g><path d="M-10 100 H 120 L 134 62 L 150 138 L 166 76 L 180 120 L 192 100 H 330" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <section class="post-hero">
+    <header class="a-head">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="blog.html">Blog</a><svg><use href="#arrow"/></svg><span class="cat">Sleep</span></nav>
+      <h1>Why do I still feel tired after a full night’s sleep?</h1>
+      <p class="lede dek">If you’re exhausted, wired, and told your labs are normal, this is the space your body lost.</p>
+      <div class="byline">
+        <span class="who"><img src="assets/justin-coat.png" alt=""><span>Justin Maguire<small>Nutritional scientist and health coach</small></span></span>
+        <span class="m"><svg class="pi"><use href="#i-calendar-blank"/></svg>Published 12 October 2026</span>
+        <span class="m"><svg class="pi"><use href="#i-clock"/></svg>6 min read</span>
+      </div>
+    </header>
+    <div class="a-cover"><div class="cv t-slp"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-slp"/></svg></div></div>
+  </section>
+
+  <div class="a-body">
+    <aside class="rail">
+      <div class="toc-wrap">
+        <p class="toc-t">On this page</p>
+        <ol class="toc" id="toc">
+          <li><a href="#familiar">Sound familiar?</a></li>
+          <li><a href="#what">What is Responsive Living?</a></li>
+          <li><a href="#static">Static physiology</a></li>
+          <li><a href="#labs">“Normal” labs don’t mean you’re well</a></li>
+          <li><a href="#aw">How is Autonomic Wellness different from Autonomic Coaching?</a></li>
+        </ol>
+      </div>
+      <div class="share">
+        <p class="toc-t">Share</p>
+        <div class="row">
+          <button type="button" id="copyLink" aria-label="Copy link"><svg class="pi"><use href="#i-link-simple"/></svg></button>
+          <a href="#" data-share="linkedin" aria-label="Share on LinkedIn"><svg class="pi"><use href="#i-linkedin-logo"/></svg></a>
+          <a href="#" data-share="x" aria-label="Share on X"><svg class="pi"><use href="#i-x-logo"/></svg></a>
+          <a href="#" data-share="facebook" aria-label="Share on Facebook"><svg class="pi"><use href="#i-facebook-logo"/></svg></a>
+          <a href="#" data-share="whatsapp" aria-label="Share on WhatsApp"><svg class="pi"><use href="#i-whatsapp-logo"/></svg></a>
+          <a href="#" data-share="email" aria-label="Share by email"><svg class="pi"><use href="#i-envelope-simple"/></svg></a>
+        </div>
+        <p class="copied" id="copied" role="status"></p>
+      </div>
+    </aside>
+
+    <article class="prose">
+      <h2 id="familiar">Sound familiar?</h2>
+      <ul>
+        <li>You sleep eight hours and wake up already tired.</li>
+        <li>Your focus is gone by mid-afternoon, and more coffee only makes you jittery.</li>
+        <li>You can’t switch off, even when the day is over.</li>
+        <li>Every protocol you try contradicts the last one.</li>
+        <li>You’ve stopped trusting your body to cope the way it used to.</li>
+      </ul>
+      <p class="lead-p">If so, there’s a reason, and it starts with a gap most of us never learn to see.</p>
+
+      <h2 id="what">What is Responsive Living?</h2>
+      <p>Responsive Living is the practice of reading your biology, your psychology, and your daily life together, and adjusting as each one changes. There’s a gap between what happens to you and how your body responds. Under constant stress, that gap closes, and the body stays on alert. Responsive Living widens it again.</p>
+      <figure class="pull">
+        <svg class="qm"><use href="#if-quotes"/></svg>
+        <blockquote>“Between stimulus and response, there is a space. In that space is our power to choose our response. In our response lies our growth and our freedom.”</blockquote>
+        <cite>Viktor E. Frankl</cite>
+      </figure>
+
+      <h2 id="static">Static physiology</h2>
+      <p>For most of human history, stress was physical. You ran, fought, or hid, and the stress response burned itself out in the action. Today’s stress is mental: deadlines, money, a phone that never stops. The alarm goes off, and nothing moves. Justin Maguire calls this static physiology, and the book traces how a body stuck in it can stay in defense mode for years: tired, inflamed, and slow to recover.</p>
+      <p>The book shows how this plays out in a real body, through one man’s story. <a href="responsive-living.html#chapter">Read the first chapter free</a>.</p>
+
+      <h2 id="labs">“Normal” labs don’t mean you’re well</h2>
+      <p>Energy that crashes mid-afternoon. Focus that slips when it matters most. Restless nights, digestive issues, weight that won’t shift.</p>
+      <div class="callout"><p class="statement">We look deeper at <span class="nw"><span class="chip"><span class="ci"><svg class="pi"><use href="#i-drop-half"/></svg></span>hormones</span>,</span> <span class="nw"><span class="chip"><span class="ci"><svg class="pi"><use href="#i-plant"/></svg></span>gut health</span>,</span> <span class="chip"><span class="ci"><svg class="pi"><use href="#i-fire"/></svg></span>metabolism</span> and <span class="chip"><span class="ci"><svg class="pi"><use href="#i-wave-sine"/></svg></span>stress patterns</span> to find what’s actually holding you back, then build a plan to fix it.</p></div>
+
+      <h2 id="aw">How is Autonomic Wellness different from Autonomic Coaching?</h2>
+      <div class="tbl">
+        <table>
+          <thead><tr><th scope="col"></th><th scope="col">Autonomic Wellness</th><th scope="col">Autonomic Coaching</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Who leads</th><td>A doctor leads, with a scientist</td><td>You lead, with Justin supporting you</td></tr>
+            <tr><th scope="row">How often</th><td>One consultation</td><td>Weekly sessions over months</td></tr>
+            <tr><th scope="row">What it looks at</th><td>Your symptoms, health history and lifestyle at one point in time</td><td>Your daily log of sleep, food and how you feel, alongside your lab results</td></tr>
+            <tr><th scope="row">Support afterward</th><td>No ongoing support</td><td>Weekly sessions and a daily log</td></tr>
+            <tr><th scope="row">Time and cost</th><td>Less time and a lower cost</td><td>A larger time and financial commitment</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cta-box">
+        <h3>Request one-to-one coaching</h3>
+        <p>Coaching is private and by application. Each application is reviewed before a call is booked.</p>
+        <a href="#request" class="btn btn-pill">Request Coaching <svg><use href="#arrow"/></svg></a>
+      </div>
+
+      <div class="tags"><span class="pill blue">Sleep</span><span class="pill">Nervous system</span><span class="pill">Lab results</span></div>
+      <div class="author">
+        <img src="assets/justin-coat.png" alt="Justin Maguire">
+        <div>
+          <span class="k">Written by</span>
+          <strong>Justin Maguire</strong>
+          <span class="t">Nutritional scientist and health coach</span>
+          <p>Justin Maguire is a nutritional scientist and one-to-one health coach. He reads lab results, daily tracking and a client’s psychology together to find the patterns that each one misses when it’s looked at alone.</p>
+          <a href="about.html" class="u-link">Meet Justin <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="head recs-head">
+        <h2>Recommended articles</h2>
+        <a href="blog.html" class="u-link">All articles <svg><use href="#arrow"/></svg></a>
+      </div>
+      <div class="recs">
+        <a href="blog-post.html" class="art">
+          <div class="cv t-exh"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-exh"/></svg></div>
+          <div class="meta">Exhaustion</div>
+          <h3>Energy that crashes mid-afternoon</h3>
+          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+        </a>
+        <a href="blog-post.html" class="art">
+          <div class="cv t-lab"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-lab"/></svg></div>
+          <div class="meta">Lab results</div>
+          <h3>What lab work can and can’t tell you</h3>
+          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+        </a>
+        <a href="blog-post.html" class="art">
+          <div class="cv t-ner"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-ner"/></svg></div>
+          <div class="meta">Nervous system</div>
+          <h3>Static physiology: the alarm goes off, and nothing moves</h3>
+          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final dark">
+    <div class="wrap">
+      <h2>Request one-to-one coaching</h2>
+      <p class="lede">Coaching is private and by application. Each application is reviewed before a call is booked.</p>
+      <a href="#request" class="btn btn-pill">Request Coaching <svg><use href="#arrow"/></svg></a>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="brand"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+        <div><a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <nav class="foot-col foot-links" aria-label="Footer">
+        <a href="responsive-living.html">Responsive Living</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="about.html">About Justin</a>
+        <a href="testimonials.html">Results</a>
+        <a href="blog.html">Blog</a>
+        <a href="concierge.html">Concierge</a>
+        <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+      <div class="foot-col socials">
+        <a href="#"><svg class="pi"><use href="#i-instagram-logo"/></svg>Instagram</a>
+        <a href="#"><svg class="pi"><use href="#i-youtube-logo"/></svg>YouTube</a>
+        <a href="#"><svg class="pi"><use href="#i-facebook-logo"/></svg>Facebook</a>
+      </div>
+    </div>
+    <div class="foot-mid">
+      <div class="notes"><span>Coaching is not a substitute for medical diagnosis or treatment.</span></div>
+      <a href="#top" class="totop" aria-label="Back to top"><svg><use href="#arrow"/></svg></a>
+    </div>
+    <div class="mark-xl" aria-hidden="true">Autonomic Coaching</div>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  // Reading progress
+  var bar = document.getElementById('prog'), art = document.querySelector('.prose');
+  function prog() {
+    var r = art.getBoundingClientRect(), total = r.height - window.innerHeight * .6;
+    bar.style.width = Math.max(0, Math.min(1, -r.top / total)) * 100 + '%';
+  }
+  if (!AC.figma) { prog(); window.addEventListener('scroll', prog, { passive: true }); }
+
+  // Table of contents: highlight the section being read
+  var links = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+  var heads = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+  function active() {
+    var cur = 0;
+    heads.forEach(function (h, i) { if (h.getBoundingClientRect().top < 160) cur = i; });
+    links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+  }
+  active(); window.addEventListener('scroll', active, { passive: true });
+
+  // Share
+  var url = encodeURIComponent(location.href.split('?')[0]), title = encodeURIComponent(document.querySelector('h1').textContent);
+  var to = {
+    linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=' + url,
+    x: 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title,
+    facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
+    whatsapp: 'https://wa.me/?text=' + title + '%20' + url,
+    email: 'mailto:?subject=' + title + '&body=' + url
+  };
+  document.querySelectorAll('[data-share]').forEach(function (a) {
+    a.href = to[a.getAttribute('data-share')];
+    if (a.getAttribute('data-share') !== 'email') { a.target = '_blank'; a.rel = 'noopener'; }
+  });
+  document.getElementById('copyLink').addEventListener('click', function () {
+    var done = function () { document.getElementById('copied').textContent = 'Link copied'; };
+    if (navigator.clipboard) navigator.clipboard.writeText(location.href.split('?')[0]).then(done); else done();
+  });
+})();
+</script>
+</body>
+</html>

@@ -9,58 +9,84 @@
 <script>if (/[?&]figma\b/.test(location.search)) document.documentElement.classList.add('figma');</script>
 <link rel="stylesheet" href="assets/site.css">
 <style>
-/* ============ 1. Hero (light, Justin on a forest panel) ============ */
-.ab-hero .phero-in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-.ab-hero .kicker { margin-top: 18px; }
-.ab-quote { margin: 32px 0 0; padding-left: 22px; border-left: 2px solid var(--g-600); max-width: 40ch; font-size: clamp(19px, 1.6vw, 23px); line-height: 1.45; letter-spacing: -0.015em; }
-.creds { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; max-width: 580px; border-top: 1px solid var(--line); }
-.creds li { display: flex; gap: 10px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; line-height: 1.45; color: var(--ink); }
-.creds li::before { content: ""; flex: none; width: 6px; height: 6px; margin-top: 7px; border-radius: 99px; background: var(--g-600); }
-.ab-hero .sub { margin-top: 28px; }
-.ab-person { position: relative; height: clamp(560px, 48vw, 700px); border-radius: 28px; overflow: hidden; isolation: isolate; background: radial-gradient(60% 50% at 50% 30%, rgba(22, 157, 105, .45), rgba(22, 157, 105, 0) 70%), var(--forest); display: flex; align-items: flex-end; justify-content: center; }
-.ab-person img { position: absolute; z-index: 1; left: 50%; bottom: 0; width: auto; height: 94%; max-width: none; transform: translateX(-50%); }
-.ab-person .ring { position: absolute; z-index: 0; left: 50%; top: 10%; width: 74%; aspect-ratio: 1; margin-left: -37%; border-radius: 50%; border: 1px solid rgba(143, 239, 202, .22); }
-.ab-person .ring + .ring { top: 4%; width: 92%; margin-left: -46%; border-color: rgba(143, 239, 202, .12); }
+/* ============ 1. Hero (cinematic, the quote leads) ============ */
+.ab-hero { position: relative; overflow: hidden; isolation: isolate; color: #fff; background: radial-gradient(55% 70% at 74% 38%, rgba(22, 157, 105, .38), rgba(22, 157, 105, 0) 70%), linear-gradient(180deg, #01130f 0%, #03231d 60%, #01130f 100%); }
+.ab-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(120% 90% at 50% 40%, rgba(1, 19, 15, 0) 55%, rgba(1, 19, 15, .7) 100%); }
+.ab-stage { position: relative; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); min-height: clamp(640px, calc(100svh - var(--hdr) - 120px), 760px); display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 40px; }
+.ab-copy { position: relative; z-index: 2; align-self: center; padding: clamp(40px, 5vw, 72px) 0; }
+.ab-copy .qm { width: 40px; height: 40px; color: var(--g-300); }
+.ab-quote { margin: 26px 0 0; max-width: 22ch; font-size: clamp(30px, 3.5vw, 50px); line-height: 1.14; letter-spacing: -0.03em; color: #fff; }
+.ab-sign { margin-top: 40px; display: flex; align-items: center; gap: 18px; }
+.ab-sign::before { content: ""; flex: none; width: 44px; height: 1px; background: rgba(143, 239, 202, .6); }
+.ab-sign h1 { font-size: 22px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 500; color: #fff; }
+.ab-sign p { margin-top: 4px; font-size: 15px; color: var(--g-200); }
+.ab-intro { margin-top: 28px; max-width: 46ch; font-size: 16.5px; line-height: 1.65; color: rgba(255, 255, 255, .66); }
+.ab-copy .btn { margin-top: 32px; }
+.ab-person { position: relative; z-index: 1; min-width: 0; }
+.ab-person img { position: absolute; bottom: 0; left: 50%; height: 92%; width: auto; max-width: none; transform: translateX(-50%); filter: drop-shadow(0 40px 60px rgba(0, 0, 0, .4)); }
+.ab-person::after { content: ""; position: absolute; left: -30%; right: -30%; bottom: 0; height: 30%; z-index: 2; background: linear-gradient(180deg, rgba(1, 19, 15, 0), #01130f); }
+.creds { position: relative; z-index: 3; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.creds li { padding: 26px 24px 30px 0; border-top: 1px solid rgba(255, 255, 255, .14); font-size: 14.5px; line-height: 1.45; color: rgba(255, 255, 255, .82); }
+.creds li + li { padding-left: 24px; border-left: 1px solid rgba(255, 255, 255, .14); }
+.creds li span { display: block; margin-bottom: 8px; font-size: 11px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--g-300); }
 
 /* ============ 2. How I look at health ============ */
 .look { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
-.look h2 { margin-bottom: 28px; }
-.look .next { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); font-size: clamp(18px, 1.5vw, 21px); letter-spacing: -0.015em; color: var(--g-700); }
-.venn-card { padding: clamp(28px, 3.4vw, 48px) clamp(24px, 3vw, 40px); border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
-.venn { position: relative; width: min(100%, 420px); aspect-ratio: 1 / .92; margin: 0 auto; }
+.venn-wrap { position: relative; }
+.venn-wrap::before { content: ""; position: absolute; left: 50%; top: 48%; width: 110%; aspect-ratio: 1; margin: -55% 0 0 -55%; border-radius: 50%; background: radial-gradient(closest-side, rgba(198, 245, 226, .7), rgba(198, 245, 226, 0)); }
+.venn { position: relative; width: min(100%, 540px); aspect-ratio: 1 / .94; margin: 0 auto; }
 .venn svg { width: 100%; height: 100%; overflow: visible; }
-.venn .c1 { fill: rgba(22, 157, 105, .12); stroke: var(--g-600); }
-.venn .c2 { fill: rgba(29, 85, 214, .08); stroke: var(--b-600); }
-.venn .c3 { fill: rgba(196, 160, 94, .12); stroke: #b38a45; }
-.venn circle { stroke-width: 1.5; }
 .venn text { font-family: aeonik, "Helvetica Neue", Arial, sans-serif; font-size: 15px; font-weight: 500; fill: #020a1d; }
-.venn .core { position: absolute; left: 50%; top: 53%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 99px; background: #fff; box-shadow: var(--shadow-md); display: grid; place-items: center; }
-.venn .core img { width: 40px; height: auto; }
-.venn-cap { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line-2); text-align: center; font-size: 15px; font-weight: 500; color: var(--ink-2); }
+.venn text.k { font-size: 10.5px; letter-spacing: 1.4px; fill: #59647d; }
+.venn .core { position: absolute; left: 50%; top: 56.5%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 99px; background: #fff; box-shadow: 0 0 0 10px rgba(255, 255, 255, .5), var(--shadow-lg); display: grid; place-items: center; }
+.venn .core img { width: 44px; height: auto; }
+.venn-cap { position: relative; margin-top: 18px; text-align: center; font-size: 13px; font-weight: 500; letter-spacing: 1.4px; text-transform: uppercase; color: var(--g-700); }
+.look h2 { max-width: 14ch; }
+.look .lead { margin-top: 26px; font-size: clamp(19px, 1.6vw, 22px); line-height: 1.6; letter-spacing: -0.015em; }
+.look .lead .chip { font-size: .8em; }
+.chip.n .ci { background: var(--g-50); color: var(--g-700); }
+.chip.i .ci { background: var(--b-25); color: var(--b-700); }
+.chip.h .ci { background: #f6eedf; color: #9a7434; }
+.look .body { margin-top: 20px; }
+.look .next { margin-top: 28px; display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; color: var(--g-700); }
+.look .next svg { width: 15px; height: 15px; transform: rotate(90deg); }
 
-/* ============ 3. How I work with clients ============ */
-.work-foot { margin-top: clamp(36px, 4vw, 56px); }
+/* ============ 3. How I work with clients (four question cards) ============ */
+.qgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; counter-reset: qq; }
+.qcard { position: relative; display: flex; flex-direction: column; padding: 28px 26px 30px; border-radius: 22px; background: #fff; border: 1px solid var(--line-2); min-height: 320px; }
+.qcard .n { font-size: 56px; line-height: 1; letter-spacing: -0.05em; color: var(--g-100); }
+.qcard h3 { margin-top: auto; padding-top: 32px; font-size: 22px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.22; }
+.qcard p { margin-top: 12px; font-size: 15.5px; line-height: 1.6; color: var(--ink-2); }
+.qcard:last-child { background: var(--g-900); border-color: var(--g-900); }
+.qcard:last-child .n { color: rgba(143, 239, 202, .28); }
+.qcard:last-child h3 { color: #fff; }
+.qcard:last-child p { color: rgba(255, 255, 255, .72); }
+.work-foot { margin-top: clamp(36px, 4vw, 52px); }
 
-/* ============ 4. Qualifications and training ============ */
-.ledger { border-top: 1px solid var(--ink); }
-.lrow { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) 132px; gap: 32px; padding: 24px 0; border-bottom: 1px solid var(--line); font-size: 16px; line-height: 1.5; }
-.lrow:first-child { padding: 14px 0; font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
-.lrow .q1 { font-size: clamp(17px, 1.35vw, 19px); letter-spacing: -0.01em; color: var(--ink); }
-.lrow .q2 { color: var(--ink-2); }
-.lrow .q3 { text-align: right; color: var(--ink-2); font-variant-numeric: tabular-nums; }
-.lrow .q3.ip { color: var(--g-700); font-weight: 500; }
+/* ============ 4. Qualifications and training (cards, not a long table) ============ */
+.quals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.qual { display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 20px; background: #fff; border: 1px solid var(--line-2); min-height: 196px; }
+.qual .yr { align-self: flex-start; font-size: 13px; font-weight: 500; padding: 5px 11px; border-radius: 99px; background: var(--page); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.qual .yr.ip { background: var(--g-50); color: var(--g-700); }
+.qual strong { margin-top: 8px; font-size: 17px; font-weight: 400; line-height: 1.35; letter-spacing: -0.01em; }
+.qual small { margin-top: auto; padding-top: 6px; font-size: 14px; line-height: 1.45; color: var(--ink-3); }
+.qual.wide { grid-column: span 2; }
+.qual.lead { grid-column: span 2; background: var(--mist); border-color: transparent; }
+.qual.lead strong { font-size: 22px; letter-spacing: -0.02em; }
+.qual.lead .yr { background: #fff; }
 .bridge { margin-top: clamp(64px, 7vw, 104px); text-align: center; font-size: clamp(24px, 2.6vw, 38px); line-height: 1.3; letter-spacing: -0.025em; text-wrap: balance; }
 .bridge span { color: var(--g-700); }
 
 /* ============ 5. What others say ============ */
-.record { margin-top: clamp(64px, 7vw, 104px); display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 32px clamp(32px, 6vw, 96px); }
-.record > p { font-size: clamp(20px, 1.8vw, 26px); letter-spacing: -0.02em; line-height: 1.3; color: #fff; max-width: 16ch; }
-.rec > div { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 24px; padding: 22px 0; border-top: 1px solid rgba(255, 255, 255, .12); }
-.rec > div:last-child { border-bottom: 1px solid rgba(255, 255, 255, .12); }
-.rec .k { font-size: 13px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--g-200); padding-top: 3px; }
-.rec .v { font-size: 16.5px; line-height: 1.55; color: rgba(255, 255, 255, .82); display: grid; gap: 8px; }
+.record { margin-top: clamp(64px, 7vw, 104px); }
+.record > p { font-size: clamp(20px, 1.8vw, 26px); letter-spacing: -0.02em; line-height: 1.3; color: #fff; }
+.rec { margin-top: 28px; display: grid; grid-template-columns: 1.3fr 1fr 1.5fr 1fr; gap: 12px; }
+.rec > div { display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 18px; background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .1); }
+.rec .k { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--g-200); }
+.rec .k .pi { font-size: 18px; }
+.rec .v { font-size: 15.5px; line-height: 1.55; color: rgba(255, 255, 255, .82); display: grid; gap: 10px; }
 .rec .v b { font-weight: 500; color: #fff; }
-.rec .v a { display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin-top: 4px; font-size: 15px; font-weight: 500; color: var(--g-200); text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+.rec .v a { display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin-top: 4px; font-size: 14.5px; font-weight: 500; color: var(--g-200); text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 .rec .v a svg { width: 14px; height: 14px; }
 
 /* ============ 6. Why I do this work ============ */
@@ -73,7 +99,7 @@
 .sig::before { content: ""; width: 32px; height: 1px; background: var(--ink-3); }
 
 /* ============ 7. Who I work with ============ */
-.who { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 32px clamp(40px, 7vw, 120px); padding-top: clamp(40px, 4vw, 56px); border-top: 1px solid var(--line); }
+.who { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 32px clamp(40px, 7vw, 120px); padding: clamp(36px, 5.6vw, 80px); }
 .who .lead { font-size: clamp(20px, 1.9vw, 27px); line-height: 1.62; letter-spacing: -0.02em; }
 .who .lead .chip { font-size: .78em; padding-top: .08em; padding-bottom: .08em; }
 .who .body { margin-top: 24px; max-width: 62ch; }
@@ -101,31 +127,35 @@
 /* ============ Tablet ============ */
 @media (max-width: 1100px) {
   .look, .why { grid-template-columns: 1fr; }
-  .look h2 { max-width: 20ch; }
-  .venn-card { max-width: 560px; }
+  .venn { width: min(100%, 460px); }
+  .qgrid, .quals { grid-template-columns: 1fr 1fr; }
+  .qcard { min-height: 260px; }
+  .rec { grid-template-columns: 1fr 1fr; }
   .why-ph { aspect-ratio: 16 / 11; }
   .why-ph img { object-position: 50% 20%; }
-  .record, .who, .req-top { grid-template-columns: 1fr; }
-  .record > p { max-width: none; }
-  .lrow { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 110px; gap: 24px; }
+  .who, .req-top { grid-template-columns: 1fr; }
+  .creds { grid-template-columns: 1fr 1fr; }
+  .creds li:nth-child(3) { padding-left: 0; border-left: 0; }
 }
 @media (max-width: 900px) {
-  .ab-hero .phero-in { grid-template-columns: 1fr; }
-  .ab-person { height: clamp(460px, 80vw, 620px); }
+  .ab-stage { grid-template-columns: 1fr; min-height: 0; gap: 0; }
+  .ab-copy { padding: 40px 0 8px; }
+  .ab-person { height: clamp(380px, 70vw, 560px); }
+  .ab-person img { height: 100%; }
 }
 /* ============ Phone ============ */
 @media (max-width: 720px) {
-  .ab-person { height: 420px; border-radius: 20px; }
-  .ab-quote { padding-left: 16px; }
+  .ab-quote { font-size: 30px; }
+  .ab-copy .btn { width: 100%; }
+  .ab-person { height: 400px; }
   .creds { grid-template-columns: 1fr; }
-  .lrow:first-child { display: none; }
-  .lrow { grid-template-columns: 1fr auto; gap: 6px 16px; padding: 20px 0; }
-  .lrow .q1 { grid-column: 1; }
-  .lrow .q2 { grid-column: 1; grid-row: 2; font-size: 14.5px; }
-  .lrow .q3 { grid-column: 2; grid-row: 1; font-size: 14px; }
-  .ledger { border-top-color: var(--line); }
-  .rec > div { grid-template-columns: 1fr; gap: 8px; }
+  .creds li, .creds li + li { padding: 18px 0; border-left: 0; }
+  .qgrid, .quals, .rec { grid-template-columns: 1fr; }
+  .qual.lead, .qual.wide { grid-column: auto; }
+  .qcard { min-height: 0; }
+  .qcard h3 { padding-top: 20px; }
   .why-ph { aspect-ratio: 4 / 4.2; }
+  .who { padding: 28px 20px; border-radius: 18px; }
   .alts { grid-template-columns: 1fr; }
   .alt, .alt + .alt { padding: 28px 0; border-left: 0; }
   .alt + .alt { border-top: 1px solid rgba(255, 255, 255, .14); }
@@ -133,16 +163,23 @@
 }
 </style>
 </head>
-<body data-page="about">
+<body data-hdr="dark" data-page="about">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <!--SPRITE-->
     <symbol id="arrow" viewBox="0 0 16 16"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="arrow-ur" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book-open-text" viewBox="0 0 256 256"><path d="M232,50H160a38,38,0,0,0-32,17.55A38,38,0,0,0,96,50H24a6,6,0,0,0-6,6V200a6,6,0,0,0,6,6H96a26,26,0,0,1,26,26,6,6,0,0,0,12,0,26,26,0,0,1,26-26h72a6,6,0,0,0,6-6V56A6,6,0,0,0,232,50ZM96,194H30V62H96a26,26,0,0,1,26,26V204.31A37.86,37.86,0,0,0,96,194Zm130,0H160a37.87,37.87,0,0,0-26,10.32V88a26,26,0,0,1,26-26h66ZM160,90h40a6,6,0,0,1,0,12H160a6,6,0,0,1,0-12Zm46,38a6,6,0,0,1-6,6H160a6,6,0,0,1,0-12h40A6,6,0,0,1,206,128Zm0,32a6,6,0,0,1-6,6H160a6,6,0,0,1,0-12h40A6,6,0,0,1,206,160Z"/></symbol>
+    <symbol id="i-brain" viewBox="0 0 256 256"><path d="M246,124a54.13,54.13,0,0,0-32-49.33V72a46,46,0,0,0-86-22.67A46,46,0,0,0,42,72v2.67a54,54,0,0,0,0,98.63V176a46,46,0,0,0,86,22.67A46,46,0,0,0,214,176v-2.7A54.07,54.07,0,0,0,246,124ZM88,210a34,34,0,0,1-34-32.94A53.67,53.67,0,0,0,64,178h8a6,6,0,0,0,0-12H64A42,42,0,0,1,50,84.39a6,6,0,0,0,4-5.66V72a34,34,0,0,1,68,0v73.05A45.89,45.89,0,0,0,88,130a6,6,0,0,0,0,12,34,34,0,0,1,0,68Zm104-44h-8a6,6,0,0,0,0,12h8a53.67,53.67,0,0,0,10-.94A34,34,0,1,1,168,142a6,6,0,0,0,0-12,45.89,45.89,0,0,0-34,15.05V72a34,34,0,0,1,68,0v6.73a6,6,0,0,0,4,5.66A42,42,0,0,1,192,166Zm14-54a6,6,0,0,1-6,6h-4a34,34,0,0,1-34-34V80a6,6,0,0,1,12,0v4a22,22,0,0,0,22,22h4A6,6,0,0,1,206,112ZM60,118H56a6,6,0,0,1,0-12h4A22,22,0,0,0,82,84V80a6,6,0,0,1,12,0v4A34,34,0,0,1,60,118Z"/></symbol>
+    <symbol id="i-chats-circle" viewBox="0 0 256 256"><path d="M229.93,186.58A78,78,0,0,0,168.16,74.42,78,78,0,1,0,26.07,138.58L18.58,164A14,14,0,0,0,36,181.42l25.46-7.49a78,78,0,0,0,26.39,7.63,78,78,0,0,0,106.77,40.37L220,229.42A14,14,0,0,0,237.42,212ZM62,161.5a6.05,6.05,0,0,0-1.69.24l-27.77,8.17a2,2,0,0,1-2.48-2.48l8.17-27.77a6.05,6.05,0,0,0-.47-4.53,66,66,0,1,1,27.08,27.08A6,6,0,0,0,62,161.5Zm155.71,26.16,8.17,27.77a2,2,0,0,1-2.48,2.48l-27.77-8.17a6.06,6.06,0,0,0-4.53.47,66,66,0,0,1-90-28.4,77.92,77.92,0,0,0,71-94.68,66,66,0,0,1,46.07,96A6.05,6.05,0,0,0,217.74,187.66Z"/></symbol>
+    <symbol id="i-drop-half" viewBox="0 0 256 256"><path d="M172.53,49.06a251.42,251.42,0,0,0-41.09-38,6,6,0,0,0-6.88,0,251.42,251.42,0,0,0-41.09,38C56.34,80.26,42,113.09,42,144a86,86,0,0,0,172,0C214,113.09,199.66,80.26,172.53,49.06ZM202,144a75,75,0,0,1-.69,10H134V134h67.44A92.09,92.09,0,0,1,202,144ZM186.8,90H134V70h39.89A176,176,0,0,1,186.8,90ZM134,198h44.52A73.76,73.76,0,0,1,134,217.74Zm0-12V166h64.66a74.05,74.05,0,0,1-9.78,20Zm0-64V102h58.7a117.43,117.43,0,0,1,6.69,20Zm30.29-64H134V28.3A257.09,257.09,0,0,1,164.29,58ZM54,144c0-53.42,47.35-98.56,68-115.7V217.74A74.09,74.09,0,0,1,54,144Z"/></symbol>
     <symbol id="i-facebook-logo" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V150h26a6,6,0,0,0,0-12H134V112a18,18,0,0,1,18-18h16a6,6,0,0,0,0-12H152a30,30,0,0,0-30,30v26H96a6,6,0,0,0,0,12h26v67.8a90,90,0,1,1,12,0Z"/></symbol>
     <symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></symbol>
     <symbol id="i-list" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128ZM40,70H216a6,6,0,0,0,0-12H40a6,6,0,0,0,0,12ZM216,186H40a6,6,0,0,0,0,12H216a6,6,0,0,0,0-12Z"/></symbol>
     <symbol id="i-lock-simple" viewBox="0 0 256 256"><path d="M208,82H174V56a46,46,0,0,0-92,0V82H48A14,14,0,0,0,34,96V208a14,14,0,0,0,14,14H208a14,14,0,0,0,14-14V96A14,14,0,0,0,208,82ZM94,56a34,34,0,0,1,68,0V82H94ZM210,208a2,2,0,0,1-2,2H48a2,2,0,0,1-2-2V96a2,2,0,0,1,2-2H208a2,2,0,0,1,2,2Z"/></symbol>
+    <symbol id="i-microphone" viewBox="0 0 256 256"><path d="M128,174a46.06,46.06,0,0,0,46-46V64a46,46,0,0,0-92,0v64A46.06,46.06,0,0,0,128,174ZM94,64a34,34,0,0,1,68,0v64a34,34,0,0,1-68,0Zm40,141.75V240a6,6,0,0,1-12,0V205.75A78.09,78.09,0,0,1,50,128a6,6,0,0,1,12,0,66,66,0,0,0,132,0,6,6,0,0,1,12,0A78.09,78.09,0,0,1,134,205.75Z"/></symbol>
+    <symbol id="i-microphone-stage" viewBox="0 0 256 256"><path d="M168,18A69.94,69.94,0,0,0,98.74,98l-70,95.46a13.92,13.92,0,0,0,1.39,18.17l14.3,14.3a13.93,13.93,0,0,0,18.17,1.39l95.46-70A70,70,0,1,0,168,18Zm58,70a57.65,57.65,0,0,1-13,36.52L131.49,43A57.95,57.95,0,0,1,226,88ZM55.5,217.59a2,2,0,0,1-2.6-.2L38.61,203.1a2,2,0,0,1-.2-2.6l64.22-87.56a70.32,70.32,0,0,0,40.44,40.43ZM110,88a57.73,57.73,0,0,1,13-36.52L204.53,133A58,58,0,0,1,110,88Zm-1.75,59.75a6,6,0,0,1,0,8.49l-8,8a6,6,0,1,1-8.49-8.49l8-8A6,6,0,0,1,108.26,147.74Z"/></symbol>
+    <symbol id="i-shield-plus" viewBox="0 0 256 256"><path d="M166,128a6,6,0,0,1-6,6H134v26a6,6,0,0,1-12,0V134H96a6,6,0,0,1,0-12h26V96a6,6,0,0,1,12,0v26h26A6,6,0,0,1,166,128Zm56-72v56c0,51.94-25.12,83.4-46.2,100.64-22.73,18.6-45.27,24.89-46.22,25.15a6,6,0,0,1-3.16,0c-1-.26-23.49-6.55-46.22-25.15C59.12,195.4,34,163.94,34,112V56A14,14,0,0,1,48,42H208A14,14,0,0,1,222,56Zm-12,0a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v56c0,37.75,13.94,68.39,41.44,91.06A130.83,130.83,0,0,0,128,225.72a131.06,131.06,0,0,0,40.56-22.66C196.06,180.39,210,149.75,210,112Z"/></symbol>
     <symbol id="i-x" viewBox="0 0 256 256"><path d="M204.24,195.76a6,6,0,1,1-8.48,8.48L128,136.49,60.24,204.24a6,6,0,0,1-8.48-8.48L119.51,128,51.76,60.24a6,6,0,0,1,8.48-8.48L128,119.51l67.76-67.75a6,6,0,0,1,8.48,8.48L136.49,128Z"/></symbol>
     <symbol id="i-youtube-logo" viewBox="0 0 256 256"><path d="M163.33,123l-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128ZM232.4,70a22,22,0,0,0-13.28-15C185,41.79,130.27,42,128,42s-57-.21-91.16,13A22,22,0,0,0,23.6,70C21.05,79.89,18,98,18,128s3.05,48.11,5.6,58a22,22,0,0,0,13.28,15C71,214.21,125.72,214,128,214h.71c6.91,0,58-.44,90.45-13a22,22,0,0,0,13.28-15c2.55-9.87,5.6-27.93,5.6-58S235,79.89,232.4,70ZM220.78,183a10,10,0,0,1-6,6.86C182.78,202.19,128.58,202,128,202s-54.71.2-86.75-12.17a10,10,0,0,1-6-6.86C32.84,173.78,30,156.78,30,128s2.84-45.78,5.22-55a10,10,0,0,1,6-6.86C72.06,54.26,123.53,54,127.76,54H128c.54,0,54.71-.2,86.75,12.17a10,10,0,0,1,6,6.86c2.38,9.19,5.22,26.19,5.22,55S223.16,173.78,220.78,183Z"/></symbol>
     <symbol id="if-quotes" viewBox="0 0 256 256"><path d="M116,72v88a48.05,48.05,0,0,1-48,48,8,8,0,0,1,0-16,32,32,0,0,0,32-32v-8H40a16,16,0,0,1-16-16V72A16,16,0,0,1,40,56h60A16,16,0,0,1,116,72ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Z"/></symbol>
@@ -181,51 +218,56 @@
 <!--/HEADER-->
 
 <main id="top">
+
   <!-- 1. Justin Maguire: About -->
-  <section class="phero ab-hero">
-    <div class="phero-in">
-      <div class="phero-copy">
-        <h1>Justin Maguire</h1>
-        <p class="kicker">Nutritional scientist and health coach</p>
+  <section class="ab-hero">
+    <div class="ab-stage">
+      <div class="ab-copy">
+        <svg class="qm"><use href="#if-quotes"/></svg>
         <blockquote class="ab-quote">“Rather than asking what diagnosis a person has, I focus on understanding the underlying physiological systems influencing their health.”</blockquote>
-        <ul class="creds" aria-label="Qualifications">
-          <li>BSc (Hons) Nutritional Science</li>
-          <li>Postgraduate Diploma, Functional Blood Chemistry Analysis</li>
-          <li>MSc in Neuroscience and Psychology of Mental Health (in progress)</li>
-          <li>Author of Responsive Living</li>
-        </ul>
-        <p class="sub">Justin Maguire is a nutritional scientist and one-to-one health coach. He reads lab results, daily tracking and a client’s psychology together to find the patterns that each one misses when it’s looked at alone.</p>
-        <div class="ctas"><a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a></div>
+        <div class="ab-sign"><div><h1>Justin Maguire</h1><p>Nutritional scientist and health coach</p></div></div>
+        <p class="ab-intro">Justin Maguire is a nutritional scientist and one-to-one health coach. He reads lab results, daily tracking and a client’s psychology together to find the patterns that each one misses when it’s looked at alone.</p>
+        <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
       </div>
-      <div class="ab-person">
-        <span class="ring"></span><span class="ring"></span>
-        <img src="assets/justin.png" alt="Justin Maguire">
-      </div>
+      <div class="ab-person"><img src="assets/justin.png" alt="Justin Maguire"></div>
     </div>
+    <ul class="creds" aria-label="Qualifications">
+      <li>BSc (Hons) Nutritional Science</li>
+      <li>Postgraduate Diploma, Functional Blood Chemistry Analysis</li>
+      <li>MSc in Neuroscience and Psychology of Mental Health (in progress)</li>
+      <li>Author of Responsive Living</li>
+    </ul>
   </section>
 
   <!-- 2. How I look at health -->
-  <section class="sec pt0">
+  <section class="sec">
     <div class="wrap look">
-      <div>
-        <h2>How I Look at Health</h2>
-        <p class="body">I work from the premise that wellbeing is more than a single lab value or a diagnosis label. What matters to me is how three systems interact within a person’s life: the nervous system, the immune system and the hormonal system.</p>
-        <p class="body">The field I draw on is called psychoneuroimmunoendocrinology, the study of how the mind, nervous system, immune system and hormones communicate with each other. I combine it with biochemistry, nutritional science, functional blood chemistry and neuroscience, so that your fatigue or brain fog is read against how those systems interact, not against a single result.</p>
-        <p class="next">In practice, I work through four questions with each client.</p>
-      </div>
-      <div class="venn-card">
+      <div class="venn-wrap">
         <div class="venn" aria-label="The nervous system, the immune system and the hormonal system">
-          <svg viewBox="0 0 420 386" aria-hidden="true">
-            <circle class="c1" cx="210" cy="128" r="118"/>
-            <circle class="c2" cx="140" cy="250" r="118"/>
-            <circle class="c3" cx="280" cy="250" r="118"/>
-            <text x="210" y="70" text-anchor="middle">Nervous system</text>
-            <text x="92" y="300" text-anchor="middle">Immune system</text>
-            <text x="328" y="300" text-anchor="middle">Hormonal system</text>
+          <svg viewBox="0 0 540 508" aria-hidden="true">
+            <defs>
+              <radialGradient id="vg1" cx="50%" cy="35%" r="65%"><stop offset="0" stop-color="#c6f5e2" stop-opacity=".95"/><stop offset="1" stop-color="#8fefca" stop-opacity=".35"/></radialGradient>
+              <radialGradient id="vg2" cx="35%" cy="60%" r="65%"><stop offset="0" stop-color="#dfe8fd" stop-opacity=".95"/><stop offset="1" stop-color="#bfd2fe" stop-opacity=".4"/></radialGradient>
+              <radialGradient id="vg3" cx="65%" cy="60%" r="65%"><stop offset="0" stop-color="#f6ecda" stop-opacity=".95"/><stop offset="1" stop-color="#e6d3ad" stop-opacity=".45"/></radialGradient>
+            </defs>
+            <g style="mix-blend-mode:multiply">
+              <circle cx="270" cy="178" r="150" fill="url(#vg1)" stroke="#169d69" stroke-opacity=".55" stroke-width="1.5"/>
+              <circle cx="190" cy="318" r="150" fill="url(#vg2)" stroke="#1d55d6" stroke-opacity=".45" stroke-width="1.5"/>
+              <circle cx="350" cy="318" r="150" fill="url(#vg3)" stroke="#b38a45" stroke-opacity=".55" stroke-width="1.5"/>
+            </g>
+            <circle cx="270" cy="92" r="4" fill="#169d69"/><text x="270" y="122" text-anchor="middle">Nervous system</text>
+            <circle cx="122" cy="370" r="4" fill="#1d55d6"/><text x="122" y="400" text-anchor="middle">Immune system</text>
+            <circle cx="418" cy="370" r="4" fill="#b38a45"/><text x="418" y="400" text-anchor="middle">Hormonal system</text>
           </svg>
           <span class="core"><img src="assets/mark.png" alt=""></span>
         </div>
         <p class="venn-cap">Psychoneuroimmunoendocrinology</p>
+      </div>
+      <div>
+        <h2>How I Look at Health</h2>
+        <p class="lead">I work from the premise that wellbeing is more than a single lab value or a diagnosis label. What matters to me is how three systems interact within a person’s life: <span class="nw"><span class="chip n"><span class="ci"><svg class="pi"><use href="#i-brain"/></svg></span>the nervous system</span>,</span> <span class="chip i"><span class="ci"><svg class="pi"><use href="#i-shield-plus"/></svg></span>the immune system</span> and <span class="nw"><span class="chip h"><span class="ci"><svg class="pi"><use href="#i-drop-half"/></svg></span>the hormonal system</span>.</span></p>
+        <p class="body">The field I draw on is called psychoneuroimmunoendocrinology, the study of how the mind, nervous system, immune system and hormones communicate with each other. I combine it with biochemistry, nutritional science, functional blood chemistry and neuroscience, so that your fatigue or brain fog is read against how those systems interact, not against a single result.</p>
+        <p class="next">In practice, I work through four questions with each client. <svg><use href="#arrow"/></svg></p>
       </div>
     </div>
   </section>
@@ -234,12 +276,12 @@
   <section class="sec pt0">
     <div class="wrap">
       <div class="head"><h2>How I work with clients</h2></div>
-      <ol class="rows">
-        <li><span class="n">01</span><h3>What are your symptoms?</h3><p>You tell me what you’re experiencing in your own words, whether it’s a long-running concern or a recent drop in physical performance, mental clarity or energy.</p></li>
-        <li><span class="n">02</span><h3>Which patterns sit behind them?</h3><p>I look for where those symptoms connect across your nervous, immune, hormonal, and metabolic systems.</p></li>
-        <li><span class="n">03</span><h3>What is driving those patterns?</h3><p>I work out what is keeping them going.</p></li>
-        <li><span class="n">04</span><h3>What plan follows?</h3><p>I turn that into practical, personalized steps that fit a busy schedule.</p></li>
-      </ol>
+      <div class="qgrid">
+        <div class="qcard"><span class="n">01</span><h3>What are your symptoms?</h3><p>You tell me what you’re experiencing in your own words, whether it’s a long-running concern or a recent drop in physical performance, mental clarity or energy.</p></div>
+        <div class="qcard"><span class="n">02</span><h3>Which patterns sit behind them?</h3><p>I look for where those symptoms connect across your nervous, immune, hormonal, and metabolic systems.</p></div>
+        <div class="qcard"><span class="n">03</span><h3>What is driving those patterns?</h3><p>I work out what is keeping them going.</p></div>
+        <div class="qcard"><span class="n">04</span><h3>What plan follows?</h3><p>I turn that into practical, personalized steps that fit a busy schedule.</p></div>
+      </div>
       <div class="work-foot"><a href="how-it-works.html" class="btn btn-light">See how coaching works <svg><use href="#arrow"/></svg></a></div>
     </div>
   </section>
@@ -251,16 +293,15 @@
         <h2>My Qualifications &amp; Training</h2>
         <p class="lede">This approach rests on formal training, and I’m still studying. I check research critically so I can explain it clearly and apply it to the person in front of me.</p>
       </div>
-      <div class="ledger">
-        <div class="lrow"><span>Qualification</span><span>Awarded by</span><span class="q3">Year</span></div>
-        <div class="lrow"><span class="q1">MSc, Neuroscience and Psychology of Mental Health</span><span class="q2">In progress (postgraduate diploma stage completed, dissertation pending)</span><span class="q3 ip">In progress</span></div>
-        <div class="lrow"><span class="q1">BSc (Hons), Nutritional Science</span><span class="q2">Middlesex University, in collaboration with CNELM</span><span class="q3">2025</span></div>
-        <div class="lrow"><span class="q1">Postgraduate Diploma, Functional Blood Chemistry Analysis</span><span class="q2">ODX Academy</span><span class="q3">2019</span></div>
-        <div class="lrow"><span class="q1">Advanced Bio-identical Hormone Replacement Therapy Certificate</span><span class="q2">WorldLink Medical</span><span class="q3">2026</span></div>
-        <div class="lrow"><span class="q1">Nutrigenomics Certification</span><span class="q2">Nutrigenetic Research Institute</span><span class="q3">2026</span></div>
-        <div class="lrow"><span class="q1">Mastery courses in functional medicine (2021), hormones (2022), toxicity (2023) and mitochondria (2025)</span><span class="q2">Integrative Medicine Academy</span><span class="q3">2021 to 2025</span></div>
-        <div class="lrow"><span class="q1">Foundational Peptide Therapy</span><span class="q2">SSRP Institute</span><span class="q3">2020</span></div>
-        <div class="lrow"><span class="q1">Advanced Diploma in Nutritional Studies, Level 5</span><span class="q2">London College of Nutrition</span><span class="q3">2014</span></div>
+      <div class="quals">
+        <div class="qual lead"><span class="yr ip">In progress</span><strong>MSc, Neuroscience and Psychology of Mental Health</strong><small>In progress (postgraduate diploma stage completed, dissertation pending)</small></div>
+        <div class="qual lead"><span class="yr">2025</span><strong>BSc (Hons), Nutritional Science</strong><small>Middlesex University, in collaboration with CNELM</small></div>
+        <div class="qual"><span class="yr">2019</span><strong>Postgraduate Diploma, Functional Blood Chemistry Analysis</strong><small>ODX Academy</small></div>
+        <div class="qual"><span class="yr">2026</span><strong>Advanced Bio-identical Hormone Replacement Therapy Certificate</strong><small>WorldLink Medical</small></div>
+        <div class="qual"><span class="yr">2026</span><strong>Nutrigenomics Certification</strong><small>Nutrigenetic Research Institute</small></div>
+        <div class="qual"><span class="yr">2021 to 2025</span><strong>Mastery courses in functional medicine (2021), hormones (2022), toxicity (2023) and mitochondria (2025)</strong><small>Integrative Medicine Academy</small></div>
+        <div class="qual wide"><span class="yr">2020</span><strong>Foundational Peptide Therapy</strong><small>SSRP Institute</small></div>
+        <div class="qual wide"><span class="yr">2014</span><strong>Advanced Diploma in Nutritional Studies, Level 5</strong><small>London College of Nutrition</small></div>
       </div>
       <p class="bridge">Qualifications show what I’ve studied. <span>These people have seen how I apply it.</span></p>
     </div>
@@ -278,10 +319,10 @@
       <div class="record">
         <p>My work is also in the public record:</p>
         <div class="rec">
-          <div><span class="k">Book</span><span class="v"><span><b>Responsive Living</b> (2026), a story-led book on stress, the nervous system and the immune system.</span><a href="responsive-living.html">Read about the book <svg><use href="#arrow"/></svg></a></span></div>
-          <div><span class="k">Speaking</span><span class="v">Health Optimisation Summit, 2022 and 2023</span></div>
-          <div><span class="k">Podcasts</span><span class="v"><span>vP Life, “Everything to Know About Immunometabolism and the Cell Danger Response”</span><span>Salute e Biohacking, episode 95, “Bidirectional Restoration of the Nervous System”</span></span></div>
-          <div><span class="k">Interview</span><span class="v">Mark De Gouveia, Thrive Labs</span></div>
+          <div><span class="k"><svg class="pi"><use href="#i-book-open-text"/></svg>Book</span><span class="v"><span><b>Responsive Living</b> (2026), a story-led book on stress, the nervous system and the immune system.</span><a href="responsive-living.html">Read about the book <svg><use href="#arrow"/></svg></a></span></div>
+          <div><span class="k"><svg class="pi"><use href="#i-microphone-stage"/></svg>Speaking</span><span class="v">Health Optimisation Summit, 2022 and 2023</span></div>
+          <div><span class="k"><svg class="pi"><use href="#i-microphone"/></svg>Podcasts</span><span class="v"><span>vP Life, “Everything to Know About Immunometabolism and the Cell Danger Response”</span><span>Salute e Biohacking, episode 95, “Bidirectional Restoration of the Nervous System”</span></span></div>
+          <div><span class="k"><svg class="pi"><use href="#i-chats-circle"/></svg>Interview</span><span class="v">Mark De Gouveia, Thrive Labs</span></div>
         </div>
       </div>
     </div>
@@ -301,14 +342,14 @@
 
   <!-- 7. Who I work with -->
   <section class="sec pt0">
-    <div class="wrap who">
+    <div class="wrap"><div class="panel who">
       <h2>Who I work with</h2>
       <div>
         <p class="lead">I work one-to-one with high-performing people: <span class="nw"><span class="chip dot">executives</span>,</span> <span class="chip dot">founders</span> and <span class="chip dot">senior professionals</span> whose energy, focus or resilience under pressure has dropped, and whose standard tests don’t explain why. I also work with people whose health concerns are complex and haven’t had a clear answer.</p>
         <p class="body">Coaching runs week by week and asks for time, money and emotional energy, so it suits people who are ready to give all three.</p>
         <p class="priv"><svg class="pi"><use href="#i-lock-simple"/></svg>Everything you share stays private.</p>
       </div>
-    </div>
+    </div></div>
   </section>
 
   <!-- 8. Request coaching with me -->

@@ -109,16 +109,17 @@
 .proof p { margin-top: 10px; color: var(--ink-2); }
 .proof .btn { margin-top: 32px; }
 
-/* ============ 6. Responsive Living (dark band, like the AW consultation band) ============ */
-.rl { position: relative; overflow: hidden; isolation: isolate; background: var(--g-950); color: #fff; }
-.rl-media { position: absolute; top: 0; right: 0; bottom: 0; width: 56%; z-index: -1; }
-.rl-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; filter: saturate(.9) brightness(.82); }
-.rl .wrap { min-height: clamp(560px, 70vh, 700px); display: flex; align-items: center; }
-.rl-copy { max-width: 560px; padding: 96px 0; }
-.rl h2 { color: #fff; margin-top: 14px; }
-.rl .lede { margin-top: 20px; color: rgba(255, 255, 255, .78); }
-.rl .body { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .12); color: rgba(255, 255, 255, .55); }
-.rl .u-link { margin-top: 26px; }
+/* ============ 6. Responsive Living (warm panel with the book, matches the RL page) ============ */
+.rl-card { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 96px); align-items: center; padding: clamp(36px, 5.6vw, 88px); border-radius: var(--r-xl); background: linear-gradient(160deg, #f6f1e9 0%, #efe6d8 100%); overflow: hidden; }
+.rl-card h2 { margin-top: 16px; max-width: 18ch; }
+.rl-card .lede { margin-top: 22px; max-width: 48ch; color: var(--ink); }
+.rl-card .body { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(2, 10, 29, .1); max-width: 52ch; }
+.rl-card .btn { margin-top: 32px; }
+.rl-book { position: relative; display: grid; place-items: center; padding: 12px 0 28px; }
+.rl-book .sun { position: absolute; left: 50%; top: 46%; width: 130%; aspect-ratio: 1; margin: -65% 0 0 -65%; border-radius: 50%; background: radial-gradient(closest-side, rgba(246, 196, 160, .7), rgba(246, 196, 160, .2) 55%, rgba(246, 196, 160, 0)); }
+.rl-book .cover { position: relative; width: min(100%, 320px); aspect-ratio: 1004 / 1500; border-radius: 3px 8px 8px 3px; overflow: hidden; box-shadow: 0 2px 4px rgba(40, 26, 12, .12), 0 36px 70px -24px rgba(60, 38, 18, .5); transform: rotate(3deg); }
+.rl-book .cover img { width: 100%; height: 100%; object-fit: cover; }
+.rl-book .cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 0, 0, .22) 0%, rgba(255, 255, 255, .22) 1.4%, rgba(255, 255, 255, 0) 3.4%, rgba(0, 0, 0, .1) 4.4%, rgba(0, 0, 0, 0) 8%); }
 
 /* ============ 7. How coaching works ============ */
 .how-head h2 { margin-top: 14px; max-width: 30ch; }
@@ -258,7 +259,7 @@
 .aw-copy { padding: clamp(36px, 5vw, 72px); align-self: center; }
 .aw-badge { display: inline-flex; padding: 8px 12px; border-radius: 12px; background: #fff; box-shadow: var(--shadow-sm); }
 .aw-logo { height: 46px; width: auto; }
-.aw .eyebrow { margin-top: 28px; color: var(--b-300); }
+.aw .eyebrow { margin-top: 0; color: var(--b-300); }
 .aw h2 { color: #fff; margin-top: 14px; max-width: 24ch; }
 .aw .lede { color: rgba(255, 255, 255, .62); margin-top: 18px; max-width: 44ch; }
 .aw .btn { margin-top: 32px; }
@@ -272,13 +273,11 @@
 .rail::before { left: 0; background: linear-gradient(90deg, #fafaf8, rgba(250, 250, 248, 0)); }
 .rail::after { right: 0; background: linear-gradient(270deg, #fafaf8, rgba(250, 250, 248, 0)); }
 .scan::after { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(90deg, #fafaf8 0%, rgba(250, 250, 248, 0) 10%, rgba(250, 250, 248, 0) 90%, #fafaf8 100%), linear-gradient(180deg, rgba(250, 250, 248, 0) 74%, #fafaf8 99%); }
-.rl-media::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #01130f 0%, rgba(1, 19, 15, 0) 34%); }
 .fit-img::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 56%, rgba(255, 255, 255, .55) 78%, #fff 100%); }
 .aw-media::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 30%; pointer-events: none; background: linear-gradient(180deg, rgba(44, 66, 120, 0), #2c4278); }
 .stage::before { display: none; }
 @media (max-width: 900px) {
-  .rl-media::after { background: linear-gradient(180deg, rgba(1, 19, 15, 0) 55%, #01130f 100%); }
-  .fit-img::after { background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #fff 100%); }
+    .fit-img::after { background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #fff 100%); }
 }
 
 /* ============ Static modes (page specific) ============ */
@@ -294,7 +293,8 @@
   .menu-btn { display: grid; }
   .hdr .in { gap: 10px; }
   .hdr .in > .btn { margin-left: auto; }
-  .justin, .problem-head, .how, .faq, .results-head { grid-template-columns: 1fr; }
+  .justin, .problem-head, .how, .faq, .results-head, .rl-card { grid-template-columns: 1fr; }
+  .rl-book .cover { width: 260px; }
   .results-head .lede { justify-self: start; }
   .scan-layout { grid-template-columns: 1fr 1fr; }
   .scan { grid-column: 1 / -1; grid-row: 1; width: min(440px, 100%); justify-self: center; }
@@ -326,10 +326,6 @@
   .hero-person { height: clamp(380px, 70vw, 560px); }
   .hero-person img { height: 100%; max-height: 100%; }
   .glass { left: auto; right: 0; top: auto; bottom: 18%; width: 230px; }
-  .rl-media { position: relative; width: 100%; height: clamp(260px, 52vw, 420px); }
-  .rl-media img { }
-  .rl .wrap { min-height: 0; }
-  .rl-copy { padding: 0 0 72px; margin-top: -40px; }
   .quotes { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(62%, 340px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter) 6px; scroll-padding: 0 var(--gutter); }
   .quotes::-webkit-scrollbar { display: none; }
   .q { scroll-snap-align: start; }
@@ -355,7 +351,10 @@
   .glass .row { font-size: 13px; padding: 8px 10px; }
   .trust { padding-top: 40px; }
   .logo { padding: 0 28px; height: 60px; }
-  .problem, .stage, .fit-card, .aw, .review { border-radius: 18px; }
+  .problem, .stage, .fit-card, .aw, .review, .rl-card { border-radius: 18px; }
+  .rl-card { padding: 32px 22px; }
+  .rl-card .btn { width: 100%; }
+  .rl-book .cover { width: 62%; }
   .justin .pcard .ph { aspect-ratio: 4 / 4.4; }
   .justin .pcard .ph img { object-position: 50% 12%; }
   .scan-layout { grid-template-columns: 1fr; gap: 44px; }
@@ -385,19 +384,15 @@
 }
 </style>
 </head>
-<body data-page="home">
+<body data-hdr="dark" data-page="home">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
 <!--SPRITE-->
     <symbol id="arrow" viewBox="0 0 16 16"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="arrow-ur" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="play" viewBox="0 0 16 16"><path d="M4.5 2.9v10.2c0 .6.7 1 1.2.7l8.2-5.1c.5-.3.5-1.1 0-1.4L5.7 2.2c-.5-.3-1.2.1-1.2.7z" fill="currentColor"/></symbol>
-    <symbol id="plus" viewBox="0 0 16 16"><path d="M8 2.5v11M2.5 8h11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
     <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="x" viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
     <symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.6 5.2 3.6 8.5S14.4 18.1 12 20.5M12 3.5C9.6 5.9 8.4 8.7 8.4 12s1.2 6.1 3.6 8.5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
-    <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
     <symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M198,64V168a6,6,0,0,1-12,0V78.48L68.24,196.24a6,6,0,0,1-8.48-8.48L177.52,70H88a6,6,0,0,1,0-12H192A6,6,0,0,1,198,64Z"/></symbol>
     <symbol id="i-arrows-clockwise" viewBox="0 0 256 256"><path d="M222,48V96a6,6,0,0,1-6,6H168a6,6,0,0,1,0-12h33.52L183.47,72a81.51,81.51,0,0,0-57.53-24h-.46A81.5,81.5,0,0,0,68.19,71.28a6,6,0,1,1-8.38-8.58,93.38,93.38,0,0,1,65.67-26.76H126a93.45,93.45,0,0,1,66,27.53l18,18V48a6,6,0,0,1,12,0ZM187.81,184.72a81.5,81.5,0,0,1-57.29,23.34h-.46a81.51,81.51,0,0,1-57.53-24L54.48,166H88a6,6,0,0,0,0-12H40a6,6,0,0,0-6,6v48a6,6,0,0,0,12,0V174.48l18,18.05a93.45,93.45,0,0,0,66,27.53h.52a93.38,93.38,0,0,0,65.67-26.76,6,6,0,1,0-8.38-8.58Z"/></symbol>
     <symbol id="i-bowl-food" viewBox="0 0 256 256"><path d="M224,106H213.77a86,86,0,0,0-171.54,0H32a6,6,0,0,0-6,6,102.35,102.35,0,0,0,56,91.06V208a14,14,0,0,0,14,14h64a14,14,0,0,0,14-14v-4.94A102.35,102.35,0,0,0,230,112,6,6,0,0,0,224,106ZM174.24,54.29a74.15,74.15,0,0,1,8.15,7.6A85.89,85.89,0,0,0,130.84,106H97.34A74.24,74.24,0,0,1,168,54C170.08,54,172.17,54.11,174.24,54.29ZM190.3,72.14A73.49,73.49,0,0,1,201.74,106H144.48A73.89,73.89,0,0,1,190.3,72.14ZM128,38a73.68,73.68,0,0,1,26.8,5,86.32,86.32,0,0,0-69.94,63H54.26A74.09,74.09,0,0,1,128,38Zm37.5,155.84a6,6,0,0,0-3.5,5.46V208a2,2,0,0,1-2,2H96a2,2,0,0,1-2-2v-8.7a6,6,0,0,0-3.5-5.46A90.35,90.35,0,0,1,38.2,118H217.8A90.35,90.35,0,0,1,165.5,193.84Z"/></symbol>
@@ -430,6 +425,10 @@
     <symbol id="if-quotes" viewBox="0 0 256 256"><path d="M116,72v88a48.05,48.05,0,0,1-48,48,8,8,0,0,1,0-16,32,32,0,0,0,32-32v-8H40a16,16,0,0,1-16-16V72A16,16,0,0,1,40,56h60A16,16,0,0,1,116,72ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Z"/></symbol>
     <symbol id="if-star" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></symbol>
     <symbol id="if-waveform" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM72,152a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm32,32a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-16a8,8,0,0,1-16,0V88a8,8,0,0,1,16,0Zm32-16a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm32,8a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"/></symbol>
+    <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="play" viewBox="0 0 16 16"><path d="M4.5 2.9v10.2c0 .6.7 1 1.2.7l8.2-5.1c.5-.3.5-1.1 0-1.4L5.7 2.2c-.5-.3-1.2.1-1.2.7z" fill="currentColor"/></symbol>
+    <symbol id="plus" viewBox="0 0 16 16"><path d="M8 2.5v11M2.5 8h11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="x" viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
     <!--/SPRITE-->
 </defs>
 </svg>
@@ -483,7 +482,7 @@
         </div>
       </div>
       <div class="hero-person">
-        <img src="assets/justin.webp" alt="Justin Maguire, smiling with arms crossed">
+        <img src="assets/justin.png" alt="Justin Maguire, smiling with arms crossed">
         <div class="glass">
           <div class="row"><span class="live"></span>Limited client spots</div>
           <div class="row"><svg><use href="#globe"/></svg>Online, worldwide</div>
@@ -593,15 +592,20 @@
   </section>
 
   <!-- 6. Responsive Living -->
-  <section class="rl dark" id="responsive-living">
-    <div class="rl-media"><img src="https://images.unsplash.com/photo-1491382825904-a4c6dca98e8c?w=2000&q=80&auto=format&fit=crop" alt="A person standing at the end of a stone pier, looking out over a calm sea"></div>
+  <section class="sec pt0" id="responsive-living">
     <div class="wrap">
-      <div class="rl-copy">
-        <span class="eyebrow">Responsive Living</span>
-        <h2>Responsive Living: training your body to handle pressure without burning out.</h2>
-        <p class="lede">Our approach to building a nervous system and daily habits that adapt to stress, travel and demanding schedules instead of breaking down under them.</p>
-        <p class="body">Your body is constantly responding to food, sleep, light, stress and life. Responsive Living teaches it to respond well, so you stay sharp, energised and resilient when life gets intense.</p>
-        <div><a href="responsive-living.html" class="u-link">Explore Responsive Living <svg><use href="#arrow"/></svg></a></div>
+      <div class="rl-card">
+        <div>
+          <span class="eyebrow">Responsive Living</span>
+          <h2>Responsive Living: training your body to handle pressure without burning out.</h2>
+          <p class="lede">Our approach to building a nervous system and daily habits that adapt to stress, travel and demanding schedules instead of breaking down under them.</p>
+          <p class="body">Your body is constantly responding to food, sleep, light, stress and life. Responsive Living teaches it to respond well, so you stay sharp, energised and resilient when life gets intense.</p>
+          <a href="responsive-living.html" class="btn btn-primary">Explore Responsive Living <svg><use href="#arrow"/></svg></a>
+        </div>
+        <div class="rl-book" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="cover"><img src="assets/rl-cover.jpg" alt=""></div>
+        </div>
       </div>
     </div>
   </section>
@@ -801,7 +805,6 @@
       <div class="aw">
         <div class="dots"></div>
         <div class="aw-copy">
-          <span class="aw-badge"><img class="aw-logo" src="assets/aw-logo.png" alt="Autonomic Wellness"></span>
           <span class="eyebrow">Autonomic Wellness</span>
           <h2>Need advanced lab testing or functional medicine protocols? That’s Autonomic Wellness.</h2>
           <p class="lede">Our clinical arm for in-depth testing. Use it on its own or alongside coaching.</p>
