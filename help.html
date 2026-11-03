@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help / FAQ · Autonomic Coaching</title>
+<meta name="description" content="Answers about Autonomic Coaching, how coaching works and the book Responsive Living.">
+<link rel="icon" href="assets/mark.png">
+<script>if (/[?&]figma\b/.test(location.search)) document.documentElement.classList.add('figma');</script>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ============ Hero (Autonomic Wellness help layout, in coaching green) ============ */
+.h-hero { background: linear-gradient(180deg, var(--mist) 0%, var(--page) 100%); }
+.h-in { max-width: 1040px; margin: 0 auto; padding: clamp(40px, 5vw, 72px) var(--gutter) clamp(56px, 6vw, 88px); text-align: center; }
+.h-in .eyebrow { margin-bottom: 14px; }
+.h-in h1 { margin: 0 auto; max-width: 16ch; }
+.h-in .sub { margin: 18px auto 0; max-width: 54ch; color: var(--ink-2); }
+.finder { margin-top: 36px; padding: clamp(18px, 2.4vw, 28px); border-radius: 24px; background: radial-gradient(70% 90% at 50% 0%, rgba(22, 157, 105, .35), rgba(22, 157, 105, 0) 70%), var(--g-900); box-shadow: 0 30px 60px -30px rgba(1, 19, 15, .55); }
+.search { position: relative; display: block; }
+.search .pi { position: absolute; left: 20px; top: 50%; margin-top: -10px; font-size: 20px; color: var(--ink-3); }
+.search input { width: 100%; height: 60px; padding: 0 20px 0 54px; border-radius: 14px; border: 0; background: #fff; font-size: 16px; }
+.search input:focus { outline: 0; box-shadow: 0 0 0 4px rgba(143, 239, 202, .45); }
+.tpills { margin-top: 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.tpill { height: 34px; padding: 0 16px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, .28); color: #fff; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: background-color .2s, border-color .2s, color .2s; }
+.tpill:hover, .tpill[aria-pressed="true"] { background: var(--g-300); border-color: var(--g-300); color: var(--g-950); }
+
+/* ============ Popular questions ============ */
+.pop { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.pq { display: grid; grid-template-columns: 1fr 32px; gap: 14px; align-items: center; padding: 22px 22px 24px; border-radius: 18px; background: #fff; border: 1px solid var(--line-2); text-align: left; transition: box-shadow .3s var(--ease), transform .3s var(--ease), border-color .3s; }
+.pq:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: transparent; }
+.pq strong { display: block; margin-top: 12px; font-size: 16px; line-height: 20px; font-weight: 500; }
+.pq .chev { width: 32px; height: 32px; border-radius: 99px; display: grid; place-items: center; background: var(--page); color: var(--g-700); }
+.pq .chev svg { width: 14px; height: 14px; }
+.label { display: inline-flex; align-items: center; height: 26px; padding: 0 11px; border-radius: 99px; background: var(--g-50); color: var(--g-700); font-size: 12px; line-height: 16px; font-weight: 500; }
+.label.b { background: var(--b-25); color: var(--b-700); }
+
+/* ============ All answers: topic nav + groups ============ */
+.answers { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); }
+.tnav { position: sticky; top: 108px; align-self: start; display: grid; gap: 8px; }
+.figma .tnav { position: static; }
+.tnav a { display: grid; grid-template-columns: 40px 1fr auto; gap: 12px; align-items: center; padding: 12px 14px 12px 12px; border-radius: 14px; border: 1px solid var(--line-2); background: #fff; font-size: 14px; line-height: 18px; font-weight: 500; transition: border-color .2s, background-color .2s; }
+.tnav a:hover { border-color: var(--g-300); }
+.tnav a.on { background: var(--g-900); border-color: var(--g-900); color: #fff; }
+.tnav .ic { width: 40px; height: 40px; border-radius: 10px; font-size: 19px; background: var(--g-50); border: 0; }
+.tnav a.on .ic { background: rgba(143, 239, 202, .14); color: var(--g-200); }
+.tnav small { font-size: 12px; line-height: 16px; font-weight: 400; color: var(--ink-3); }
+.tnav a.on small { color: rgba(255, 255, 255, .6); }
+.group + .group { margin-top: 56px; }
+.group h3 { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 16px; font-size: 24px; line-height: 30px; font-weight: 500; letter-spacing: -0.02em; scroll-margin-top: 110px; }
+.group h3 small { font-size: 14px; line-height: 18px; font-weight: 400; color: var(--ink-3); }
+.group[hidden], .group details[hidden] { display: none; }
+.empty { display: none; padding: 40px 0; color: var(--ink-2); }
+.empty.on { display: block; }
+
+/* ============ Still need help ============ */
+.still { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: center; padding: clamp(32px, 4.4vw, 64px); }
+.still p { margin-top: 12px; max-width: 52ch; color: var(--ink-2); }
+.still .ctas { justify-content: flex-end; }
+
+@media (max-width: 1100px) {
+  .pop { grid-template-columns: 1fr 1fr; }
+  .answers { grid-template-columns: 1fr; }
+  .tnav { position: static; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .still { grid-template-columns: 1fr; }
+  .still .ctas { justify-content: flex-start; }
+}
+@media (max-width: 720px) {
+  .pop { grid-template-columns: 1fr; }
+  .tnav { grid-template-columns: 1fr; }
+  .search input { height: 54px; }
+  .finder { border-radius: 18px; }
+  .still { padding: 28px 20px; border-radius: 18px; }
+  .still .btn { width: 100%; }
+}
+</style>
+</head>
+<body data-page="help">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<!--SPRITE-->
+    <symbol id="arrow" viewBox="0 0 16 16"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow-ur" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book-open-text" viewBox="0 0 256 256"><path d="M232,50H160a38,38,0,0,0-32,17.55A38,38,0,0,0,96,50H24a6,6,0,0,0-6,6V200a6,6,0,0,0,6,6H96a26,26,0,0,1,26,26,6,6,0,0,0,12,0,26,26,0,0,1,26-26h72a6,6,0,0,0,6-6V56A6,6,0,0,0,232,50ZM96,194H30V62H96a26,26,0,0,1,26,26V204.31A37.86,37.86,0,0,0,96,194Zm130,0H160a37.87,37.87,0,0,0-26,10.32V88a26,26,0,0,1,26-26h66ZM160,90h40a6,6,0,0,1,0,12H160a6,6,0,0,1,0-12Zm46,38a6,6,0,0,1-6,6H160a6,6,0,0,1,0-12h40A6,6,0,0,1,206,128Zm0,32a6,6,0,0,1-6,6H160a6,6,0,0,1,0-12h40A6,6,0,0,1,206,160Z"/></symbol>
+    <symbol id="i-facebook-logo" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V150h26a6,6,0,0,0,0-12H134V112a18,18,0,0,1,18-18h16a6,6,0,0,0,0-12H152a30,30,0,0,0-30,30v26H96a6,6,0,0,0,0,12h26v67.8a90,90,0,1,1,12,0Z"/></symbol>
+    <symbol id="i-heartbeat" viewBox="0 0 256 256"><path d="M72,142H32a6,6,0,0,1,0-12H68.79L83,108.67a6,6,0,0,1,10,0l27,40.51,11-16.51a6,6,0,0,1,5-2.67h24a6,6,0,0,1,0,12H139.21L125,163.33a6,6,0,0,1-10,0L88,122.82,77,139.33A6,6,0,0,1,72,142ZM178,42c-21,0-39.26,9.47-50,25.34C117.26,51.47,99,42,78,42a60.07,60.07,0,0,0-60,60q0,1.09,0,2.19a6,6,0,0,0,12-.38c0-.6,0-1.21,0-1.81A48.05,48.05,0,0,1,78,54c20.28,0,37.31,10.83,44.45,28.27a6,6,0,0,0,11.1,0C140.69,64.83,157.72,54,178,54a48.05,48.05,0,0,1,48,48c0,55.73-81.61,105.65-98,115.11-9.84-5.66-43.09-25.82-68.16-53.16a6,6,0,1,0-8.84,8.1c30.94,33.77,72.41,56.29,74.16,57.23a6,6,0,0,0,5.68,0,334.68,334.68,0,0,0,53.06-37C219.8,161.59,238,131.2,238,102A60.07,60.07,0,0,0,178,42Z"/></symbol>
+    <symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128ZM40,70H216a6,6,0,0,0,0-12H40a6,6,0,0,0,0,12ZM216,186H40a6,6,0,0,0,0,12H216a6,6,0,0,0,0-12Z"/></symbol>
+    <symbol id="i-magnifying-glass" viewBox="0 0 256 256"><path d="M228.24,219.76l-51.38-51.38a86.15,86.15,0,1,0-8.48,8.48l51.38,51.38a6,6,0,0,0,8.48-8.48ZM38,112a74,74,0,1,1,74,74A74.09,74.09,0,0,1,38,112Z"/></symbol>
+    <symbol id="i-path" viewBox="0 0 256 256"><path d="M200,170a30.05,30.05,0,0,0-29.4,24H72a34,34,0,0,1,0-68h96a38,38,0,0,0,0-76H72a6,6,0,0,0,0,12h96a26,26,0,0,1,0,52H72a46,46,0,0,0,0,92h98.6A30,30,0,1,0,200,170Zm0,48a18,18,0,1,1,18-18A18,18,0,0,1,200,218Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 256 256"><path d="M204.24,195.76a6,6,0,1,1-8.48,8.48L128,136.49,60.24,204.24a6,6,0,0,1-8.48-8.48L119.51,128,51.76,60.24a6,6,0,0,1,8.48-8.48L128,119.51l67.76-67.75a6,6,0,0,1,8.48,8.48L136.49,128Z"/></symbol>
+    <symbol id="i-youtube-logo" viewBox="0 0 256 256"><path d="M163.33,123l-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128ZM232.4,70a22,22,0,0,0-13.28-15C185,41.79,130.27,42,128,42s-57-.21-91.16,13A22,22,0,0,0,23.6,70C21.05,79.89,18,98,18,128s3.05,48.11,5.6,58a22,22,0,0,0,13.28,15C71,214.21,125.72,214,128,214h.71c6.91,0,58-.44,90.45-13a22,22,0,0,0,13.28-15c2.55-9.87,5.6-27.93,5.6-58S235,79.89,232.4,70ZM220.78,183a10,10,0,0,1-6,6.86C182.78,202.19,128.58,202,128,202s-54.71.2-86.75-12.17a10,10,0,0,1-6-6.86C32.84,173.78,30,156.78,30,128s2.84-45.78,5.22-55a10,10,0,0,1,6-6.86C72.06,54.26,123.53,54,127.76,54H128c.54,0,54.71-.2,86.75,12.17a10,10,0,0,1,6,6.86c2.38,9.19,5.22,26.19,5.22,55S223.16,173.78,220.78,183Z"/></symbol>
+    <symbol id="plus" viewBox="0 0 16 16"><path d="M8 2.5v11M2.5 8h11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <!--/SPRITE-->
+</defs></svg>
+
+<!--HEADER-->
+<header class="hdr" id="nav">
+  <div class="in">
+    <a href="index.html" class="brand" aria-label="Autonomic Coaching home"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+    <nav aria-label="Primary">
+      <a href="responsive-living.html">Responsive Living</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About Justin</a>
+      <a href="testimonials.html">Results</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <button class="menu-btn close" id="sheetClose" aria-label="Close menu" style="display:grid"><svg class="pi"><use href="#i-x"/></svg></button>
+  <nav>
+    <a href="responsive-living.html">Responsive Living<svg><use href="#arrow"/></svg></a>
+    <a href="how-it-works.html">How It Works<svg><use href="#arrow"/></svg></a>
+    <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
+    <a href="testimonials.html">Results<svg><use href="#arrow"/></svg></a>
+    <a href="blog.html">Blog<svg><use href="#arrow"/></svg></a>
+    <a href="help.html">Help / FAQ<svg><use href="#arrow"/></svg></a>
+    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
+    <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness<svg><use href="#arrow-ur"/></svg></a>
+  </nav>
+  <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
+</div>
+<!--/HEADER-->
+
+<main id="top">
+
+  <!-- 1. Help hero with search -->
+  <section class="h-hero">
+    <div class="h-in">
+      <span class="eyebrow">Help Center</span>
+      <h1>Hello, how can we help?</h1>
+      <p class="sub">Answers about coaching, how it works and the book Responsive Living, in one place.</p>
+      <div class="finder">
+        <label class="search"><span class="sr">Search the Help Center</span><svg class="pi"><use href="#i-magnifying-glass"/></svg><input type="search" id="q" placeholder="Search coaching, lab tests, the book…" autocomplete="off"></label>
+        <div class="tpills" role="group" aria-label="Topics">
+          <button type="button" class="tpill" data-t="coaching" aria-pressed="false">Coaching</button>
+          <button type="button" class="tpill" data-t="how" aria-pressed="false">How it works</button>
+          <button type="button" class="tpill" data-t="book" aria-pressed="false">Responsive Living, the book</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Popular questions -->
+  <section class="sec pt0" id="popular">
+    <div class="wrap">
+      <div class="head"><h2>Popular questions</h2></div>
+      <div class="pop">
+        <a href="#coaching-1" class="pq" data-open><span><span class="label">Coaching</span><strong>Who do you work with?</strong></span><span class="chev"><svg><use href="#arrow"/></svg></span></a>
+        <a href="#coaching-2" class="pq" data-open><span><span class="label">Coaching</span><strong>Is coaching online?</strong></span><span class="chev"><svg><use href="#arrow"/></svg></span></a>
+        <a href="#coaching-5" class="pq" data-open><span><span class="label">Coaching</span><strong>What happens after I request coaching?</strong></span><span class="chev"><svg><use href="#arrow"/></svg></span></a>
+        <a href="#how-2" class="pq" data-open><span><span class="label">How it works</span><strong>Is coaching the same as therapy?</strong></span><span class="chev"><svg><use href="#arrow"/></svg></span></a>
+        <a href="#book-1" class="pq" data-open><span><span class="label b">Responsive Living, the book</span><strong>What is Responsive Living?</strong></span><span class="chev"><svg><use href="#arrow"/></svg></span></a>
+        <a href="#book-7" class="pq" data-open><span><span class="label b">Responsive Living, the book</span><strong>Is there an audiobook?</strong></span><span class="chev"><svg><use href="#arrow"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. All answers -->
+  <section class="sec pt0" id="answers">
+    <div class="wrap answers">
+      <nav class="tnav" aria-label="Topics">
+        <a href="#t-coaching" data-t="coaching"><span class="ic"><svg class="pi"><use href="#i-heartbeat"/></svg></span><span>Coaching<br><small>5 answers</small></span></a>
+        <a href="#t-how" data-t="how"><span class="ic"><svg class="pi"><use href="#i-path"/></svg></span><span>How it works<br><small>3 answers</small></span></a>
+        <a href="#t-book" data-t="book"><span class="ic"><svg class="pi"><use href="#i-book-open-text"/></svg></span><span>Responsive Living, the book<br><small>7 answers</small></span></a>
+      </nav>
+      <div>
+      <div class="group" data-g="coaching">
+        <h3 id="t-coaching">Coaching<small>5 answers</small></h3>
+        <div class="faq-list">
+          <details id="coaching-1"><summary>Who do you work with?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>Founders, executives, athletes and high performers whose health is getting in the way of how they want to live and work.</p></div></details>
+          <details id="coaching-2"><summary>Is coaching online?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>Yes. You can work with us from anywhere in the world.</p></div></details>
+          <details id="coaching-3"><summary>Do I need lab tests?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>In most cases, yes. We’ll recommend the right tests for you and explain exactly what they show.</p></div></details>
+          <details id="coaching-4"><summary>How long does coaching last?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>Most clients work with us for at least 3–6 months, because lasting change takes time to build.</p></div></details>
+          <details id="coaching-5"><summary>What happens after I request coaching?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>We review your request and, if it’s a good fit, invite you to a call to discuss next steps.</p></div></details>
+        </div>
+      </div>
+      <div class="group" data-g="how">
+        <h3 id="t-how">How it works<small>3 answers</small></h3>
+        <div class="faq-list">
+          <details id="how-1"><summary>Do I need lab tests to start coaching?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>In most cases, yes. Blood work is the starting point for the assessment, and we recommend the tests that apply to you.</p></div></details>
+          <details id="how-2"><summary>Is coaching the same as therapy?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. Therapy is treatment you receive, while coaching is learning you do. Some countries, including South Africa, regulate the two differently.</p></div></details>
+          <details id="how-3"><summary>Does coaching replace my doctor?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. Anything urgent should go to your own doctor or emergency services.</p></div></details>
+        </div>
+      </div>
+      <div class="group" data-g="book">
+        <h3 id="t-book">Responsive Living, the book<small>7 answers</small></h3>
+        <div class="faq-list">
+          <details id="book-1"><summary>What is Responsive Living?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>Responsive Living is the practice of reading your biology, your psychology and your daily life together, and adjusting as each one changes. It’s also the title of Justin Maguire’s book, which explains the idea through one man’s story.</p></div></details>
+          <details id="book-2"><summary>Is this book medical advice?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. It’s written for information and understanding, and the author isn’t a medical professional. Talk to a qualified healthcare provider before making decisions about your health. If you need a doctor’s review or testing, see <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness</a>. For anything urgent, contact your own doctor or emergency services.</p></div></details>
+          <details id="book-3"><summary>Is the book only about allergies?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. The story follows a man whose symptoms lean toward allergies, gut and skin trouble, but it covers energy, thyroid, hormones, stress, and the nervous system too.</p></div></details>
+          <details id="book-4"><summary>Does the book tell me what to take?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>It explains how different approaches work and includes reference notes on protocols. None of it is a personal plan, and what suits you depends on your lab results, your history, and a qualified clinician.</p></div></details>
+          <details id="book-5"><summary>Do I need lab work to read the book?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. You can read the book without it. Lab work helps once you want to apply the ideas, and the later chapters explain what it can and can’t tell you.</p></div></details>
+          <details id="book-6"><summary>How is this different from biohacking?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>Biohacking often starts with a tool or a protocol. Responsive Living starts with how your body responds to stress and why, then lets that shape every choice.</p></div></details>
+          <details id="book-7"><summary>Is there an audiobook?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>Yes. It’s available on Audible, Spotify, and Apple.</p></div></details>
+        </div>
+      </div>
+        <p class="empty" id="empty">No answers match that search. Try another word, or send us your question below.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Still need help -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="panel still">
+        <div>
+          <h2>Still need help?</h2>
+          <p>Can’t find what you’re looking for? Request coaching and tell us your question, or visit Autonomic Wellness for testing and doctor-led care.</p>
+        </div>
+        <div class="ctas">
+          <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
+          <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener" class="u-link">Visit Autonomic Wellness <svg><use href="#arrow-ur"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="brand"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+        <div><a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <nav class="foot-col foot-links" aria-label="Footer">
+        <a href="responsive-living.html">Responsive Living</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="about.html">About Justin</a>
+        <a href="testimonials.html">Results</a>
+        <a href="blog.html">Blog</a>
+        <a href="help.html">Help / FAQ</a>
+        <a href="concierge.html">Concierge</a>
+        <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Autonomic Wellness</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+      <div class="foot-col socials">
+        <a href="#"><svg class="pi"><use href="#i-instagram-logo"/></svg>Instagram</a>
+        <a href="#"><svg class="pi"><use href="#i-youtube-logo"/></svg>YouTube</a>
+        <a href="#"><svg class="pi"><use href="#i-facebook-logo"/></svg>Facebook</a>
+      </div>
+    </div>
+    <div class="foot-mid">
+      <div class="notes"><span>Coaching is not a substitute for medical diagnosis or treatment.</span></div>
+      <a href="#top" class="totop" aria-label="Back to top"><svg><use href="#arrow"/></svg></a>
+    </div>
+    <div class="mark-xl" aria-hidden="true">Autonomic Coaching</div>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  var q = document.getElementById('q'), empty = document.getElementById('empty');
+  var groups = document.querySelectorAll('.group'), pills = document.querySelectorAll('.tpill'), navs = document.querySelectorAll('.tnav a');
+  var topic = null;
+  function apply() {
+    var term = q.value.trim().toLowerCase(), total = 0;
+    groups.forEach(function (g) {
+      var n = 0;
+      g.querySelectorAll('details').forEach(function (d) {
+        var ok = !term || d.textContent.toLowerCase().indexOf(term) > -1;
+        d.hidden = !ok; if (ok) n++;
+        if (term && ok) d.open = true;
+      });
+      g.hidden = n === 0 || (topic && g.getAttribute('data-g') !== topic);
+      if (!g.hidden) total += n;
+    });
+    empty.classList.toggle('on', total === 0);
+  }
+  q.addEventListener('input', apply);
+  pills.forEach(function (p) {
+    p.addEventListener('click', function () {
+      topic = topic === p.getAttribute('data-t') ? null : p.getAttribute('data-t');
+      pills.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-t') === topic ? 'true' : 'false'); });
+      apply();
+      document.getElementById('answers').scrollIntoView({ behavior: AC.reduce ? 'auto' : 'smooth' });
+    });
+  });
+  // Popular question cards open their answer
+  document.querySelectorAll('[data-open]').forEach(function (a) {
+    a.addEventListener('click', function () { var d = document.querySelector(a.getAttribute('href')); if (d) d.open = true; });
+  });
+  // Highlight the topic being read
+  function spy() {
+    var cur = null;
+    groups.forEach(function (g) { if (!g.hidden && g.getBoundingClientRect().top < 200) cur = g.getAttribute('data-g'); });
+    navs.forEach(function (a) { a.classList.toggle('on', a.getAttribute('data-t') === (cur || 'coaching')); });
+  }
+  spy(); window.addEventListener('scroll', spy, { passive: true });
+})();
+</script>
+</body>
+</html>
