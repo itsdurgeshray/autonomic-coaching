@@ -21,35 +21,24 @@
 .t-ner { background: linear-gradient(160deg, #06352c 0%, #01130f 100%); color: #4fd1a0; }
 .t-hor .lbl, .t-lab .lbl, .t-gut .lbl { background: #fff; border-color: rgba(2, 10, 29, .06); color: var(--ink); }
 
-/* ============ Hero: layered, with floating article photos ============ */
-.b-hero { position: relative; overflow: hidden; isolation: isolate; background: radial-gradient(50% 60% at 50% 0%, rgba(143, 239, 202, .45), rgba(143, 239, 202, 0) 70%), radial-gradient(40% 50% at 100% 60%, rgba(191, 210, 254, .45), rgba(191, 210, 254, 0) 70%), radial-gradient(40% 50% at 0% 70%, rgba(198, 245, 226, .6), rgba(198, 245, 226, 0) 70%), var(--page); }
-.b-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(rgba(2, 10, 29, .045) 1px, rgba(2, 10, 29, 0) 1px), linear-gradient(90deg, rgba(2, 10, 29, .045) 1px, rgba(2, 10, 29, 0) 1px); background-size: 64px 64px; background-position: center top; }
-.b-hero .phero-in { grid-template-columns: minmax(0, 1fr); gap: 0; justify-items: center; text-align: center; padding-bottom: clamp(56px, 6vw, 96px); }
-.b-hero .eyebrow { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 14px; border-radius: 99px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
-.b-hero .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 99px; background: var(--g-600); }
-.b-hero h1 { margin: 20px auto 0; max-width: 15ch; }
+/* ============ Hero: same language as the Help page (mint fade, dark green search panel) ============ */
+.b-hero { background: linear-gradient(180deg, var(--mist) 0%, var(--page) 100%); }
+.b-hero .phero-in { grid-template-columns: minmax(0, 1fr); gap: 0; justify-items: center; text-align: center; padding-bottom: clamp(56px, 6vw, 88px); }
+.b-hero h1 { margin: 14px auto 0; max-width: 15ch; }
 .b-hero .sub { margin-left: auto; margin-right: auto; max-width: 56ch; }
-.float { position: absolute; z-index: 1; width: 210px; border-radius: 18px; overflow: hidden; background: #fff; padding: 8px; box-shadow: 0 2px 4px rgba(2, 10, 29, .05), 0 30px 60px -24px rgba(2, 10, 29, .35); }
-.float img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; }
-.float span { display: block; padding: 10px 6px 4px; font-size: 12px; line-height: 16px; font-weight: 500; color: var(--g-700); text-align: left; }
-.float.a { left: 4%; top: 22%; transform: rotate(-6deg); }
-.float.b { right: 4%; top: 16%; transform: rotate(5deg); }
-.float.c { left: 9%; bottom: 10%; width: 170px; transform: rotate(4deg); }
-.float.d { right: 8%; bottom: 8%; width: 180px; transform: rotate(-4deg); }
-.finder { margin-top: 40px; width: min(100%, 800px); min-width: 0; padding: 10px; border-radius: 22px; background: rgba(255, 255, 255, .7); border: 1px solid rgba(255, 255, 255, .9); box-shadow: 0 30px 60px -30px rgba(2, 10, 29, .3); }
+.finder { margin-top: 36px; width: min(100%, 880px); min-width: 0; padding: clamp(18px, 2.4vw, 28px); border-radius: 24px; background: radial-gradient(70% 90% at 50% 0%, rgba(22, 157, 105, .35), rgba(22, 157, 105, 0) 70%), var(--g-900); box-shadow: 0 30px 60px -30px rgba(1, 19, 15, .55); }
 .search { position: relative; display: flex; align-items: center; }
 .search .pi { position: absolute; left: 20px; top: 50%; margin-top: -10px; font-size: 20px; color: var(--ink-3); }
-.search input { width: 100%; height: 60px; padding: 0 140px 0 54px; border-radius: 14px; border: 1px solid var(--line); background: #fff; font-size: 16px; transition: border-color .2s, box-shadow .2s; }
-.search input:focus { outline: 0; border-color: var(--g-600); box-shadow: 0 0 0 4px rgba(22, 157, 105, .14); }
+.search input { width: 100%; height: 60px; padding: 0 140px 0 54px; border-radius: 14px; border: 0; background: #fff; font-size: 16px; }
+.search input:focus { outline: 0; box-shadow: 0 0 0 4px rgba(143, 239, 202, .45); }
 .search input::placeholder { color: #a3a9b6; }
 .search .btn { position: absolute; right: 6px; height: 48px; }
-.chips { margin: 12px 0 2px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
-.chip-f { height: 36px; padding: 0 16px; border-radius: 99px; border: 1px solid var(--line); background: #fff; font-size: 14px; line-height: 18px; font-weight: 500; color: var(--ink-2); transition: background-color .2s, color .2s, border-color .2s; }
-.chip-f:hover { border-color: var(--g-300); color: var(--ink); }
-.chip-f[aria-pressed="true"] { background: var(--g-900); border-color: var(--g-900); color: #fff; }
+.chips { margin-top: 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.chip-f { height: 34px; padding: 0 16px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, .28); color: #fff; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: background-color .2s, border-color .2s, color .2s; }
+.chip-f:hover, .chip-f[aria-pressed="true"] { background: var(--g-300); border-color: var(--g-300); color: var(--g-950); }
 
 /* ============ Featured: cinematic, light ============ */
-.feat { display: block; max-width: 1120px; margin: 0 auto; border-radius: 28px; overflow: hidden; background: #fff; border: 1px solid var(--line-2); box-shadow: 0 2px 4px rgba(2, 10, 29, .04), 0 50px 100px -50px rgba(2, 10, 29, .45); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+.feat { display: block; border-radius: 28px; overflow: hidden; background: #fff; border: 1px solid var(--line-2); box-shadow: 0 2px 4px rgba(2, 10, 29, .04), 0 50px 100px -50px rgba(2, 10, 29, .45); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
 .feat:hover { transform: translateY(-4px); }
 .feat .ph { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #dfe6e2; }
 .feat .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.6s var(--ease); }
@@ -84,7 +73,6 @@
 .empty { display: none; padding: 48px 0; text-align: center; color: var(--ink-2); }
 .empty.on { display: block; }
 
-@media (max-width: 1240px) { .float { display: none; } }
 @media (max-width: 1100px) {
   .grid { grid-template-columns: 1fr 1fr; }
   .feat-body { grid-template-columns: 1fr; }
@@ -92,10 +80,10 @@
 }
 @media (max-width: 720px) {
   .grid { grid-template-columns: 1fr; gap: 16px; }
-  .finder { padding: 8px; border-radius: 18px; }
+  .finder { border-radius: 18px; }
   .search input { height: 54px; padding-right: 16px; }
   .search .btn { display: none; }
-  .chips { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; margin: 12px -8px 0; padding: 0 8px; }
+  .chips { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; margin: 14px -18px 0; padding: 0 18px; }
   .chips::-webkit-scrollbar { display: none; }
   .chip-f { flex: none; }
   .feat { border-radius: 20px; }
@@ -163,10 +151,6 @@
   <!-- 1. Hero: search and topics -->
   <section class="phero b-hero">
     <div class="phero-in">
-      <span class="float a" aria-hidden="true"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=420&h=315&fit=crop&q=80&auto=format" alt=""><span>Nervous system</span></span>
-      <span class="float b" aria-hidden="true"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=420&h=315&fit=crop&q=80&auto=format" alt=""><span>Gut health</span></span>
-      <span class="float c" aria-hidden="true"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=420&h=315&fit=crop&q=80&auto=format" alt=""><span>Lab results</span></span>
-      <span class="float d" aria-hidden="true"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=420&h=315&fit=crop&q=80&auto=format" alt=""><span>Sleep</span></span>
       <div class="phero-copy">
         <span class="eyebrow">Blog</span>
         <h1>Science-led health articles across body and mind</h1>
