@@ -7,6 +7,8 @@
 <meta name="description" content="Why do I still feel tired after a full night’s sleep? The space between stress and response, and what your labs can and can’t show.">
 <link rel="icon" href="assets/mark.png">
 <script>if (/[?&]figma\b/.test(location.search)) document.documentElement.classList.add('figma');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 <style>
 /* ============ Topic covers (drawn as inline SVG so they import into Figma as vectors) ============ */
@@ -41,18 +43,26 @@
 .byline .m { display: inline-flex; align-items: center; gap: 8px; }
 .byline .m .pi { font-size: 16px; color: var(--g-700); }
 .a-cover { max-width: var(--max); margin: clamp(40px, 4.4vw, 64px) auto 0; padding: 0 var(--gutter); }
-.a-cover .cv { aspect-ratio: 21 / 8.4; border-radius: 28px; }
+.a-cover .ph { aspect-ratio: 21 / 9; border-radius: 28px; overflow: hidden; background: #dfe6e2; }
+.a-cover .ph img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ============ Layout: TOC + article ============ */
-.a-body { max-width: var(--max); margin: 0 auto; padding: clamp(56px, 6vw, 88px) var(--gutter) 0; display: grid; grid-template-columns: 260px minmax(0, 720px); justify-content: center; gap: clamp(40px, 6vw, 104px); }
-.rail { position: sticky; top: 108px; align-self: start; }
+.a-body { max-width: var(--max); margin: 0 auto; padding: clamp(56px, 6vw, 88px) var(--gutter) 0; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: clamp(40px, 5vw, 80px); }
+.rail { position: sticky; top: 108px; align-self: start; display: grid; gap: 32px; }
+.side-author { display: grid; grid-template-columns: 52px 1fr; gap: 14px; align-items: center; padding: 20px; border-radius: 20px; background: #fff; border: 1px solid var(--line-2); }
+.side-author img { width: 52px; height: 52px; border-radius: 99px; object-fit: cover; object-position: 50% 12%; background: #dfe0e4; }
+.side-author .k { display: block; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-3); }
+.side-author strong { display: block; margin-top: 2px; font-size: 16px; line-height: 20px; font-weight: 500; }
+.side-author .t { display: block; font-size: 12px; line-height: 16px; color: var(--g-700); }
+.side-author p { grid-column: 1 / -1; font-size: 14px; line-height: 18px; color: var(--ink-2); }
+.side-author .u-link { grid-column: 1 / -1; font-size: 14px; }
 .figma .rail { position: static; }
 .toc-t { font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
 .toc { list-style: none; margin: 16px 0 0; padding: 0; border-left: 1px solid var(--line); }
 .toc a { display: block; margin-left: -1px; padding: 9px 0 9px 18px; border-left: 2px solid transparent; font-size: 14px; line-height: 18px; color: var(--ink-2); transition: color .2s, border-color .2s; }
 .toc a:hover { color: var(--ink); }
 .toc a.on { color: var(--g-700); border-left-color: var(--g-600); font-weight: 500; }
-.share { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line); }
+.share { padding-top: 24px; border-top: 1px solid var(--line); }
 .share .row { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
 .share a, .share button { width: 40px; height: 40px; border-radius: 99px; display: grid; place-items: center; background: #fff; border: 1px solid var(--line); color: var(--ink-2); font-size: 16px; transition: color .2s, border-color .2s, background-color .2s; }
 .share a:hover, .share button:hover { color: var(--g-700); border-color: var(--g-300); background: var(--g-50); }
@@ -69,10 +79,11 @@
 .prose .lead-p { font-size: 21px; line-height: 1.6; color: var(--ink); }
 .prose strong { font-weight: 500; color: var(--ink); }
 .prose p a { color: var(--g-700); text-decoration: underline; text-underline-offset: 4px; }
-.pull { margin: 48px 0; padding: 36px 0 36px 32px; border-left: 3px solid var(--g-600); }
-.pull .qm { width: 28px; height: 28px; color: var(--g-600); }
-.pull blockquote { margin: 16px 0 0; font-size: clamp(23px, 2.2vw, 30px); line-height: 1.32; letter-spacing: -0.02em; color: var(--ink); }
-.pull cite { display: block; margin-top: 18px; font-size: 16px; font-weight: 500; color: var(--g-700); }
+.pull { position: relative; margin: 48px 0; padding: clamp(32px, 3.6vw, 48px) clamp(28px, 4vw, 56px) clamp(28px, 3vw, 40px) clamp(56px, 6vw, 88px); border-radius: 20px; background: var(--mist); border-left: 4px solid var(--g-600); }
+.pull .qm { position: absolute; left: clamp(20px, 2.4vw, 32px); top: clamp(30px, 3.4vw, 46px); width: 28px; height: 28px; color: var(--g-600); }
+.pull blockquote { margin: 0; font-family: "Newsreader", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(22px, 2.2vw, 28px); line-height: 1.4; letter-spacing: -0.01em; color: var(--ink); }
+.pull cite { display: flex; align-items: center; gap: 12px; margin-top: 22px; font-size: 14px; line-height: 18px; font-weight: 500; font-style: normal; color: var(--g-700); }
+.pull cite::before { content: ""; width: 28px; height: 1px; background: var(--g-600); }
 .callout { padding: 28px 30px; border-radius: 20px; background: var(--mist); font-size: 16px; line-height: 20px; }
 .callout .statement { font-size: 22px; line-height: 1.6; color: var(--ink); }
 .tbl { overflow-x: auto; border-radius: 18px; border: 1px solid var(--line); background: #fff; }
@@ -88,41 +99,38 @@
 .cta-box p { margin-top: 12px; color: rgba(255, 255, 255, .72); font-size: 16px; line-height: 20px;}
 .cta-box .btn { margin-top: 24px; }
 .tags { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 8px; }
-.author { margin-top: 32px; padding: 28px; border-radius: 22px; background: #fff; border: 1px solid var(--line-2); display: grid; grid-template-columns: 88px 1fr; gap: 22px; align-items: start; }
-.author img { width: 88px; height: 88px; border-radius: 99px; object-fit: cover; object-position: 50% 12%; background: #dfe0e4; }
-.author .k { font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
-.author strong { display: block; margin-top: 6px; font-size: 20px; font-weight: 500; letter-spacing: -0.01em; }
-.author .t { font-size: 14px; color: var(--g-700); }
-.author p { margin-top: 12px; font-size: 16px; line-height: 20px; color: var(--ink-2); }
-.author .u-link { margin-top: 14px; }
 
 /* ============ Recommended (same cards as the blog listing) ============ */
 .recs-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .recs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.card-a { display: flex; flex-direction: column; border-radius: 20px; background: #fff; border: 1px solid var(--line-2); overflow: hidden; transition: box-shadow .4s var(--ease), transform .4s var(--ease); }
+.card-a { display: flex; flex-direction: column; padding: 10px; border-radius: 22px; background: #fff; border: 1px solid var(--line-2); transition: box-shadow .4s var(--ease), transform .4s var(--ease); }
 .card-a:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-.card-a .cv { border-radius: 0; aspect-ratio: 16 / 9; }
-.card-a .in { flex: 1; display: flex; flex-direction: column; padding: 22px 22px 20px; }
+.card-a .ph { aspect-ratio: 16 / 10; border-radius: 14px; overflow: hidden; background: #dfe6e2; }
+.card-a .ph img { width: 100%; height: 100%; object-fit: cover; }
+.card-a .in { flex: 1; display: flex; flex-direction: column; padding: 18px 12px 12px; }
 .label { display: inline-flex; align-self: flex-start; align-items: center; height: 28px; padding: 0 12px; border-radius: 99px; background: var(--g-50); color: var(--g-700); font-size: 12px; line-height: 16px; font-weight: 500; }
 .card-a h3 { margin-top: 14px; font-size: 20px; line-height: 26px; font-weight: 500; letter-spacing: -0.015em; }
 .card-a .go { margin-top: auto; padding-top: 22px; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; line-height: 18px; font-weight: 500; color: var(--g-700); }
 .card-a .go svg { width: 14px; height: 14px; }
 
 @media (max-width: 1100px) {
-  .a-body { grid-template-columns: minmax(0, 720px); }
+  .a-body { grid-template-columns: minmax(0, 1fr); }
+  .rail { grid-template-columns: 1fr 1fr; align-items: start; }
+  .share { grid-column: 1 / -1; }
   .rail { position: static; }
   .toc-wrap { padding: 20px 22px; border-radius: 18px; background: #fff; border: 1px solid var(--line-2); }
   .recs { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 720px) {
-  .a-cover .cv { aspect-ratio: 16 / 10; border-radius: 18px; }
+  .a-cover .ph { aspect-ratio: 16 / 10; border-radius: 18px; }
   .byline { gap: 12px 18px; }
   .prose { font-size: 16px; }
   .prose .lead-p { font-size: 19px; }
-  .pull { padding: 24px 0 24px 20px; }
+  .pull { padding: 56px 20px 24px 22px; }
+  .pull .qm { left: 22px; top: 20px; }
   .callout, .cta-box { padding: 24px 20px; }
   .cta-box .btn { width: 100%; }
-  .author { grid-template-columns: 1fr; padding: 22px; }
+  .rail { grid-template-columns: 1fr; }
   .recs { grid-template-columns: 1fr; gap: 16px; }
 }
 </style>
@@ -207,11 +215,17 @@
         <span class="m"><svg class="pi"><use href="#i-clock"/></svg>6 min read</span>
       </div>
     </header>
-    <div class="a-cover"><div class="cv t-slp"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-slp"/></svg></div></div>
+    <div class="a-cover"><div class="ph"><img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=2400&h=1029&fit=crop&q=80&auto=format" alt="A person sitting at the end of a wooden pier on a still mountain lake"></div></div>
   </section>
 
   <div class="a-body">
     <aside class="rail">
+      <div class="side-author">
+        <img src="assets/justin-coat.png" alt="Justin Maguire">
+        <div><span class="k">Written by</span><strong>Justin Maguire</strong><span class="t">Nutritional scientist and health coach</span></div>
+        <p>Justin Maguire is a nutritional scientist and one-to-one health coach. He reads lab results, daily tracking and a client’s psychology together to find the patterns that each one misses when it’s looked at alone.</p>
+        <a href="about.html" class="u-link">Meet Justin <svg><use href="#arrow"/></svg></a>
+      </div>
       <div class="toc-wrap">
         <p class="toc-t">On this page</p>
         <ol class="toc" id="toc">
@@ -284,16 +298,6 @@
       </div>
 
       <div class="tags"><span class="pill blue">Sleep</span><span class="pill">Nervous system</span><span class="pill">Lab results</span></div>
-      <div class="author">
-        <img src="assets/justin-coat.png" alt="Justin Maguire">
-        <div>
-          <span class="k">Written by</span>
-          <strong>Justin Maguire</strong>
-          <span class="t">Nutritional scientist and health coach</span>
-          <p>Justin Maguire is a nutritional scientist and one-to-one health coach. He reads lab results, daily tracking and a client’s psychology together to find the patterns that each one misses when it’s looked at alone.</p>
-          <a href="about.html" class="u-link">Meet Justin <svg><use href="#arrow"/></svg></a>
-        </div>
-      </div>
     </article>
   </div>
 
@@ -305,15 +309,15 @@
       </div>
       <div class="recs">
         <a href="blog-post.html" class="card-a">
-          <div class="cv t-exh"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-exh"/></svg></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
           <div class="in"><span class="label">Exhaustion</span><h3>Energy that crashes mid-afternoon</h3><span class="go">Read article <svg><use href="#arrow"/></svg></span></div>
         </a>
         <a href="blog-post.html" class="card-a">
-          <div class="cv t-lab"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-lab"/></svg></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
           <div class="in"><span class="label">Lab results</span><h3>What lab work can and can’t tell you</h3><span class="go">Read article <svg><use href="#arrow"/></svg></span></div>
         </a>
         <a href="blog-post.html" class="card-a">
-          <div class="cv t-ner"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-ner"/></svg></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
           <div class="in"><span class="label">Nervous system</span><h3>Static physiology: the alarm goes off, and nothing moves</h3><span class="go">Read article <svg><use href="#arrow"/></svg></span></div>
         </a>
       </div>

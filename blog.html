@@ -21,43 +21,62 @@
 .t-ner { background: linear-gradient(160deg, #06352c 0%, #01130f 100%); color: #4fd1a0; }
 .t-hor .lbl, .t-lab .lbl, .t-gut .lbl { background: #fff; border-color: rgba(2, 10, 29, .06); color: var(--ink); }
 
-/* ============ Hero: title, search, topic pills ============ */
-.b-hero .phero-in { grid-template-columns: minmax(0, 1fr); gap: 0; justify-items: center; text-align: center; padding-bottom: clamp(40px, 4vw, 56px); }
-.b-hero h1 { max-width: 16ch; margin: 0 auto; }
-.b-hero .sub { margin-left: auto; margin-right: auto; max-width: 60ch; }
-.finder { margin-top: 40px; width: min(100%, 760px); min-width: 0; }
-.search { position: relative; }
+/* ============ Hero: layered, with floating article photos ============ */
+.b-hero { position: relative; overflow: hidden; isolation: isolate; background: radial-gradient(50% 60% at 50% 0%, rgba(143, 239, 202, .45), rgba(143, 239, 202, 0) 70%), radial-gradient(40% 50% at 100% 60%, rgba(191, 210, 254, .45), rgba(191, 210, 254, 0) 70%), radial-gradient(40% 50% at 0% 70%, rgba(198, 245, 226, .6), rgba(198, 245, 226, 0) 70%), var(--page); }
+.b-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(rgba(2, 10, 29, .045) 1px, rgba(2, 10, 29, 0) 1px), linear-gradient(90deg, rgba(2, 10, 29, .045) 1px, rgba(2, 10, 29, 0) 1px); background-size: 64px 64px; background-position: center top; }
+.b-hero .phero-in { grid-template-columns: minmax(0, 1fr); gap: 0; justify-items: center; text-align: center; padding-bottom: clamp(56px, 6vw, 96px); }
+.b-hero .eyebrow { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 14px; border-radius: 99px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+.b-hero .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 99px; background: var(--g-600); }
+.b-hero h1 { margin: 20px auto 0; max-width: 15ch; }
+.b-hero .sub { margin-left: auto; margin-right: auto; max-width: 56ch; }
+.float { position: absolute; z-index: 1; width: 210px; border-radius: 18px; overflow: hidden; background: #fff; padding: 8px; box-shadow: 0 2px 4px rgba(2, 10, 29, .05), 0 30px 60px -24px rgba(2, 10, 29, .35); }
+.float img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; }
+.float span { display: block; padding: 10px 6px 4px; font-size: 12px; line-height: 16px; font-weight: 500; color: var(--g-700); text-align: left; }
+.float.a { left: 4%; top: 22%; transform: rotate(-6deg); }
+.float.b { right: 4%; top: 16%; transform: rotate(5deg); }
+.float.c { left: 9%; bottom: 10%; width: 170px; transform: rotate(4deg); }
+.float.d { right: 8%; bottom: 8%; width: 180px; transform: rotate(-4deg); }
+.finder { margin-top: 40px; width: min(100%, 800px); min-width: 0; padding: 10px; border-radius: 22px; background: rgba(255, 255, 255, .7); border: 1px solid rgba(255, 255, 255, .9); box-shadow: 0 30px 60px -30px rgba(2, 10, 29, .3); }
+.search { position: relative; display: flex; align-items: center; }
 .search .pi { position: absolute; left: 20px; top: 50%; margin-top: -10px; font-size: 20px; color: var(--ink-3); }
-.search input { width: 100%; height: 60px; padding: 0 20px 0 54px; border-radius: 16px; border: 1px solid var(--line); background: #fff; font-size: 16px; box-shadow: var(--shadow-md); transition: border-color .2s, box-shadow .2s; }
-.search input:focus { outline: 0; border-color: var(--g-600); box-shadow: 0 0 0 4px rgba(22, 157, 105, .14), var(--shadow-md); }
+.search input { width: 100%; height: 60px; padding: 0 140px 0 54px; border-radius: 14px; border: 1px solid var(--line); background: #fff; font-size: 16px; transition: border-color .2s, box-shadow .2s; }
+.search input:focus { outline: 0; border-color: var(--g-600); box-shadow: 0 0 0 4px rgba(22, 157, 105, .14); }
 .search input::placeholder { color: #a3a9b6; }
-.chips { margin-top: 18px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.search .btn { position: absolute; right: 6px; height: 48px; }
+.chips { margin: 12px 0 2px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .chip-f { height: 36px; padding: 0 16px; border-radius: 99px; border: 1px solid var(--line); background: #fff; font-size: 14px; line-height: 18px; font-weight: 500; color: var(--ink-2); transition: background-color .2s, color .2s, border-color .2s; }
 .chip-f:hover { border-color: var(--g-300); color: var(--ink); }
 .chip-f[aria-pressed="true"] { background: var(--g-900); border-color: var(--g-900); color: #fff; }
 
-/* ============ Featured ============ */
-.feat { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: stretch; border-radius: 24px; overflow: hidden; background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); transition: box-shadow .4s var(--ease), transform .4s var(--ease); }
-.feat:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-.feat .cv { border-radius: 0; aspect-ratio: auto; min-height: 360px; }
-.feat-body { padding: clamp(28px, 3.6vw, 52px); display: flex; flex-direction: column; }
-.feat .kick { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.feat h2 { margin-top: 20px; }
-.feat .intro { margin-top: 16px; color: var(--ink-2); }
-.feat .go { margin-top: auto; padding-top: 28px; }
+/* ============ Featured: cinematic, light ============ */
+.feat { display: block; max-width: 1120px; margin: 0 auto; border-radius: 28px; overflow: hidden; background: #fff; border: 1px solid var(--line-2); box-shadow: 0 2px 4px rgba(2, 10, 29, .04), 0 50px 100px -50px rgba(2, 10, 29, .45); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+.feat:hover { transform: translateY(-4px); }
+.feat .ph { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #dfe6e2; }
+.feat .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.6s var(--ease); }
+.feat:hover .ph img { transform: scale(1.03); }
+.feat .ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(1, 19, 15, .3) 0%, rgba(1, 19, 15, 0) 26%, rgba(1, 19, 15, 0) 70%, rgba(1, 19, 15, .25) 100%); }
+.feat .ph .label { position: absolute; z-index: 1; left: 24px; top: 24px; background: #fff; color: var(--g-900); }
+.feat-body { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 24px 64px; align-items: end; padding: clamp(28px, 3.6vw, 48px); }
+.feat h2 { margin-top: 14px; max-width: 20ch; }
+.feat .intro { margin-top: 16px; color: var(--ink-2); max-width: 46ch; }
+.feat .side { display: grid; gap: 20px; justify-items: end; }
+.by { display: flex; align-items: center; gap: 12px; font-size: 14px; line-height: 18px; color: var(--ink-2); }
+.by img { width: 40px; height: 40px; border-radius: 99px; object-fit: cover; object-position: 50% 10%; background: #dfe0e4; }
+.by b { display: block; font-weight: 500; color: var(--ink); }
 .label { display: inline-flex; align-self: flex-start; align-items: center; height: 28px; padding: 0 12px; border-radius: 99px; background: var(--g-50); color: var(--g-700); font-size: 12px; line-height: 16px; font-weight: 500; }
-.label.dark { background: var(--g-900); color: #fff; }
 
-/* ============ Cards ============ */
+/* ============ Cards with photo thumbnails ============ */
 .list-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
 .list-head .count { font-size: 14px; line-height: 18px; color: var(--ink-3); }
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.card-a { display: flex; flex-direction: column; border-radius: 20px; background: #fff; border: 1px solid var(--line-2); overflow: hidden; transition: box-shadow .4s var(--ease), transform .4s var(--ease), border-color .3s; }
-.card-a:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: transparent; }
-.card-a .cv { border-radius: 0; aspect-ratio: 16 / 9; }
-.card-a .in { flex: 1; display: flex; flex-direction: column; padding: 22px 22px 20px; }
-.card-a h3 { margin-top: 14px; font-size: 20px; line-height: 26px; font-weight: 500; letter-spacing: -0.015em; }
-.card-a .c-foot { margin-top: auto; padding-top: 22px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid transparent; }
+.card-a { display: flex; flex-direction: column; padding: 10px; border-radius: 22px; background: #fff; border: 1px solid var(--line-2); transition: box-shadow .4s var(--ease), transform .4s var(--ease); }
+.card-a:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.card-a .ph { aspect-ratio: 16 / 10; border-radius: 14px; overflow: hidden; background: #dfe6e2; }
+.card-a .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.card-a:hover .ph img { transform: scale(1.04); }
+.card-a .in { flex: 1; display: flex; flex-direction: column; padding: 18px 12px 12px; }
+.card-a h3 { margin-top: 12px; font-size: 20px; line-height: 26px; font-weight: 500; letter-spacing: -0.015em; }
+.card-a .c-foot { margin-top: auto; padding-top: 20px; }
 .go { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; line-height: 18px; font-weight: 500; color: var(--g-700); }
 .go svg { width: 14px; height: 14px; transition: transform .3s var(--ease); }
 .card-a:hover .go svg, .feat:hover .go svg { transform: translateX(3px); }
@@ -65,19 +84,22 @@
 .empty { display: none; padding: 48px 0; text-align: center; color: var(--ink-2); }
 .empty.on { display: block; }
 
+@media (max-width: 1240px) { .float { display: none; } }
 @media (max-width: 1100px) {
   .grid { grid-template-columns: 1fr 1fr; }
-  .feat { grid-template-columns: 1fr; }
-  .feat .cv { min-height: 0; aspect-ratio: 16 / 8; }
+  .feat-body { grid-template-columns: 1fr; }
+  .feat .side { justify-items: start; }
 }
 @media (max-width: 720px) {
   .grid { grid-template-columns: 1fr; gap: 16px; }
-  .search input { height: 54px; }
-  .chips { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; margin: 18px calc(var(--gutter) * -1) 0; padding: 0 var(--gutter); }
+  .finder { padding: 8px; border-radius: 18px; }
+  .search input { height: 54px; padding-right: 16px; }
+  .search .btn { display: none; }
+  .chips { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; margin: 12px -8px 0; padding: 0 8px; }
   .chips::-webkit-scrollbar { display: none; }
   .chip-f { flex: none; }
-  .feat { border-radius: 18px; }
-  .feat .cv { aspect-ratio: 16 / 10; }
+  .feat { border-radius: 20px; }
+  .feat .ph .label { left: 14px; top: 14px; }
 }
 </style>
 </head>
@@ -141,12 +163,17 @@
   <!-- 1. Hero: search and topics -->
   <section class="phero b-hero">
     <div class="phero-in">
+      <span class="float a" aria-hidden="true"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=420&h=315&fit=crop&q=80&auto=format" alt=""><span>Nervous system</span></span>
+      <span class="float b" aria-hidden="true"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=420&h=315&fit=crop&q=80&auto=format" alt=""><span>Gut health</span></span>
+      <span class="float c" aria-hidden="true"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=420&h=315&fit=crop&q=80&auto=format" alt=""><span>Lab results</span></span>
+      <span class="float d" aria-hidden="true"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=420&h=315&fit=crop&q=80&auto=format" alt=""><span>Sleep</span></span>
       <div class="phero-copy">
+        <span class="eyebrow">Blog</span>
         <h1>Science-led health articles across body and mind</h1>
         <p class="sub">Most health advice treats symptoms one at a time. These articles look at how your biology, your psychology, and your daily life connect, from exhaustion and broken sleep to hormone shifts and lab results that don’t add up.</p>
       </div>
       <div class="finder">
-        <label class="search"><span class="sr">Search articles</span><svg class="pi"><use href="#i-magnifying-glass"/></svg><input type="search" id="q" placeholder="Search articles" autocomplete="off"></label>
+        <label class="search"><span class="sr">Search articles</span><svg class="pi"><use href="#i-magnifying-glass"/></svg><input type="search" id="q" placeholder="Search articles" autocomplete="off"><button type="button" class="btn btn-primary btn-sm" id="qgo">Search</button></label>
         <div class="chips" role="group" aria-label="Browse articles by topic">
           <button type="button" class="chip-f" data-f="all" aria-pressed="true">All</button>
           <button type="button" class="chip-f" data-f="exh" aria-pressed="false">Exhaustion</button>
@@ -164,12 +191,17 @@
   <section class="sec pt0" id="start">
     <div class="wrap">
       <a href="blog-post.html" class="feat">
-        <div class="cv t-slp"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-slp"/></svg></div>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=1800&h=1013&fit=crop&q=80&auto=format" alt="A person sitting at the end of a wooden pier on a still mountain lake"><span class="label">Start here</span></div>
         <div class="feat-body">
-          <div class="kick"><span class="label dark">Start here</span><span class="label">Sleep</span></div>
-          <h2>Why do I still feel tired after a full night’s sleep?</h2>
-          <p class="intro">If you’re exhausted, wired, and told your labs are normal, this is the space your body lost.</p>
-          <span class="go">Read article <svg><use href="#arrow"/></svg></span>
+          <div>
+            <span class="label">Sleep</span>
+            <h2>Why do I still feel tired after a full night’s sleep?</h2>
+            <p class="intro">If you’re exhausted, wired, and told your labs are normal, this is the space your body lost.</p>
+          </div>
+          <div class="side">
+            <span class="by"><img src="assets/justin-coat.png" alt=""><span><b>Justin Maguire</b>12 October 2026 · 6 min read</span></span>
+            <span class="btn btn-primary">Read article <svg><use href="#arrow"/></svg></span>
+          </div>
         </div>
       </a>
     </div>
@@ -181,35 +213,35 @@
       <div class="head list-head"><h2>Latest articles</h2><span class="count" id="count"></span></div>
       <div class="grid" id="grid">
         <a href="blog-post.html" class="card-a" data-t="lab">
-          <div class="cv t-lab"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-lab"/></svg></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
           <div class="in"><span class="label">Lab results</span><h3>“Normal” labs don’t mean you’re well</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
         </a>
         <a href="blog-post.html" class="card-a" data-t="ner">
-          <div class="cv t-ner"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-ner"/></svg></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
           <div class="in"><span class="label">Nervous system</span><h3>What is Responsive Living?</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
         </a>
         <a href="blog-post.html" class="card-a" data-t="exh">
-          <div class="cv t-exh"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-exh"/></svg></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
           <div class="in"><span class="label">Exhaustion</span><h3>Energy that crashes mid-afternoon</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
         </a>
         <a href="blog-post.html" class="card-a" data-t="slp">
-          <div class="cv t-slp"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-slp"/></svg></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
           <div class="in"><span class="label">Sleep</span><h3>You can’t switch off, even when the day is over</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
         </a>
         <a href="blog-post.html" class="card-a" data-t="lab">
-          <div class="cv t-lab"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-lab"/></svg></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
           <div class="in"><span class="label">Lab results</span><h3>What lab work can and can’t tell you</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
         </a>
         <a href="blog-post.html" class="card-a" data-t="hor">
-          <div class="cv t-hor"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-hor"/></svg></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
           <div class="in"><span class="label">Hormones</span><h3>Where it hides and how it shows up: from the mouth to your hormones and thyroid</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
         </a>
         <a href="blog-post.html" class="card-a" data-t="gut">
-          <div class="cv t-gut"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-gut"/></svg></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
           <div class="in"><span class="label">Gut health</span><h3>How food affects immune balance</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
         </a>
         <a href="blog-post.html" class="card-a" data-t="ner">
-          <div class="cv t-ner"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><use href="#cv-ner"/></svg></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
           <div class="in"><span class="label">Nervous system</span><h3>Static physiology: the alarm goes off, and nothing moves</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
         </a>
       </div>
@@ -285,6 +317,7 @@
     });
   });
   q.addEventListener('input', apply);
+  document.getElementById('qgo').addEventListener('click', function () { apply(); document.getElementById('latest').scrollIntoView({ behavior: AC.reduce ? 'auto' : 'smooth' }); });
   apply();
 })();
 </script>
