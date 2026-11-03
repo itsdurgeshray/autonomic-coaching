@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autonomic Wellness · Autonomic Coaching</title>
+<meta name="description" content="Scientist- and doctor-led hormone care. Licensed doctors and a nutritional scientist read your hormones, symptoms, and health history together.">
+<link rel="icon" href="assets/mark.png">
+<script>if (/[?&]figma\b/.test(location.search)) document.documentElement.classList.add('figma');</script>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* Autonomic Wellness bridge page: AW's blue identity inside the Coaching site */
+.aw-pg { --aw: #2c4278; --aw-ink: #1b294b; }
+.btn-aw { background: #fff; color: var(--aw-950); border-radius: 100px; padding: 0 28px; }
+.btn-aw:hover { background: var(--b-25); }
+.eb-b { color: var(--b-700); }
+
+/* ============ 1. Hero ============ */
+.aw-hero { position: relative; overflow: hidden; isolation: isolate; color: #fff; background: var(--aw-grad); }
+.aw-hero-in { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); min-height: clamp(620px, calc(100svh - 120px), 760px); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 40px; }
+.aw-hero-copy { align-self: center; padding: clamp(48px, 6vw, 96px) 0; }
+.aw-hero .eyebrow { color: var(--b-150); }
+.aw-hero h1 { color: #fff; margin-top: 18px; max-width: 13ch; }
+.aw-hero .sub { margin-top: 24px; max-width: 46ch; font-size: 16px; line-height: 20px; color: rgba(255, 255, 255, .74); }
+.aw-hero .ctas { margin-top: 40px; }
+.aw-hero .u-link { color: #fff; text-decoration-color: rgba(255, 255, 255, .4); }
+.aw-hero-art { position: relative; min-width: 0; }
+.aw-hero-art img { position: absolute; bottom: 0; right: -6%; height: 96%; width: auto; max-width: none; }
+.aw-hero-art::after { content: ""; position: absolute; left: -20%; right: -20%; bottom: 0; height: 22%; background: linear-gradient(180deg, rgba(44, 66, 120, 0), #2c4278); }
+
+/* ============ 2. The problem (pill statement) ============ */
+.prob { text-align: center; }
+.prob h2 { margin: 16px auto 0; max-width: 20ch; }
+.prob .statement { margin: clamp(36px, 4vw, 56px) auto 0; max-width: 1000px; }
+.prob .chip .ci { background: var(--b-25); color: var(--b-700); }
+.prob .body { margin: 28px auto 0; max-width: 56ch; padding-top: 28px; border-top: 1px solid var(--line); }
+
+/* ============ 3. What is AW ============ */
+.what { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
+.what .media { aspect-ratio: 5 / 4; }
+.what .media img { object-position: 60% 50%; }
+.what .lede { margin-top: 24px; color: var(--ink); max-width: 50ch; }
+
+/* ============ 4. How it works ============ */
+.proc { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.proc li { display: flex; flex-direction: column; padding: 28px 26px 30px; border-radius: 22px; background: #fff; border: 1px solid var(--line-2); min-height: 280px; }
+.proc .n { font-size: 56px; line-height: 1; letter-spacing: -0.05em; color: var(--b-150); }
+.proc h3 { margin-top: auto; padding-top: 32px; font-size: 22px; line-height: 28px; font-weight: 500; letter-spacing: -0.02em; }
+.proc p { margin-top: 10px; font-size: 16px; line-height: 20px; color: var(--ink-2); }
+.proc li:last-child { background: var(--aw-grad); border-color: transparent; }
+.proc li:last-child .n { color: rgba(191, 210, 254, .35); }
+.proc li:last-child h3 { color: #fff; }
+.proc li:last-child p { color: rgba(255, 255, 255, .74); }
+
+/* ============ 5. Who leads your care ============ */
+.lead-care { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
+.lead-care .body { margin-top: 24px; max-width: 52ch; }
+.lead-care .u-link { margin-top: 28px; }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.role { display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: #fff; border: 1px solid var(--line-2); }
+.role .ph { position: relative; height: 300px; background: linear-gradient(180deg, #eef1f6 0%, #dde3ee 100%); overflow: hidden; }
+.role.g .ph { background: linear-gradient(180deg, #eaf4ef 0%, #d5e8de 100%); }
+.role .ph img { position: absolute; bottom: 0; left: 50%; height: 94%; width: auto; max-width: none; transform: translateX(-50%); }
+.role .in { padding: 18px 20px 22px; }
+.role .k { display: inline-flex; align-items: center; height: 26px; padding: 0 11px; border-radius: 99px; font-size: 12px; line-height: 16px; font-weight: 500; background: var(--b-25); color: var(--b-700); }
+.role.g .k { background: var(--g-50); color: var(--g-700); }
+.role p { margin-top: 12px; font-size: 14px; line-height: 18px; color: var(--ink-2); }
+
+/* ============ 6. AW vs AC ============ */
+.vs { overflow: hidden; border-radius: 24px; background: #fff; border: 1px solid var(--line-2); }
+.vs-row { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1fr) minmax(0, 1fr); }
+.vs-row > * { padding: 22px clamp(20px, 2.6vw, 36px); border-top: 1px solid var(--line-2); font-size: 16px; line-height: 20px; }
+.vs-row .k { font-weight: 500; }
+.vs-row .a { color: var(--ink-2); }
+.vs-row .c { color: var(--ink-2); background: rgba(237, 252, 247, .45); }
+.vs-head > * { border-top: 0; padding-top: 28px; padding-bottom: 24px; }
+.vs-head .a, .vs-head .c { display: flex; align-items: center; gap: 12px; font-size: 18px; line-height: 22px; font-weight: 500; color: var(--ink); }
+.vs-head i { flex: none; width: 10px; height: 10px; border-radius: 99px; background: var(--aw); }
+.vs-head .c i { background: var(--g-600); }
+.vs-head .a { background: var(--b-25); }
+.vs-head .c { background: var(--g-50); }
+
+/* ============ 8. Start your assessment ============ */
+.aw-final { color: #fff; text-align: center; background: var(--aw-grad); }
+.aw-final .wrap { padding-top: clamp(88px, 10vw, 144px); padding-bottom: clamp(88px, 10vw, 144px); display: flex; flex-direction: column; align-items: center; }
+.aw-final h2 { color: #fff; }
+.aw-final .lede { margin-top: 20px; max-width: 46ch; color: rgba(255, 255, 255, .72); }
+.aw-final .btn { margin-top: 40px; }
+
+/* ============ Responsive ============ */
+@media (max-width: 1100px) {
+  .proc { grid-template-columns: 1fr 1fr; }
+  .what, .lead-care { grid-template-columns: 1fr; }
+  .what .media { aspect-ratio: 16 / 10; }
+}
+@media (max-width: 900px) {
+  .aw-hero-in { grid-template-columns: 1fr; min-height: 0; gap: 0; }
+  .aw-hero-copy { padding: 40px 0 8px; }
+  .aw-hero-art { height: clamp(360px, 66vw, 520px); }
+  .aw-hero-art img { right: auto; left: 50%; transform: translateX(-50%); height: 100%; }
+    }
+@media (max-width: 720px) {
+  .aw-hero .ctas .btn { flex: 1 1 100%; }
+  .proc { grid-template-columns: 1fr; }
+  .proc li { min-height: 0; }
+  .duo { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .role .ph { height: 200px; }
+  .role .in { padding: 14px 14px 16px; }
+  .vs-head { display: none; }
+  .vs-row { grid-template-columns: 1fr; padding: 20px; border-top: 1px solid var(--line-2); }
+  .vs-head + .vs-row { border-top: 0; }
+  .vs-row > * { padding: 0; border-top: 0; background: none; }
+  .vs-row .k { font-size: 12px; line-height: 16px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); margin-bottom: 12px; }
+  .vs-row .a, .vs-row .c { position: relative; padding-left: 18px; }
+  .vs-row .c { margin-top: 10px; }
+  .vs-row .a::before, .vs-row .c::before { content: ""; position: absolute; left: 0; top: 6px; width: 8px; height: 8px; border-radius: 99px; background: var(--aw); }
+  .vs-row .c::before { background: var(--g-600); }
+  .vs-row .a b, .vs-row .c b { display: block; font-size: 12px; line-height: 16px; font-weight: 500; color: var(--ink-3); }
+}
+@media (min-width: 721px) { .vs-row .a b, .vs-row .c b { display: none; } }
+</style>
+</head>
+<body data-hdr="dark" data-page="aw" data-note="Disclaimer: This page is for information. Medical advice comes only from your consultation with a licensed doctor.">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<!--SPRITE-->
+    <symbol id="arrow" viewBox="0 0 16 16"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow-ur" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-crosshair-simple" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V184a6,6,0,0,0-12,0v33.8A90.15,90.15,0,0,1,38.2,134H72a6,6,0,0,0,0-12H38.2A90.15,90.15,0,0,1,122,38.2V72a6,6,0,0,0,12,0V38.2A90.15,90.15,0,0,1,217.8,122H184a6,6,0,0,0,0,12h33.8A90.15,90.15,0,0,1,134,217.8Z"/></symbol>
+    <symbol id="i-facebook-logo" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V150h26a6,6,0,0,0,0-12H134V112a18,18,0,0,1,18-18h16a6,6,0,0,0,0-12H152a30,30,0,0,0-30,30v26H96a6,6,0,0,0,0,12h26v67.8a90,90,0,1,1,12,0Z"/></symbol>
+    <symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></symbol>
+    <symbol id="i-lightning" viewBox="0 0 256 256"><path d="M213.84,118.63a6,6,0,0,0-3.73-4.25L150.88,92.17l15-75a6,6,0,0,0-10.27-5.27l-112,120a6,6,0,0,0,2.28,9.71l59.23,22.21-15,75a6,6,0,0,0,3.14,6.52A6.07,6.07,0,0,0,96,246a6,6,0,0,0,4.39-1.91l112-120A6,6,0,0,0,213.84,118.63ZM106,220.46l11.85-59.28a6,6,0,0,0-3.77-6.8l-55.6-20.85,91.46-98L138.12,94.82a6,6,0,0,0,3.77,6.8l55.6,20.85Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128ZM40,70H216a6,6,0,0,0,0-12H40a6,6,0,0,0,0,12ZM216,186H40a6,6,0,0,0,0,12H216a6,6,0,0,0,0-12Z"/></symbol>
+    <symbol id="i-moon-stars" viewBox="0 0 256 256"><path d="M238,96a6,6,0,0,1-6,6H214v18a6,6,0,0,1-12,0V102H184a6,6,0,0,1,0-12h18V72a6,6,0,0,1,12,0V90h18A6,6,0,0,1,238,96ZM144,54h10V64a6,6,0,0,0,12,0V54h10a6,6,0,0,0,0-12H166V32a6,6,0,0,0-12,0V42H144a6,6,0,0,0,0,12Zm71.25,100.28a6,6,0,0,1,1.07,6A94,94,0,1,1,95.76,39.68a6,6,0,0,1,7.94,6.79A90.11,90.11,0,0,0,192,154a90.9,90.9,0,0,0,17.53-1.7A6,6,0,0,1,215.25,154.28Zm-14.37,11.34q-4.42.38-8.88.38A102.12,102.12,0,0,1,90,64q0-4.45.38-8.88a82,82,0,1,0,110.5,110.5Z"/></symbol>
+    <symbol id="i-person-simple" viewBox="0 0 256 256"><path d="M128,78A30,30,0,1,0,98,48,30,30,0,0,0,128,78Zm0-48a18,18,0,1,1-18,18A18,18,0,0,1,128,30ZM229.14,131.09a6,6,0,0,1-8.23,2c-.37-.21-36.49-21.43-86.91-23v39.61L196.48,220a6,6,0,0,1-9,8L128,161,68.48,228a6,6,0,0,1-9-8L122,149.72V110.11c-50.42,1.6-86.55,22.82-86.92,23a6,6,0,0,1-6.17-10.29C30.6,121.84,71,98,128,98s97.39,23.84,99.09,24.86A6,6,0,0,1,229.14,131.09Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 256 256"><path d="M204.24,195.76a6,6,0,1,1-8.48,8.48L128,136.49,60.24,204.24a6,6,0,0,1-8.48-8.48L119.51,128,51.76,60.24a6,6,0,0,1,8.48-8.48L128,119.51l67.76-67.75a6,6,0,0,1,8.48,8.48L136.49,128Z"/></symbol>
+    <symbol id="i-youtube-logo" viewBox="0 0 256 256"><path d="M163.33,123l-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128ZM232.4,70a22,22,0,0,0-13.28-15C185,41.79,130.27,42,128,42s-57-.21-91.16,13A22,22,0,0,0,23.6,70C21.05,79.89,18,98,18,128s3.05,48.11,5.6,58a22,22,0,0,0,13.28,15C71,214.21,125.72,214,128,214h.71c6.91,0,58-.44,90.45-13a22,22,0,0,0,13.28-15c2.55-9.87,5.6-27.93,5.6-58S235,79.89,232.4,70ZM220.78,183a10,10,0,0,1-6,6.86C182.78,202.19,128.58,202,128,202s-54.71.2-86.75-12.17a10,10,0,0,1-6-6.86C32.84,173.78,30,156.78,30,128s2.84-45.78,5.22-55a10,10,0,0,1,6-6.86C72.06,54.26,123.53,54,127.76,54H128c.54,0,54.71-.2,86.75,12.17a10,10,0,0,1,6,6.86c2.38,9.19,5.22,26.19,5.22,55S223.16,173.78,220.78,183Z"/></symbol>
+    <symbol id="plus" viewBox="0 0 16 16"><path d="M8 2.5v11M2.5 8h11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <!--/SPRITE-->
+</defs></svg>
+
+<!--HEADER-->
+<header class="hdr" id="nav">
+  <div class="in">
+    <a href="index.html" class="brand" aria-label="Autonomic Coaching home"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+    <nav aria-label="Primary">
+      <a href="responsive-living.html">Responsive Living</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About Justin</a>
+      <a href="testimonials.html">Results</a>
+      <a href="blog.html">Blog</a>
+      <a href="autonomic-wellness.html" aria-current="page">Autonomic Wellness</a>
+    </nav>
+    <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <button class="menu-btn close" id="sheetClose" aria-label="Close menu" style="display:grid"><svg class="pi"><use href="#i-x"/></svg></button>
+  <nav>
+    <a href="responsive-living.html">Responsive Living<svg><use href="#arrow"/></svg></a>
+    <a href="how-it-works.html">How It Works<svg><use href="#arrow"/></svg></a>
+    <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
+    <a href="testimonials.html">Results<svg><use href="#arrow"/></svg></a>
+    <a href="blog.html">Blog<svg><use href="#arrow"/></svg></a>
+    <a href="help.html">Help / FAQ<svg><use href="#arrow"/></svg></a>
+    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
+    <a href="autonomic-wellness.html" aria-current="page">Autonomic Wellness<svg><use href="#arrow"/></svg></a>
+  </nav>
+  <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
+</div>
+<!--/HEADER-->
+
+<main id="top" class="aw-pg">
+
+  <!-- 1. Hero -->
+  <section class="aw-hero">
+    <div class="aw-hero-in">
+      <div class="aw-hero-copy">
+        <span class="eyebrow">Autonomic Wellness</span>
+        <h1>Scientist- and doctor-led hormone care</h1>
+        <p class="sub">Autonomic Wellness is for professionals whose energy has run out. Licensed doctors and a nutritional scientist read your hormones, symptoms, and health history together.</p>
+        <div class="ctas">
+          <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener" class="btn btn-aw">Start Assessment <svg><use href="#arrow-ur"/></svg></a>
+          <a href="#vs" class="u-link">How is Autonomic Wellness different from Autonomic Coaching? <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="aw-hero-art" aria-hidden="true"><img src="assets/aw-portrait.png" alt=""></div>
+    </div>
+  </section>
+
+  <!-- 2. The problem -->
+  <section class="sec">
+    <div class="wrap prob">
+      <span class="eyebrow eb-b">The problem</span>
+      <h2>Why do I still feel unwell when my labs are normal?</h2>
+      <p class="statement">Your <span class="nw"><span class="chip"><span class="ci"><svg class="pi"><use href="#i-lightning"/></svg></span>energy</span>,</span> <span class="nw"><span class="chip"><span class="ci"><svg class="pi"><use href="#i-moon-stars"/></svg></span>sleep</span>,</span> <span class="chip"><span class="ci"><svg class="pi"><use href="#i-crosshair-simple"/></svg></span>focus</span> or <span class="chip"><span class="ci"><svg class="pi"><use href="#i-person-simple"/></svg></span>body composition</span> is changing in ways you didn’t expect, even though the routines that used to work are still in place.</p>
+      <p class="body">You’ve seen doctors, taken supplements, run tests and tracked your data, and nothing has explained it. Changes in your hormones are one possible explanation, and they’re easy to miss when each marker is read on its own.</p>
+    </div>
+  </section>
+
+  <!-- 3. What is Autonomic Wellness? -->
+  <section class="sec pt0">
+    <div class="wrap what">
+      <div class="media"><img src="assets/aw-consult.png" alt="A doctor in a white coat talking with a patient across a table"></div>
+      <div>
+        <h2>What is Autonomic Wellness?</h2>
+        <p class="lede">Autonomic Wellness gives you hormone care built around you, not around one test result. You complete an online assessment, and a licensed doctor, working with a scientist, turns your answers into personal recommendations in one consultation. It makes preventative care easier to afford and access.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. How does Autonomic Wellness work? -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="head"><h2>How does Autonomic Wellness work?</h2></div>
+      <ol class="proc">
+        <li><span class="n">01</span><h3>Assessment</h3><p>An online questionnaire covers symptoms, health history and lifestyle.</p></li>
+        <li><span class="n">02</span><h3>Review</h3><p>Doctors and a scientist go through the answers before the consultation.</p></li>
+        <li><span class="n">03</span><h3>Consultation</h3><p>A doctor sees you one-to-one.</p></li>
+        <li><span class="n">04</span><h3>Recommendations</h3><p>The doctor sets out what is advised, including medical treatment if it’s needed.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5. Who leads your care? -->
+  <section class="sec pt0">
+    <div class="wrap lead-care">
+      <div>
+        <h2>Who leads your care?</h2>
+        <p class="body">Doctors lead the care, and Justin Maguire works alongside them. Personalized care takes both. The doctors make the medical decisions. The scientists reads your results against your own history, so the recommendations fit you and not just the average patient.</p>
+        <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener" class="u-link">Meet the Autonomic Wellness team <svg><use href="#arrow-ur"/></svg></a>
+      </div>
+      <div class="duo">
+        <div class="role"><div class="ph"><img src="assets/bernardo.png" alt=""></div><div class="in"><span class="k">Doctors</span><p>The doctors make the medical decisions.</p></div></div>
+        <div class="role g"><div class="ph"><img src="assets/justin.png" alt="Justin Maguire"></div><div class="in"><span class="k">Justin Maguire</span><p>The scientists reads your results against your own history.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. How is AW different from AC? -->
+  <section class="sec pt0" id="vs">
+    <div class="wrap">
+      <div class="head c"><h2>How is Autonomic Wellness different from Autonomic Coaching?</h2></div>
+      <div class="vs">
+        <div class="vs-row vs-head"><span></span><span class="a"><i></i>Autonomic Wellness</span><span class="c"><i></i>Autonomic Coaching</span></div>
+        <div class="vs-row"><span class="k">Who leads</span><span class="a"><b>Autonomic Wellness</b>A doctor leads, with a scientist</span><span class="c"><b>Autonomic Coaching</b>You lead, with Justin supporting you</span></div>
+        <div class="vs-row"><span class="k">How often</span><span class="a"><b>Autonomic Wellness</b>One consultation</span><span class="c"><b>Autonomic Coaching</b>Weekly sessions over months</span></div>
+        <div class="vs-row"><span class="k">What it looks at</span><span class="a"><b>Autonomic Wellness</b>Your symptoms, health history and lifestyle at one point in time</span><span class="c"><b>Autonomic Coaching</b>Your daily log of sleep, food and how you feel, alongside your lab results</span></div>
+        <div class="vs-row"><span class="k">Support afterward</span><span class="a"><b>Autonomic Wellness</b>No ongoing support</span><span class="c"><b>Autonomic Coaching</b>Weekly sessions and a daily log</span></div>
+        <div class="vs-row"><span class="k">Time and cost</span><span class="a"><b>Autonomic Wellness</b>Less time and a lower cost</span><span class="c"><b>Autonomic Coaching</b>A larger time and financial commitment</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQs -->
+  <section class="sec pt0">
+    <div class="wrap faq">
+      <div class="faq-left"><h2>Frequently asked questions</h2></div>
+      <div class="faq-list">
+        <details open><summary>Can the assessment diagnose a medical condition?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. The assessment gathers information. Your consultation with a doctor is where anything medical is decided.</p></div></details>
+        <details><summary>Is the consultation online?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>Yes. You meet the doctor online.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Start your assessment -->
+  <section class="aw-final">
+    <div class="wrap">
+      <h2>Start your assessment</h2>
+      <p class="lede">The assessment is the first step toward your consultation with a doctor.</p>
+      <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener" class="btn btn-aw">Start Assessment <svg><use href="#arrow-ur"/></svg></a>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="brand"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+        <div><a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <nav class="foot-col foot-links" aria-label="Footer">
+        <a href="responsive-living.html">Responsive Living</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="about.html">About Justin</a>
+        <a href="testimonials.html">Results</a>
+        <a href="blog.html">Blog</a>
+        <a href="help.html">Help / FAQ</a>
+        <a href="concierge.html">Concierge</a>
+        <a href="autonomic-wellness.html">Autonomic Wellness</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+      <div class="foot-col socials">
+        <a href="#"><svg class="pi"><use href="#i-instagram-logo"/></svg>Instagram</a>
+        <a href="#"><svg class="pi"><use href="#i-youtube-logo"/></svg>YouTube</a>
+        <a href="#"><svg class="pi"><use href="#i-facebook-logo"/></svg>Facebook</a>
+      </div>
+    </div>
+    <div class="foot-mid">
+      <div class="notes"><span>Disclaimer: This page is for information. Medical advice comes only from your consultation with a licensed doctor.</span><span>Coaching is not a substitute for medical diagnosis or treatment.</span></div>
+      <a href="#top" class="totop" aria-label="Back to top"><svg><use href="#arrow"/></svg></a>
+    </div>
+    <div class="mark-xl" aria-hidden="true">Autonomic Coaching</div>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script src="assets/site.js"></script>
+</body>
+</html>
