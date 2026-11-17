@@ -17,45 +17,45 @@
 .cover-stage { position: relative; display: grid; place-items: center; padding: 8px 0 36px; }
 .cover-stage .sun { position: absolute; z-index: 0; left: 50%; top: 46%; width: 118%; aspect-ratio: 1; margin: -59% 0 0 -59%; border-radius: 50%; background: radial-gradient(closest-side, rgba(143, 239, 202, .55), rgba(143, 239, 202, .18) 55%, rgba(143, 239, 202, 0)); pointer-events: none; }
 .cover-stage .floor { position: absolute; z-index: 0; left: 50%; bottom: 14px; width: 76%; height: 44px; margin-left: -38%; border-radius: 50%; background: radial-gradient(closest-side, rgba(2, 10, 29, .22), rgba(2, 10, 29, 0)); }
-.cover { position: relative; z-index: 1; width: min(100%, 410px); aspect-ratio: 1004 / 1500; border-radius: 3px 8px 8px 3px; overflow: hidden; background: #d9dfe6; box-shadow: 0 2px 4px rgba(2, 10, 29, .1), 0 36px 70px -24px rgba(2, 10, 29, .45); }
+.cover { position: relative; z-index: 1; width: min(100%, 410px); aspect-ratio: 1004 / 1500; border-radius: 4px 8px 8px 4px; overflow: hidden; background: #d9dfe6; box-shadow: 0 2px 4px rgba(2, 10, 29, .1), 0 36px 70px -24px rgba(2, 10, 29, .45); }
 .cover img { width: 100%; height: 100%; object-fit: cover; }
 .cover::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(0, 0, 0, .22) 0%, rgba(255, 255, 255, .22) 1.4%, rgba(255, 255, 255, 0) 3.4%, rgba(0, 0, 0, .1) 4.4%, rgba(0, 0, 0, 0) 8%); }
 
 /* ============ 2. Endorsed by (open grid, no boxes) ============ */
 .endorse { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
-.endorse figure { margin: 0; display: flex; flex-direction: column; padding: clamp(32px, 3.4vw, 52px) clamp(28px, 3.6vw, 64px) clamp(32px, 3.4vw, 52px) 0; border-bottom: 1px solid var(--line); }
-.endorse figure:nth-child(even) { padding-left: clamp(28px, 3.6vw, 64px); padding-right: 0; border-left: 1px solid var(--line); }
+.endorse figure { margin: 0; display: flex; flex-direction: column; padding: 52px 64px 52px 0; border-bottom: 1px solid var(--line); }
+.endorse figure:nth-child(even) { padding-left: 64px; padding-right: 0; border-left: 1px solid var(--line); }
 .endorse .qm { width: 22px; height: 22px; color: var(--g-600); }
-.endorse blockquote { margin: 22px 0 0; font-size: clamp(19px, 1.75vw, 25px); line-height: 1.42; letter-spacing: -0.02em; }
+.endorse blockquote { margin: 22px 0 0; font-size: 16px; line-height: 24px; letter-spacing: -0.02em; }
 .endorse figcaption { margin-top: auto; padding-top: 30px; }
-.endorse figcaption strong { display: block; font-size: 16px; font-weight: 500; }
-.endorse figcaption small { display: block; margin-top: 4px; max-width: 46ch; font-size: 14px; line-height: 18px; color: var(--ink-3); }
+.endorse figcaption strong { display: block; font-size: 16px; font-weight: 500; line-height: 24px; }
+.endorse figcaption small { display: block; margin-top: 4px; max-width: 46ch; font-size: 14px; line-height: 22px; color: var(--ink-3); }
 
 /* ============ 3. The problem (pill statements) ============ */
 .prob { text-align: center; }
 .prob h2 { max-width: 19ch; margin-left: auto; margin-right: auto; }
-.sym { list-style: none; margin: clamp(44px, 5vw, 72px) auto 0; padding: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
-.sym li { display: inline-flex; align-items: center; gap: 14px; padding: 12px 26px 12px 12px; border-radius: 99px; background: #fff; border: 1px solid var(--line); font-size: clamp(16px, 1.35vw, 20px); line-height: 1.35; letter-spacing: -0.015em; text-align: left; }
-.sym .ci { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 99px; background: var(--g-50); color: var(--g-700); font-size: 19px; }
-.familiar { margin-top: clamp(44px, 5vw, 72px); }
-.familiar strong { display: block; font-size: clamp(22px, 2vw, 28px); font-weight: 400; letter-spacing: -0.02em; color: var(--g-700); }
-.familiar p { margin: 12px auto 0; max-width: 44ch; font-size: 16px; color: var(--ink-2); line-height: 20px;}
+.sym { list-style: none; margin: 72px auto 0; padding: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.sym li { display: inline-flex; align-items: center; gap: 14px; padding: 12px 26px 12px 12px; border-radius: 100px; background: #fff; border: 1px solid var(--line); font-size: 16px; line-height: 24px; letter-spacing: -0.015em; text-align: left; }
+.sym .ci { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 100px; background: var(--g-50); color: var(--g-700); font-size: 16px; line-height: 24px; }
+.familiar { margin-top: 72px; }
+.familiar strong { display: block; font-size: 32px; font-weight: 400; letter-spacing: -0.02em; color: var(--g-700); line-height: 40px; }
+.familiar p { margin: 12px auto 0; max-width: 44ch; font-size: 16px; color: var(--ink-2); line-height: 24px;}
 
 /* ============ 4. What is Responsive Living ============ */
-.what { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 28px clamp(40px, 7vw, 120px); align-items: start; }
+.what { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 28px 120px; align-items: start; }
 .what .body:first-child { margin-top: 0; }
 /* Comparator: a signal monitor showing the space between what happens and how the body responds */
-.gapviz { margin-top: clamp(48px, 5vw, 72px); padding: clamp(20px, 2.4vw, 32px); border-radius: 28px; color: #fff; background: radial-gradient(60% 80% at 50% 0%, rgba(22, 157, 105, .28), rgba(22, 157, 105, 0) 70%), linear-gradient(180deg, #03231d 0%, #01130f 100%); box-shadow: 0 40px 80px -40px rgba(1, 19, 15, .7), inset 0 1px 0 rgba(255, 255, 255, .08); }
+.gapviz { margin-top: 72px; padding: 32px; border-radius: 28px; color: #fff; background: radial-gradient(60% 80% at 50% 0%, rgba(22, 157, 105, .28), rgba(22, 157, 105, 0) 70%), linear-gradient(180deg, #03231d 0%, #01130f 100%); box-shadow: 0 40px 80px -40px rgba(1, 19, 15, .7), inset 0 1px 0 rgba(255, 255, 255, .08); }
 .gapviz[data-state="stress"] { background: radial-gradient(60% 80% at 75% 0%, rgba(194, 65, 12, .26), rgba(194, 65, 12, 0) 70%), linear-gradient(180deg, #1c120d 0%, #0d0806 100%); }
 .gapviz { transition: background .8s; }
 .gv-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.seg { display: inline-flex; padding: 4px; border-radius: 99px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .12); }
-.seg button { height: 40px; padding: 0 20px; border-radius: 99px; font-size: 14px; font-weight: 500; color: rgba(255, 255, 255, .62); transition: background-color .3s, color .3s; }
+.seg { display: inline-flex; padding: 4px; border-radius: 100px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .12); }
+.seg button { height: 40px; padding: 0 20px; border-radius: 100px; font-size: 14px; font-weight: 500; color: rgba(255, 255, 255, .62); transition: background-color .3s, color .3s; line-height: 22px; }
 .seg button:hover { color: #fff; }
 .seg button[aria-pressed="true"] { background: var(--g-300); color: var(--g-950); }
 .gapviz[data-state="stress"] .seg button[aria-pressed="true"] { background: #fb923c; color: #1c0d05; }
-.gv-cap { display: flex; align-items: center; gap: 10px; font-size: 16px; color: rgba(255, 255, 255, .78); }
-.gv-cap::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 99px; background: var(--g-300); box-shadow: 0 0 0 4px rgba(79, 209, 160, .18), 0 0 12px rgba(79, 209, 160, .9); }
+.gv-cap { display: flex; align-items: center; gap: 10px; font-size: 16px; color: rgba(255, 255, 255, .78); line-height: 24px; }
+.gv-cap::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 100px; background: var(--g-300); box-shadow: 0 0 0 4px rgba(79, 209, 160, .18), 0 0 12px rgba(79, 209, 160, .9); }
 .gapviz[data-state="stress"] .gv-cap::before { background: #fb923c; box-shadow: 0 0 0 4px rgba(251, 146, 60, .18), 0 0 12px rgba(251, 146, 60, .9); }
 .gv-cap [data-for] { display: none; }
 .gapviz[data-state="stress"] .gv-cap [data-for="stress"], .gapviz[data-state="rl"] .gv-cap [data-for="rl"] { display: block; }
@@ -63,8 +63,8 @@
 .gapviz[data-state="stress"] .gv { --space: 0%; }
 .gv-col { position: relative; overflow: hidden; min-width: 0; border-radius: 18px; padding: 20px 22px; display: flex; flex-direction: column; justify-content: space-between; background: rgba(255, 255, 255, .035); border: 1px solid rgba(255, 255, 255, .08);
   background-image: linear-gradient(rgba(255, 255, 255, .05) 1px, rgba(255, 255, 255, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, rgba(255, 255, 255, 0) 1px); background-size: 100% 40px, 40px 100%; }
-.gv-col .lbl { position: relative; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
-.gv-col .lbl::before { content: ""; width: 6px; height: 6px; border-radius: 99px; background: #fff; }
+.gv-col .lbl { position: relative; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255, 255, 255, .6); line-height: 20px; }
+.gv-col .lbl::before { content: ""; width: 6px; height: 6px; border-radius: 100px; background: #fff; }
 .gv-col.r .lbl::before { background: var(--g-300); transition: background-color .6s; }
 .gapviz[data-state="stress"] .gv-col.r .lbl::before { background: #fb923c; }
 .gv-col svg { position: relative; width: 100%; height: 150px; overflow: visible; }
@@ -75,46 +75,46 @@
 .gv-col.r .area { fill: url(#gvCalm); transition: d 1s var(--ease), opacity .6s; }
 .gapviz[data-state="stress"] .gv-col.r .wave { stroke: #fb923c; filter: drop-shadow(0 0 8px rgba(251, 146, 60, .85)); }
 .gapviz[data-state="stress"] .gv-col.r .area { fill: url(#gvAlert); }
-.gv-col .live { position: absolute; right: 18px; bottom: 90px; width: 9px; height: 9px; border-radius: 99px; background: var(--g-300); box-shadow: 0 0 12px rgba(79, 209, 160, .9); }
-.gv-col .live::after { content: ""; position: absolute; inset: -6px; border-radius: 99px; border: 1px solid rgba(79, 209, 160, .7); animation: gvping 2s var(--ease) infinite; }
+.gv-col .live { position: absolute; right: 18px; bottom: 90px; width: 10px; height: 10px; border-radius: 100px; background: var(--g-300); box-shadow: 0 0 12px rgba(79, 209, 160, .9); }
+.gv-col .live::after { content: ""; position: absolute; inset: -6px; border-radius: 100px; border: 1px solid rgba(79, 209, 160, .7); animation: gvping 2s var(--ease) infinite; }
 .gapviz[data-state="stress"] .gv-col .live { background: #fb923c; box-shadow: 0 0 12px rgba(251, 146, 60, .9); }
 .gapviz[data-state="stress"] .gv-col .live::after { border-color: rgba(251, 146, 60, .7); animation-duration: .7s; }
 @keyframes gvping { from { transform: scale(.6); opacity: 1; } to { transform: scale(1.8); opacity: 0; } }
 .gv-space { position: relative; min-width: 0; overflow: hidden; display: grid; place-items: center; }
 .gv-space::before { content: ""; position: absolute; top: 10px; bottom: 10px; left: 12px; right: 12px; border-radius: 14px; border-left: 1px dashed rgba(143, 239, 202, .5); border-right: 1px dashed rgba(143, 239, 202, .5); background: radial-gradient(50% 60% at 50% 50%, rgba(79, 209, 160, .22), rgba(79, 209, 160, 0)); transition: opacity .5s; }
 .gv-space .span { position: absolute; left: 22px; right: 22px; top: 50%; height: 1px; background: linear-gradient(90deg, rgba(143, 239, 202, .2), rgba(143, 239, 202, .8), rgba(143, 239, 202, .2)); }
-.gv-space .span::before, .gv-space .span::after { content: ""; position: absolute; top: -4px; width: 8px; height: 8px; border-top: 1.5px solid var(--g-200); border-left: 1.5px solid var(--g-200); }
+.gv-space .span::before, .gv-space .span::after { content: ""; position: absolute; top: -4px; width: 8px; height: 8px; border-top: 2px solid var(--g-200); border-left: 2px solid var(--g-200); }
 .gv-space .span::before { left: 0; transform: rotate(-45deg); }
 .gv-space .span::after { right: 0; transform: rotate(135deg); }
-.gv-space .tag { position: relative; padding: 9px 18px; border-radius: 99px; background: var(--g-300); color: var(--g-950); font-size: 12px; font-weight: 500; letter-spacing: 1.4px; text-transform: uppercase; white-space: nowrap; box-shadow: 0 0 0 6px rgba(79, 209, 160, .14), 0 0 30px rgba(79, 209, 160, .5); transition: opacity .4s, transform .6s var(--ease); }
+.gv-space .tag { position: relative; padding: 10px 18px; border-radius: 100px; background: var(--g-300); color: var(--g-950); font-size: 12px; font-weight: 500; letter-spacing: 1.4px; text-transform: uppercase; white-space: nowrap; box-shadow: 0 0 0 6px rgba(79, 209, 160, .14), 0 0 30px rgba(79, 209, 160, .5); transition: opacity .4s, transform .6s var(--ease); line-height: 20px; }
 .gapviz[data-state="stress"] .gv-space > * { opacity: 0; transform: scale(.6); }
 .gapviz[data-state="stress"] .gv-space::before { opacity: 0; }
 
 /* Frankl: the one dark moment mid-page */
 .frankl { margin: 0; text-align: center; color: #fff; background: radial-gradient(70% 90% at 50% 0%, rgba(22, 157, 105, .3), rgba(22, 157, 105, 0) 70%), var(--g-950); }
-.frankl .wrap { padding-top: clamp(96px, 11vw, 160px); padding-bottom: clamp(96px, 11vw, 160px); display: flex; flex-direction: column; align-items: center; }
+.frankl .wrap { padding-top: 160px; padding-bottom: 160px; display: flex; flex-direction: column; align-items: center; }
 .frankl .qm { width: 34px; height: 34px; color: var(--g-300); }
-.frankl blockquote { margin: 32px 0 0; max-width: 34ch; font-size: clamp(25px, 2.8vw, 40px); line-height: 1.28; letter-spacing: -0.025em; }
-.frankl cite { display: block; margin-top: 28px; font-size: 16px; font-weight: 500; color: var(--g-200); }
-.frankl .after { margin-top: clamp(48px, 5vw, 72px); padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .14); width: min(100%, 560px); font-size: 16px; color: rgba(255, 255, 255, .72); }
+.frankl blockquote { margin: 32px 0 0; max-width: 34ch; font-size: 40px; line-height: 48px; letter-spacing: -0.025em; }
+.frankl cite { display: block; margin-top: 28px; font-size: 16px; font-weight: 500; color: var(--g-200); line-height: 24px; }
+.frankl .after { margin-top: 72px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .14); width: min(100%, 560px); font-size: 16px; color: rgba(255, 255, 255, .72); line-height: 24px; }
 
 /* ============ 5. Meet James ============ */
-.james { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
+.james { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 120px; align-items: center; }
 .james h2 { margin-bottom: 28px; }
-.jcard { padding: clamp(28px, 3vw, 40px); border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
+.jcard { padding: 40px; border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
 .jcard-top { display: flex; align-items: center; gap: 14px; padding-bottom: 24px; border-bottom: 1px solid var(--line-2); }
-.jcard-top .av { flex: none; width: 46px; height: 46px; border-radius: 99px; display: grid; place-items: center; background: var(--g-900); color: var(--g-200); font-size: 16px; }
-.jcard-top strong { display: block; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; }
-.jcard-top small { display: block; font-size: 14px; color: var(--ink-3); line-height: 18px;}
+.jcard-top .av { flex: none; width: 46px; height: 46px; border-radius: 100px; display: grid; place-items: center; background: var(--g-900); color: var(--g-200); font-size: 16px; line-height: 24px; }
+.jcard-top strong { display: block; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; line-height: 24px; }
+.jcard-top small { display: block; font-size: 14px; color: var(--ink-3); line-height: 22px;}
 .jline { list-style: none; margin: 26px 0 0; padding: 0; display: grid; gap: 22px; position: relative; }
-.jline::before { content: ""; position: absolute; left: 9px; top: 10px; bottom: 10px; width: 1px; background: var(--line); }
-.jline li { position: relative; display: flex; align-items: center; gap: 18px; font-size: 16px; line-height: 20px; color: var(--ink-2); }
-.jline li::before { content: ""; position: relative; flex: none; width: 19px; height: 19px; border-radius: 99px; background: #fff; border: 1.5px solid rgba(2, 10, 29, .2); box-sizing: border-box; }
+.jline::before { content: ""; position: absolute; left: 10px; top: 10px; bottom: 10px; width: 1px; background: var(--line); }
+.jline li { position: relative; display: flex; align-items: center; gap: 18px; font-size: 16px; line-height: 24px; color: var(--ink-2); }
+.jline li::before { content: ""; position: relative; flex: none; width: 20px; height: 20px; border-radius: 100px; background: #fff; border: 2px solid rgba(2, 10, 29, .2); box-sizing: border-box; }
 .jline li:last-child { color: var(--ink); font-weight: 500; }
-.jline li:last-child::before { background: var(--g-700); border-color: var(--g-700); box-shadow: 0 0 0 5px var(--g-50); }
+.jline li:last-child::before { background: var(--g-700); border-color: var(--g-700); box-shadow: 0 0 0 6px var(--g-50); }
 
 /* ============ 7. About the author ============ */
-.author { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
+.author { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 120px; align-items: center; }
 .author-ph { aspect-ratio: 4 / 4.5; background: #dfe0e4; }
 .author-ph img { object-position: 50% 16%; }
 .author h2 { margin-top: 16px; max-width: 16ch; }
@@ -122,32 +122,32 @@
 .author .btn { margin-top: 36px; }
 
 /* ============ 9. Read the first chapter free ============ */
-.chapter { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 96px); align-items: center; padding: clamp(36px, 5.6vw, 88px); }
+.chapter { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 96px; align-items: center; padding: 88px; }
 .chapter-art { position: relative; height: 420px; }
 .chapter-art .page { position: absolute; left: 50%; top: 50%; width: 230px; height: 340px; margin: -170px 0 0 -40px; transform: rotate(5deg); border-radius: 6px; background: #fff; box-shadow: var(--shadow-md); padding: 34px 26px; }
-.chapter-art .page .eyebrow { font-size: 10.5px; }
-.chapter-art .page h4 { margin: 12px 0 18px; font-size: 16px; line-height: 20px; font-weight: 400; letter-spacing: -0.01em; }
+.chapter-art .page .eyebrow { font-size: 12px; line-height: 20px; }
+.chapter-art .page h4 { margin: 12px 0 18px; font-size: 16px; line-height: 24px; font-weight: 400; letter-spacing: -0.01em; }
 .chapter-art .page i { display: block; height: 6px; margin-top: 10px; border-radius: 6px; background: rgba(2, 10, 29, .07); }
 .chapter-art .cover { position: absolute; left: 50%; top: 50%; width: 230px; margin: -172px 0 0 -190px; transform: rotate(-4deg); }
 .chapter-copy h2 { max-width: 16ch; }
 .chapter-copy .lede { margin-top: 20px; max-width: 54ch; }
 .chapter-copy .rform { margin-top: 32px; }
 .chapter-copy .rf input { background: #fff; }
-.fine { font-size: 14px; color: var(--ink-3); }
+.fine { font-size: 14px; color: var(--ink-3); line-height: 22px; }
 .chapter-copy .fdone { margin-top: 32px; }
 
 /* ============ 10. Get Responsive Living ============ */
 .fmts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
-.fmt { padding: clamp(28px, 3vw, 44px) clamp(24px, 3vw, 48px) 0 0; }
-.fmt + .fmt { padding-left: clamp(24px, 3vw, 48px); border-left: 1px solid var(--line); }
-.fmt h3 { font-size: clamp(24px, 2.2vw, 30px); font-weight: 400; letter-spacing: -0.02em; }
-.fmt .wb { display: block; margin-top: 22px; font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
+.fmt { padding: 44px 48px 0 0; }
+.fmt + .fmt { padding-left: 48px; border-left: 1px solid var(--line); }
+.fmt h3 { font-size: 32px; font-weight: 400; letter-spacing: -0.02em; line-height: 40px; }
+.fmt .wb { display: block; margin-top: 22px; font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); line-height: 20px; }
 .shops { margin-top: 10px; display: grid; }
-.shop { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--line-2); font-size: 16px; transition: color .2s, padding .3s var(--ease); }
+.shop { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line-2); font-size: 16px; transition: color .2s, padding .3s var(--ease); line-height: 24px; }
 .shop svg { width: 14px; height: 14px; color: var(--ink-3); }
 .shop:hover { color: var(--g-700); padding-left: 4px; }
 .shop:hover svg { color: var(--g-700); }
-.pub { margin-top: 44px; font-size: 14px; color: var(--ink-3); }
+.pub { margin-top: 44px; font-size: 14px; color: var(--ink-3); line-height: 22px; }
 
 /* ============ Tablet ============ */
 @media (max-width: 1100px) {
@@ -169,25 +169,87 @@
   .endorse { grid-template-columns: 1fr; }
   .endorse figure, .endorse figure:nth-child(even) { padding: 30px 0; border-left: 0; }
   .sym { align-items: stretch; gap: 10px; }
-  .sym li { border-radius: 18px; padding: 12px 16px 12px 12px; gap: 12px; font-size: 16px; line-height: 20px;}
-  .sym .ci { width: 34px; height: 34px; font-size: 16px; }
+  .sym li { border-radius: 18px; padding: 12px 16px 12px 12px; gap: 12px; font-size: 16px; line-height: 24px;}
+  .sym .ci { width: 34px; height: 34px; font-size: 16px; line-height: 24px; }
   .gv { height: 230px; --space: 24%; }
   .gv-col { padding: 14px 12px; border-radius: 14px; }
   .gv-col .live { right: 10px; }
-  .gv-col .lbl { font-size: 10.5px; letter-spacing: .6px; }
-  .gv-space .tag { padding: 6px 10px; font-size: 10px; }
+  .gv-col .lbl { font-size: 12px; letter-spacing: .6px; line-height: 20px; }
+  .gv-space .tag { padding: 6px 10px; font-size: 12px; line-height: 20px; }
   .gv-top { flex-direction: column; align-items: stretch; }
   .seg { display: flex; }
-  .seg button { flex: 1; padding: 0 8px; font-size: 14px; white-space: nowrap; }
+  .seg button { flex: 1; padding: 0 8px; font-size: 14px; white-space: nowrap; line-height: 22px; }
   .author-ph { aspect-ratio: 4 / 4.2; }
   .chapter { padding: 28px 20px 32px; border-radius: 18px; }
   .chapter-art { height: 300px; }
   .chapter-art .page { width: 170px; height: 252px; margin: -126px 0 0 -26px; padding: 24px 18px; }
-  .chapter-art .page h4 { font-size: 14px; }
+  .chapter-art .page h4 { font-size: 14px; line-height: 22px; }
   .chapter-art .cover { width: 170px; margin: -128px 0 0 -144px; }
   .fmts { grid-template-columns: 1fr; }
   .fmt, .fmt + .fmt { padding: 30px 0 8px; border-left: 0; }
   .fmt + .fmt { border-top: 1px solid var(--line); }
+}
+
+/* Phone and tablet steps of the type scale */
+@media (max-width: 1023px) {
+  .frankl blockquote { font-size: 32px; line-height: 40px; }
+}
+
+/* Spacing steps on the 2px grid (tablet, phone) */
+@media (max-width: 1023px) {
+  .endorse figure { padding: 42px 46px 42px 0; }
+  .endorse figure:nth-child(even) { padding-left: 46px; }
+  .sym { margin: 58px auto 0; }
+  .familiar { margin-top: 58px; }
+  .what { gap: 28px 80px; }
+  .gapviz { margin-top: 60px; }
+  .gapviz { padding: 26px; }
+  .frankl .wrap { padding-top: 128px; }
+  .frankl .wrap { padding-bottom: 128px; }
+  .frankl .after { margin-top: 60px; }
+  .james { gap: 80px; }
+  .jcard { padding: 34px; }
+  .author { gap: 80px; }
+  .chapter { gap: 68px; }
+  .chapter { padding: 62px; }
+  .fmt { padding: 36px 36px 0 0; }
+  .fmt + .fmt { padding-left: 36px; }
+}
+@media (max-width: 720px) {
+  .endorse figure { padding: 32px 28px 32px 0; }
+  .endorse figure:nth-child(even) { padding-left: 28px; }
+  .sym { margin: 44px auto 0; }
+  .familiar { margin-top: 44px; }
+  .what { gap: 28px 40px; }
+  .gapviz { margin-top: 48px; }
+  .gapviz { padding: 20px; }
+  .frankl .wrap { padding-top: 96px; }
+  .frankl .wrap { padding-bottom: 96px; }
+  .frankl .after { margin-top: 48px; }
+  .james { gap: 40px; }
+  .jcard { padding: 28px; }
+  .author { gap: 40px; }
+  .chapter { gap: 40px; }
+  .chapter { padding: 36px; }
+  .fmt { padding: 28px 24px 0 0; }
+  .fmt + .fmt { padding-left: 24px; }
+}
+.rows .lead-in { grid-column: 2 / -1; color: var(--ink-2); font-size: 16px; line-height: 24px; }
+.rows .lead-in strong { color: var(--ink); font-weight: 500; }
+.buy { border: 1px solid var(--line-2); border-radius: var(--r-lg); background: #fff; overflow: hidden; }
+.table { width: 100%; border-collapse: collapse; font-size: 16px; line-height: 24px; }
+.table th { height: 40px; padding: 0 24px; background: var(--page); border-bottom: 1px solid var(--line); text-align: left; font-size: 12px; line-height: 20px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
+.table td { padding: 20px 24px; border-bottom: 1px solid var(--line-2); vertical-align: top; color: var(--ink-2); }
+.table tr:last-child td { border-bottom: 0; }
+.table .fmt-n { color: var(--ink); font-weight: 500; white-space: nowrap; }
+.table .tbd { color: var(--ink-3); white-space: nowrap; }
+@media (max-width: 720px) {
+  .rows .lead-in { grid-column: 1; }
+  .table thead { display: none; }
+  .table tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; padding: 16px; border-bottom: 1px solid var(--line-2); }
+  .table tr:last-child { border-bottom: 0; }
+  .table td { padding: 0; border: 0; }
+  .table td:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
 }
 </style>
 </head>
@@ -223,7 +285,7 @@
       <a href="about.html">About Justin</a>
       <a href="testimonials.html">Results</a>
       <a href="blog.html">Blog</a>
-      <a href="autonomic-wellness.html">Autonomic Wellness</a>
+      <a href="faq.html">FAQ</a>
     </nav>
     <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
@@ -238,9 +300,8 @@
     <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
     <a href="testimonials.html">Results<svg><use href="#arrow"/></svg></a>
     <a href="blog.html">Blog<svg><use href="#arrow"/></svg></a>
-    <a href="help.html">Help / FAQ<svg><use href="#arrow"/></svg></a>
-    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
-    <a href="autonomic-wellness.html">Autonomic Wellness<svg><use href="#arrow"/></svg></a>
+    <a href="faq.html">FAQ<svg><use href="#arrow"/></svg></a>
+    <a href="contact.html">Contact<svg><use href="#arrow"/></svg></a>
   </nav>
   <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
 </div>
@@ -251,12 +312,11 @@
   <section class="phero rl-hero">
     <div class="phero-in">
       <div class="phero-copy">
-        <h1>Between stress and response, there’s a space.</h1>
+        <h1>Between stress and response, there's a space.</h1>
         <p class="sub">Responsive Living follows one man who learned to widen that space and explains the biology of what happens when it closes.</p>
-        <p class="kicker">If you’re exhausted, wired, and told your labs are normal, this is the space your body lost.</p>
+        <p class="kicker">If you're exhausted, wired, and told your labs are normal, this is the space your body lost.</p>
         <div class="ctas">
           <a href="#buy" class="btn btn-primary">Buy the Book <svg><use href="#arrow"/></svg></a>
-          <a href="#chapter" class="u-link">Read the first chapter free <svg><use href="#arrow"/></svg></a>
         </div>
       </div>
       <div class="cover-stage">
@@ -270,7 +330,7 @@
   <!-- 2. Endorsed by -->
   <section class="sec pt0">
     <div class="wrap">
-      <div class="head"><h2>Endorsed by</h2></div>
+      <div class="head"><h2>Endorsed By</h2></div>
       <div class="endorse">
         <figure>
           <svg class="qm"><use href="#if-quotes"/></svg>
@@ -386,10 +446,10 @@
     <div class="wrap">
       <div class="head"><h2>What you’ll understand by the end of the book</h2></div>
       <ol class="rows">
-        <li><span class="n">01</span><h3>Why your body ends up here</h3><p>How mitochondria, immune balance, and a lifetime of exposures set the stage.</p></li>
-        <li><span class="n">02</span><h3>Where it hides and how it shows up</h3><p>From the mouth to your hormones and thyroid, and how to recognize the signs.</p></li>
-        <li><span class="n">03</span><h3>What shifts the pattern</h3><p>The ideas behind the clinical options practitioners use to support energy, hormone, and immune balance, and why each is matched to the person. These chapters are for understanding and for better conversations with your doctor.</p></li>
-        <li><span class="n">04</span><h3>How to sustain it and measure it</h3><p>Fasting, calming the nervous system, what lab work can and can’t tell you, and how food affects immune balance.</p></li>
+        <li><span class="n">01</span><p class="lead-in"><strong>Why your body ends up here:</strong> how mitochondria, immune balance, and a lifetime of exposures set the stage.</p></li>
+        <li><span class="n">02</span><p class="lead-in"><strong>Where it hides and how it shows up:</strong> from the mouth to your hormones and thyroid, and how to recognize the signs.</p></li>
+        <li><span class="n">03</span><p class="lead-in"><strong>What shifts the pattern:</strong> the ideas behind the clinical options practitioners use to support energy, hormone, and immune balance, and why each is matched to the person. These chapters are for understanding and for better conversations with your doctor.</p></li>
+        <li><span class="n">04</span><p class="lead-in"><strong>How to sustain it and measure it:</strong> fasting, calming the nervous system, what lab work can and can’t tell you, and how food affects immune balance.</p></li>
       </ol>
     </div>
   </section>
@@ -399,7 +459,7 @@
     <div class="wrap author">
       <div class="media author-ph"><img src="assets/justin-coat.png" alt="Justin Maguire"></div>
       <div>
-        <span class="eyebrow">Meet the author</span>
+        <span class="eyebrow">Meet the Author</span>
         <h2>About the author, Justin Maguire</h2>
         <p class="body">Justin Maguire is a nutritional scientist and health coach, and both Dr. Dominik Nischwitz and Tim Gray call him a “blood detective.” He holds a BSc (Hons) in Nutritional Science, a Diploma in Functional Blood Chemistry and certifications in hormone therapy and nutrigenomics, and is completing an MSc in Neuroscience and Psychology of Mental Health.</p>
         <a href="about.html" class="btn btn-light">Meet Justin <svg><use href="#arrow"/></svg></a>
@@ -418,8 +478,8 @@
         <div class="cmp-col">
           <h3>This book is for you if</h3>
           <ul class="ticks">
-            <li><span class="tk"><svg><use href="#check"/></svg></span>You’re exhausted and nobody can tell you why.</li>
-            <li><span class="tk"><svg><use href="#check"/></svg></span>You’ve tried a lot and nothing has lasted.</li>
+            <li><span class="tk"><svg><use href="#check"/></svg></span>You’re exhausted, and nobody can tell you why.</li>
+            <li><span class="tk"><svg><use href="#check"/></svg></span>You’ve tried a lot, and nothing has lasted.</li>
             <li><span class="tk"><svg><use href="#check"/></svg></span>You want to understand your own biology rather than follow instructions.</li>
             <li><span class="tk"><svg><use href="#check"/></svg></span>You learn better from a story than from a textbook.</li>
           </ul>
@@ -451,7 +511,7 @@
         </div>
         <div class="chapter-copy" id="chapterBox">
           <h2>Read the first chapter free</h2>
-          <p class="lede">If that sounds like you, start with the introduction and Chapter 1, “Mitochondria: the unseen engine of immunity and energy.” Enter your email and we’ll send it straight to you.</p>
+          <p class="lede">If that sounds like you, start with the introduction and Chapter 1, “Mitochondria: the unseen engine of immunity and energy.” Enter your email, and we’ll send it straight to you.</p>
           <form class="rform" data-form="chapter" novalidate>
             <label class="rf"><span>First name <small>(optional)</small></span><input type="text" name="first_name" autocomplete="given-name" placeholder="First name"></label>
             <label class="rf"><span>Email</span><input type="email" name="email" autocomplete="email" placeholder="you@example.com" data-req data-msg="Please add a valid email address."></label>
@@ -472,35 +532,18 @@
   <section class="sec pt0" id="buy">
     <div class="wrap">
       <div class="head shead-row">
-        <div><span class="eyebrow">Buy the book</span><h2>Get Responsive Living</h2></div>
+        <div><h2>Get Responsive Living</h2></div>
         <p class="lede">Ready to read the whole book?</p>
       </div>
-      <div class="fmts">
-        <div class="fmt">
-          <h3>Paperback</h3>
-          <span class="wb">Where to buy</span>
-          <div class="shops">
-            <a class="shop" href="#">Amazon <svg><use href="#arrow-ur"/></svg></a>
-            <a class="shop" href="#">Barnes &amp; Noble <svg><use href="#arrow-ur"/></svg></a>
-            <a class="shop" href="#">Target <svg><use href="#arrow-ur"/></svg></a>
-            <a class="shop" href="#">Walmart <svg><use href="#arrow-ur"/></svg></a>
-            <a class="shop" href="#">Independent booksellers <svg><use href="#arrow-ur"/></svg></a>
-          </div>
-        </div>
-        <div class="fmt">
-          <h3>Kindle</h3>
-          <span class="wb">Where to buy</span>
-          <div class="shops"><a class="shop" href="#">Amazon <svg><use href="#arrow-ur"/></svg></a></div>
-        </div>
-        <div class="fmt">
-          <h3>Audiobook</h3>
-          <span class="wb">Where to buy</span>
-          <div class="shops">
-            <a class="shop" href="#">Audible <svg><use href="#arrow-ur"/></svg></a>
-            <a class="shop" href="#">Spotify <svg><use href="#arrow-ur"/></svg></a>
-            <a class="shop" href="#">Apple <svg><use href="#arrow-ur"/></svg></a>
-          </div>
-        </div>
+      <div class="table-wrap buy">
+        <table class="table">
+          <thead><tr><th>Format</th><th>Where to buy</th><th>Link</th></tr></thead>
+          <tbody>
+            <tr><td class="fmt-n">Paperback</td><td>Amazon, Barnes &amp; Noble, Target, Walmart, independent booksellers</td><td class="tbd">To add</td></tr>
+            <tr><td class="fmt-n">Kindle</td><td>Amazon</td><td class="tbd">To add</td></tr>
+            <tr><td class="fmt-n">Audiobook</td><td>Audible, plus Spotify and Apple</td><td class="tbd">To add</td></tr>
+          </tbody>
+        </table>
       </div>
       <p class="pub">Published by Golden Ray Books. ISBN 979-8-9945080-2-2 (paperback).</p>
     </div>
@@ -515,7 +558,7 @@
       </div>
       <div class="faq-list">
         <details open><summary>What is Responsive Living?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>Responsive Living is the practice of reading your biology, your psychology and your daily life together, and adjusting as each one changes. It’s also the title of Justin Maguire’s book, which explains the idea through one man’s story.</p></div></details>
-        <details><summary>Is this book medical advice?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. It’s written for information and understanding, and the author isn’t a medical professional. Talk to a qualified healthcare provider before making decisions about your health. If you need a doctor’s review or testing, see <a href="autonomic-wellness.html">Autonomic Wellness</a>. For anything urgent, contact your own doctor or emergency services.</p></div></details>
+        <details><summary>Is this book medical advice?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. It’s written for information and understanding, and the author isn’t a medical professional. Talk to a qualified healthcare provider before making decisions about your health. For anything urgent, contact your own doctor or emergency services.</p></div></details>
         <details><summary>Is the book only about allergies?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. The story follows a man whose symptoms lean toward allergies, gut and skin trouble, but it covers energy, thyroid, hormones, stress, and the nervous system too.</p></div></details>
         <details><summary>Does the book tell me what to take?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>It explains how different approaches work and includes reference notes on protocols. None of it is a personal plan, and what suits you depends on your lab results, your history, and a qualified clinician.</p></div></details>
         <details><summary>Do I need lab work to read the book?<span class="pm"><svg><use href="#plus"/></svg></span></summary><div class="faq-a"><p>No. You can read the book without it. Lab work helps once you want to apply the ideas, and the later chapters explain what it can and can’t tell you.</p></div></details>
@@ -534,10 +577,6 @@
         <a href="how-it-works.html" class="btn btn-ghost">See how coaching works <svg><use href="#arrow"/></svg></a>
         <a href="#request" class="btn btn-pill">Request Coaching <svg><use href="#arrow"/></svg></a>
       </div>
-      <div class="final-aw">
-        <p>Looking for testing or a licensed doctor’s review? That’s Autonomic Wellness.</p>
-        <a href="https://beta.aw.agpro.co.in/" target="_blank" rel="noopener">Visit Autonomic Wellness <svg><use href="#arrow-ur"/></svg></a>
-      </div>
     </div>
   </section>
 </main>
@@ -551,15 +590,11 @@
         <div><a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a></div>
       </div>
       <nav class="foot-col foot-links" aria-label="Footer">
-        <a href="responsive-living.html">Responsive Living</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="about.html">About Justin</a>
+        <a href="responsive-living.html" aria-current="page">Responsive Living</a>
         <a href="testimonials.html">Results</a>
+        <a href="about.html">About Justin</a>
         <a href="blog.html">Blog</a>
-        <a href="help.html">Help / FAQ</a>
-        <a href="concierge.html">Concierge</a>
-        <a href="autonomic-wellness.html">Autonomic Wellness</a>
-        <a href="#">Contact</a>
+        <a href="contact.html">Contact</a>
         <a href="#">Privacy Policy</a>
       </nav>
       <div class="foot-col socials">

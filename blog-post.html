@@ -14,7 +14,7 @@
 /* ============ Topic covers (drawn as inline SVG so they import into Figma as vectors) ============ */
 .cv { position: relative; overflow: hidden; aspect-ratio: 16 / 10; border-radius: 16px; }
 .cv > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.cv .lbl { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 99px; font-size: 14px; font-weight: 500; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .22); color: #fff; }
+.cv .lbl { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 100px; font-size: 14px; font-weight: 500; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .22); color: #fff; line-height: 22px; }
 .t-exh { background: linear-gradient(160deg, #0e7a52 0%, #022721 100%); color: #8fefca; }
 .t-slp { background: linear-gradient(170deg, #020a1d 0%, #2c4278 100%); color: #bfd2fe; }
 .t-hor { background: linear-gradient(160deg, #f2f8f5 0%, #d8ebe1 100%); color: #0e7a52; }
@@ -24,79 +24,79 @@
 .t-hor .lbl, .t-lab .lbl, .t-gut .lbl { background: #fff; border-color: rgba(2, 10, 29, .06); color: var(--ink); }
 
 /* ============ Reading progress ============ */
-.progress { position: fixed; z-index: 55; top: 0; left: 0; right: 0; max-width: 1440px; margin: 0 auto; height: 3px; pointer-events: none; }
+.progress { position: fixed; z-index: 55; top: 0; left: 0; right: 0; max-width: 1440px; margin: 0 auto; height: 4px; pointer-events: none; }
 .progress i { display: block; height: 100%; width: 0; background: var(--g-600); }
 .figma .progress { display: none; }
 
 /* ============ Article header ============ */
-.a-head { max-width: 860px; margin: 0 auto; padding: clamp(40px, 5vw, 72px) var(--gutter) 0; text-align: center; }
-.crumbs { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-3); }
+.a-head { max-width: 860px; margin: 0 auto; padding: 72px var(--gutter) 0; text-align: center; }
+.crumbs { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-3); line-height: 22px; }
 .crumbs a:hover { color: var(--ink); }
 .crumbs svg { width: 12px; height: 12px; }
 .crumbs .cat { color: var(--g-700); font-weight: 500; }
-.a-head h1 { margin: 22px auto 0; max-width: 18ch; font-size: clamp(36px, 4.2vw, 56px); }
+.a-head h1 { margin: 22px auto 0; max-width: 18ch; font-size: 56px; line-height: 64px; }
 .a-head .dek { margin: 22px auto 0; max-width: 56ch; }
-.byline { margin-top: 32px; display: flex; align-items: center; justify-content: center; gap: 14px 28px; flex-wrap: wrap; font-size: 14px; color: var(--ink-2); }
+.byline { margin-top: 32px; display: flex; align-items: center; justify-content: center; gap: 14px 28px; flex-wrap: wrap; font-size: 14px; color: var(--ink-2); line-height: 22px; }
 .byline .who { display: flex; align-items: center; gap: 12px; text-align: left; color: var(--ink); font-weight: 500; }
-.byline .who img { width: 44px; height: 44px; border-radius: 99px; object-fit: cover; object-position: 50% 10%; background: #dfe0e4; }
-.byline .who small { display: block; font-weight: 400; color: var(--ink-3); font-size: 14px; line-height: 18px;}
+.byline .who img { width: 44px; height: 44px; border-radius: 100px; object-fit: cover; object-position: 50% 10%; background: #dfe0e4; }
+.byline .who small { display: block; font-weight: 400; color: var(--ink-3); font-size: 14px; line-height: 22px;}
 .byline .m { display: inline-flex; align-items: center; gap: 8px; }
 .byline .m .pi { font-size: 16px; color: var(--g-700); }
-.a-cover { max-width: var(--max); margin: clamp(40px, 4.4vw, 64px) auto 0; padding: 0 var(--gutter); }
+.a-cover { max-width: var(--max); margin: 64px auto 0; padding: 0 var(--gutter); }
 .a-cover .ph { aspect-ratio: 21 / 9; border-radius: 28px; overflow: hidden; background: #dfe6e2; }
 .a-cover .ph img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ============ Layout: TOC + article ============ */
-.a-body { max-width: var(--max); margin: 0 auto; padding: clamp(56px, 6vw, 88px) var(--gutter) 0; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: clamp(40px, 5vw, 80px); }
+.a-body { max-width: var(--max); margin: 0 auto; padding: 88px var(--gutter) 0; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 80px; }
 .rail { position: sticky; top: 108px; align-self: start; display: grid; gap: 32px; }
 .side-author { display: grid; grid-template-columns: 52px 1fr; gap: 14px; align-items: center; padding: 20px; border-radius: 20px; background: #fff; border: 1px solid var(--line-2); }
-.side-author img { width: 52px; height: 52px; border-radius: 99px; object-fit: cover; object-position: 50% 12%; background: #dfe0e4; }
-.side-author .k { display: block; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-3); }
-.side-author strong { display: block; margin-top: 2px; font-size: 16px; line-height: 20px; font-weight: 500; }
-.side-author .t { display: block; font-size: 12px; line-height: 16px; color: var(--g-700); }
-.side-author p { grid-column: 1 / -1; font-size: 14px; line-height: 18px; color: var(--ink-2); }
-.side-author .u-link { grid-column: 1 / -1; font-size: 14px; }
+.side-author img { width: 52px; height: 52px; border-radius: 100px; object-fit: cover; object-position: 50% 12%; background: #dfe0e4; }
+.side-author .k { display: block; font-size: 12px; line-height: 20px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-3); }
+.side-author strong { display: block; margin-top: 2px; font-size: 16px; line-height: 24px; font-weight: 500; }
+.side-author .t { display: block; font-size: 12px; line-height: 20px; color: var(--g-700); }
+.side-author p { grid-column: 1 / -1; font-size: 14px; line-height: 22px; color: var(--ink-2); }
+.side-author .u-link { grid-column: 1 / -1; font-size: 14px; line-height: 22px; }
 .figma .rail { position: static; }
-.toc-t { font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
+.toc-t { font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); line-height: 20px; }
 .toc { list-style: none; margin: 16px 0 0; padding: 0; border-left: 1px solid var(--line); }
-.toc a { display: block; margin-left: -1px; padding: 9px 0 9px 18px; border-left: 2px solid transparent; font-size: 14px; line-height: 18px; color: var(--ink-2); transition: color .2s, border-color .2s; }
+.toc a { display: block; margin-left: -1px; padding: 10px 0 10px 18px; border-left: 2px solid transparent; font-size: 14px; line-height: 22px; color: var(--ink-2); transition: color .2s, border-color .2s; }
 .toc a:hover { color: var(--ink); }
 .toc a.on { color: var(--g-700); border-left-color: var(--g-600); font-weight: 500; }
 .share { padding-top: 24px; border-top: 1px solid var(--line); }
 .share .row { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
-.share a, .share button { width: 40px; height: 40px; border-radius: 99px; display: grid; place-items: center; background: #fff; border: 1px solid var(--line); color: var(--ink-2); font-size: 16px; transition: color .2s, border-color .2s, background-color .2s; }
+.share a, .share button { width: 40px; height: 40px; border-radius: 100px; display: grid; place-items: center; background: #fff; border: 1px solid var(--line); color: var(--ink-2); font-size: 16px; transition: color .2s, border-color .2s, background-color .2s; line-height: 24px; }
 .share a:hover, .share button:hover { color: var(--g-700); border-color: var(--g-300); background: var(--g-50); }
-.share .copied { margin-top: 10px; min-height: 18px; font-size: 14px; color: var(--g-700); }
+.share .copied { margin-top: 10px; min-height: 18px; font-size: 14px; color: var(--g-700); line-height: 22px; }
 
 /* ============ Prose ============ */
-.prose { font-size: 16px; line-height: 20px; color: #2a3346; }
+.prose { font-size: 16px; line-height: 24px; color: #2a3346; }
 .prose > * + * { margin-top: 24px; }
-.prose h2 { margin-top: 64px; scroll-margin-top: 110px; font-size: clamp(26px, 2.4vw, 34px); line-height: 1.15; color: var(--ink); }
+.prose h2 { margin-top: 64px; scroll-margin-top: 110px; font-size: 32px; line-height: 40px; color: var(--ink); }
 .prose h2:first-child { margin-top: 0; }
 .prose ul { padding: 0; list-style: none; display: grid; gap: 12px; }
 .prose ul li { position: relative; padding-left: 30px; }
-.prose ul li::before { content: ""; position: absolute; left: 4px; top: 11px; width: 8px; height: 8px; border-radius: 99px; background: var(--g-600); box-shadow: 0 0 0 4px var(--g-50); }
-.prose .lead-p { font-size: 21px; line-height: 1.6; color: var(--ink); }
+.prose ul li::before { content: ""; position: absolute; left: 4px; top: 12px; width: 8px; height: 8px; border-radius: 100px; background: var(--g-600); box-shadow: 0 0 0 4px var(--g-50); }
+.prose .lead-p { font-size: 16px; line-height: 24px; color: var(--ink); }
 .prose strong { font-weight: 500; color: var(--ink); }
 .prose p a { color: var(--g-700); text-decoration: underline; text-underline-offset: 4px; }
-.pull { position: relative; margin: 48px 0; padding: clamp(32px, 3.6vw, 48px) clamp(28px, 4vw, 56px) clamp(28px, 3vw, 40px) clamp(56px, 6vw, 88px); border-radius: 20px; background: var(--mist); border-left: 4px solid var(--g-600); }
-.pull .qm { position: absolute; left: clamp(20px, 2.4vw, 32px); top: clamp(30px, 3.4vw, 46px); width: 28px; height: 28px; color: var(--g-600); }
-.pull blockquote { margin: 0; font-family: "Newsreader", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(22px, 2.2vw, 28px); line-height: 1.4; letter-spacing: -0.01em; color: var(--ink); }
-.pull cite { display: flex; align-items: center; gap: 12px; margin-top: 22px; font-size: 14px; line-height: 18px; font-weight: 500; font-style: normal; color: var(--g-700); }
+.pull { position: relative; margin: 48px 0; padding: 48px 56px 40px 88px; border-radius: 20px; background: var(--mist); border-left: 4px solid var(--g-600); }
+.pull .qm { position: absolute; left: 32px; top: 46px; width: 28px; height: 28px; color: var(--g-600); }
+.pull blockquote { margin: 0; font-family: "Newsreader", Georgia, serif; font-style: italic; font-weight: 400; font-size: 32px; line-height: 40px; letter-spacing: -0.01em; color: var(--ink); }
+.pull cite { display: flex; align-items: center; gap: 12px; margin-top: 22px; font-size: 14px; line-height: 22px; font-weight: 500; font-style: normal; color: var(--g-700); }
 .pull cite::before { content: ""; width: 28px; height: 1px; background: var(--g-600); }
-.callout { padding: 28px 30px; border-radius: 20px; background: var(--mist); font-size: 16px; line-height: 20px; }
-.callout .statement { font-size: 22px; line-height: 1.6; color: var(--ink); }
+.callout { padding: 28px 30px; border-radius: 20px; background: var(--mist); font-size: 16px; line-height: 24px; }
+.callout .statement { font-size: 16px; line-height: 24px; color: var(--ink); }
 .tbl { overflow-x: auto; border-radius: 18px; border: 1px solid var(--line); background: #fff; }
-.tbl table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 16px; line-height: 20px; }
-.tbl caption { padding: 18px 20px; text-align: left; font-size: 16px; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--line); }
-.tbl th, .tbl td { padding: 15px 20px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line-2); }
-.tbl thead th { font-size: 12px; font-weight: 500; letter-spacing: 1.1px; text-transform: uppercase; color: var(--ink-3); background: var(--page); }
+.tbl table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 16px; line-height: 24px; }
+.tbl caption { padding: 18px 20px; text-align: left; font-size: 16px; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--line); line-height: 24px; }
+.tbl th, .tbl td { padding: 16px 20px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line-2); }
+.tbl thead th { font-size: 12px; font-weight: 500; letter-spacing: 1.1px; text-transform: uppercase; color: var(--ink-3); background: var(--page); line-height: 20px; }
 .tbl tbody th { font-weight: 500; color: var(--ink); width: 26%; }
 .tbl td:last-child { color: var(--g-800); background: rgba(237, 252, 247, .5); }
 .tbl tr:last-child th, .tbl tr:last-child td { border-bottom: 0; }
 .cta-box { margin-top: 56px; padding: 36px; border-radius: 24px; background: radial-gradient(80% 90% at 100% 0%, rgba(22, 157, 105, .4), rgba(22, 157, 105, 0) 70%), var(--g-900); color: #fff; }
-.cta-box h3 { color: #fff; font-size: 26px; font-weight: 400; letter-spacing: -0.02em; }
-.cta-box p { margin-top: 12px; color: rgba(255, 255, 255, .72); font-size: 16px; line-height: 20px;}
+.cta-box h3 { color: #fff; font-size: 16px; font-weight: 400; letter-spacing: -0.02em; line-height: 24px; }
+.cta-box p { margin-top: 12px; color: rgba(255, 255, 255, .72); font-size: 16px; line-height: 24px;}
 .cta-box .btn { margin-top: 24px; }
 .tags { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 8px; }
 
@@ -104,13 +104,13 @@
 .recs-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .recs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .card-a { display: flex; flex-direction: column; padding: 10px; border-radius: 22px; background: #fff; border: 1px solid var(--line-2); transition: box-shadow .4s var(--ease), transform .4s var(--ease); }
-.card-a:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.card-a:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .card-a .ph { aspect-ratio: 16 / 10; border-radius: 14px; overflow: hidden; background: #dfe6e2; }
 .card-a .ph img { width: 100%; height: 100%; object-fit: cover; }
 .card-a .in { flex: 1; display: flex; flex-direction: column; padding: 18px 12px 12px; }
-.label { display: inline-flex; align-self: flex-start; align-items: center; height: 28px; padding: 0 12px; border-radius: 99px; background: var(--g-50); color: var(--g-700); font-size: 12px; line-height: 16px; font-weight: 500; }
-.card-a h3 { margin-top: 14px; font-size: 20px; line-height: 26px; font-weight: 500; letter-spacing: -0.015em; }
-.card-a .go { margin-top: auto; padding-top: 22px; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; line-height: 18px; font-weight: 500; color: var(--g-700); }
+.label { display: inline-flex; align-self: flex-start; align-items: center; height: 28px; padding: 0 12px; border-radius: 100px; background: var(--g-50); color: var(--g-700); font-size: 12px; line-height: 20px; font-weight: 500; }
+.card-a h3 { margin-top: 14px; font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: -0.015em; }
+.card-a .go { margin-top: auto; padding-top: 22px; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; line-height: 22px; font-weight: 500; color: var(--g-700); }
 .card-a .go svg { width: 14px; height: 14px; }
 
 @media (max-width: 1100px) {
@@ -124,14 +124,39 @@
 @media (max-width: 720px) {
   .a-cover .ph { aspect-ratio: 16 / 10; border-radius: 18px; }
   .byline { gap: 12px 18px; }
-  .prose { font-size: 16px; }
-  .prose .lead-p { font-size: 19px; }
+  .prose { font-size: 16px; line-height: 24px; }
+  .prose .lead-p { font-size: 16px; line-height: 24px; }
   .pull { padding: 56px 20px 24px 22px; }
   .pull .qm { left: 22px; top: 20px; }
   .callout, .cta-box { padding: 24px 20px; }
   .cta-box .btn { width: 100%; }
   .rail { grid-template-columns: 1fr; }
   .recs { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* Phone and tablet steps of the type scale */
+@media (max-width: 1023px) {
+  .a-head h1 { font-size: 40px; line-height: 48px; }
+}
+
+/* Spacing steps on the 2px grid (tablet, phone) */
+@media (max-width: 1023px) {
+  .a-head { padding: 56px var(--gutter) 0; }
+  .a-cover { margin: 52px auto 0; }
+  .a-body { padding: 72px var(--gutter) 0; }
+  .a-body { gap: 60px; }
+  .pull { padding: 40px 42px 34px 72px; }
+  .pull .qm { left: 26px; }
+  .pull .qm { top: 38px; }
+}
+@media (max-width: 720px) {
+  .a-head { padding: 40px var(--gutter) 0; }
+  .a-cover { margin: 40px auto 0; }
+  .a-body { padding: 56px var(--gutter) 0; }
+  .a-body { gap: 40px; }
+  .pull { padding: 32px 28px 28px 56px; }
+  .pull .qm { left: 20px; }
+  .pull .qm { top: 30px; }
 }
 </style>
 </head>
@@ -171,7 +196,7 @@
       <a href="about.html">About Justin</a>
       <a href="testimonials.html">Results</a>
       <a href="blog.html" aria-current="page">Blog</a>
-      <a href="autonomic-wellness.html">Autonomic Wellness</a>
+      <a href="faq.html">FAQ</a>
     </nav>
     <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
@@ -186,9 +211,8 @@
     <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
     <a href="testimonials.html">Results<svg><use href="#arrow"/></svg></a>
     <a href="blog.html" aria-current="page">Blog<svg><use href="#arrow"/></svg></a>
-    <a href="help.html">Help / FAQ<svg><use href="#arrow"/></svg></a>
-    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
-    <a href="autonomic-wellness.html">Autonomic Wellness<svg><use href="#arrow"/></svg></a>
+    <a href="faq.html">FAQ<svg><use href="#arrow"/></svg></a>
+    <a href="contact.html">Contact<svg><use href="#arrow"/></svg></a>
   </nav>
   <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
 </div>
@@ -234,7 +258,7 @@
           <li><a href="#what">What is Responsive Living?</a></li>
           <li><a href="#static">Static physiology</a></li>
           <li><a href="#labs">“Normal” labs don’t mean you’re well</a></li>
-          <li><a href="#aw">How is Autonomic Wellness different from Autonomic Coaching?</a></li>
+          <li><a href="#fit">Who coaching is for, and who it isn’t</a></li>
         </ol>
       </div>
       <div class="share">
@@ -278,16 +302,15 @@
       <p>Energy that crashes mid-afternoon. Focus that slips when it matters most. Restless nights, digestive issues, weight that won’t shift.</p>
       <div class="callout"><p class="statement">We look deeper at <span class="nw"><span class="chip"><span class="ci"><svg class="pi"><use href="#i-drop-half"/></svg></span>hormones</span>,</span> <span class="nw"><span class="chip"><span class="ci"><svg class="pi"><use href="#i-plant"/></svg></span>gut health</span>,</span> <span class="chip"><span class="ci"><svg class="pi"><use href="#i-fire"/></svg></span>metabolism</span> and <span class="chip"><span class="ci"><svg class="pi"><use href="#i-wave-sine"/></svg></span>stress patterns</span> to find what’s actually holding you back, then build a plan to fix it.</p></div>
 
-      <h2 id="aw">How is Autonomic Wellness different from Autonomic Coaching?</h2>
+      <h2 id="fit">Who coaching is for, and who it isn’t</h2>
       <div class="tbl">
         <table>
-          <thead><tr><th scope="col"></th><th scope="col">Autonomic Wellness</th><th scope="col">Autonomic Coaching</th></tr></thead>
+          <thead><tr><th scope="col"></th><th scope="col">Coaching suits you if</th><th scope="col">Coaching doesn’t suit you if</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Who leads</th><td>A doctor leads, with a scientist</td><td>You lead, with Justin supporting you</td></tr>
-            <tr><th scope="row">How often</th><td>One consultation</td><td>Weekly sessions over months</td></tr>
-            <tr><th scope="row">What it looks at</th><td>Your symptoms, health history and lifestyle at one point in time</td><td>Your daily log of sleep, food and how you feel, alongside your lab results</td></tr>
-            <tr><th scope="row">Support afterward</th><td>No ongoing support</td><td>Weekly sessions and a daily log</td></tr>
-            <tr><th scope="row">Time and cost</th><td>Less time and a lower cost</td><td>A larger time and financial commitment</td></tr>
+            <tr><th scope="row">What you want</th><td>You want to understand why you feel the way you do, across body and mind.</td><td>You want a diagnosis or a prescription.</td></tr>
+            <tr><th scope="row">How you want support</th><td>You want weekly sessions over months.</td><td>You want a quick fix or a single review at one point in time.</td></tr>
+            <tr><th scope="row">Who decides</th><td>You want to make the decisions, using guidance based on your own data.</td><td>You’d rather be handed a fixed set of instructions.</td></tr>
+            <tr><th scope="row">Your situation</th><td>You’re feeling unwell and want your sleep, stress, food and lab results looked at together.</td><td>You need urgent medical attention.</td></tr>
           </tbody>
         </table>
       </div>
@@ -344,14 +367,10 @@
       </div>
       <nav class="foot-col foot-links" aria-label="Footer">
         <a href="responsive-living.html">Responsive Living</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="about.html">About Justin</a>
         <a href="testimonials.html">Results</a>
-        <a href="blog.html">Blog</a>
-        <a href="help.html">Help / FAQ</a>
-        <a href="concierge.html">Concierge</a>
-        <a href="autonomic-wellness.html">Autonomic Wellness</a>
-        <a href="#">Contact</a>
+        <a href="about.html">About Justin</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="contact.html">Contact</a>
         <a href="#">Privacy Policy</a>
       </nav>
       <div class="foot-col socials">

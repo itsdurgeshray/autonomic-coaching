@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Autonomic Coaching</title>
+<meta name="description" content="Scientist-led, one-to-one health coaching begins with understanding your situation.">
+<link rel="icon" href="assets/mark.png">
+<script>if (/[?&]figma\b/.test(location.search)) document.documentElement.classList.add('figma');</script>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ============ Hero ============ */
+.c-hero { background: linear-gradient(180deg, var(--mist) 0%, var(--page) 100%); }
+.c-hero .phero-in { align-items: center; }
+.c-art .media { aspect-ratio: 4 / 3; background: linear-gradient(180deg, #e6efe9 0%, #d8e8df 100%); }
+.c-art .media img { object-fit: cover; object-position: 50% 16%; }
+
+/* ============ Is this about me ============ */
+.begin { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px 80px; align-items: start; padding-top: 48px; border-top: 1px solid var(--line); }
+.begin h2 { max-width: 16ch; }
+.discreet { margin-top: 24px; display: flex; align-items: center; gap: 10px; font-size: 16px; line-height: 24px; font-weight: 500; color: var(--g-700); }
+.discreet .pi { font-size: 20px; }
+
+/* ============ What happens next ============ */
+.nsteps { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.nsteps li { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 32px; border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-sm); }
+.nsteps .num { position: absolute; top: 32px; right: 32px; font-size: 12px; line-height: 20px; font-weight: 500; letter-spacing: 1.2px; color: var(--ink-3); }
+.nsteps h3 { margin-top: 12px; }
+.nsteps p { font-size: 16px; line-height: 24px; color: var(--ink-2); }
+
+/* ============ The coaching commitment ============ */
+.commit { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px 80px; align-items: start; padding: 64px; border-radius: var(--r-xl); background: var(--mist); }
+.commit-copy .lede { margin-top: 20px; }
+.commit-copy .body { margin-top: 16px; }
+.commit-card { display: flex; flex-direction: column; gap: 20px; padding: 32px; border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
+.commit-card .k { font-size: 16px; line-height: 24px; font-weight: 500; }
+.commit-card .ticks { gap: 12px; }
+.commit-card .btn { align-self: flex-start; }
+.commit-card .fine { font-size: 14px; line-height: 22px; color: var(--ink-3); }
+mark.tbc { background: var(--g-50); color: var(--g-700); padding: 0 4px; border-radius: 4px; }
+
+/* ============ Prefer to write directly ============ */
+.direct { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 24px; max-width: 880px; padding-top: 48px; border-top: 1px solid var(--line); }
+.direct .body { margin-top: 16px; max-width: 64ch; }
+.direct a { color: var(--g-700); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(14, 122, 82, .35); }
+
+@media (max-width: 1100px) {
+  .nsteps { grid-template-columns: minmax(0, 1fr); }
+  .commit { grid-template-columns: minmax(0, 1fr); padding: 40px; }
+  .begin { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  .c-art .media { aspect-ratio: 4 / 3; border-radius: 18px; }
+  .nsteps li { padding: 24px; }
+  .nsteps .num { top: 24px; right: 24px; }
+  .commit { padding: 24px 16px; border-radius: 18px; }
+  .commit-card { padding: 24px; }
+  .commit-card .btn { width: 100%; }
+  .direct { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+}
+</style>
+</head>
+<body data-page="contact">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<!--SPRITE-->
+    <symbol id="arrow" viewBox="0 0 16 16"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow-ur" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book-open-text" viewBox="0 0 256 256"><path d="M232,50H160a38,38,0,0,0-32,17.55A38,38,0,0,0,96,50H24a6,6,0,0,0-6,6V200a6,6,0,0,0,6,6H96a26,26,0,0,1,26,26,6,6,0,0,0,12,0,26,26,0,0,1,26-26h72a6,6,0,0,0,6-6V56A6,6,0,0,0,232,50ZM96,194H30V62H96a26,26,0,0,1,26,26V204.31A37.86,37.86,0,0,0,96,194Zm130,0H160a37.87,37.87,0,0,0-26,10.32V88a26,26,0,0,1,26-26h66ZM160,90h40a6,6,0,0,1,0,12H160a6,6,0,0,1,0-12Zm46,38a6,6,0,0,1-6,6H160a6,6,0,0,1,0-12h40A6,6,0,0,1,206,128Zm0,32a6,6,0,0,1-6,6H160a6,6,0,0,1,0-12h40A6,6,0,0,1,206,160Z"/></symbol>
+    <symbol id="i-facebook-logo" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V150h26a6,6,0,0,0,0-12H134V112a18,18,0,0,1,18-18h16a6,6,0,0,0,0-12H152a30,30,0,0,0-30,30v26H96a6,6,0,0,0,0,12h26v67.8a90,90,0,1,1,12,0Z"/></symbol>
+    <symbol id="i-heartbeat" viewBox="0 0 256 256"><path d="M72,142H32a6,6,0,0,1,0-12H68.79L83,108.67a6,6,0,0,1,10,0l27,40.51,11-16.51a6,6,0,0,1,5-2.67h24a6,6,0,0,1,0,12H139.21L125,163.33a6,6,0,0,1-10,0L88,122.82,77,139.33A6,6,0,0,1,72,142ZM178,42c-21,0-39.26,9.47-50,25.34C117.26,51.47,99,42,78,42a60.07,60.07,0,0,0-60,60q0,1.09,0,2.19a6,6,0,0,0,12-.38c0-.6,0-1.21,0-1.81A48.05,48.05,0,0,1,78,54c20.28,0,37.31,10.83,44.45,28.27a6,6,0,0,0,11.1,0C140.69,64.83,157.72,54,178,54a48.05,48.05,0,0,1,48,48c0,55.73-81.61,105.65-98,115.11-9.84-5.66-43.09-25.82-68.16-53.16a6,6,0,1,0-8.84,8.1c30.94,33.77,72.41,56.29,74.16,57.23a6,6,0,0,0,5.68,0,334.68,334.68,0,0,0,53.06-37C219.8,161.59,238,131.2,238,102A60.07,60.07,0,0,0,178,42Z"/></symbol>
+    <symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H40a6,6,0,0,1,0-12H216A6,6,0,0,1,222,128ZM40,70H216a6,6,0,0,0,0-12H40a6,6,0,0,0,0,12ZM216,186H40a6,6,0,0,0,0,12H216a6,6,0,0,0,0-12Z"/></symbol>
+    <symbol id="i-magnifying-glass" viewBox="0 0 256 256"><path d="M228.24,219.76l-51.38-51.38a86.15,86.15,0,1,0-8.48,8.48l51.38,51.38a6,6,0,0,0,8.48-8.48ZM38,112a74,74,0,1,1,74,74A74.09,74.09,0,0,1,38,112Z"/></symbol>
+    <symbol id="i-path" viewBox="0 0 256 256"><path d="M200,170a30.05,30.05,0,0,0-29.4,24H72a34,34,0,0,1,0-68h96a38,38,0,0,0,0-76H72a6,6,0,0,0,0,12h96a26,26,0,0,1,0,52H72a46,46,0,0,0,0,92h98.6A30,30,0,1,0,200,170Zm0,48a18,18,0,1,1,18-18A18,18,0,0,1,200,218Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 256 256"><path d="M204.24,195.76a6,6,0,1,1-8.48,8.48L128,136.49,60.24,204.24a6,6,0,0,1-8.48-8.48L119.51,128,51.76,60.24a6,6,0,0,1,8.48-8.48L128,119.51l67.76-67.75a6,6,0,0,1,8.48,8.48L136.49,128Z"/></symbol>
+    <symbol id="i-youtube-logo" viewBox="0 0 256 256"><path d="M163.33,123l-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128ZM232.4,70a22,22,0,0,0-13.28-15C185,41.79,130.27,42,128,42s-57-.21-91.16,13A22,22,0,0,0,23.6,70C21.05,79.89,18,98,18,128s3.05,48.11,5.6,58a22,22,0,0,0,13.28,15C71,214.21,125.72,214,128,214h.71c6.91,0,58-.44,90.45-13a22,22,0,0,0,13.28-15c2.55-9.87,5.6-27.93,5.6-58S235,79.89,232.4,70ZM220.78,183a10,10,0,0,1-6,6.86C182.78,202.19,128.58,202,128,202s-54.71.2-86.75-12.17a10,10,0,0,1-6-6.86C32.84,173.78,30,156.78,30,128s2.84-45.78,5.22-55a10,10,0,0,1,6-6.86C72.06,54.26,123.53,54,127.76,54H128c.54,0,54.71-.2,86.75,12.17a10,10,0,0,1,6,6.86c2.38,9.19,5.22,26.19,5.22,55S223.16,173.78,220.78,183Z"/></symbol>
+    <symbol id="plus" viewBox="0 0 16 16"><path d="M8 2.5v11M2.5 8h11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-calendar-check" viewBox="0 0 256 256"><path d="M208,34H182V24a6,6,0,0,0-12,0V34H86V24a6,6,0,0,0-12,0V34H48A14,14,0,0,0,34,48V208a14,14,0,0,0,14,14H208a14,14,0,0,0,14-14V48A14,14,0,0,0,208,34ZM48,46H74V56a6,6,0,0,0,12,0V46h84V56a6,6,0,0,0,12,0V46h26a2,2,0,0,1,2,2V82H46V48A2,2,0,0,1,48,46ZM208,210H48a2,2,0,0,1-2-2V94H210V208A2,2,0,0,1,208,210Zm-39.76-86.24a6,6,0,0,1,0,8.48l-48,48a6,6,0,0,1-8.48,0l-24-24a6,6,0,0,1,8.48-8.48L116,167.51l43.76-43.75A6,6,0,0,1,168.24,123.76Z"/></symbol><symbol id="i-chats-circle" viewBox="0 0 256 256"><path d="M229.93,186.58A78,78,0,0,0,168.16,74.42,78,78,0,1,0,26.07,138.58L18.58,164A14,14,0,0,0,36,181.42l25.46-7.49a78,78,0,0,0,26.39,7.63,78,78,0,0,0,106.77,40.37L220,229.42A14,14,0,0,0,237.42,212ZM62,161.5a6.05,6.05,0,0,0-1.69.24l-27.77,8.17a2,2,0,0,1-2.48-2.48l8.17-27.77a6.05,6.05,0,0,0-.47-4.53,66,66,0,1,1,27.08,27.08A6,6,0,0,0,62,161.5Zm155.71,26.16,8.17,27.77a2,2,0,0,1-2.48,2.48l-27.77-8.17a6.06,6.06,0,0,0-4.53.47,66,66,0,0,1-90-28.4,77.92,77.92,0,0,0,71-94.68,66,66,0,0,1,46.07,96A6.05,6.05,0,0,0,217.74,187.66Z"/></symbol><symbol id="i-check-circle" viewBox="0 0 256 256"><path d="M172.24,99.76a6,6,0,0,1,0,8.48l-56,56a6,6,0,0,1-8.48,0l-24-24a6,6,0,0,1,8.48-8.48L112,151.51l51.76-51.75A6,6,0,0,1,172.24,99.76ZM230,128A102,102,0,1,1,128,26,102.12,102.12,0,0,1,230,128Zm-12,0a90,90,0,1,0-90,90A90.1,90.1,0,0,0,218,128Z"/></symbol><symbol id="i-compass" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218ZM173.32,74.63l-64,32a6,6,0,0,0-2.69,2.69l-32,64A6,6,0,0,0,80,182a6.06,6.06,0,0,0,2.68-.63l64-32a6,6,0,0,0,2.69-2.69l32-64a6,6,0,0,0-8.05-8.05Zm-33.79,64.9L93.42,162.58l23-46.11,46.11-23Z"/></symbol><symbol id="i-envelope-simple" viewBox="0 0 256 256"><path d="M224,50H32a6,6,0,0,0-6,6V192a14,14,0,0,0,14,14H216a14,14,0,0,0,14-14V56A6,6,0,0,0,224,50ZM208.58,62,128,135.86,47.42,62ZM216,194H40a2,2,0,0,1-2-2V69.64l86,78.78a6,6,0,0,0,8.1,0L218,69.64V192A2,2,0,0,1,216,194Z"/></symbol><symbol id="i-list-checks" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H128a6,6,0,0,1,0-12h88A6,6,0,0,1,222,128ZM128,70h88a6,6,0,0,0,0-12H128a6,6,0,0,0,0,12Zm88,116H128a6,6,0,0,0,0,12h88a6,6,0,0,0,0-12ZM83.76,43.76,56,71.51,44.24,59.76a6,6,0,0,0-8.48,8.48l16,16a6,6,0,0,0,8.48,0l32-32a6,6,0,0,0-8.48-8.48Zm0,64L56,135.51,44.24,123.76a6,6,0,1,0-8.48,8.48l16,16a6,6,0,0,0,8.48,0l32-32a6,6,0,0,0-8.48-8.48Zm0,64L56,199.51,44.24,187.76a6,6,0,0,0-8.48,8.48l16,16a6,6,0,0,0,8.48,0l32-32a6,6,0,0,0-8.48-8.48Z"/></symbol><symbol id="i-lock-simple" viewBox="0 0 256 256"><path d="M208,82H174V56a46,46,0,0,0-92,0V82H48A14,14,0,0,0,34,96V208a14,14,0,0,0,14,14H208a14,14,0,0,0,14-14V96A14,14,0,0,0,208,82ZM94,56a34,34,0,0,1,68,0V82H94ZM210,208a2,2,0,0,1-2,2H48a2,2,0,0,1-2-2V96a2,2,0,0,1,2-2H208a2,2,0,0,1,2,2Z"/></symbol><symbol id="i-paper-plane-tilt" viewBox="0 0 256 256"><path d="M225.88,30.12a13.83,13.83,0,0,0-13.7-3.58l-.11,0L20.14,84.77A14,14,0,0,0,18,110.85l85.56,41.64L145.12,238a13.87,13.87,0,0,0,12.61,8c.4,0,.81,0,1.21-.05a13.9,13.9,0,0,0,12.29-10.09l58.2-191.93,0-.11A13.83,13.83,0,0,0,225.88,30.12Zm-8,10.4L159.73,232.43l0,.11a2,2,0,0,1-3.76.26l-40.68-83.58,49-49a6,6,0,1,0-8.49-8.49l-49,49L23.15,100a2,2,0,0,1,.31-3.74l.11,0L215.48,38.08a1.94,1.94,0,0,1,1.92.52A2,2,0,0,1,217.92,40.52Z"/></symbol><symbol id="i-stethoscope" viewBox="0 0 256 256"><path d="M218,160a10,10,0,1,1-10-10A10,10,0,0,1,218,160Zm-4.35,37.58A46.05,46.05,0,0,1,168,238H144a46.06,46.06,0,0,1-46-46V149.71A62,62,0,0,1,42,88V40a6,6,0,0,1,6-6H72a6,6,0,0,1,0,12H54V88a50,50,0,0,0,50,50h.67c27.2-.36,49.33-23.16,49.33-50.83V46H136a6,6,0,0,1,0-12h24a6,6,0,0,1,6,6V87.17c0,32.43-24.68,59.44-56,62.52V192a34,34,0,0,0,34,34h24a34.05,34.05,0,0,0,33.56-28.56,38,38,0,1,1,12.09.14ZM234,160a26,26,0,1,0-26,26A26,26,0,0,0,234,160Z"/></symbol><symbol id="i-wallet" viewBox="0 0 256 256"><path d="M216,66H56a10,10,0,0,1,0-20H192a6,6,0,0,0,0-12H56A22,22,0,0,0,34,56V184a22,22,0,0,0,22,22H216a14,14,0,0,0,14-14V80A14,14,0,0,0,216,66Zm2,126a2,2,0,0,1-2,2H56a10,10,0,0,1-10-10V75.59A21.84,21.84,0,0,0,56,78H216a2,2,0,0,1,2,2Zm-28-60a10,10,0,1,1-10-10A10,10,0,0,1,190,132Z"/></symbol><symbol id="i-whatsapp-logo" viewBox="0 0 256 256"><path d="M186.68,146.63l-32-16a6,6,0,0,0-6,.38L133,141.46A42.49,42.49,0,0,1,114.54,123L125,107.33a6,6,0,0,0,.38-6l-16-32A6,6,0,0,0,104,66a38,38,0,0,0-38,38,86.1,86.1,0,0,0,86,86,38,38,0,0,0,38-38A6,6,0,0,0,186.68,146.63ZM152,178a74.09,74.09,0,0,1-74-74,26,26,0,0,1,22.42-25.75l12.66,25.32-10.39,15.58a6,6,0,0,0-.54,5.63,54.43,54.43,0,0,0,29.07,29.07,6,6,0,0,0,5.63-.54l15.58-10.39,25.32,12.66A26,26,0,0,1,152,178ZM128,26A102,102,0,0,0,38.35,176.69L26.73,211.56a14,14,0,0,0,17.71,17.71l34.87-11.62A102,102,0,1,0,128,26Zm0,192a90,90,0,0,1-45.06-12.08,6.09,6.09,0,0,0-3-.81,6.2,6.2,0,0,0-1.9.31L40.65,217.88a2,2,0,0,1-2.53-2.53L50.58,178a6,6,0,0,0-.5-4.91A90,90,0,1,1,128,218Z"/></symbol>
+    <!--/SPRITE-->
+</defs></svg>
+
+<!--HEADER-->
+<header class="hdr" id="nav">
+  <div class="in">
+    <a href="index.html" class="brand" aria-label="Autonomic Coaching home"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+    <nav aria-label="Primary">
+      <a href="responsive-living.html">Responsive Living</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About Justin</a>
+      <a href="testimonials.html">Results</a>
+      <a href="blog.html">Blog</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <button class="menu-btn close" id="sheetClose" aria-label="Close menu" style="display:grid"><svg class="pi"><use href="#i-x"/></svg></button>
+  <nav>
+    <a href="responsive-living.html">Responsive Living<svg><use href="#arrow"/></svg></a>
+    <a href="how-it-works.html">How It Works<svg><use href="#arrow"/></svg></a>
+    <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
+    <a href="testimonials.html">Results<svg><use href="#arrow"/></svg></a>
+    <a href="blog.html">Blog<svg><use href="#arrow"/></svg></a>
+    <a href="faq.html">FAQ<svg><use href="#arrow"/></svg></a>
+    <a href="contact.html" aria-current="page">Contact<svg><use href="#arrow"/></svg></a>
+  </nav>
+  <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
+</div>
+<!--/HEADER-->
+
+<main id="top">
+  <!-- 1. Hero -->
+  <section class="phero c-hero">
+    <div class="phero-in">
+      <div class="phero-copy">
+        <h1>Start a Conversation</h1>
+        <p class="sub">Scientist-led, one-to-one health coaching begins with understanding your situation.</p>
+        <div class="ctas"><a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <div class="c-art"><div class="media"><img src="assets/justin-coat.png" alt="Justin Maguire"></div></div>
+    </div>
+  </section>
+  <!-- 2. Is this about me -->
+  <section class="sec pt0">
+    <div class="wrap begin">
+      <h2>You don’t need all the answers to begin</h2>
+      <div>
+        <p class="body">If your health, energy, or ability to manage pressure has changed, we’d like to understand what’s been going on. You may have had tests, tried different approaches, or received results that don’t explain how you feel.</p>
+        <p class="discreet"><svg class="pi"><use href="#i-lock-simple"/></svg>Every request is treated with discretion.</p>
+      </div>
+    </div>
+  </section>
+  <!-- 3. What happens next -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="head"><h2>What happens next</h2></div>
+      <ol class="nsteps">
+        <li><span class="ic soft"><svg class="pi"><use href="#i-paper-plane-tilt"/></svg></span><span class="num">01</span><h3>Send your request</h3><p>Share what you’ve been experiencing by answering eight short questions about your health and goals. There’s no need for a complete medical history.</p></li>
+        <li><span class="ic soft"><svg class="pi"><use href="#i-chats-circle"/></svg></span><span class="num">02</span><h3>Suitability consultation</h3><p>The team arranges a conversation about your history, symptoms, routines, and goals, supported by an intake form. It’s a chance to ask your own questions too.</p></li>
+        <li><span class="ic soft"><svg class="pi"><use href="#i-compass"/></svg></span><span class="num">03</span><h3>Your next step</h3><p>You may be invited to join the programme. If coaching isn’t the right next step, we’ll say so and help point you towards more suitable support.</p></li>
+      </ol>
+    </div>
+  </section>
+  <!-- 4. The coaching commitment -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="commit">
+        <div class="commit-copy">
+          <h2>The coaching commitment</h2>
+          <p class="lede">If the consultation leads to an invitation, this is what the program involves.</p>
+          <p class="body">Autonomic Coaching is one-to-one, led by Justin Maguire, a <mark class="tbc">[]</mark> scientist. A collaborating licensed doctor handles medical matters.</p>
+        </div>
+        <div class="commit-card">
+          <p class="k">Each month includes:</p>
+          <ul class="ticks">
+            <li><span class="tk"><svg><use href="#check"/></svg></span>Four lifestyle coaching sessions</li>
+            <li><span class="tk"><svg><use href="#check"/></svg></span>Two biopsychosocial reviews, where you score seven markers of how you’re doing</li>
+            <li><span class="tk"><svg><use href="#check"/></svg></span>A dietary program, adjusted as you progress</li>
+            <li><span class="tk"><svg><use href="#check"/></svg></span>WhatsApp support, Monday to Friday, 08:00 to 17:00 CAT</li>
+          </ul>
+          <p class="body">Investigative reviews take place at the start of the program and every three months thereafter.</p>
+          <p class="body">Programs run for 6, 12, or 18 months, starting at $11,111.11 USD, paid upfront. Lab tests, supplements, and prescribed treatments are quoted separately.</p>
+          <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
+          <p class="fine">We reply to every request within <mark class="tbc">[X]</mark> business days. Sending a request doesn’t commit you to anything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 5. Prefer to write directly -->
+  <section class="sec pt0">
+    <div class="wrap">
+      <div class="direct">
+        <span class="ic soft"><svg class="pi"><use href="#i-envelope-simple"/></svg></span>
+        <div>
+          <h2>Prefer to write directly?</h2>
+          <p class="body">Email <a href="mailto:justin@autonomiccoaching.com">justin@autonomiccoaching.com</a> with a general question, or for press, speaking, partnerships, or to refer a client.</p>
+          <p class="body">You can also message the team on WhatsApp. Support for current clients runs Monday to Friday, 08:00 to 17:00 CAT.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="brand"><img src="assets/mark.png" alt="">Autonomic Coaching</a>
+        <div><a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <nav class="foot-col foot-links" aria-label="Footer">
+        <a href="responsive-living.html">Responsive Living</a>
+        <a href="testimonials.html">Results</a>
+        <a href="about.html">About Justin</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+      <div class="foot-col socials">
+        <a href="#"><svg class="pi"><use href="#i-instagram-logo"/></svg>Instagram</a>
+        <a href="#"><svg class="pi"><use href="#i-youtube-logo"/></svg>YouTube</a>
+        <a href="#"><svg class="pi"><use href="#i-facebook-logo"/></svg>Facebook</a>
+      </div>
+    </div>
+    <div class="foot-mid">
+      <div class="notes"><span>Coaching is not a substitute for medical diagnosis or treatment.</span></div>
+      <a href="#top" class="totop" aria-label="Back to top"><svg><use href="#arrow"/></svg></a>
+    </div>
+    <div class="mark-xl" aria-hidden="true">Autonomic Coaching</div>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script src="assets/site.js"></script>
+</body>
+</html>

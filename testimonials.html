@@ -17,9 +17,9 @@
 .fan a { position: absolute; top: 50%; left: 50%; width: 260px; height: 360px; margin: -180px 0 0 -130px; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow-lg); background: var(--g-900); transition: transform .5s var(--ease); }
 .fan a img { width: 100%; height: 100%; object-fit: cover; }
 .fan a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(1, 19, 15, 0) 50%, rgba(1, 19, 15, .7)); }
-.fan a span { position: absolute; z-index: 1; left: 18px; right: 18px; bottom: 18px; display: flex; align-items: center; gap: 12px; color: #fff; font-size: 20px; letter-spacing: -0.02em; }
-.fan a span i { flex: none; width: 40px; height: 40px; border-radius: 99px; display: grid; place-items: center; background: #fff; color: var(--g-900); }
-.fan a span svg { width: 13px; height: 13px; margin-left: 2px; }
+.fan a span { position: absolute; z-index: 1; left: 18px; right: 18px; bottom: 18px; display: flex; align-items: center; gap: 12px; color: #fff; font-size: 16px; letter-spacing: -0.02em; line-height: 24px; }
+.fan a span i { flex: none; width: 40px; height: 40px; border-radius: 100px; display: grid; place-items: center; background: #fff; color: var(--g-900); }
+.fan a span svg { width: 14px; height: 14px; margin-left: 2px; }
 .fan a:nth-child(1) { transform: translateX(-62%) rotate(-8deg); }
 .fan a:nth-child(2) { z-index: 2; transform: translateY(-18px); }
 .fan a:nth-child(3) { transform: translateX(62%) rotate(8deg); }
@@ -32,19 +32,18 @@
 
 /* ============ 3. In their own words (colour bento) ============ */
 .bento { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); grid-template-rows: auto auto; gap: 16px; }
-.bq { margin: 0; display: flex; flex-direction: column; padding: clamp(28px, 3.2vw, 48px); border-radius: 24px; }
+.bq { margin: 0; display: flex; flex-direction: column; padding: 48px; border-radius: 24px; }
 .bq .qm { width: 26px; height: 26px; }
-.bq blockquote { margin: 22px 0 0; font-size: clamp(19px, 1.6vw, 23px); line-height: 1.42; letter-spacing: -0.02em; }
-.bq figcaption { margin-top: auto; padding-top: 28px; display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; }
+.bq blockquote { margin: 22px 0 0; font-size: 16px; line-height: 24px; letter-spacing: -0.02em; }
+.bq figcaption { margin-top: auto; padding-top: 28px; display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; line-height: 24px; }
 .bq.f { grid-row: span 2; position: relative; overflow: hidden; background: radial-gradient(80% 70% at 100% 0%, rgba(22, 157, 105, .45), rgba(22, 157, 105, 0) 70%), var(--g-900); color: #fff; min-height: 460px; }
 .bq.f .qm { width: 56px; height: 56px; color: var(--g-300); }
-.bq.f blockquote { font-size: clamp(28px, 3vw, 44px); line-height: 1.16; letter-spacing: -0.03em; max-width: 18ch; }
+.bq.f blockquote { font-size: 40px; line-height: 48px; letter-spacing: -0.03em; max-width: 18ch; }
 .bq.f .mono { background: rgba(143, 239, 202, .12); border-color: rgba(143, 239, 202, .3); color: var(--g-200); }
 .bq.m { background: var(--mist); }
 .bq.m .qm { color: var(--g-600); }
 .bq.s { background: var(--b-25); }
 .bq.s .qm { color: var(--b-600); }
-.review { margin-top: clamp(48px, 5vw, 72px); }
 
 @media (max-width: 900px) {
   .t-hero .phero-in { grid-template-columns: 1fr; }
@@ -54,12 +53,25 @@
 }
 @media (max-width: 720px) {
   .fan { height: 300px; }
-  .fan a { width: 160px; height: 226px; margin: -113px 0 0 -80px; border-radius: 16px; }
-  .fan a span { font-size: 16px; left: 14px; bottom: 14px; }
+  .fan a { width: 160px; height: 226px; margin: -114px 0 0 -80px; border-radius: 16px; }
+  .fan a span { font-size: 16px; left: 14px; bottom: 14px; line-height: 24px; }
   .fan a span i { width: 34px; height: 34px; }
   .fan a:nth-child(1) { transform: translateX(-56%) rotate(-7deg); }
   .fan a:nth-child(3) { transform: translateX(56%) rotate(7deg); }
-  .fan a span { font-size: 16px; gap: 8px; }
+  .fan a span { font-size: 16px; gap: 8px; line-height: 24px; }
+}
+
+/* Phone and tablet steps of the type scale */
+@media (max-width: 1023px) {
+  .bq.f blockquote { font-size: 32px; line-height: 40px; }
+}
+
+/* Spacing steps on the 2px grid (tablet, phone) */
+@media (max-width: 1023px) {
+  .bq { padding: 38px; }
+}
+@media (max-width: 720px) {
+  .bq { padding: 28px; }
 }
 </style>
 </head>
@@ -91,7 +103,7 @@
       <a href="about.html">About Justin</a>
       <a href="testimonials.html" aria-current="page">Results</a>
       <a href="blog.html">Blog</a>
-      <a href="autonomic-wellness.html">Autonomic Wellness</a>
+      <a href="faq.html">FAQ</a>
     </nav>
     <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
@@ -106,9 +118,8 @@
     <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
     <a href="testimonials.html" aria-current="page">Results<svg><use href="#arrow"/></svg></a>
     <a href="blog.html">Blog<svg><use href="#arrow"/></svg></a>
-    <a href="help.html">Help / FAQ<svg><use href="#arrow"/></svg></a>
-    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
-    <a href="autonomic-wellness.html">Autonomic Wellness<svg><use href="#arrow"/></svg></a>
+    <a href="faq.html">FAQ<svg><use href="#arrow"/></svg></a>
+    <a href="contact.html">Contact<svg><use href="#arrow"/></svg></a>
   </nav>
   <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
 </div>
@@ -174,37 +185,6 @@
           <figcaption><span class="mono">JT</span>IFBB Pro Joe Tong</figcaption>
         </figure>
       </div>
-
-      <div class="review">
-        <div class="review-intro">
-          <span class="eyebrow">Leave a review</span>
-          <h3>Worked with Justin? Share your experience.</h3>
-          <p>Your words help the next person who has tried everything else find a way forward.</p>
-          <div class="review-note"><svg><use href="#lock"/></svg>Your email stays private. Only your name, rating and review may be shown.</div>
-        </div>
-        <form class="rform" data-form="review" novalidate>
-          <label class="rf"><span>Full name</span><input type="text" name="name" autocomplete="name" placeholder="Your name"eq data-msg="Please add your name."></label>
-          <label class="rf"><span>Email</span><input type="email" name="email" autocomplete="email" placeholder="you@example.com"eq data-msg="Please add a valid email address."></label>
-          <fieldset class="rf full">
-            <legend>Your rating</legend>
-            <div class="stars">
-              <input type="radio" id="tr5" name="rating" value="5"eq data-msg="Please choose a rating."><label for="tr5" title="5 stars"><svg class="pi"><use href="#if-star"/></svg><span class="sr">5 stars</span></label>
-              <input type="radio" id="tr4" name="rating" value="4"><label for="tr4" title="4 stars"><svg class="pi"><use href="#if-star"/></svg><span class="sr">4 stars</span></label>
-              <input type="radio" id="tr3" name="rating" value="3"><label for="tr3" title="3 stars"><svg class="pi"><use href="#if-star"/></svg><span class="sr">3 stars</span></label>
-              <input type="radio" id="tr2" name="rating" value="2"><label for="tr2" title="2 stars"><svg class="pi"><use href="#if-star"/></svg><span class="sr">2 stars</span></label>
-              <input type="radio" id="tr1" name="rating" value="1"><label for="tr1" title="1 star"><svg class="pi"><use href="#if-star"/></svg><span class="sr">1 star</span></label>
-            </div>
-          </fieldset>
-          <label class="rf full"><span>Your review</span><textarea name="review" placeholder="What changed for you?"eq data-msg="Please write a few words about your experience."></textarea></label>
-          <label class="consent full"><input type="checkbox" name="consent" value="yes"eq data-msg="Please confirm we may publish your review.">I’m happy for my review to be published on this website.</label>
-          <div class="rform-foot full"><span class="err" role="alert"></span><button class="btn btn-primary" type="submit">Submit review <svg><use href="#arrow"/></svg></button></div>
-        </form>
-        <div class="fdone" role="status">
-          <span class="ok"><svg><use href="#check"/></svg></span>
-          <strong>Thank you for sharing your experience.</strong>
-          <p>Your review has been received and will appear once it has been approved.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -243,14 +223,10 @@
       </div>
       <nav class="foot-col foot-links" aria-label="Footer">
         <a href="responsive-living.html">Responsive Living</a>
-        <a href="how-it-works.html">How It Works</a>
+        <a href="testimonials.html" aria-current="page">Results</a>
         <a href="about.html">About Justin</a>
-        <a href="testimonials.html">Results</a>
         <a href="blog.html">Blog</a>
-        <a href="help.html">Help / FAQ</a>
-        <a href="concierge.html">Concierge</a>
-        <a href="autonomic-wellness.html">Autonomic Wellness</a>
-        <a href="#">Contact</a>
+        <a href="contact.html">Contact</a>
         <a href="#">Privacy Policy</a>
       </nav>
       <div class="foot-col socials">

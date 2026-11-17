@@ -13,120 +13,119 @@
 .how-hero h1 { max-width: 13ch; }
 .scene { position: relative; aspect-ratio: 1 / .92; border-radius: 28px; background: radial-gradient(70% 60% at 80% 10%, rgba(143, 239, 202, .5), rgba(143, 239, 202, 0) 70%), var(--mist); }
 .ui { position: absolute; background: #fff; border-radius: 20px; border: 1px solid var(--line-2); box-shadow: var(--shadow-lg); padding: 24px; }
-.ui-h { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 16px; font-weight: 500; }
-.ui-h small { font-size: 12px; font-weight: 400; color: var(--ink-3); line-height: 16px;}
+.ui-h { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 16px; font-weight: 500; line-height: 24px; }
+.ui-h small { font-size: 12px; font-weight: 400; color: var(--ink-3); line-height: 20px;}
 .ui-week { left: 9%; right: 9%; top: 11%; }
 .sess { margin-top: 18px; display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 14px; background: var(--forest); color: #fff; }
-.sess img { flex: none; width: 52px; height: 52px; border-radius: 99px; object-fit: cover; object-position: 50% 8%; background: #2f5850; }
-.sess strong { display: block; font-size: 16px; font-weight: 500; }
-.sess small { display: block; font-size: 14px; color: rgba(255, 255, 255, .7); line-height: 18px;}
-.sess .cam { margin-left: auto; flex: none; width: 40px; height: 40px; border-radius: 99px; display: grid; place-items: center; background: rgba(255, 255, 255, .12); color: var(--g-200); font-size: 19px; }
+.sess img { flex: none; width: 52px; height: 52px; border-radius: 100px; object-fit: cover; object-position: 50% 8%; background: #2f5850; }
+.sess strong { display: block; font-size: 16px; font-weight: 500; line-height: 24px; }
+.sess small { display: block; font-size: 14px; color: rgba(255, 255, 255, .7); line-height: 22px;}
+.sess .cam { margin-left: auto; flex: none; width: 40px; height: 40px; border-radius: 100px; display: grid; place-items: center; background: rgba(255, 255, 255, .12); color: var(--g-200); font-size: 16px; line-height: 24px; }
 .wk { margin-top: 16px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
-.wk span { height: 40px; border-radius: 10px; display: grid; place-items: center; font-size: 14px; font-weight: 500; color: var(--ink-3); background: var(--page); }
+.wk span { height: 40px; border-radius: 10px; display: grid; place-items: center; font-size: 14px; font-weight: 500; color: var(--ink-3); background: var(--page); line-height: 22px; }
 .wk span.on { background: var(--g-700); color: #fff; }
 .ui-log { left: 4%; bottom: 8%; width: 54%; }
-.logrow { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 12px; margin-top: 14px; font-size: 14px; color: var(--ink-2); }
-.logrow b { height: 8px; border-radius: 9px; background: var(--g-50); position: relative; overflow: hidden; }
-.logrow b::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--v); border-radius: 9px; background: var(--g-600); }
-.ui-tag { right: 6%; bottom: 14%; padding: 14px 18px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; border-radius: 99px; }
+.logrow { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 12px; margin-top: 14px; font-size: 14px; color: var(--ink-2); line-height: 22px; }
+.logrow b { height: 8px; border-radius: 10px; background: var(--g-50); position: relative; overflow: hidden; }
+.logrow b::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--v); border-radius: 10px; background: var(--g-600); }
+.ui-tag { right: 6%; bottom: 14%; padding: 14px 18px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; border-radius: 100px; line-height: 22px; }
 .ui-tag .pi { font-size: 16px; color: var(--g-700); }
 
 /* ============ 2. The process at a glance ============ */
 .proc { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; }
 .proc li { position: relative; }
-.proc .num { display: block; font-size: clamp(48px, 4.4vw, 64px); line-height: 1; letter-spacing: -0.04em; color: var(--g-700); }
+.proc .num { display: block; font-size: 64px; line-height: 72px; letter-spacing: -0.04em; color: var(--g-700); }
 .proc .rail { position: relative; display: block; height: 1px; margin: 28px 0 28px; background: var(--line); }
-.proc .rail::before { content: ""; position: absolute; left: 0; top: -5px; width: 11px; height: 11px; border-radius: 99px; background: var(--g-600); box-shadow: 0 0 0 5px var(--g-50); }
+.proc .rail::before { content: ""; position: absolute; left: 0; top: -6px; width: 12px; height: 12px; border-radius: 100px; background: var(--g-600); box-shadow: 0 0 0 6px var(--g-50); }
 .proc li:not(:last-child) .rail { margin-right: -40px; }
-.proc h3 { font-size: 22px; font-weight: 400; letter-spacing: -0.02em; }
-.proc p { margin-top: 12px; color: var(--ink-2); font-size: 16px; line-height: 20px; max-width: 34ch; }
+.proc h3 { font-size: 16px; font-weight: 400; letter-spacing: -0.02em; line-height: 24px; }
+.proc p { margin-top: 12px; color: var(--ink-2); font-size: 16px; line-height: 24px; max-width: 34ch; }
 
 /* ============ 3. Applying for coaching ============ */
-.apply { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(36px, 6vw, 104px); align-items: center; padding: clamp(36px, 5.6vw, 88px); }
+.apply { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: 104px; align-items: center; padding: 88px; }
 .apply .lede { margin-top: 20px; max-width: 46ch; color: var(--ink); }
-.apply .note { margin-top: 18px; max-width: 46ch; color: var(--ink-2); font-size: 16px; line-height: 20px; }
+.apply .note { margin-top: 18px; max-width: 46ch; color: var(--ink-2); font-size: 16px; line-height: 24px; }
 .apply .btn { margin-top: 36px; }
 .tbc { display: inline-block; padding: 0 6px; border-radius: 6px; border: 1px dashed currentColor; background: transparent; color: inherit; font-weight: 500; }
 .formcard { background: #fff; border-radius: 20px; border: 1px solid var(--line-2); box-shadow: var(--shadow-lg); padding: 10px 24px 20px; }
-.formcard .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 17px 0; border-bottom: 1px solid var(--line-2); font-size: 16px; }
-.formcard .ck { flex: none; width: 22px; height: 22px; border-radius: 99px; display: grid; place-items: center; background: var(--g-700); color: #fff; }
-.formcard .ck svg { width: 11px; height: 11px; }
-.formcard .time { margin-top: 16px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-3); }
+.formcard .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0; border-bottom: 1px solid var(--line-2); font-size: 16px; line-height: 24px; }
+.formcard .ck { flex: none; width: 22px; height: 22px; border-radius: 100px; display: grid; place-items: center; background: var(--g-700); color: #fff; }
+.formcard .ck svg { width: 12px; height: 12px; }
+.formcard .time { margin-top: 16px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-3); line-height: 22px; }
 .formcard .time .pi { font-size: 16px; color: var(--g-700); }
 
 /* ============ 4. The first call and your Assessment ============ */
-.call { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
+.call { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 120px; align-items: center; }
 .call h2 { margin-bottom: 28px; }
-.qs { padding: clamp(24px, 2.8vw, 36px); border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
-.qs-top { padding-bottom: 8px; font-size: 14px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); }
+.qs { padding: 36px; border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
+.qs-top { padding-bottom: 8px; font-size: 14px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); line-height: 22px; }
 .qs ol { list-style: none; margin: 0; padding: 0; counter-reset: q; }
-.qs li { counter-increment: q; display: flex; align-items: center; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line-2); font-size: clamp(18px, 1.5vw, 21px); letter-spacing: -0.015em; }
+.qs li { counter-increment: q; display: flex; align-items: center; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line-2); font-size: 16px; letter-spacing: -0.015em; line-height: 24px; }
 .qs li::before { content: "0" counter(q); flex: none; font-size: 14px; font-weight: 500; color: var(--g-700); width: 22px; line-height: 18px;}
 .qs li:last-child { border-bottom: 0; padding-bottom: 4px; }
-.from { margin-top: clamp(64px, 7vw, 104px); padding-top: clamp(56px, 6vw, 88px); border-top: 1px solid var(--line); text-align: center; }
+.from { margin-top: 104px; padding-top: 88px; border-top: 1px solid var(--line); text-align: center; }
 .from .statement { max-width: 30ch; margin: 0 auto; }
 .from .body { margin: 28px auto 0; max-width: 66ch; }
 
 /* ============ 5. What a typical week looks like ============ */
-.week { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 120px); align-items: center; }
+.week { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 120px; align-items: center; }
 .week h2 { margin-bottom: 28px; }
-.cal { padding: clamp(22px, 2.6vw, 32px); border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
+.cal { padding: 32px; border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); box-shadow: var(--shadow-md); }
 .cal-h { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.cal-h strong { font-size: 16px; font-weight: 500; }
+.cal-h strong { font-size: 16px; font-weight: 500; line-height: 24px; }
 .days { margin-top: 22px; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
 .day { border-radius: 12px; background: var(--page); padding: 12px 4px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px; min-height: 172px; }
-.day b { font-size: 12px; font-weight: 500; color: var(--ink-3); }
-.day .lg { margin-top: auto; display: grid; gap: 7px; }
-.day .lg i { display: block; width: 8px; height: 8px; border-radius: 99px; background: var(--g-300); }
+.day b { font-size: 12px; font-weight: 500; color: var(--ink-3); line-height: 20px; }
+.day .lg { margin-top: auto; display: grid; gap: 8px; }
+.day .lg i { display: block; width: 8px; height: 8px; border-radius: 100px; background: var(--g-300); }
 .day .lg i:nth-child(2) { background: var(--g-600); }
 .day .lg i:nth-child(3) { background: var(--b-300); }
 .day.s { background: var(--forest); color: #fff; }
 .day.s b { color: var(--g-200); }
-.day.s img { width: 42px; height: 42px; border-radius: 99px; object-fit: cover; object-position: 50% 8%; background: #2f5850; border: 2px solid rgba(143, 239, 202, .5); }
-.day.s span { font-size: 12px; line-height: 1.25; text-align: center; color: rgba(255, 255, 255, .86); }
-.cal-legend { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px; color: var(--ink-2); }
+.day.s img { width: 42px; height: 42px; border-radius: 100px; object-fit: cover; object-position: 50% 8%; background: #2f5850; border: 2px solid rgba(143, 239, 202, .5); }
+.day.s span { font-size: 12px; line-height: 20px; text-align: center; color: rgba(255, 255, 255, .86); }
+.cal-legend { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px; color: var(--ink-2); line-height: 22px; }
 .cal-legend span { display: inline-flex; align-items: center; gap: 8px; }
-.cal-legend i { width: 8px; height: 8px; border-radius: 99px; background: var(--g-300); }
+.cal-legend i { width: 8px; height: 8px; border-radius: 100px; background: var(--g-300); }
 .cal-legend span:nth-child(2) i { background: var(--g-600); }
 .cal-legend span:nth-child(3) i { background: var(--b-300); }
 
 /* ============ 6. How long coaching lasts ============ */
-.dur { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(36px, 6vw, 104px); align-items: center; padding: clamp(36px, 5vw, 72px); }
+.dur { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 104px; align-items: center; padding: 72px; }
 .dur .lede { margin-top: 18px; color: var(--ink); }
 .months { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; padding-top: 50px; }
-.months span { height: 72px; border-radius: 12px; background: var(--page); display: flex; align-items: flex-end; padding: 10px 12px; font-size: 12px; font-weight: 500; color: var(--ink-3); }
+.months span { height: 72px; border-radius: 12px; background: var(--page); display: flex; align-items: flex-end; padding: 10px 12px; font-size: 12px; font-weight: 500; color: var(--ink-3); line-height: 20px; }
 .months span.in { background: var(--g-700); color: #fff; }
 .months span.in + span.in { background: var(--g-600); }
-.months .br { position: absolute; top: 0; left: calc((100% - 40px) / 6 * 2 + 16px); right: 0; height: 38px; text-align: center; font-size: 14px; font-weight: 500; line-height: 1; color: var(--g-700); }
-.months .br::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 12px; border: 1.5px solid var(--g-600); border-bottom: 0; border-radius: 8px 8px 0 0; }
+.months .br { position: absolute; top: 0; left: calc((100% - 40px) / 6 * 2 + 16px); right: 0; height: 38px; text-align: center; font-size: 14px; font-weight: 500; line-height: 22px; color: var(--g-700); }
+.months .br::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 12px; border: 2px solid var(--g-600); border-bottom: 0; border-radius: 8px 8px 0 0; }
 
 /* ============ 7. What coaching asks of you ============ */
 .asks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
-.ask { padding: clamp(28px, 3vw, 44px) clamp(24px, 3vw, 48px) 0 0; }
-.ask + .ask { padding-left: clamp(24px, 3vw, 48px); border-left: 1px solid var(--line); }
-.ask h3 { font-size: clamp(24px, 2.2vw, 30px); font-weight: 400; letter-spacing: -0.02em; }
+.ask { padding: 44px 48px 0 0; }
+.ask + .ask { padding-left: 48px; border-left: 1px solid var(--line); }
+.ask h3 { font-size: 32px; font-weight: 400; letter-spacing: -0.02em; line-height: 40px; }
 .ask ul { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 14px; }
-.ask li { position: relative; padding-left: 20px; font-size: 16px; line-height: 20px; color: var(--ink-2); }
-.ask li::before { content: ""; position: absolute; left: 0; top: 10px; width: 7px; height: 7px; border-radius: 99px; background: var(--g-600); }
-.support { margin-top: clamp(48px, 5vw, 72px); text-align: center; font-size: clamp(18px, 1.6vw, 22px); letter-spacing: -0.015em; color: var(--g-700); }
+.ask li { position: relative; padding-left: 20px; font-size: 16px; line-height: 24px; color: var(--ink-2); }
+.ask li::before { content: ""; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 100px; background: var(--g-600); }
+.support { margin-top: 72px; text-align: center; font-size: 16px; letter-spacing: -0.015em; color: var(--g-700); line-height: 24px; }
 
 /* ============ 8. Who coaching is for ============ */
 .suit { overflow: hidden; border-radius: var(--r-xl); background: #fff; border: 1px solid var(--line-2); }
 .suit-row { display: grid; grid-template-columns: minmax(0, .62fr) minmax(0, 1fr) minmax(0, 1fr); }
-.suit-row > * { padding: 24px clamp(20px, 2.6vw, 36px); border-top: 1px solid var(--line-2); font-size: 16px; line-height: 20px; }
+.suit-row > * { padding: 24px 36px; border-top: 1px solid var(--line-2); font-size: 16px; line-height: 24px; }
 .suit-row:first-child > * { border-top: 0; padding-top: 24px; padding-bottom: 22px; }
 .suit-row:first-child { background: var(--page); }
 .suit-row .k { font-weight: 500; color: var(--ink); }
 .suit-row .y { display: flex; gap: 14px; }
 .suit-row .n { display: flex; gap: 14px; color: var(--ink-2); }
-.suit-row .tk { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 99px; margin-top: 1px; }
+.suit-row .tk { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 100px; margin-top: 1px; }
 .suit-row .y .tk { background: var(--g-700); color: #fff; }
-.suit-row .n .tk { border: 1.5px solid rgba(2, 10, 29, .22); color: var(--ink-3); }
-.suit-row .tk svg { width: 11px; height: 11px; }
-.suit-h { font-size: 16px; font-weight: 500; }
+.suit-row .n .tk { border: 2px solid rgba(2, 10, 29, .22); color: var(--ink-3); }
+.suit-row .tk svg { width: 12px; height: 12px; }
+.suit-h { font-size: 16px; font-weight: 500; line-height: 24px; }
 .suit-h.y { color: var(--g-700); }
 .suit-row .lbl { display: none; }
-.awstrip { margin-top: 20px; }
 
 /* ============ Tablet ============ */
 @media (max-width: 1100px) {
@@ -148,23 +147,23 @@
   .ui { padding: 18px; border-radius: 16px; }
   .ui-week { left: 5%; right: 5%; top: 6%; }
   .sess img { width: 44px; height: 44px; }
-  .wk span { height: 34px; font-size: 12px; }
+  .wk span { height: 34px; font-size: 12px; line-height: 20px; }
   .ui-log { left: 5%; bottom: 6%; width: 74%; }
-  .logrow { grid-template-columns: 84px 1fr; font-size: 12px; margin-top: 12px; }
+  .logrow { grid-template-columns: 84px 1fr; font-size: 12px; margin-top: 12px; line-height: 20px; }
   .ui-tag { display: none; }
   .proc { grid-template-columns: 1fr; gap: 36px; }
-  .proc .num { font-size: 44px; }
+  .proc .num { font-size: 40px; line-height: 48px; }
   .proc .rail { margin: 20px 0; }
   .apply, .dur { padding: 28px 20px 32px; border-radius: 18px; }
   .apply .btn { width: 100%; }
   .qs li { padding: 16px 0; }
   .cal { padding: 16px; }
   .days { gap: 4px; }
-  .day { min-height: 132px; padding: 10px 2px; border-radius: 9px; }
+  .day { min-height: 132px; padding: 10px 2px; border-radius: 10px; }
   .day.s img { width: 30px; height: 30px; }
-  .day.s span { font-size: 9.5px; }
+  .day.s span { font-size: 12px; line-height: 20px; }
   .months { grid-template-columns: repeat(3, 1fr); padding-top: 0; }
-  .months .br { position: static; grid-column: 1 / -1; order: -1; height: auto; text-align: left; font-size: 14px; }
+  .months .br { position: static; grid-column: 1 / -1; order: -1; height: auto; text-align: left; font-size: 14px; line-height: 22px; }
   .months .br::before { display: none; }
   .months span { height: 54px; }
   .asks { grid-template-columns: 1fr; }
@@ -174,8 +173,47 @@
   .suit-row { grid-template-columns: 1fr; padding: 22px 20px; border-top: 1px solid var(--line-2); }
   .suit-row:nth-child(2) { border-top: 0; }
   .suit-row > * { padding: 0; border-top: 0; }
-  .suit-row .k { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .suit-row .k { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; line-height: 20px; }
   .suit-row .n { margin-top: 12px; }
+}
+
+/* Phone and tablet steps of the type scale */
+@media (max-width: 1023px) {
+  .proc .num { font-size: 48px; line-height: 56px; }
+}
+
+/* Spacing steps on the 2px grid (tablet, phone) */
+@media (max-width: 1023px) {
+  .apply { gap: 70px; }
+  .apply { padding: 62px; }
+  .call { gap: 80px; }
+  .qs { padding: 30px; }
+  .from { margin-top: 84px; }
+  .from { padding-top: 72px; }
+  .week { gap: 80px; }
+  .cal { padding: 28px; }
+  .dur { gap: 70px; }
+  .dur { padding: 54px; }
+  .ask { padding: 36px 36px 0 0; }
+  .ask + .ask { padding-left: 36px; }
+  .support { margin-top: 60px; }
+  .suit-row > * { padding: 24px 28px; }
+}
+@media (max-width: 720px) {
+  .apply { gap: 36px; }
+  .apply { padding: 36px; }
+  .call { gap: 40px; }
+  .qs { padding: 24px; }
+  .from { margin-top: 64px; }
+  .from { padding-top: 56px; }
+  .week { gap: 40px; }
+  .cal { padding: 22px; }
+  .dur { gap: 36px; }
+  .dur { padding: 36px; }
+  .ask { padding: 28px 24px 0 0; }
+  .ask + .ask { padding-left: 24px; }
+  .support { margin-top: 48px; }
+  .suit-row > * { padding: 24px 20px; }
 }
 </style>
 </head>
@@ -213,7 +251,7 @@
       <a href="about.html">About Justin</a>
       <a href="testimonials.html">Results</a>
       <a href="blog.html">Blog</a>
-      <a href="autonomic-wellness.html">Autonomic Wellness</a>
+      <a href="faq.html">FAQ</a>
     </nav>
     <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
@@ -228,9 +266,8 @@
     <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
     <a href="testimonials.html">Results<svg><use href="#arrow"/></svg></a>
     <a href="blog.html">Blog<svg><use href="#arrow"/></svg></a>
-    <a href="help.html">Help / FAQ<svg><use href="#arrow"/></svg></a>
-    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
-    <a href="autonomic-wellness.html">Autonomic Wellness<svg><use href="#arrow"/></svg></a>
+    <a href="faq.html">FAQ<svg><use href="#arrow"/></svg></a>
+    <a href="contact.html">Contact<svg><use href="#arrow"/></svg></a>
   </nav>
   <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
 </div>
@@ -245,13 +282,12 @@
         <p class="sub">Coaching starts with an application. After review, we book a call and begin weekly one-to-one sessions with Justin. We read your biology, your psychology and your daily life together, because each one affects the other two.</p>
         <div class="ctas">
           <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
-          <a href="#process" class="u-link">The process at a glance <svg><use href="#arrow"/></svg></a>
         </div>
       </div>
       <div class="scene" aria-hidden="true">
         <div class="ui ui-week">
           <div class="ui-h">Weekly coaching<small>Online, worldwide</small></div>
-          <div class="sess"><img src="assets/justin.png" alt=""><div><strong>Justin Maguire</strong><small>One-to-one, online</small></div><span class="cam"><svg class="pi"><use href="#i-video-camera"/></svg></span></div>
+          <div class="sess"><img src="assets/justin.png" alt=""><div><strong>Justin Maguire</strong></div><span class="cam"><svg class="pi"><use href="#i-video-camera"/></svg></span></div>
           <div class="wk"><span>M</span><span class="on">T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
         </div>
         <div class="ui ui-log">
@@ -270,10 +306,10 @@
     <div class="wrap">
       <div class="head"><h2>The process at a glance</h2></div>
       <ol class="proc">
-        <li><span class="num">01</span><span class="rail"></span><h3>Request coaching</h3><p>Tell us about your main health concern, what you’ve tried and your goals in a short online form. We review your application and, if coaching looks right for you, invite you to a call.</p></li>
-        <li><span class="num">02</span><span class="rail"></span><h3>Assessment</h3><p>We review your lab results, symptoms and nervous system patterns to see what is driving them.</p></li>
-        <li><span class="num">03</span><span class="rail"></span><h3>Your personalized plan</h3><p>You get clear daily actions across nutrition, supplementation, nervous system work and lifestyle.</p></li>
-        <li><span class="num">04</span><span class="rail"></span><h3>Weekly coaching</h3><p>One session a week, plus a short daily log of sleep, food and how you feel. We track your progress and adjust your plan.</p></li>
+        <li><span class="num">01</span><span class="rail"></span><h3>Request coaching.</h3><p>Tell us about your main health concern, what you’ve tried and your goals in a short online form. We review your application and, if coaching looks right for you, invite you to a call.</p></li>
+        <li><span class="num">02</span><span class="rail"></span><h3>Assessment.</h3><p>We review your lab results, symptoms and nervous system patterns to see what is driving them.</p></li>
+        <li><span class="num">03</span><span class="rail"></span><h3>Your personalized plan.</h3><p>You get clear daily actions across nutrition, supplementation, nervous system work and lifestyle.</p></li>
+        <li><span class="num">04</span><span class="rail"></span><h3>Weekly coaching.</h3><p>One session a week, plus a short daily log of sleep, food and how you feel. We track your progress and adjust your plan.</p></li>
       </ol>
     </div>
   </section>
@@ -361,7 +397,7 @@
         </div>
         <div class="months" aria-hidden="true">
           <div class="br">3 to 6 months</div>
-          <span>Month 1</span><span>Month 2</span><span class="in">Month 3</span><span class="in">Month 4</span><span class="in">Month 5</span><span class="in">Month 6</span>
+          <span>1</span><span>2</span><span class="in">3</span><span class="in">4</span><span class="in">5</span><span class="in">6</span>
         </div>
       </div>
     </div>
@@ -420,10 +456,6 @@
           <span class="n"><span class="tk"><svg><use href="#x"/></svg></span>You need urgent medical attention.</span>
         </div>
       </div>
-      <div class="awstrip">
-        <div class="t"><p>If you want in-depth testing or a licensed doctor’s review at one point in time, Autonomic Wellness is a separate service. You can use it on its own or alongside coaching.</p></div>
-        <a href="autonomic-wellness.html" class="btn btn-blue">Learn about Autonomic Wellness <svg><use href="#arrow"/></svg></a>
-      </div>
     </div>
   </section>
 
@@ -459,14 +491,10 @@
       </div>
       <nav class="foot-col foot-links" aria-label="Footer">
         <a href="responsive-living.html">Responsive Living</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="about.html">About Justin</a>
         <a href="testimonials.html">Results</a>
+        <a href="about.html">About Justin</a>
         <a href="blog.html">Blog</a>
-        <a href="help.html">Help / FAQ</a>
-        <a href="concierge.html">Concierge</a>
-        <a href="autonomic-wellness.html">Autonomic Wellness</a>
-        <a href="#">Contact</a>
+        <a href="contact.html">Contact</a>
         <a href="#">Privacy Policy</a>
       </nav>
       <div class="foot-col socials">

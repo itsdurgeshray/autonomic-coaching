@@ -12,7 +12,7 @@
 /* ============ Topic covers (drawn as inline SVG so they import into Figma as vectors) ============ */
 .cv { position: relative; overflow: hidden; aspect-ratio: 16 / 10; border-radius: 16px; }
 .cv > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.cv .lbl-x { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 99px; font-size: 14px; font-weight: 500; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .22); color: #fff; }
+.cv .lbl-x { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 100px; font-size: 14px; font-weight: 500; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .22); color: #fff; }
 .t-exh { background: linear-gradient(160deg, #0e7a52 0%, #022721 100%); color: #8fefca; }
 .t-slp { background: linear-gradient(170deg, #020a1d 0%, #2c4278 100%); color: #bfd2fe; }
 .t-hor { background: linear-gradient(160deg, #f2f8f5 0%, #d8ebe1 100%); color: #0e7a52; }
@@ -23,18 +23,18 @@
 
 /* ============ Hero: same language as the Help page (mint fade, dark green search panel) ============ */
 .b-hero { background: linear-gradient(180deg, var(--mist) 0%, var(--page) 100%); }
-.b-hero .phero-in { grid-template-columns: minmax(0, 1fr); gap: 0; justify-items: center; text-align: center; padding-bottom: clamp(56px, 6vw, 88px); }
+.b-hero .phero-in { grid-template-columns: minmax(0, 1fr); gap: 0; justify-items: center; text-align: center; padding-bottom: 88px; }
 .b-hero h1 { margin: 14px auto 0; max-width: 15ch; }
 .b-hero .sub { margin-left: auto; margin-right: auto; max-width: 56ch; }
-.finder { margin-top: 36px; width: min(100%, 880px); min-width: 0; padding: clamp(18px, 2.4vw, 28px); border-radius: 24px; background: radial-gradient(70% 90% at 50% 0%, rgba(22, 157, 105, .35), rgba(22, 157, 105, 0) 70%), var(--g-900); box-shadow: 0 30px 60px -30px rgba(1, 19, 15, .55); }
+.finder { margin-top: 36px; width: min(100%, 880px); min-width: 0; padding: 28px; border-radius: 24px; background: radial-gradient(70% 90% at 50% 0%, rgba(22, 157, 105, .35), rgba(22, 157, 105, 0) 70%), var(--g-900); box-shadow: 0 30px 60px -30px rgba(1, 19, 15, .55); }
 .search { position: relative; display: flex; align-items: center; }
 .search .pi { position: absolute; left: 20px; top: 50%; margin-top: -10px; font-size: 20px; color: var(--ink-3); }
-.search input { width: 100%; height: 60px; padding: 0 140px 0 54px; border-radius: 14px; border: 0; background: #fff; font-size: 16px; }
+.search input { width: 100%; height: 60px; padding: 0 140px 0 54px; border-radius: 14px; border: 0; background: #fff; font-size: 16px; line-height: 24px; }
 .search input:focus { outline: 0; box-shadow: 0 0 0 4px rgba(143, 239, 202, .45); }
 .search input::placeholder { color: #a3a9b6; }
 .search .btn { position: absolute; right: 6px; height: 48px; }
 .chips { margin-top: 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
-.chip-f { height: 34px; padding: 0 16px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, .28); color: #fff; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: background-color .2s, border-color .2s, color .2s; }
+.chip-f { height: 34px; padding: 0 16px; border-radius: 100px; border: 1px solid rgba(255, 255, 255, .28); color: #fff; font-size: 12px; line-height: 20px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: background-color .2s, border-color .2s, color .2s; }
 .chip-f:hover, .chip-f[aria-pressed="true"] { background: var(--g-300); border-color: var(--g-300); color: var(--g-950); }
 
 /* ============ Featured: cinematic, light ============ */
@@ -45,30 +45,30 @@
 .feat:hover .ph img { transform: scale(1.03); }
 .feat .ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(1, 19, 15, .3) 0%, rgba(1, 19, 15, 0) 26%, rgba(1, 19, 15, 0) 70%, rgba(1, 19, 15, .25) 100%); }
 .feat .ph .label { position: absolute; z-index: 1; left: 24px; top: 24px; background: #fff; color: var(--g-900); }
-.feat-body { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 24px 64px; align-items: end; padding: clamp(28px, 3.6vw, 48px); }
+.feat-body { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 24px 64px; align-items: end; padding: 48px; }
 .feat h2 { margin-top: 14px; max-width: 20ch; }
 .feat .intro { margin-top: 16px; color: var(--ink-2); max-width: 46ch; }
 .feat .side { display: grid; gap: 20px; justify-items: end; }
-.by { display: flex; align-items: center; gap: 12px; font-size: 14px; line-height: 18px; color: var(--ink-2); }
-.by img { width: 40px; height: 40px; border-radius: 99px; object-fit: cover; object-position: 50% 10%; background: #dfe0e4; }
+.by { display: flex; align-items: center; gap: 12px; font-size: 14px; line-height: 22px; color: var(--ink-2); }
+.by img { width: 40px; height: 40px; border-radius: 100px; object-fit: cover; object-position: 50% 10%; background: #dfe0e4; }
 .by b { display: block; font-weight: 500; color: var(--ink); }
-.label { display: inline-flex; align-self: flex-start; align-items: center; height: 28px; padding: 0 12px; border-radius: 99px; background: var(--g-50); color: var(--g-700); font-size: 12px; line-height: 16px; font-weight: 500; }
+.label { display: inline-flex; align-self: flex-start; align-items: center; height: 28px; padding: 0 12px; border-radius: 100px; background: var(--g-50); color: var(--g-700); font-size: 12px; line-height: 20px; font-weight: 500; }
 
 /* ============ Cards with photo thumbnails ============ */
 .list-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
-.list-head .count { font-size: 14px; line-height: 18px; color: var(--ink-3); }
+.list-head .count { font-size: 14px; line-height: 22px; color: var(--ink-3); }
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .card-a { display: flex; flex-direction: column; padding: 10px; border-radius: 22px; background: #fff; border: 1px solid var(--line-2); transition: box-shadow .4s var(--ease), transform .4s var(--ease); }
-.card-a:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.card-a:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .card-a .ph { aspect-ratio: 16 / 10; border-radius: 14px; overflow: hidden; background: #dfe6e2; }
 .card-a .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
 .card-a:hover .ph img { transform: scale(1.04); }
 .card-a .in { flex: 1; display: flex; flex-direction: column; padding: 18px 12px 12px; }
-.card-a h3 { margin-top: 12px; font-size: 20px; line-height: 26px; font-weight: 500; letter-spacing: -0.015em; }
+.card-a h3 { margin-top: 12px; font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: -0.015em; }
 .card-a .c-foot { margin-top: auto; padding-top: 20px; }
-.go { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; line-height: 18px; font-weight: 500; color: var(--g-700); }
+.go { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; line-height: 22px; font-weight: 500; color: var(--g-700); }
 .go svg { width: 14px; height: 14px; transition: transform .3s var(--ease); }
-.card-a:hover .go svg, .feat:hover .go svg { transform: translateX(3px); }
+.card-a:hover .go svg, .feat:hover .go svg { transform: translateX(4px); }
 .card-a[hidden] { display: none; }
 .empty { display: none; padding: 48px 0; text-align: center; color: var(--ink-2); }
 .empty.on { display: block; }
@@ -88,6 +88,39 @@
   .chip-f { flex: none; }
   .feat { border-radius: 20px; }
   .feat .ph .label { left: 14px; top: 14px; }
+}
+
+/* Spacing steps on the 2px grid (tablet, phone) */
+@media (max-width: 1023px) {
+  .b-hero .phero-in { padding-bottom: 72px; }
+  .finder { padding: 24px; }
+  .feat-body { padding: 38px; }
+}
+@media (max-width: 720px) {
+  .b-hero .phero-in { padding-bottom: 56px; }
+  .finder { padding: 18px; }
+  .feat-body { padding: 28px; }
+}
+
+/* ============ Search, topics, Start here ============ */
+.finder { margin-top: 32px; width: min(100%, 720px); padding: 0; border-radius: 0; background: none; box-shadow: none; }
+.search input { border: 1px solid var(--line); box-shadow: var(--shadow-md); }
+.topics { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px 64px; align-items: end; padding: 40px; border-radius: var(--r-xl); background: var(--mist); }
+.topics .lede { margin-top: 16px; max-width: 46ch; }
+.topics .chips { margin-top: 0; justify-content: flex-start; }
+.chip-f { border-color: var(--line); background: #fff; color: var(--ink-2); }
+.chip-f:hover, .chip-f[aria-pressed="true"] { background: var(--g-900); border-color: var(--g-900); color: #fff; }
+.grid.three { grid-template-columns: 1.4fr 1fr 1fr; }
+.card-a.lg h3 { max-width: 24ch; }
+@media (max-width: 1100px) {
+  .grid.three { grid-template-columns: 1fr 1fr; }
+  .grid.three .lg { grid-column: 1 / -1; }
+  .topics { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  .grid.three { grid-template-columns: 1fr; }
+  .topics { padding: 24px; border-radius: 18px; }
+  .topics .chips { margin: 0 -24px; padding: 0 24px; }
 }
 </style>
 </head>
@@ -116,7 +149,7 @@
       <a href="about.html">About Justin</a>
       <a href="testimonials.html">Results</a>
       <a href="blog.html" aria-current="page">Blog</a>
-      <a href="autonomic-wellness.html">Autonomic Wellness</a>
+      <a href="faq.html">FAQ</a>
     </nav>
     <a href="#request" class="btn btn-primary btn-sm">Request Coaching <svg><use href="#arrow"/></svg></a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg class="pi"><use href="#i-list"/></svg></button>
@@ -131,9 +164,8 @@
     <a href="about.html">About Justin<svg><use href="#arrow"/></svg></a>
     <a href="testimonials.html">Results<svg><use href="#arrow"/></svg></a>
     <a href="blog.html" aria-current="page">Blog<svg><use href="#arrow"/></svg></a>
-    <a href="help.html">Help / FAQ<svg><use href="#arrow"/></svg></a>
-    <a href="concierge.html">Concierge<svg><use href="#arrow"/></svg></a>
-    <a href="autonomic-wellness.html">Autonomic Wellness<svg><use href="#arrow"/></svg></a>
+    <a href="faq.html">FAQ<svg><use href="#arrow"/></svg></a>
+    <a href="contact.html">Contact<svg><use href="#arrow"/></svg></a>
   </nav>
   <a href="#request" class="btn btn-primary">Request Coaching <svg><use href="#arrow"/></svg></a>
 </div>
@@ -149,7 +181,7 @@
     <symbol id="cv-ner" viewBox="0 0 320 200"><g stroke="currentColor" stroke-width="1" opacity=".1"><path d="M0 40H320M0 80H320M0 120H320M0 160H320"/></g><path d="M-10 100 H 120 L 134 62 L 150 138 L 166 76 L 180 120 L 192 100 H 330" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </svg>
 
-  <!-- 1. Hero: search and topics -->
+  <!-- 1. Hero -->
   <section class="phero b-hero">
     <div class="phero-in">
       <div class="phero-copy">
@@ -159,6 +191,41 @@
       </div>
       <div class="finder">
         <label class="search"><span class="sr">Search articles</span><svg class="pi"><use href="#i-magnifying-glass"/></svg><input type="search" id="q" placeholder="Search articles" autocomplete="off"><button type="button" class="btn btn-primary btn-sm" id="qgo">Search</button></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Start here -->
+  <section class="sec pt0" id="start">
+    <div class="wrap">
+      <div class="head shead-row">
+        <h2>Start here</h2>
+        <p class="lede">If you’re new here, these three cover the questions people ask first.</p>
+      </div>
+      <div class="grid three">
+        <a href="blog-post.html" class="card-a lg">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=1200&h=750&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
+          <div class="in"><span class="label">Sleep</span><h3>Why do I still feel tired after a full night’s sleep?</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
+        </a>
+        <a href="blog-post.html" class="card-a">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
+          <div class="in"><span class="label">Lab results</span><h3>“Normal” labs don’t mean you’re well</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
+        </a>
+        <a href="blog-post.html" class="card-a">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
+          <div class="in"><span class="label">Nervous system</span><h3>What is Responsive Living?</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- 3. Browse articles by topic -->
+  <section class="sec pt0" id="topics">
+    <div class="wrap">
+      <div class="topics">
+        <div>
+          <h2>Browse articles by topic</h2>
+          <p class="lede">Articles are grouped by the questions readers bring most often. New topics are added as the library grows.</p>
+        </div>
         <div class="chips" role="group" aria-label="Browse articles by topic">
           <button type="button" class="chip-f" data-f="all" aria-pressed="true">All</button>
           <button type="button" class="chip-f" data-f="exh" aria-pressed="false">Exhaustion</button>
@@ -171,40 +238,11 @@
       </div>
     </div>
   </section>
-
-  <!-- 2. Start here: featured -->
-  <section class="sec pt0" id="start">
-    <div class="wrap">
-      <a href="blog-post.html" class="feat">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=1800&h=1013&fit=crop&q=80&auto=format" alt="A person sitting at the end of a wooden pier on a still mountain lake"><span class="label">Start here</span></div>
-        <div class="feat-body">
-          <div>
-            <span class="label">Sleep</span>
-            <h2>Why do I still feel tired after a full night’s sleep?</h2>
-            <p class="intro">If you’re exhausted, wired, and told your labs are normal, this is the space your body lost.</p>
-          </div>
-          <div class="side">
-            <span class="by"><img src="assets/justin-coat.png" alt=""><span><b>Justin Maguire</b>12 October 2026 · 6 min read</span></span>
-            <span class="btn btn-primary">Read article <svg><use href="#arrow"/></svg></span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- 3. Latest articles -->
+  <!-- 4. Latest articles -->
   <section class="sec pt0" id="latest">
     <div class="wrap">
       <div class="head list-head"><h2>Latest articles</h2><span class="count" id="count"></span></div>
       <div class="grid" id="grid">
-        <a href="blog-post.html" class="card-a" data-t="lab">
-          <div class="ph"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
-          <div class="in"><span class="label">Lab results</span><h3>“Normal” labs don’t mean you’re well</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
-        </a>
-        <a href="blog-post.html" class="card-a" data-t="ner">
-          <div class="ph"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
-          <div class="in"><span class="label">Nervous system</span><h3>What is Responsive Living?</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
-        </a>
         <a href="blog-post.html" class="card-a" data-t="exh">
           <div class="ph"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=720&h=450&fit=crop&q=80&auto=format" alt="" loading="lazy"></div>
           <div class="in"><span class="label">Exhaustion</span><h3>Energy that crashes mid-afternoon</h3><div class="c-foot"><span class="go">Read article <svg><use href="#arrow"/></svg></span></div></div>
@@ -234,7 +272,7 @@
     </div>
   </section>
 
-  <!-- 4. Request Coaching -->
+  <!-- 5. Request Coaching -->
   <section class="final dark">
     <div class="wrap">
       <h2>Request one-to-one coaching</h2>
@@ -254,14 +292,10 @@
       </div>
       <nav class="foot-col foot-links" aria-label="Footer">
         <a href="responsive-living.html">Responsive Living</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="about.html">About Justin</a>
         <a href="testimonials.html">Results</a>
-        <a href="blog.html">Blog</a>
-        <a href="help.html">Help / FAQ</a>
-        <a href="concierge.html">Concierge</a>
-        <a href="autonomic-wellness.html">Autonomic Wellness</a>
-        <a href="#">Contact</a>
+        <a href="about.html">About Justin</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="contact.html">Contact</a>
         <a href="#">Privacy Policy</a>
       </nav>
       <div class="foot-col socials">
