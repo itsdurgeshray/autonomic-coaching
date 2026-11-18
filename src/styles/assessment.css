@@ -1598,7 +1598,8 @@ svg.i {
 }
 .facts span {
   display: inline-block;
-  line-height: 22px;
+  white-space: nowrap;
+  line-height: 34px;
   height: 36px;
   padding: 0 14px;
   border-radius: 100px;
@@ -1608,7 +1609,6 @@ svg.i {
   color: var(--ink-2);
 }
 .facts b {
-  margin-right: 4px;
   color: var(--q);
   font-weight: 500;
 }
