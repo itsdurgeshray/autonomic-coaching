@@ -1,0 +1,21 @@
+import { Icon } from '@/components/ui/Icon';
+import { SiteButton } from '@/components/ui/SiteButton';
+
+export function RequestCTASection() {
+  return (
+    <section className="final dark" aria-labelledby="how-it-works-requestcta-title">
+      {' '}
+      <div className="wrap">
+        {' '}
+        <h2 id="how-it-works-requestcta-title">Request one-to-one coaching</h2>{' '}
+        <p className="lede">
+          Coaching is private and by application. Each application is reviewed before a call is
+          booked.
+        </p>{' '}
+        <SiteButton href="#request" variant="pill">
+          Request Coaching <Icon name="arrow" />
+        </SiteButton>{' '}
+      </div>{' '}
+    </section>
+  );
+}

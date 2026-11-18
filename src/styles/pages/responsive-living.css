@@ -1,0 +1,1143 @@
+/* Responsive Living, the book page sections */
+/* ============ 1. Hero ============ */
+[data-page='responsive-living'] .rl-hero {
+  background: linear-gradient(180deg, var(--mist) 0%, var(--mist) 78%, var(--page) 100%);
+}
+[data-page='responsive-living'] .rl-hero .phero-in {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+}
+[data-page='responsive-living'] .rl-hero h1 {
+  max-width: 12ch;
+}
+[data-page='responsive-living'] .rl-hero .sub {
+  color: var(--ink);
+  max-width: 44ch;
+}
+[data-page='responsive-living'] .cover-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 8px 0 36px;
+}
+[data-page='responsive-living'] .cover-stage .sun {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 46%;
+  width: 118%;
+  aspect-ratio: 1;
+  margin: -59% 0 0 -59%;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    rgba(143, 239, 202, 0.55),
+    rgba(143, 239, 202, 0.18) 55%,
+    rgba(143, 239, 202, 0)
+  );
+  pointer-events: none;
+}
+[data-page='responsive-living'] .cover-stage .floor {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  bottom: 14px;
+  width: 76%;
+  height: 44px;
+  margin-left: -38%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(2, 10, 29, 0.22), rgba(2, 10, 29, 0));
+}
+[data-page='responsive-living'] .cover {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 410px);
+  aspect-ratio: 1004 / 1500;
+  border-radius: 4px 8px 8px 4px;
+  overflow: hidden;
+  background: #d9dfe6;
+  box-shadow:
+    0 2px 4px rgba(2, 10, 29, 0.1),
+    0 36px 70px -24px rgba(2, 10, 29, 0.45);
+}
+[data-page='responsive-living'] .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+[data-page='responsive-living'] .cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.22) 0%,
+    rgba(255, 255, 255, 0.22) 1.4%,
+    rgba(255, 255, 255, 0) 3.4%,
+    rgba(0, 0, 0, 0.1) 4.4%,
+    rgba(0, 0, 0, 0) 8%
+  );
+}
+
+/* ============ 2. Endorsed by (open grid, no boxes) ============ */
+[data-page='responsive-living'] .endorse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line);
+}
+[data-page='responsive-living'] .endorse figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 52px 64px 52px 0;
+  border-bottom: 1px solid var(--line);
+}
+[data-page='responsive-living'] .endorse figure:nth-child(even) {
+  padding-left: 64px;
+  padding-right: 0;
+  border-left: 1px solid var(--line);
+}
+[data-page='responsive-living'] .endorse .qm {
+  width: 22px;
+  height: 22px;
+  color: var(--g-600);
+}
+[data-page='responsive-living'] .endorse blockquote {
+  margin: 22px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+[data-page='responsive-living'] .endorse figcaption {
+  margin-top: auto;
+  padding-top: 30px;
+}
+[data-page='responsive-living'] .endorse figcaption strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+[data-page='responsive-living'] .endorse figcaption small {
+  display: block;
+  margin-top: 4px;
+  max-width: 46ch;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--ink-3);
+}
+
+/* ============ 3. The problem (pill statements) ============ */
+[data-page='responsive-living'] .prob {
+  text-align: center;
+}
+[data-page='responsive-living'] .prob h2 {
+  max-width: 19ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+[data-page='responsive-living'] .sym {
+  list-style: none;
+  margin: 72px auto 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+[data-page='responsive-living'] .sym li {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 26px 12px 12px;
+  border-radius: 100px;
+  background: #fff;
+  border: 1px solid var(--line);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  text-align: left;
+}
+[data-page='responsive-living'] .sym .ci {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background: var(--g-50);
+  color: var(--g-700);
+  font-size: 16px;
+  line-height: 24px;
+}
+[data-page='responsive-living'] .familiar {
+  margin-top: 72px;
+}
+[data-page='responsive-living'] .familiar strong {
+  display: block;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--g-700);
+  line-height: 40px;
+}
+[data-page='responsive-living'] .familiar p {
+  margin: 12px auto 0;
+  max-width: 44ch;
+  font-size: 16px;
+  color: var(--ink-2);
+  line-height: 24px;
+}
+
+/* ============ 4. What is Responsive Living ============ */
+[data-page='responsive-living'] .what {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 28px 120px;
+  align-items: start;
+}
+[data-page='responsive-living'] .what .body:first-child {
+  margin-top: 0;
+}
+/* Comparator: a signal monitor showing the space between what happens and how the body responds */
+[data-page='responsive-living'] .gapviz {
+  margin-top: 72px;
+  padding: 32px;
+  border-radius: 28px;
+  color: #fff;
+  background:
+    radial-gradient(60% 80% at 50% 0%, rgba(22, 157, 105, 0.28), rgba(22, 157, 105, 0) 70%),
+    linear-gradient(180deg, #03231d 0%, #01130f 100%);
+  box-shadow:
+    0 40px 80px -40px rgba(1, 19, 15, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+[data-page='responsive-living'] .gapviz[data-state='stress'] {
+  background:
+    radial-gradient(60% 80% at 75% 0%, rgba(194, 65, 12, 0.26), rgba(194, 65, 12, 0) 70%),
+    linear-gradient(180deg, #1c120d 0%, #0d0806 100%);
+}
+[data-page='responsive-living'] .gapviz {
+  transition: background 0.8s;
+}
+[data-page='responsive-living'] .gv-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+[data-page='responsive-living'] .seg {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+[data-page='responsive-living'] .seg button {
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.62);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  line-height: 22px;
+}
+[data-page='responsive-living'] .seg button:hover {
+  color: #fff;
+}
+[data-page='responsive-living'] .seg button[aria-pressed='true'] {
+  background: var(--g-300);
+  color: var(--g-950);
+}
+[data-page='responsive-living'] .gapviz[data-state='stress'] .seg button[aria-pressed='true'] {
+  background: #fb923c;
+  color: #1c0d05;
+}
+[data-page='responsive-living'] .gv-cap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 24px;
+}
+[data-page='responsive-living'] .gv-cap::before {
+  content: '';
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background: var(--g-300);
+  box-shadow:
+    0 0 0 4px rgba(79, 209, 160, 0.18),
+    0 0 12px rgba(79, 209, 160, 0.9);
+}
+[data-page='responsive-living'] .gapviz[data-state='stress'] .gv-cap::before {
+  background: #fb923c;
+  box-shadow:
+    0 0 0 4px rgba(251, 146, 60, 0.18),
+    0 0 12px rgba(251, 146, 60, 0.9);
+}
+[data-page='responsive-living'] .gv-cap [data-for] {
+  display: none;
+}
+[data-page='responsive-living'] .gapviz[data-state='stress'] .gv-cap [data-for='stress'],
+[data-page='responsive-living'] .gapviz[data-state='rl'] .gv-cap [data-for='rl'] {
+  display: block;
+}
+[data-page='responsive-living'] .gv {
+  --space: 28%;
+  margin-top: 24px;
+  height: 280px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--space) minmax(0, 1fr);
+  transition: grid-template-columns 1s var(--ease);
+}
+[data-page='responsive-living'] .gapviz[data-state='stress'] .gv {
+  --space: 0%;
+}
+[data-page='responsive-living'] .gv-col {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  border-radius: 18px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 1px);
+  background-size:
+    100% 40px,
+    40px 100%;
+}
+[data-page='responsive-living'] .gv-col .lbl {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 20px;
+}
+[data-page='responsive-living'] .gv-col .lbl::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 100px;
+  background: #fff;
+}
+[data-page='responsive-living'] .gv-col.r .lbl::before {
+  background: var(--g-300);
+  transition: background-color 0.6s;
+}
+[data-page='responsive-living'] .gapviz[data-state='stress'] .gv-col.r .lbl::before {
+  background: #fb923c;
+}
+[data-page='responsive-living'] .gv-col svg {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: visible;
+}
+[data-page='responsive-living'] .gv-col .base {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 1;
+  stroke-dasharray: 2 6;
+  vector-effect: non-scaling-stroke;
+}
+[data-page='responsive-living'] .gv-col .wave {
+  fill: none;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+[data-page='responsive-living'] .gv-col.l .wave {
+  stroke: #fff;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.55));
+}
+[data-page='responsive-living'] .gv-col.r .wave {
+  stroke: var(--g-300);
+  filter: drop-shadow(0 0 8px rgba(79, 209, 160, 0.85));
+  transition:
+    d 1s var(--ease),
+    stroke 0.6s,
+    filter 0.6s;
+}
+[data-page='responsive-living'] .gv-col.r .area {
+  fill: url(#gvCalm);
+  transition:
+    d 1s var(--ease),
+    opacity 0.6s;
+}
+[data-page='responsive-living'] .gapviz[data-state='stress'] .gv-col.r .wave {
+  stroke: #fb923c;
+  filter: drop-shadow(0 0 8px rgba(251, 146, 60, 0.85));
+}
+[data-page='responsive-living'] .gapviz[data-state='stress'] .gv-col.r .area {
+  fill: url(#gvAlert);
+}
+[data-page='responsive-living'] .gv-col .live {
+  position: absolute;
+  right: 18px;
+  bottom: 90px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+  background: var(--g-300);
+  box-shadow: 0 0 12px rgba(79, 209, 160, 0.9);
+}
+[data-page='responsive-living'] .gv-col .live::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 100px;
+  border: 1px solid rgba(79, 209, 160, 0.7);
+  animation: gvping-responsive-living 2s var(--ease) infinite;
+}
+[data-page='responsive-living'] .gapviz[data-state='stress'] .gv-col .live {
+  background: #fb923c;
+  box-shadow: 0 0 12px rgba(251, 146, 60, 0.9);
+}
+[data-page='responsive-living'] .gapviz[data-state='stress'] .gv-col .live::after {
+  border-color: rgba(251, 146, 60, 0.7);
+  animation-duration: 0.7s;
+}
+@keyframes gvping-responsive-living {
+  from {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+[data-page='responsive-living'] .gv-space {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+[data-page='responsive-living'] .gv-space::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 12px;
+  right: 12px;
+  border-radius: 14px;
+  border-left: 1px dashed rgba(143, 239, 202, 0.5);
+  border-right: 1px dashed rgba(143, 239, 202, 0.5);
+  background: radial-gradient(50% 60% at 50% 50%, rgba(79, 209, 160, 0.22), rgba(79, 209, 160, 0));
+  transition: opacity 0.5s;
+}
+[data-page='responsive-living'] .gv-space .span {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(143, 239, 202, 0.2),
+    rgba(143, 239, 202, 0.8),
+    rgba(143, 239, 202, 0.2)
+  );
+}
+[data-page='responsive-living'] .gv-space .span::before,
+[data-page='responsive-living'] .gv-space .span::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--g-200);
+  border-left: 2px solid var(--g-200);
+}
+[data-page='responsive-living'] .gv-space .span::before {
+  left: 0;
+  transform: rotate(-45deg);
+}
+[data-page='responsive-living'] .gv-space .span::after {
+  right: 0;
+  transform: rotate(135deg);
+}
+[data-page='responsive-living'] .gv-space .tag {
+  position: relative;
+  padding: 10px 18px;
+  border-radius: 100px;
+  background: var(--g-300);
+  color: var(--g-950);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow:
+    0 0 0 6px rgba(79, 209, 160, 0.14),
+    0 0 30px rgba(79, 209, 160, 0.5);
+  transition:
+    opacity 0.4s,
+    transform 0.6s var(--ease);
+  line-height: 20px;
+}
+[data-page='responsive-living'] .gapviz[data-state='stress'] .gv-space > * {
+  opacity: 0;
+  transform: scale(0.6);
+}
+[data-page='responsive-living'] .gapviz[data-state='stress'] .gv-space::before {
+  opacity: 0;
+}
+
+/* Frankl: the one dark moment mid-page */
+[data-page='responsive-living'] .frankl {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  background:
+    radial-gradient(70% 90% at 50% 0%, rgba(22, 157, 105, 0.3), rgba(22, 157, 105, 0) 70%),
+    var(--g-950);
+}
+[data-page='responsive-living'] .frankl .wrap {
+  padding-top: 160px;
+  padding-bottom: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+[data-page='responsive-living'] .frankl .qm {
+  width: 34px;
+  height: 34px;
+  color: var(--g-300);
+}
+[data-page='responsive-living'] .frankl blockquote {
+  margin: 32px 0 0;
+  max-width: 34ch;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.025em;
+}
+[data-page='responsive-living'] .frankl cite {
+  display: block;
+  margin-top: 28px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--g-200);
+  line-height: 24px;
+}
+[data-page='responsive-living'] .frankl .after {
+  margin-top: 72px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  width: min(100%, 560px);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 24px;
+}
+
+/* ============ 5. Meet James ============ */
+[data-page='responsive-living'] .james {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 120px;
+  align-items: center;
+}
+[data-page='responsive-living'] .james h2 {
+  margin-bottom: 28px;
+}
+[data-page='responsive-living'] .jcard {
+  padding: 40px;
+  border-radius: var(--r-xl);
+  background: #fff;
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-md);
+}
+[data-page='responsive-living'] .jcard-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line-2);
+}
+[data-page='responsive-living'] .jcard-top .av {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 100px;
+  display: grid;
+  place-items: center;
+  background: var(--g-900);
+  color: var(--g-200);
+  font-size: 16px;
+  line-height: 24px;
+}
+[data-page='responsive-living'] .jcard-top strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 24px;
+}
+[data-page='responsive-living'] .jcard-top small {
+  display: block;
+  font-size: 14px;
+  color: var(--ink-3);
+  line-height: 22px;
+}
+[data-page='responsive-living'] .jline {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 22px;
+  position: relative;
+}
+[data-page='responsive-living'] .jline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: var(--line);
+}
+[data-page='responsive-living'] .jline li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-2);
+}
+[data-page='responsive-living'] .jline li::before {
+  content: '';
+  position: relative;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  background: #fff;
+  border: 2px solid rgba(2, 10, 29, 0.2);
+  box-sizing: border-box;
+}
+[data-page='responsive-living'] .jline li:last-child {
+  color: var(--ink);
+  font-weight: 500;
+}
+[data-page='responsive-living'] .jline li:last-child::before {
+  background: var(--g-700);
+  border-color: var(--g-700);
+  box-shadow: 0 0 0 6px var(--g-50);
+}
+
+/* ============ 7. About the author ============ */
+[data-page='responsive-living'] .author {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 120px;
+  align-items: center;
+}
+[data-page='responsive-living'] .author-ph {
+  aspect-ratio: 4 / 4.5;
+  background: #dfe0e4;
+}
+[data-page='responsive-living'] .author-ph img {
+  object-position: 50% 16%;
+}
+[data-page='responsive-living'] .author h2 {
+  margin-top: 16px;
+  max-width: 16ch;
+}
+[data-page='responsive-living'] .author .body {
+  margin-top: 24px;
+  max-width: 58ch;
+}
+[data-page='responsive-living'] .author .btn {
+  margin-top: 36px;
+}
+
+/* ============ 9. Read the first chapter free ============ */
+[data-page='responsive-living'] .chapter {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 96px;
+  align-items: center;
+  padding: 88px;
+}
+[data-page='responsive-living'] .chapter-art {
+  position: relative;
+  height: 420px;
+}
+[data-page='responsive-living'] .chapter-art .page {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 230px;
+  height: 340px;
+  margin: -170px 0 0 -40px;
+  transform: rotate(5deg);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: var(--shadow-md);
+  padding: 34px 26px;
+}
+[data-page='responsive-living'] .chapter-art .page .eyebrow {
+  font-size: 12px;
+  line-height: 20px;
+}
+[data-page='responsive-living'] .chapter-art .page h4 {
+  margin: 12px 0 18px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+[data-page='responsive-living'] .chapter-art .page i {
+  display: block;
+  height: 6px;
+  margin-top: 10px;
+  border-radius: 6px;
+  background: rgba(2, 10, 29, 0.07);
+}
+[data-page='responsive-living'] .chapter-art .cover {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 230px;
+  margin: -172px 0 0 -190px;
+  transform: rotate(-4deg);
+}
+[data-page='responsive-living'] .chapter-copy h2 {
+  max-width: 16ch;
+}
+[data-page='responsive-living'] .chapter-copy .lede {
+  margin-top: 20px;
+  max-width: 54ch;
+}
+[data-page='responsive-living'] .chapter-copy .rform {
+  margin-top: 32px;
+}
+[data-page='responsive-living'] .chapter-copy .rf input {
+  background: #fff;
+}
+[data-page='responsive-living'] .fine {
+  font-size: 14px;
+  color: var(--ink-3);
+  line-height: 22px;
+}
+[data-page='responsive-living'] .chapter-copy .fdone {
+  margin-top: 32px;
+}
+
+/* ============ 10. Get Responsive Living ============ */
+[data-page='responsive-living'] .fmts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+[data-page='responsive-living'] .fmt {
+  padding: 44px 48px 0 0;
+}
+[data-page='responsive-living'] .fmt + .fmt {
+  padding-left: 48px;
+  border-left: 1px solid var(--line);
+}
+[data-page='responsive-living'] .fmt h3 {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+}
+[data-page='responsive-living'] .fmt .wb {
+  display: block;
+  margin-top: 22px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  line-height: 20px;
+}
+[data-page='responsive-living'] .shops {
+  margin-top: 10px;
+  display: grid;
+}
+[data-page='responsive-living'] .shop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line-2);
+  font-size: 16px;
+  transition:
+    color 0.2s,
+    padding 0.3s var(--ease);
+  line-height: 24px;
+}
+[data-page='responsive-living'] .shop svg {
+  width: 14px;
+  height: 14px;
+  color: var(--ink-3);
+}
+[data-page='responsive-living'] .shop:hover {
+  color: var(--g-700);
+  padding-left: 4px;
+}
+[data-page='responsive-living'] .shop:hover svg {
+  color: var(--g-700);
+}
+[data-page='responsive-living'] .pub {
+  margin-top: 44px;
+  font-size: 14px;
+  color: var(--ink-3);
+  line-height: 22px;
+}
+
+/* Phone and tablet steps of the type scale */
+@media (max-width: 1023px) {
+  [data-page='responsive-living'] .frankl blockquote {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+/* Spacing steps on the 2px grid (tablet, phone) */
+@media (max-width: 1023px) {
+  [data-page='responsive-living'] .endorse figure {
+    padding: 42px 46px 42px 0;
+  }
+  [data-page='responsive-living'] .endorse figure:nth-child(even) {
+    padding-left: 46px;
+  }
+  [data-page='responsive-living'] .sym {
+    margin: 58px auto 0;
+  }
+  [data-page='responsive-living'] .familiar {
+    margin-top: 58px;
+  }
+  [data-page='responsive-living'] .what {
+    gap: 28px 80px;
+  }
+  [data-page='responsive-living'] .gapviz {
+    margin-top: 60px;
+  }
+  [data-page='responsive-living'] .gapviz {
+    padding: 26px;
+  }
+  [data-page='responsive-living'] .frankl .wrap {
+    padding-top: 128px;
+  }
+  [data-page='responsive-living'] .frankl .wrap {
+    padding-bottom: 128px;
+  }
+  [data-page='responsive-living'] .frankl .after {
+    margin-top: 60px;
+  }
+  [data-page='responsive-living'] .james {
+    gap: 80px;
+  }
+  [data-page='responsive-living'] .jcard {
+    padding: 34px;
+  }
+  [data-page='responsive-living'] .author {
+    gap: 80px;
+  }
+  [data-page='responsive-living'] .chapter {
+    gap: 68px;
+  }
+  [data-page='responsive-living'] .chapter {
+    padding: 62px;
+  }
+  [data-page='responsive-living'] .fmt {
+    padding: 36px 36px 0 0;
+  }
+  [data-page='responsive-living'] .fmt + .fmt {
+    padding-left: 36px;
+  }
+}
+@media (max-width: 720px) {
+  [data-page='responsive-living'] .endorse figure {
+    padding: 32px 28px 32px 0;
+  }
+  [data-page='responsive-living'] .endorse figure:nth-child(even) {
+    padding-left: 28px;
+  }
+  [data-page='responsive-living'] .sym {
+    margin: 44px auto 0;
+  }
+  [data-page='responsive-living'] .familiar {
+    margin-top: 44px;
+  }
+  [data-page='responsive-living'] .what {
+    gap: 28px 40px;
+  }
+  [data-page='responsive-living'] .gapviz {
+    margin-top: 48px;
+  }
+  [data-page='responsive-living'] .gapviz {
+    padding: 20px;
+  }
+  [data-page='responsive-living'] .frankl .wrap {
+    padding-top: 96px;
+  }
+  [data-page='responsive-living'] .frankl .wrap {
+    padding-bottom: 96px;
+  }
+  [data-page='responsive-living'] .frankl .after {
+    margin-top: 48px;
+  }
+  [data-page='responsive-living'] .james {
+    gap: 40px;
+  }
+  [data-page='responsive-living'] .jcard {
+    padding: 28px;
+  }
+  [data-page='responsive-living'] .author {
+    gap: 40px;
+  }
+  [data-page='responsive-living'] .chapter {
+    gap: 40px;
+  }
+  [data-page='responsive-living'] .chapter {
+    padding: 36px;
+  }
+  [data-page='responsive-living'] .fmt {
+    padding: 28px 24px 0 0;
+  }
+  [data-page='responsive-living'] .fmt + .fmt {
+    padding-left: 24px;
+  }
+}
+
+/* ============ Tablet ============ */
+@media (max-width: 1100px) {
+  [data-page='responsive-living'] .what,
+  [data-page='responsive-living'] .james,
+  [data-page='responsive-living'] .author {
+    grid-template-columns: 1fr;
+  }
+  [data-page='responsive-living'] .gapviz {
+    max-width: none;
+  }
+  [data-page='responsive-living'] .what h2,
+  [data-page='responsive-living'] .james h2 {
+    max-width: 20ch;
+  }
+  [data-page='responsive-living'] .jcard {
+    max-width: 640px;
+  }
+  [data-page='responsive-living'] .author-ph {
+    aspect-ratio: 16 / 10;
+  }
+  [data-page='responsive-living'] .author-ph img {
+    object-position: 50% 22%;
+  }
+  [data-page='responsive-living'] .chapter {
+    grid-template-columns: 1fr;
+  }
+  [data-page='responsive-living'] .chapter-art {
+    height: 380px;
+  }
+}
+@media (max-width: 900px) {
+  [data-page='responsive-living'] .rl-hero .phero-in {
+    grid-template-columns: 1fr;
+  }
+  [data-page='responsive-living'] .cover {
+    width: min(64vw, 360px);
+  }
+}
+/* ============ Phone ============ */
+@media (max-width: 720px) {
+  [data-page='responsive-living'] .endorse {
+    grid-template-columns: 1fr;
+  }
+  [data-page='responsive-living'] .endorse figure,
+  [data-page='responsive-living'] .endorse figure:nth-child(even) {
+    padding: 30px 0;
+    border-left: 0;
+  }
+  [data-page='responsive-living'] .sym {
+    align-items: stretch;
+    gap: 10px;
+  }
+  [data-page='responsive-living'] .sym li {
+    border-radius: 18px;
+    padding: 12px 16px 12px 12px;
+    gap: 12px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  [data-page='responsive-living'] .sym .ci {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  [data-page='responsive-living'] .gv {
+    height: 230px;
+    --space: 24%;
+  }
+  [data-page='responsive-living'] .gv-col {
+    padding: 14px 12px;
+    border-radius: 14px;
+  }
+  [data-page='responsive-living'] .gv-col .live {
+    right: 10px;
+  }
+  [data-page='responsive-living'] .gv-col .lbl {
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    line-height: 20px;
+  }
+  [data-page='responsive-living'] .gv-space .tag {
+    padding: 6px 10px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  [data-page='responsive-living'] .gv-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  [data-page='responsive-living'] .seg {
+    display: flex;
+  }
+  [data-page='responsive-living'] .seg button {
+    flex: 1;
+    padding: 0 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    line-height: 22px;
+  }
+  [data-page='responsive-living'] .author-ph {
+    aspect-ratio: 4 / 4.2;
+  }
+  [data-page='responsive-living'] .chapter {
+    padding: 28px 20px 32px;
+    border-radius: 18px;
+  }
+  [data-page='responsive-living'] .chapter-art {
+    height: 300px;
+  }
+  [data-page='responsive-living'] .chapter-art .page {
+    width: 170px;
+    height: 252px;
+    margin: -126px 0 0 -26px;
+    padding: 24px 18px;
+  }
+  [data-page='responsive-living'] .chapter-art .page h4 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  [data-page='responsive-living'] .chapter-art .cover {
+    width: 170px;
+    margin: -128px 0 0 -144px;
+  }
+  [data-page='responsive-living'] .fmts {
+    grid-template-columns: 1fr;
+  }
+  [data-page='responsive-living'] .fmt,
+  [data-page='responsive-living'] .fmt + .fmt {
+    padding: 30px 0 8px;
+    border-left: 0;
+  }
+  [data-page='responsive-living'] .fmt + .fmt {
+    border-top: 1px solid var(--line);
+  }
+}
+
+[data-page='responsive-living'] .rows .lead-in {
+  grid-column: 2 / -1;
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 24px;
+}
+[data-page='responsive-living'] .rows .lead-in strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+[data-page='responsive-living'] .buy {
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-lg);
+  background: #fff;
+  overflow: hidden;
+}
+[data-page='responsive-living'] .table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 24px;
+}
+[data-page='responsive-living'] .table th {
+  height: 40px;
+  padding: 0 24px;
+  background: var(--page);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+[data-page='responsive-living'] .table td {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line-2);
+  vertical-align: top;
+  color: var(--ink-2);
+}
+[data-page='responsive-living'] .table tr:last-child td {
+  border-bottom: 0;
+}
+[data-page='responsive-living'] .table .fmt-n {
+  color: var(--ink);
+  font-weight: 500;
+  white-space: nowrap;
+}
+[data-page='responsive-living'] .table .tbd {
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+@media (max-width: 720px) {
+  [data-page='responsive-living'] .rows .lead-in {
+    grid-column: 1;
+  }
+  [data-page='responsive-living'] .table thead {
+    display: none;
+  }
+  [data-page='responsive-living'] .table tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px 16px;
+    padding: 16px;
+    border-bottom: 1px solid var(--line-2);
+  }
+  [data-page='responsive-living'] .table tr:last-child {
+    border-bottom: 0;
+  }
+  [data-page='responsive-living'] .table td {
+    padding: 0;
+    border: 0;
+  }
+  [data-page='responsive-living'] .table td:nth-child(2) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}

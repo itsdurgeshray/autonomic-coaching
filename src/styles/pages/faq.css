@@ -1,0 +1,242 @@
+/* Understanding Autonomic Coaching page sections */
+/* ============ Hero ============ */
+[data-page='faq'] .h-hero {
+  background: linear-gradient(180deg, var(--mist) 0%, var(--page) 100%);
+}
+[data-page='faq'] .h-in {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 72px var(--gutter) 88px;
+  text-align: center;
+}
+[data-page='faq'] .h-in h1 {
+  margin: 0 auto;
+  max-width: 16ch;
+}
+[data-page='faq'] .h-in .sub {
+  margin: 20px auto 0;
+  max-width: 52ch;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--ink);
+}
+[data-page='faq'] .h-in .intro {
+  margin: 12px auto 0;
+  max-width: 64ch;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-2);
+}
+[data-page='faq'] .h-in .intro a {
+  color: var(--g-700);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(14, 122, 82, 0.35);
+}
+[data-page='faq'] .search {
+  position: relative;
+  display: block;
+  margin: 32px auto 0;
+  max-width: 640px;
+}
+[data-page='faq'] .search .pi {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  margin-top: -10px;
+  font-size: 20px;
+  color: var(--ink-3);
+}
+[data-page='faq'] .search input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px 0 48px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 16px;
+  line-height: 24px;
+  box-shadow: var(--shadow-md);
+}
+[data-page='faq'] .search input:focus {
+  outline: 0;
+  border-color: var(--g-600);
+  box-shadow: 0 0 0 4px rgba(22, 157, 105, 0.14);
+}
+
+/* ============ Topic nav and groups ============ */
+[data-page='faq'] .answers {
+  display: grid;
+  grid-template-columns: 296px minmax(0, 1fr);
+  gap: 80px;
+}
+[data-page='faq'] .tnav {
+  position: sticky;
+  top: 104px;
+  align-self: start;
+  display: grid;
+  gap: 8px;
+}
+.figma [data-page='faq'] .tnav {
+  position: static;
+}
+[data-page='faq'] .tnav a {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line-2);
+  background: #fff;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s,
+    color 0.2s;
+}
+[data-page='faq'] .tnav a:hover {
+  border-color: var(--g-300);
+}
+[data-page='faq'] .tnav a.on {
+  background: var(--g-900);
+  border-color: var(--g-900);
+  color: #fff;
+}
+[data-page='faq'] .tnav .ic {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 20px;
+  background: var(--g-50);
+  border: 0;
+}
+[data-page='faq'] .tnav a.on .ic {
+  background: rgba(143, 239, 202, 0.14);
+  color: var(--g-200);
+}
+[data-page='faq'] .tnav .n {
+  display: grid;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 100px;
+  background: var(--page);
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--ink-3);
+}
+[data-page='faq'] .tnav a.on .n {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+[data-page='faq'] .group + .group {
+  margin-top: 64px;
+}
+[data-page='faq'] .g-head {
+  padding-bottom: 16px;
+  scroll-margin-top: 104px;
+}
+[data-page='faq'] .g-head h2 {
+  font-size: 32px;
+  line-height: 40px;
+}
+[data-page='faq'] .g-head p {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-3);
+}
+[data-page='faq'] .faq-a ul {
+  margin: 0 0 16px;
+  padding: 0 64px 0 20px;
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 24px;
+}
+[data-page='faq'] .faq-a li + li {
+  margin-top: 8px;
+}
+[data-page='faq'] .faq-a a {
+  color: var(--g-700);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+[data-page='faq'] .ftable {
+  margin: 0 64px 28px 0;
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+[data-page='faq'] .ftable table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 24px;
+}
+[data-page='faq'] .ftable th {
+  height: 40px;
+  padding: 0 20px;
+  background: var(--page);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+[data-page='faq'] .ftable td {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--line-2);
+  color: var(--ink-2);
+}
+[data-page='faq'] .ftable td + td,
+[data-page='faq'] .ftable th + th {
+  text-align: right;
+}
+[data-page='faq'] .ftable tr:last-child td {
+  border-bottom: 0;
+}
+[data-page='faq'] .group[hidden],
+[data-page='faq'] .group details[hidden] {
+  display: none;
+}
+[data-page='faq'] .empty {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  [data-page='faq'] .answers {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+  [data-page='faq'] .tnav {
+    position: static;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 720px) {
+  [data-page='faq'] .h-in {
+    padding: 40px var(--gutter) 56px;
+  }
+  [data-page='faq'] .tnav {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  [data-page='faq'] .g-head h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  [data-page='faq'] .faq-a ul {
+    padding-right: 0;
+  }
+  [data-page='faq'] .ftable {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,191 @@
+/* Contact page sections */
+/* ============ Hero ============ */
+[data-page='contact'] .c-hero {
+  background: linear-gradient(180deg, var(--mist) 0%, var(--page) 100%);
+}
+[data-page='contact'] .c-hero .phero-in {
+  align-items: center;
+}
+[data-page='contact'] .c-art .media {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(180deg, #e6efe9 0%, #d8e8df 100%);
+}
+[data-page='contact'] .c-art .media img {
+  object-fit: cover;
+  object-position: 50% 16%;
+}
+
+/* ============ Is this about me ============ */
+[data-page='contact'] .begin {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px 80px;
+  align-items: start;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+[data-page='contact'] .begin h2 {
+  max-width: 16ch;
+}
+[data-page='contact'] .discreet {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--g-700);
+}
+[data-page='contact'] .discreet .pi {
+  font-size: 20px;
+}
+
+/* ============ What happens next ============ */
+[data-page='contact'] .nsteps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+[data-page='contact'] .nsteps li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px;
+  border-radius: var(--r-xl);
+  background: #fff;
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-sm);
+}
+[data-page='contact'] .nsteps .num {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  color: var(--ink-3);
+}
+[data-page='contact'] .nsteps h3 {
+  margin-top: 12px;
+}
+[data-page='contact'] .nsteps p {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-2);
+}
+
+/* ============ The coaching commitment ============ */
+[data-page='contact'] .commit {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px 80px;
+  align-items: start;
+  padding: 64px;
+  border-radius: var(--r-xl);
+  background: var(--mist);
+}
+[data-page='contact'] .commit-copy .lede {
+  margin-top: 20px;
+}
+[data-page='contact'] .commit-copy .body {
+  margin-top: 16px;
+}
+[data-page='contact'] .commit-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 32px;
+  border-radius: var(--r-xl);
+  background: #fff;
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-md);
+}
+[data-page='contact'] .commit-card .k {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+[data-page='contact'] .commit-card .ticks {
+  gap: 12px;
+}
+[data-page='contact'] .commit-card .btn {
+  align-self: flex-start;
+}
+[data-page='contact'] .commit-card .fine {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--ink-3);
+}
+[data-page='contact'] mark.tbc {
+  background: var(--g-50);
+  color: var(--g-700);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+/* ============ Prefer to write directly ============ */
+[data-page='contact'] .direct {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 24px;
+  max-width: 880px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+[data-page='contact'] .direct .body {
+  margin-top: 16px;
+  max-width: 64ch;
+}
+[data-page='contact'] .direct a {
+  color: var(--g-700);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(14, 122, 82, 0.35);
+}
+
+@media (max-width: 1100px) {
+  [data-page='contact'] .nsteps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  [data-page='contact'] .commit {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 40px;
+  }
+  [data-page='contact'] .begin {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 720px) {
+  [data-page='contact'] .c-art .media {
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+  }
+  [data-page='contact'] .nsteps li {
+    padding: 24px;
+  }
+  [data-page='contact'] .nsteps .num {
+    top: 24px;
+    right: 24px;
+  }
+  [data-page='contact'] .commit {
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+  [data-page='contact'] .commit-card {
+    padding: 24px;
+  }
+  [data-page='contact'] .commit-card .btn {
+    width: 100%;
+  }
+  [data-page='contact'] .direct {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}
