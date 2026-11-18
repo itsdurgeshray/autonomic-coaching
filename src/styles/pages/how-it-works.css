@@ -1,0 +1,921 @@
+/* How It Works page sections */
+/* ============ 1. Hero ============ */
+[data-page='how-it-works'] .how-hero h1 {
+  max-width: 13ch;
+}
+[data-page='how-it-works'] .scene {
+  position: relative;
+  aspect-ratio: 1 / 0.92;
+  border-radius: 28px;
+  background:
+    radial-gradient(70% 60% at 80% 10%, rgba(143, 239, 202, 0.5), rgba(143, 239, 202, 0) 70%),
+    var(--mist);
+}
+[data-page='how-it-works'] .ui {
+  position: absolute;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-lg);
+  padding: 24px;
+}
+[data-page='how-it-works'] .ui-h {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+[data-page='how-it-works'] .ui-h small {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-3);
+  line-height: 20px;
+}
+[data-page='how-it-works'] .ui-week {
+  left: 9%;
+  right: 9%;
+  top: 11%;
+}
+[data-page='how-it-works'] .sess {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--forest);
+  color: #fff;
+}
+[data-page='how-it-works'] .sess img {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 100px;
+  object-fit: cover;
+  object-position: 50% 8%;
+  background: #2f5850;
+}
+[data-page='how-it-works'] .sess strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+[data-page='how-it-works'] .sess small {
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 22px;
+}
+[data-page='how-it-works'] .sess .cam {
+  margin-left: auto;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--g-200);
+  font-size: 16px;
+  line-height: 24px;
+}
+[data-page='how-it-works'] .wk {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+[data-page='how-it-works'] .wk span {
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-3);
+  background: var(--page);
+  line-height: 22px;
+}
+[data-page='how-it-works'] .wk span.on {
+  background: var(--g-700);
+  color: #fff;
+}
+[data-page='how-it-works'] .ui-log {
+  left: 4%;
+  bottom: 8%;
+  width: 54%;
+}
+[data-page='how-it-works'] .logrow {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 22px;
+}
+[data-page='how-it-works'] .logrow b {
+  height: 8px;
+  border-radius: 10px;
+  background: var(--g-50);
+  position: relative;
+  overflow: hidden;
+}
+[data-page='how-it-works'] .logrow b::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--v);
+  border-radius: 10px;
+  background: var(--g-600);
+}
+[data-page='how-it-works'] .ui-tag {
+  right: 6%;
+  bottom: 14%;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 100px;
+  line-height: 22px;
+}
+[data-page='how-it-works'] .ui-tag .pi {
+  font-size: 16px;
+  color: var(--g-700);
+}
+
+/* ============ 2. The process at a glance ============ */
+[data-page='how-it-works'] .proc {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px;
+}
+[data-page='how-it-works'] .proc li {
+  position: relative;
+}
+[data-page='how-it-works'] .proc .num {
+  display: block;
+  font-size: 64px;
+  line-height: 72px;
+  letter-spacing: -0.04em;
+  color: var(--g-700);
+}
+[data-page='how-it-works'] .proc .rail {
+  position: relative;
+  display: block;
+  height: 1px;
+  margin: 28px 0 28px;
+  background: var(--line);
+}
+[data-page='how-it-works'] .proc .rail::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 100px;
+  background: var(--g-600);
+  box-shadow: 0 0 0 6px var(--g-50);
+}
+[data-page='how-it-works'] .proc li:not(:last-child) .rail {
+  margin-right: -40px;
+}
+[data-page='how-it-works'] .proc h3 {
+}
+[data-page='how-it-works'] .proc p {
+  margin-top: 12px;
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 34ch;
+}
+
+/* ============ 3. Applying for coaching ============ */
+[data-page='how-it-works'] .apply {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: 104px;
+  align-items: center;
+  padding: 88px;
+}
+[data-page='how-it-works'] .apply .lede {
+  margin-top: 20px;
+  max-width: 46ch;
+  color: var(--ink);
+}
+[data-page='how-it-works'] .apply .note {
+  margin-top: 18px;
+  max-width: 46ch;
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 24px;
+}
+[data-page='how-it-works'] .apply .btn {
+  margin-top: 36px;
+}
+[data-page='how-it-works'] .tbc {
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: 6px;
+  border: 1px dashed currentColor;
+  background: transparent;
+  color: inherit;
+  font-weight: 500;
+}
+[data-page='how-it-works'] .formcard {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-lg);
+  padding: 10px 24px 20px;
+}
+[data-page='how-it-works'] .formcard .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-2);
+  font-size: 16px;
+  line-height: 24px;
+}
+[data-page='how-it-works'] .formcard .ck {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 100px;
+  display: grid;
+  place-items: center;
+  background: var(--g-700);
+  color: #fff;
+}
+[data-page='how-it-works'] .formcard .ck svg {
+  width: 12px;
+  height: 12px;
+}
+[data-page='how-it-works'] .formcard .time {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--ink-3);
+  line-height: 22px;
+}
+[data-page='how-it-works'] .formcard .time .pi {
+  font-size: 16px;
+  color: var(--g-700);
+}
+
+/* ============ 4. The first call and your Assessment ============ */
+[data-page='how-it-works'] .call {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 120px;
+  align-items: center;
+}
+[data-page='how-it-works'] .call h2 {
+  margin-bottom: 28px;
+}
+[data-page='how-it-works'] .qs {
+  padding: 36px;
+  border-radius: var(--r-xl);
+  background: #fff;
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-md);
+}
+[data-page='how-it-works'] .qs-top {
+  padding-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  line-height: 22px;
+}
+[data-page='how-it-works'] .qs ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: q;
+}
+[data-page='how-it-works'] .qs li {
+  counter-increment: q;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line-2);
+  font-size: 16px;
+  letter-spacing: -0.015em;
+  line-height: 24px;
+}
+[data-page='how-it-works'] .qs li::before {
+  content: '0' counter(q);
+  flex: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--g-700);
+  width: 22px;
+  line-height: 18px;
+}
+[data-page='how-it-works'] .qs li:last-child {
+  border-bottom: 0;
+  padding-bottom: 4px;
+}
+[data-page='how-it-works'] .from {
+  margin-top: 104px;
+  padding-top: 88px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+[data-page='how-it-works'] .from .statement {
+  max-width: 30ch;
+  margin: 0 auto;
+}
+[data-page='how-it-works'] .from .body {
+  margin: 28px auto 0;
+  max-width: 66ch;
+}
+
+/* ============ 5. What a typical week looks like ============ */
+[data-page='how-it-works'] .week {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 120px;
+  align-items: center;
+}
+[data-page='how-it-works'] .week h2 {
+  margin-bottom: 28px;
+}
+[data-page='how-it-works'] .cal {
+  padding: 32px;
+  border-radius: var(--r-xl);
+  background: #fff;
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-md);
+}
+[data-page='how-it-works'] .cal-h {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+[data-page='how-it-works'] .cal-h strong {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+[data-page='how-it-works'] .days {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+[data-page='how-it-works'] .day {
+  border-radius: 12px;
+  background: var(--page);
+  padding: 12px 4px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-height: 172px;
+}
+[data-page='how-it-works'] .day b {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-3);
+  line-height: 20px;
+}
+[data-page='how-it-works'] .day .lg {
+  margin-top: auto;
+  display: grid;
+  gap: 8px;
+}
+[data-page='how-it-works'] .day .lg i {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background: var(--g-300);
+}
+[data-page='how-it-works'] .day .lg i:nth-child(2) {
+  background: var(--g-600);
+}
+[data-page='how-it-works'] .day .lg i:nth-child(3) {
+  background: var(--b-300);
+}
+[data-page='how-it-works'] .day.s {
+  background: var(--forest);
+  color: #fff;
+}
+[data-page='how-it-works'] .day.s b {
+  color: var(--g-200);
+}
+[data-page='how-it-works'] .day.s img {
+  width: 42px;
+  height: 42px;
+  border-radius: 100px;
+  object-fit: cover;
+  object-position: 50% 8%;
+  background: #2f5850;
+  border: 2px solid rgba(143, 239, 202, 0.5);
+}
+[data-page='how-it-works'] .day.s span {
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.86);
+}
+[data-page='how-it-works'] .cal-legend {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 22px;
+}
+[data-page='how-it-works'] .cal-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+[data-page='how-it-works'] .cal-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background: var(--g-300);
+}
+[data-page='how-it-works'] .cal-legend span:nth-child(2) i {
+  background: var(--g-600);
+}
+[data-page='how-it-works'] .cal-legend span:nth-child(3) i {
+  background: var(--b-300);
+}
+
+/* ============ 6. How long coaching lasts ============ */
+[data-page='how-it-works'] .dur {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 104px;
+  align-items: center;
+  padding: 72px;
+}
+[data-page='how-it-works'] .dur .lede {
+  margin-top: 18px;
+  color: var(--ink);
+}
+[data-page='how-it-works'] .months {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  padding-top: 50px;
+}
+[data-page='how-it-works'] .months span {
+  height: 72px;
+  border-radius: 12px;
+  background: var(--page);
+  display: flex;
+  align-items: flex-end;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-3);
+  line-height: 20px;
+}
+[data-page='how-it-works'] .months span.in {
+  background: var(--g-700);
+  color: #fff;
+}
+[data-page='how-it-works'] .months span.in + span.in {
+  background: var(--g-600);
+}
+[data-page='how-it-works'] .months .br {
+  position: absolute;
+  top: 0;
+  left: calc((100% - 40px) / 6 * 2 + 16px);
+  right: 0;
+  height: 38px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  color: var(--g-700);
+}
+[data-page='how-it-works'] .months .br::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 12px;
+  border: 2px solid var(--g-600);
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+/* ============ 7. What coaching asks of you ============ */
+[data-page='how-it-works'] .asks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+[data-page='how-it-works'] .ask {
+  padding: 44px 48px 0 0;
+}
+[data-page='how-it-works'] .ask + .ask {
+  padding-left: 48px;
+  border-left: 1px solid var(--line);
+}
+[data-page='how-it-works'] .ask h3 {
+}
+[data-page='how-it-works'] .ask ul {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+[data-page='how-it-works'] .ask li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-2);
+}
+[data-page='how-it-works'] .ask li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background: var(--g-600);
+}
+[data-page='how-it-works'] .support {
+  margin-top: 72px;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: -0.015em;
+  color: var(--g-700);
+  line-height: 24px;
+}
+
+/* ============ 8. Who coaching is for ============ */
+[data-page='how-it-works'] .suit {
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  background: #fff;
+  border: 1px solid var(--line-2);
+}
+[data-page='how-it-works'] .suit-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr) minmax(0, 1fr);
+}
+[data-page='how-it-works'] .suit-row > * {
+  padding: 24px 36px;
+  border-top: 1px solid var(--line-2);
+  font-size: 16px;
+  line-height: 24px;
+}
+[data-page='how-it-works'] .suit-row:first-child > * {
+  border-top: 0;
+  padding-top: 24px;
+  padding-bottom: 22px;
+}
+[data-page='how-it-works'] .suit-row:first-child {
+  background: var(--page);
+}
+[data-page='how-it-works'] .suit-row .k {
+  font-weight: 500;
+  color: var(--ink);
+}
+[data-page='how-it-works'] .suit-row .y {
+  display: flex;
+  gap: 14px;
+}
+[data-page='how-it-works'] .suit-row .n {
+  display: flex;
+  gap: 14px;
+  color: var(--ink-2);
+}
+[data-page='how-it-works'] .suit-row .tk {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 100px;
+  margin-top: 1px;
+}
+[data-page='how-it-works'] .suit-row .y .tk {
+  background: var(--g-700);
+  color: #fff;
+}
+[data-page='how-it-works'] .suit-row .n .tk {
+  border: 2px solid rgba(2, 10, 29, 0.22);
+  color: var(--ink-3);
+}
+[data-page='how-it-works'] .suit-row .tk svg {
+  width: 12px;
+  height: 12px;
+}
+[data-page='how-it-works'] .suit-h {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+[data-page='how-it-works'] .suit-h.y {
+  color: var(--g-700);
+}
+[data-page='how-it-works'] .suit-row .lbl {
+  display: none;
+}
+
+/* Phone and tablet steps of the type scale */
+@media (max-width: 1023px) {
+  [data-page='how-it-works'] .proc .num {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+/* Spacing steps on the 2px grid (tablet, phone) */
+@media (max-width: 1023px) {
+  [data-page='how-it-works'] .apply {
+    gap: 70px;
+  }
+  [data-page='how-it-works'] .apply {
+    padding: 62px;
+  }
+  [data-page='how-it-works'] .call {
+    gap: 80px;
+  }
+  [data-page='how-it-works'] .qs {
+    padding: 30px;
+  }
+  [data-page='how-it-works'] .from {
+    margin-top: 84px;
+  }
+  [data-page='how-it-works'] .from {
+    padding-top: 72px;
+  }
+  [data-page='how-it-works'] .week {
+    gap: 80px;
+  }
+  [data-page='how-it-works'] .cal {
+    padding: 28px;
+  }
+  [data-page='how-it-works'] .dur {
+    gap: 70px;
+  }
+  [data-page='how-it-works'] .dur {
+    padding: 54px;
+  }
+  [data-page='how-it-works'] .ask {
+    padding: 36px 36px 0 0;
+  }
+  [data-page='how-it-works'] .ask + .ask {
+    padding-left: 36px;
+  }
+  [data-page='how-it-works'] .support {
+    margin-top: 60px;
+  }
+  [data-page='how-it-works'] .suit-row > * {
+    padding: 24px 28px;
+  }
+}
+@media (max-width: 720px) {
+  [data-page='how-it-works'] .apply {
+    gap: 36px;
+  }
+  [data-page='how-it-works'] .apply {
+    padding: 36px;
+  }
+  [data-page='how-it-works'] .call {
+    gap: 40px;
+  }
+  [data-page='how-it-works'] .qs {
+    padding: 24px;
+  }
+  [data-page='how-it-works'] .from {
+    margin-top: 64px;
+  }
+  [data-page='how-it-works'] .from {
+    padding-top: 56px;
+  }
+  [data-page='how-it-works'] .week {
+    gap: 40px;
+  }
+  [data-page='how-it-works'] .cal {
+    padding: 22px;
+  }
+  [data-page='how-it-works'] .dur {
+    gap: 36px;
+  }
+  [data-page='how-it-works'] .dur {
+    padding: 36px;
+  }
+  [data-page='how-it-works'] .ask {
+    padding: 28px 24px 0 0;
+  }
+  [data-page='how-it-works'] .ask + .ask {
+    padding-left: 24px;
+  }
+  [data-page='how-it-works'] .support {
+    margin-top: 48px;
+  }
+  [data-page='how-it-works'] .suit-row > * {
+    padding: 24px 20px;
+  }
+}
+
+/* ============ Tablet ============ */
+@media (max-width: 1100px) {
+  [data-page='how-it-works'] .proc {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 40px;
+  }
+  [data-page='how-it-works'] .proc li:not(:last-child) .rail {
+    margin-right: 0;
+  }
+  [data-page='how-it-works'] .call,
+  [data-page='how-it-works'] .week {
+    grid-template-columns: 1fr;
+  }
+  [data-page='how-it-works'] .call h2,
+  [data-page='how-it-works'] .week h2 {
+    max-width: 20ch;
+  }
+  [data-page='how-it-works'] .qs,
+  [data-page='how-it-works'] .cal {
+    max-width: 640px;
+  }
+  [data-page='how-it-works'] .week > div:last-child {
+    order: -1;
+  }
+  [data-page='how-it-works'] .apply,
+  [data-page='how-it-works'] .dur {
+    grid-template-columns: 1fr;
+  }
+  [data-page='how-it-works'] .formcard {
+    max-width: 520px;
+  }
+}
+@media (max-width: 900px) {
+  [data-page='how-it-works'] .scene {
+    max-width: 560px;
+  }
+}
+/* ============ Phone ============ */
+@media (max-width: 720px) {
+  [data-page='how-it-works'] .scene {
+    aspect-ratio: auto;
+    height: 400px;
+    border-radius: 20px;
+  }
+  [data-page='how-it-works'] .ui {
+    padding: 18px;
+    border-radius: 16px;
+  }
+  [data-page='how-it-works'] .ui-week {
+    left: 5%;
+    right: 5%;
+    top: 6%;
+  }
+  [data-page='how-it-works'] .sess img {
+    width: 44px;
+    height: 44px;
+  }
+  [data-page='how-it-works'] .wk span {
+    height: 34px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  [data-page='how-it-works'] .ui-log {
+    left: 5%;
+    bottom: 6%;
+    width: 74%;
+  }
+  [data-page='how-it-works'] .logrow {
+    grid-template-columns: 84px 1fr;
+    font-size: 12px;
+    margin-top: 12px;
+    line-height: 20px;
+  }
+  [data-page='how-it-works'] .ui-tag {
+    display: none;
+  }
+  [data-page='how-it-works'] .proc {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  [data-page='how-it-works'] .proc .num {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  [data-page='how-it-works'] .proc .rail {
+    margin: 20px 0;
+  }
+  [data-page='how-it-works'] .apply,
+  [data-page='how-it-works'] .dur {
+    padding: 28px 20px 32px;
+    border-radius: 18px;
+  }
+  [data-page='how-it-works'] .apply .btn {
+    width: 100%;
+  }
+  [data-page='how-it-works'] .qs li {
+    padding: 16px 0;
+  }
+  [data-page='how-it-works'] .cal {
+    padding: 16px;
+  }
+  [data-page='how-it-works'] .days {
+    gap: 4px;
+  }
+  [data-page='how-it-works'] .day {
+    min-height: 132px;
+    padding: 10px 2px;
+    border-radius: 10px;
+  }
+  [data-page='how-it-works'] .day.s img {
+    width: 30px;
+    height: 30px;
+  }
+  [data-page='how-it-works'] .day.s span {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  [data-page='how-it-works'] .months {
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 0;
+  }
+  [data-page='how-it-works'] .months .br {
+    position: static;
+    grid-column: 1 / -1;
+    order: -1;
+    height: auto;
+    text-align: left;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  [data-page='how-it-works'] .months .br::before {
+    display: none;
+  }
+  [data-page='how-it-works'] .months span {
+    height: 54px;
+  }
+  [data-page='how-it-works'] .asks {
+    grid-template-columns: 1fr;
+  }
+  [data-page='how-it-works'] .ask,
+  [data-page='how-it-works'] .ask + .ask {
+    padding: 28px 0;
+    border-left: 0;
+  }
+  [data-page='how-it-works'] .ask + .ask {
+    border-top: 1px solid var(--line);
+  }
+  [data-page='how-it-works'] .suit-row:first-child {
+    display: none;
+  }
+  [data-page='how-it-works'] .suit-row {
+    grid-template-columns: 1fr;
+    padding: 22px 20px;
+    border-top: 1px solid var(--line-2);
+  }
+  [data-page='how-it-works'] .suit-row:nth-child(2) {
+    border-top: 0;
+  }
+  [data-page='how-it-works'] .suit-row > * {
+    padding: 0;
+    border-top: 0;
+  }
+  [data-page='how-it-works'] .suit-row .k {
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 14px;
+    line-height: 20px;
+  }
+  [data-page='how-it-works'] .suit-row .n {
+    margin-top: 12px;
+  }
+}

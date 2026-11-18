@@ -1,0 +1,1111 @@
+/* About Justin Maguire page sections */
+/* ============ 1. Hero (cinematic, the quote leads) ============ */
+[data-page='about'] .ab-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+  background:
+    radial-gradient(55% 70% at 74% 38%, rgba(22, 157, 105, 0.38), rgba(22, 157, 105, 0) 70%),
+    linear-gradient(180deg, #01130f 0%, #03231d 60%, #01130f 100%);
+}
+[data-page='about'] .ab-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 90% at 50% 40%,
+    rgba(1, 19, 15, 0) 55%,
+    rgba(1, 19, 15, 0.7) 100%
+  );
+}
+[data-page='about'] .ab-stage {
+  position: relative;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  min-height: clamp(640px, calc(100svh - var(--hdr) - 120px), 760px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 40px;
+}
+[data-page='about'] .ab-copy {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  padding: 72px 0;
+}
+[data-page='about'] .ab-copy .qm {
+  width: 40px;
+  height: 40px;
+  color: var(--g-300);
+}
+[data-page='about'] .ab-quote {
+  margin: 24px 0 0;
+  max-width: 26ch;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+[data-page='about'] .ab-sign {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+[data-page='about'] .ab-sign::before {
+  content: '';
+  flex: none;
+  width: 44px;
+  height: 1px;
+  background: rgba(143, 239, 202, 0.6);
+}
+[data-page='about'] .ab-sign h1 {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  color: #fff;
+}
+[data-page='about'] .ab-sign p {
+  margin-top: 4px;
+  font-size: 16px;
+  color: var(--g-200);
+  line-height: 24px;
+}
+[data-page='about'] .ab-intro {
+  margin-top: 28px;
+  max-width: 46ch;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.66);
+}
+[data-page='about'] .ab-copy .btn {
+  margin-top: 32px;
+}
+[data-page='about'] .ab-person {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+[data-page='about'] .ab-person img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 92%;
+  width: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.4));
+}
+[data-page='about'] .ab-person::after {
+  content: '';
+  position: absolute;
+  left: -30%;
+  right: -30%;
+  bottom: 0;
+  height: 30%;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(1, 19, 15, 0), #01130f);
+}
+[data-page='about'] .creds {
+  position: relative;
+  z-index: 3;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+[data-page='about'] .creds li {
+  padding: 26px 24px 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.82);
+}
+[data-page='about'] .creds li + li {
+  padding-left: 24px;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+[data-page='about'] .creds li span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--g-300);
+  line-height: 20px;
+}
+
+/* ============ 2. How I look at health ============ */
+[data-page='about'] .look {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 120px;
+  align-items: center;
+}
+[data-page='about'] .venn-wrap {
+  position: relative;
+}
+[data-page='about'] .venn {
+  position: relative;
+  width: min(100%, 540px);
+  aspect-ratio: 520 / 480;
+  margin: 0 auto;
+}
+[data-page='about'] .venn::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  width: 116%;
+  aspect-ratio: 1;
+  margin: -58% 0 0 -58%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(198, 245, 226, 0.55), rgba(198, 245, 226, 0));
+}
+[data-page='about'] .venn svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+[data-page='about'] .venn .orbit {
+  fill: none;
+  stroke: rgba(2, 10, 29, 0.1);
+  stroke-width: 1;
+  stroke-dasharray: 2 6;
+}
+[data-page='about'] .venn .sys {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 8px;
+  border-radius: 100px;
+  background: #fff;
+  box-shadow:
+    0 1px 2px rgba(2, 10, 29, 0.06),
+    0 10px 24px -12px rgba(2, 10, 29, 0.3);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 22px;
+}
+[data-page='about'] .venn .sys i {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+}
+[data-page='about'] .venn .sys i svg {
+  width: 16px;
+  height: 16px;
+}
+[data-page='about'] .venn .sys.n {
+  left: 50%;
+  top: 18%;
+}
+[data-page='about'] .venn .sys.n i {
+  background: var(--g-50);
+  color: var(--g-700);
+}
+[data-page='about'] .venn .sys.i {
+  left: 26%;
+  top: 72%;
+}
+[data-page='about'] .venn .sys.i i {
+  background: var(--b-25);
+  color: var(--b-500);
+}
+[data-page='about'] .venn .sys.h {
+  left: 74%;
+  top: 72%;
+}
+[data-page='about'] .venn .sys.h i {
+  background: #e6faf2;
+  color: var(--g-600);
+}
+[data-page='about'] .venn .core {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  width: 74px;
+  height: 74px;
+  margin: -38px 0 0 -38px;
+  border-radius: 100px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 0 0 8px rgba(255, 255, 255, 0.55),
+    0 0 0 10px rgba(22, 157, 105, 0.25),
+    0 18px 36px -14px rgba(2, 10, 29, 0.35);
+}
+[data-page='about'] .venn .core img {
+  width: 42px;
+  height: auto;
+}
+[data-page='about'] .venn-cap {
+  position: relative;
+  margin: 22px auto 0;
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 100px;
+  background: var(--g-900);
+  color: var(--g-200);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  line-height: 20px;
+}
+[data-page='about'] .look h2 {
+  max-width: 14ch;
+}
+[data-page='about'] .look .lead {
+  margin-top: 26px;
+}
+[data-page='about'] .chip.n .ci {
+  background: var(--g-50);
+  color: var(--g-700);
+}
+[data-page='about'] .chip.i .ci {
+  background: var(--b-25);
+  color: var(--b-500);
+}
+[data-page='about'] .chip.h .ci {
+  background: #e6faf2;
+  color: var(--g-600);
+}
+[data-page='about'] .look .body {
+  margin-top: 20px;
+}
+[data-page='about'] .look .next {
+  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--g-700);
+  line-height: 24px;
+}
+[data-page='about'] .look .next svg {
+  width: 16px;
+  height: 16px;
+  transform: rotate(90deg);
+}
+
+/* ============ 3. How I work with clients (four question cards) ============ */
+[data-page='about'] .qgrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  counter-reset: qq;
+}
+[data-page='about'] .qcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 26px 30px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid var(--line-2);
+  min-height: 320px;
+}
+[data-page='about'] .qcard .n {
+  font-size: 56px;
+  line-height: 64px;
+  letter-spacing: -0.05em;
+  color: var(--g-100);
+}
+[data-page='about'] .qcard h3 {
+  margin-top: auto;
+  padding-top: 32px;
+}
+[data-page='about'] .qcard p {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-2);
+}
+[data-page='about'] .qcard:last-child {
+  background: var(--g-900);
+  border-color: var(--g-900);
+}
+[data-page='about'] .qcard:last-child .n {
+  color: rgba(143, 239, 202, 0.28);
+}
+[data-page='about'] .qcard:last-child h3 {
+  color: #fff;
+}
+[data-page='about'] .qcard:last-child p {
+  color: rgba(255, 255, 255, 0.72);
+}
+[data-page='about'] .head-act {
+  justify-self: end;
+  align-self: end;
+}
+
+/* ============ 4. Qualifications and training (one line, one node per qualification) ============ */
+[data-page='about'] .tl {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 0 20px;
+}
+[data-page='about'] .tl::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--g-100), var(--g-600));
+}
+[data-page='about'] .tl li {
+  position: relative;
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+[data-page='about'] .tl li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 100px;
+  background: #fff;
+  border: 2px solid var(--g-600);
+  box-sizing: border-box;
+}
+[data-page='about'] .tl li.now::before {
+  background: var(--g-600);
+  box-shadow: 0 0 0 6px rgba(22, 157, 105, 0.18);
+}
+[data-page='about'] .tl .y {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--g-700);
+}
+[data-page='about'] .tl strong {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+}
+[data-page='about'] .tl small {
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--ink-3);
+}
+[data-page='about'] .bridge {
+  margin-top: 104px;
+  text-align: center;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+[data-page='about'] .bridge span {
+  color: var(--g-700);
+}
+
+/* ============ 5. What others say ============ */
+[data-page='about'] .record {
+  margin-top: 104px;
+}
+[data-page='about'] .record > p {
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  line-height: 24px;
+  color: #fff;
+}
+[data-page='about'] .rec {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1.5fr 1fr;
+  gap: 12px;
+}
+[data-page='about'] .rec > div {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+[data-page='about'] .rec .k {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--g-200);
+  line-height: 20px;
+}
+[data-page='about'] .rec .k .pi {
+  font-size: 16px;
+}
+[data-page='about'] .rec .v {
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.82);
+  display: grid;
+  gap: 10px;
+}
+[data-page='about'] .rec .v b {
+  font-weight: 500;
+  color: #fff;
+}
+[data-page='about'] .rec .v a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--g-200);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+  line-height: 22px;
+}
+[data-page='about'] .rec .v a svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ============ 6. Why I do this work ============ */
+[data-page='about'] .why {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 120px;
+  align-items: center;
+}
+[data-page='about'] .why-ph {
+  aspect-ratio: 4 / 4.6;
+  background: #dfe0e4;
+}
+[data-page='about'] .why-ph img {
+  object-position: 50% 16%;
+}
+[data-page='about'] .why-copy .statement {
+  margin-top: 24px;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+@media (max-width: 720px) {
+  [data-page='about'] .why-copy .statement {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+[data-page='about'] .why-copy .statement a {
+  color: var(--g-700);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+[data-page='about'] .sig {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink-2);
+  line-height: 24px;
+}
+[data-page='about'] .sig::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--ink-3);
+}
+
+/* ============ 7. Who I work with ============ */
+[data-page='about'] .who {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: 32px 120px;
+  padding: 80px;
+}
+[data-page='about'] .who .body {
+  margin-top: 24px;
+  max-width: 62ch;
+}
+[data-page='about'] .priv {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--g-700);
+  line-height: 24px;
+}
+[data-page='about'] .priv .pi {
+  font-size: 16px;
+}
+
+/* ============ 8. Request coaching with me ============ */
+[data-page='about'] .req .wrap {
+  align-items: stretch;
+  text-align: left;
+}
+[data-page='about'] .req-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px 120px;
+  align-items: start;
+}
+[data-page='about'] .req h2 {
+  max-width: 14ch;
+}
+[data-page='about'] .req .lede {
+  margin-top: 20px;
+  margin-left: 0;
+}
+[data-page='about'] .req .btn {
+  margin-top: 36px;
+  align-self: flex-start;
+}
+[data-page='about'] .rsteps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: rs;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+[data-page='about'] .rsteps li {
+  counter-increment: rs;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 12px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.86);
+}
+[data-page='about'] .rsteps li::before {
+  content: '0' counter(rs);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--g-200);
+  padding-top: 2px;
+  line-height: 18px;
+}
+[data-page='about'] .alts {
+  margin-top: 96px;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+[data-page='about'] .alt {
+  padding: 32px 40px 0 0;
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+[data-page='about'] .alt + .alt {
+  padding-left: 40px;
+  padding-right: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+[data-page='about'] .alt p {
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 40ch;
+}
+[data-page='about'] .alt a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+  line-height: 24px;
+}
+[data-page='about'] .alt a svg {
+  width: 14px;
+  height: 14px;
+}
+[data-page='about'] .alt.bk a {
+  color: var(--g-200);
+}
+
+/* Phone and tablet steps of the type scale */
+@media (max-width: 1023px) {
+  [data-page='about'] .ab-quote {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  [data-page='about'] .bridge {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+/* Spacing steps on the 2px grid (tablet, phone) */
+@media (max-width: 1023px) {
+  [data-page='about'] .ab-stage {
+    min-height: clamp(640px, calc(100svh - var(--hdr) - 120px), 760px);
+  }
+  [data-page='about'] .ab-copy {
+    padding: 56px 0;
+  }
+  [data-page='about'] .look {
+    gap: 80px;
+  }
+  [data-page='about'] .bridge {
+    margin-top: 84px;
+  }
+  [data-page='about'] .record {
+    margin-top: 84px;
+  }
+  [data-page='about'] .why {
+    gap: 80px;
+  }
+  [data-page='about'] .who {
+    gap: 32px 80px;
+  }
+  [data-page='about'] .who {
+    padding: 58px;
+  }
+  [data-page='about'] .req-top {
+    gap: 40px 80px;
+  }
+  [data-page='about'] .alts {
+    margin-top: 80px;
+  }
+  [data-page='about'] .ab-person {
+    height: 470px;
+  }
+}
+@media (max-width: 720px) {
+  [data-page='about'] .ab-stage {
+    min-height: clamp(640px, calc(100svh - var(--hdr) - 120px), 760px);
+  }
+  [data-page='about'] .ab-copy {
+    padding: 40px 0;
+  }
+  [data-page='about'] .look {
+    gap: 40px;
+  }
+  [data-page='about'] .bridge {
+    margin-top: 64px;
+  }
+  [data-page='about'] .record {
+    margin-top: 64px;
+  }
+  [data-page='about'] .why {
+    gap: 40px;
+  }
+  [data-page='about'] .who {
+    gap: 32px 40px;
+  }
+  [data-page='about'] .who {
+    padding: 36px;
+  }
+  [data-page='about'] .req-top {
+    gap: 40px 40px;
+  }
+  [data-page='about'] .alts {
+    margin-top: 64px;
+  }
+  [data-page='about'] .ab-person {
+    height: 380px;
+  }
+}
+
+/* ============ Tablet ============ */
+@media (max-width: 1100px) {
+  [data-page='about'] .look,
+  [data-page='about'] .why {
+    grid-template-columns: 1fr;
+  }
+  [data-page='about'] .venn {
+    width: min(100%, 460px);
+  }
+  [data-page='about'] .qgrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  [data-page='about'] .head-act {
+    justify-self: start;
+  }
+  [data-page='about'] .qcard {
+    min-height: 260px;
+  }
+  [data-page='about'] .rec {
+    grid-template-columns: 1fr 1fr;
+  }
+  [data-page='about'] .why-ph {
+    aspect-ratio: 16 / 11;
+  }
+  [data-page='about'] .why-ph img {
+    object-position: 50% 20%;
+  }
+  [data-page='about'] .who,
+  [data-page='about'] .req-top {
+    grid-template-columns: 1fr;
+  }
+  [data-page='about'] .creds {
+    grid-template-columns: 1fr 1fr;
+  }
+  [data-page='about'] .creds li:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+@media (max-width: 900px) {
+  [data-page='about'] .tl {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 36px 20px;
+  }
+  [data-page='about'] .tl::before {
+    display: none;
+  }
+  [data-page='about'] .tl li {
+    border-top: 2px solid var(--g-100);
+    padding-top: 26px;
+  }
+  [data-page='about'] .tl li::before {
+    top: -8px;
+  }
+  [data-page='about'] .ab-stage {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 0;
+  }
+  [data-page='about'] .ab-copy {
+    padding: 40px 0 8px;
+  }
+  [data-page='about'] .ab-person {
+    height: 560px;
+  }
+  [data-page='about'] .ab-person img {
+    height: 100%;
+  }
+}
+/* ============ Phone ============ */
+@media (max-width: 720px) {
+  [data-page='about'] .ab-quote {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  [data-page='about'] .ab-copy .btn {
+    width: 100%;
+  }
+  [data-page='about'] .ab-person {
+    height: 400px;
+  }
+  [data-page='about'] .creds {
+    grid-template-columns: 1fr;
+  }
+  [data-page='about'] .creds li,
+  [data-page='about'] .creds li + li {
+    padding: 18px 0;
+    border-left: 0;
+  }
+  [data-page='about'] .qgrid,
+  [data-page='about'] .rec {
+    grid-template-columns: 1fr;
+  }
+  [data-page='about'] .tl {
+    grid-template-columns: 1fr 1fr;
+  }
+  [data-page='about'] .venn .sys {
+    font-size: 12px;
+    gap: 8px;
+    padding: 6px 12px 6px 6px;
+    line-height: 20px;
+  }
+  [data-page='about'] .venn .sys i {
+    width: 26px;
+    height: 26px;
+  }
+  [data-page='about'] .venn .sys i svg {
+    width: 14px;
+    height: 14px;
+  }
+  [data-page='about'] .venn .core {
+    width: 58px;
+    height: 58px;
+    margin: -30px 0 0 -30px;
+  }
+  [data-page='about'] .venn .core img {
+    width: 32px;
+  }
+  [data-page='about'] .qcard {
+    min-height: 0;
+  }
+  [data-page='about'] .qcard h3 {
+    padding-top: 20px;
+  }
+  [data-page='about'] .why-ph {
+    aspect-ratio: 4 / 4.2;
+  }
+  [data-page='about'] .who {
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+  [data-page='about'] .alts {
+    grid-template-columns: 1fr;
+  }
+  [data-page='about'] .alt,
+  [data-page='about'] .alt + .alt {
+    padding: 28px 0;
+    border-left: 0;
+  }
+  [data-page='about'] .alt + .alt {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+  [data-page='about'] .req .btn {
+    width: 100%;
+  }
+}
+
+/* Wider than the 1440 grid the portrait's own background would show a hard edge: feather its sides */
+@media (min-width: 1441px) {
+  [data-page='about'] .ab-person img {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+  }
+}
+
+/* Phones: keep the Venn labels inside the screen */
+@media (max-width: 720px) {
+  [data-page='about'] .venn {
+    width: min(100% - 48px, 320px);
+  }
+  [data-page='about'] .venn .sys {
+    padding: 6px 12px 6px 6px;
+    gap: 8px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+/* ============ Qualifications timeline (interactive rail; top-down list on phones) ============ */
+[data-page='about'] .qt-list {
+  display: none;
+}
+[data-page='about'] .qt-tabs {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 0 16px;
+}
+[data-page='about'] .qt-tabs::before,
+[data-page='about'] .qt-tabs::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  height: 2px;
+  border-radius: 2px;
+}
+[data-page='about'] .qt-tabs::before {
+  right: 0;
+  background: var(--g-100);
+}
+[data-page='about'] .qt-tabs::after {
+  width: var(--p);
+  background: var(--g-600);
+  transition: width 0.5s var(--ease);
+}
+[data-page='about'] .qt-node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0 0 8px;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+}
+[data-page='about'] .qt-node .qt-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 100px;
+  background: #fff;
+  border: 2px solid var(--g-300);
+  transition:
+    transform 0.3s var(--ease),
+    background-color 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+[data-page='about'] .qt-node.is-past .qt-dot {
+  border-color: var(--g-600);
+}
+[data-page='about'] .qt-node[aria-selected='true'] .qt-dot {
+  background: var(--g-600);
+  border-color: var(--g-600);
+  box-shadow: 0 0 0 6px rgba(22, 157, 105, 0.18);
+  transform: scale(1.15);
+}
+[data-page='about'] .qt-node .qt-year {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--ink-3);
+  transition: color 0.3s;
+}
+[data-page='about'] .qt-node.is-past .qt-year,
+[data-page='about'] .qt-node[aria-selected='true'] .qt-year {
+  color: var(--g-700);
+}
+[data-page='about'] .qt-node .qt-short {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--ink-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.3s;
+}
+[data-page='about'] .qt-node[aria-selected='true'] .qt-short,
+[data-page='about'] .qt-node:hover .qt-short {
+  color: var(--ink);
+}
+[data-page='about'] .qt-card {
+  position: relative;
+  margin-top: 32px;
+  padding: 32px 40px;
+  border-radius: var(--r-xl);
+  background: #fff;
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-md);
+}
+[data-page='about'] .qt-card-year {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--g-700);
+}
+[data-page='about'] .qt-card h3 {
+  margin-top: 8px;
+  max-width: 40ch;
+}
+[data-page='about'] .qt-card-by {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-2);
+}
+[data-page='about'] .qt-count {
+  position: absolute;
+  top: 32px;
+  right: 40px;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 1023px) {
+  [data-page='about'] .qt-tabs {
+    gap: 0 8px;
+  }
+  [data-page='about'] .qt-node .qt-short {
+    display: none;
+  }
+  [data-page='about'] .qt-node .qt-year {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+@media (max-width: 767px) {
+  [data-page='about'] .qt-rail {
+    display: none;
+  }
+  [data-page='about'] .qt-list {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  [data-page='about'] .qt-list li {
+    position: relative;
+    padding: 0 0 28px 32px;
+  }
+  [data-page='about'] .qt-list li:last-child {
+    padding-bottom: 0;
+  }
+  [data-page='about'] .qt-list li::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 18px;
+    bottom: -4px;
+    width: 2px;
+    border-radius: 2px;
+    background: var(--g-100);
+  }
+  [data-page='about'] .qt-list li:last-child::before {
+    display: none;
+  }
+  [data-page='about'] .qt-list .qt-dot {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 100px;
+    background: #fff;
+    border: 2px solid var(--g-600);
+  }
+  [data-page='about'] .qt-list li.is-current .qt-dot {
+    background: var(--g-600);
+    box-shadow: 0 0 0 6px rgba(22, 157, 105, 0.18);
+  }
+  [data-page='about'] .qt-list .qt-year {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    color: var(--g-700);
+  }
+  [data-page='about'] .qt-list h3 {
+    margin-top: 4px;
+  }
+  [data-page='about'] .qt-list .qt-card-by {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

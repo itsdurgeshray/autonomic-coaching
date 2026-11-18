@@ -1,0 +1,220 @@
+/* Tailwind without its global reset: the marketing pages keep the exact base styles of the original site.
+   App screens get an equivalent reset scoped to .app-root (see the bottom of this file). */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* Design system tokens (mirrors design-system.html). Every size and space is a multiple of 2px. */
+:root {
+  --g-950: #01130f;
+  --g-900: #022721;
+  --g-800: #06352c;
+  --g-700: #0e7a52;
+  --g-600: #169d69;
+  --g-300: #4fd1a0;
+  --g-200: #8fefca;
+  --g-100: #c6f5e2;
+  --g-50: #edfcf7;
+  --b-950: #020a1d;
+  --b-800: #1b294b;
+  --b-700: #163f9d;
+  --b-600: #1d55d6;
+  --b-500: #2c4278;
+  --b-300: #8098d1;
+  --b-150: #bfd2fe;
+  --b-100: #eaeff9;
+  --b-25: #eff4ff;
+  --n-0: #ffffff;
+  --n-25: #fafaf8;
+  --n-50: #f1f3f2;
+  --n-100: #e6e9e8;
+  --n-200: #d2d7d6;
+  --n-300: #b3b9bf;
+  --n-400: #7d8494;
+  --n-600: #4f596d;
+  --n-900: #020a1d;
+  --teal-600: #0e9aa7;
+  --teal-50: #e8f8f9;
+  --success: #0e7a52;
+  --success-bg: #edfcf7;
+  --info: #1d55d6;
+  --info-bg: #eff4ff;
+  --warning: #c2410c;
+  --warning-bg: #fff3ec;
+  --danger: #c42b2b;
+  --danger-bg: #fdf0f0;
+
+  --page: var(--n-25);
+  --card: var(--n-0);
+  --mist: #eff5f1;
+  --sand: #f1f3f2;
+  --ink: var(--n-900);
+  --ink-2: var(--n-600);
+  --ink-3: var(--n-400);
+  --line: rgba(2, 10, 29, 0.1);
+  --line-2: rgba(2, 10, 29, 0.06);
+  --line-strong: rgba(2, 10, 29, 0.18);
+  --focus: rgba(22, 157, 105, 0.4);
+
+  --cta: linear-gradient(180deg, rgba(143, 239, 202, 0.28) 0%, rgba(2, 39, 33, 0.28) 100%), #0e7a52;
+  --cta-border: #0a5c3e;
+  --forest: linear-gradient(180deg, #01130f 0%, #05302a 60%, #0b3d33 100%);
+
+  --shadow-sm: 0 2px 2px rgba(2, 10, 29, 0.04);
+  --shadow-md: 0 2px 4px rgba(2, 10, 29, 0.04), 0 24px 48px -32px rgba(2, 10, 29, 0.22);
+  --shadow-lg: 0 2px 4px rgba(2, 10, 29, 0.04), 0 40px 80px -40px rgba(2, 10, 29, 0.35);
+  --font: var(--font-aeonik), 'Helvetica Neue', Arial, sans-serif;
+  --ease: cubic-bezier(0.21, 0.47, 0.32, 0.98);
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  color-scheme: light;
+}
+
+@theme inline {
+  --font-sans: var(--font);
+  --color-page: var(--page);
+  --color-card: var(--card);
+  --color-mist: var(--mist);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-line-strong: var(--line-strong);
+  --color-focus: var(--focus);
+  --color-g-950: var(--g-950);
+  --color-g-900: var(--g-900);
+  --color-g-800: var(--g-800);
+  --color-g-700: var(--g-700);
+  --color-g-600: var(--g-600);
+  --color-g-300: var(--g-300);
+  --color-g-200: var(--g-200);
+  --color-g-100: var(--g-100);
+  --color-g-50: var(--g-50);
+  --color-b-700: var(--b-700);
+  --color-b-600: var(--b-600);
+  --color-b-300: var(--b-300);
+  --color-b-150: var(--b-150);
+  --color-b-25: var(--b-25);
+  --color-n-50: var(--n-50);
+  --color-n-100: var(--n-100);
+  --color-n-200: var(--n-200);
+  --color-n-300: var(--n-300);
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-info: var(--info);
+  --color-info-bg: var(--info-bg);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-danger: var(--danger);
+  --color-danger-bg: var(--danger-bg);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-card: 16px;
+  --radius-xl: 24px;
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --ease-brand: var(--ease);
+}
+
+@theme {
+  /* Type scale: H1 64/72, H2 48/56 (and their tablet and phone steps), body 16/24, 14/22, 12/20 */
+  --text-12: 12px;
+  --text-12--line-height: 20px;
+  --text-14: 14px;
+  --text-14--line-height: 22px;
+  --text-16: 16px;
+  --text-16--line-height: 24px;
+  --text-32: 32px;
+  --text-32--line-height: 40px;
+  --text-40: 40px;
+  --text-40--line-height: 48px;
+  --text-48: 48px;
+  --text-48--line-height: 56px;
+  --text-56: 56px;
+  --text-56--line-height: 64px;
+  --text-64: 64px;
+  --text-64--line-height: 72px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    background: var(--page);
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 24px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  /* Reset for the account, fit check and assessment screens only */
+  :where(.app-root) *,
+  :where(.app-root) ::before,
+  :where(.app-root) ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  :where(.app-root) :where(h1, h2, h3, h4, h5, h6) {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  :where(.app-root) :where(ol, ul, menu) {
+    list-style: none;
+  }
+  :where(.app-root) :where(img, svg, video, canvas) {
+    display: block;
+    vertical-align: middle;
+  }
+  :where(.app-root) :where(img, video) {
+    max-width: 100%;
+    height: auto;
+  }
+  :where(.app-root) :where(button, input, select, optgroup, textarea) {
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    background-color: transparent;
+    border-radius: 0;
+  }
+  :where(.app-root) :where(button, [role='button']) {
+    cursor: pointer;
+  }
+  :where(.app-root) :where(a) {
+    color: inherit;
+    text-decoration: inherit;
+  }
+  :where(.app-root) :where(kbd) {
+    font-family: inherit;
+  }
+  :where(.app-root) :where(input::placeholder, textarea::placeholder) {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}

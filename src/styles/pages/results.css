@@ -1,0 +1,236 @@
+/* Client Results page sections */
+/* ============ 1. Hero (split, fanned video cards) ============ */
+[data-page='results'] .t-hero .phero-in {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+[data-page='results'] .t-hero h1 {
+  max-width: 14ch;
+}
+[data-page='results'] .t-hero .sub {
+  max-width: 42ch;
+}
+[data-page='results'] .fan {
+  position: relative;
+  height: 520px;
+}
+[data-page='results'] .fan a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  height: 360px;
+  margin: -180px 0 0 -130px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--g-900);
+  transition: transform 0.5s var(--ease);
+}
+[data-page='results'] .fan a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+[data-page='results'] .fan a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(1, 19, 15, 0) 50%, rgba(1, 19, 15, 0.7));
+}
+[data-page='results'] .fan a span {
+  position: absolute;
+  z-index: 1;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  line-height: 24px;
+}
+[data-page='results'] .fan a span i {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: var(--g-900);
+}
+[data-page='results'] .fan a span svg {
+  width: 14px;
+  height: 14px;
+  margin-left: 2px;
+}
+[data-page='results'] .fan a:nth-child(1) {
+  transform: translateX(-62%) rotate(-8deg);
+}
+[data-page='results'] .fan a:nth-child(2) {
+  z-index: 2;
+  transform: translateY(-18px);
+}
+[data-page='results'] .fan a:nth-child(3) {
+  transform: translateX(62%) rotate(8deg);
+}
+[data-page='results'] .fan:hover a:nth-child(1) {
+  transform: translateX(-70%) rotate(-10deg);
+}
+[data-page='results'] .fan:hover a:nth-child(3) {
+  transform: translateX(70%) rotate(10deg);
+}
+
+/* ============ 2. Hear it from clients (dark band) ============ */
+[data-page='results'] .vband {
+  background:
+    radial-gradient(60% 80% at 50% 0%, rgba(22, 157, 105, 0.28), rgba(22, 157, 105, 0) 70%),
+    var(--g-950);
+  color: #fff;
+}
+[data-page='results'] .vband h2 {
+  color: #fff;
+}
+
+/* ============ 3. In their own words (colour bento) ============ */
+[data-page='results'] .bento {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+[data-page='results'] .bq {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  border-radius: 24px;
+}
+[data-page='results'] .bq .qm {
+  width: 26px;
+  height: 26px;
+}
+[data-page='results'] .bq blockquote {
+  margin: 22px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+[data-page='results'] .bq figcaption {
+  margin-top: auto;
+  padding-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+[data-page='results'] .bq.f {
+  grid-row: span 2;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(80% 70% at 100% 0%, rgba(22, 157, 105, 0.45), rgba(22, 157, 105, 0) 70%),
+    var(--g-900);
+  color: #fff;
+  min-height: 460px;
+}
+[data-page='results'] .bq.f .qm {
+  width: 56px;
+  height: 56px;
+  color: var(--g-300);
+}
+[data-page='results'] .bq.f blockquote {
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.03em;
+  max-width: 18ch;
+}
+[data-page='results'] .bq.f .mono {
+  background: rgba(143, 239, 202, 0.12);
+  border-color: rgba(143, 239, 202, 0.3);
+  color: var(--g-200);
+}
+[data-page='results'] .bq.m {
+  background: var(--mist);
+}
+[data-page='results'] .bq.m .qm {
+  color: var(--g-600);
+}
+[data-page='results'] .bq.s {
+  background: var(--b-25);
+}
+[data-page='results'] .bq.s .qm {
+  color: var(--b-600);
+}
+
+/* Phone and tablet steps of the type scale */
+@media (max-width: 1023px) {
+  [data-page='results'] .bq.f blockquote {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+/* Spacing steps on the 2px grid (tablet, phone) */
+@media (max-width: 1023px) {
+  [data-page='results'] .bq {
+    padding: 38px;
+  }
+}
+@media (max-width: 720px) {
+  [data-page='results'] .bq {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  [data-page='results'] .t-hero .phero-in {
+    grid-template-columns: 1fr;
+  }
+  [data-page='results'] .fan {
+    height: 440px;
+  }
+  [data-page='results'] .bento {
+    grid-template-columns: 1fr;
+  }
+  [data-page='results'] .bq.f {
+    grid-row: auto;
+    min-height: 0;
+  }
+}
+@media (max-width: 720px) {
+  [data-page='results'] .fan {
+    height: 300px;
+  }
+  [data-page='results'] .fan a {
+    width: 160px;
+    height: 226px;
+    margin: -114px 0 0 -80px;
+    border-radius: 16px;
+  }
+  [data-page='results'] .fan a span {
+    font-size: 16px;
+    left: 14px;
+    bottom: 14px;
+    line-height: 24px;
+  }
+  [data-page='results'] .fan a span i {
+    width: 34px;
+    height: 34px;
+  }
+  [data-page='results'] .fan a:nth-child(1) {
+    transform: translateX(-56%) rotate(-7deg);
+  }
+  [data-page='results'] .fan a:nth-child(3) {
+    transform: translateX(56%) rotate(7deg);
+  }
+  [data-page='results'] .fan a span {
+    font-size: 16px;
+    gap: 8px;
+    line-height: 24px;
+  }
+}
