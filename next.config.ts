@@ -1,7 +1,11 @@
+import path from 'node:path';
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   devIndicators: false,
+  /* Pin the project root: a package-lock.json higher up the disk otherwise widens the dev watcher, which rebuilds and reloads pages on unrelated file changes */
+  turbopack: { root: path.join(__dirname) },
+  outputFileTracingRoot: path.join(__dirname),
   /* The static design system reference keeps its old address */
   async rewrites() {
     return [
