@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { AssessmentDrawer, type DrawerKind } from '@/components/assessment/AssessmentDrawer';
 import { AssessmentHeader } from '@/components/assessment/AssessmentHeader';
+import { QuestionnaireTour } from '@/components/assessment/QuestionnaireTour';
 import { BottomBar } from '@/components/assessment/BottomBar';
 import { CompletePanel, IntroPanel, SavedPanel } from '@/components/assessment/InfoPanels';
 import { JumpPanel } from '@/components/assessment/JumpPanel';
@@ -10,6 +11,7 @@ import { QuestionScreen } from '@/components/assessment/QuestionScreen';
 import { RewardOverlay } from '@/components/assessment/RewardOverlay';
 import { Worlds } from '@/components/assessment/Worlds';
 import { FINAL_THEME, STAGES, THEMES } from '@/content/assessment';
+import { assessmentTour } from '@/content/assessmentTour';
 import { LEAF_SVG, flyFrom, retrigger } from '@/lib/assessment/fx';
 import {
   LEAF_PER_ANSWER,
@@ -70,6 +72,21 @@ export function AssessmentApp() {
   );
   const [toast, setToast] = useState<{ text: string; bonus?: string; key: number } | null>(null);
   const [announce, setAnnounce] = useState('');
+  const [isTourOpen, setIsTourOpen] = useState(false);
+
+  /* First time on a question screen, the tour runs once by itself */
+  useEffect(() => {
+    if (s.screen !== 'q') return;
+    let seen = false;
+    try {
+      seen = window.localStorage.getItem(assessmentTour.storageKey) === '1';
+    } catch {
+      seen = false;
+    }
+    if (seen) return;
+    const t = window.setTimeout(() => setIsTourOpen(true), 700);
+    return () => window.clearTimeout(t);
+  }, [s.screen]);
   const isBusy = useRef(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -424,7 +441,12 @@ export function AssessmentApp() {
       style={{ '--acc': th.accent, '--acc-l': th.light, '--acc-d': th.deep } as React.CSSProperties}
     >
       <Worlds worldId={th.id} seed={s.screen === 'complete' ? 10 : si + 1} />
-      <AssessmentHeader s={s} shownLeaves={shownLeaves} onMenu={() => openDrawer('menu')} />
+      <AssessmentHeader
+        s={s}
+        shownLeaves={shownLeaves}
+        onMenu={() => openDrawer('menu')}
+        onTour={s.screen === 'q' ? () => setIsTourOpen(true) : undefined}
+      />
       {s.screen === 'intro' && (
         <IntroPanel
           s={s}
@@ -500,6 +522,18 @@ export function AssessmentApp() {
           />
         </>
       )}
+      <QuestionnaireTour
+        isOpen={isTourOpen && s.screen === 'q'}
+        onClose={() => {
+          setIsTourOpen(false);
+          try {
+            window.localStorage.setItem(assessmentTour.storageKey, '1');
+          } catch {
+            /* storage can be unavailable; the tour simply shows again next time */
+          }
+          document.getElementById('tourBtn')?.focus({ preventScroll: true });
+        }}
+      />
       <JumpPanel
         s={s}
         isOpen={jump.isOpen && s.screen === 'q'}
