@@ -5,7 +5,7 @@ import { SiteButton } from '@/components/ui/SiteButton';
 export function JustinMaguireSection() {
   return (
     <section className="ab-hero" aria-labelledby="about-justinmaguire-title">
-      {' '}
+      <div className="hero-dots" aria-hidden="true"></div>{' '}
       <div className="ab-stage">
         {' '}
         <div className="ab-copy">

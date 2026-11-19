@@ -20,10 +20,6 @@ export const authCopy = {
   consentJoin: 'and',
   terms: { label: 'Terms and Conditions', href: '/terms' },
   consentError: 'Please agree to the Privacy Policy and Terms and Conditions to continue.',
-  reassurance: [
-    'Coaching is private and by application.',
-    'Every request is treated with discretion.',
-  ],
   signedInAs: 'You’re signed in as',
   continue: 'Continue',
   signOut: 'Sign out',
@@ -35,16 +31,14 @@ export const journeySteps = [
   { id: 'assessment', label: 'Health assessment' },
 ] as const;
 
-export const onboardingCopy = {
-  exit: { label: 'Save and exit', href: '/account' },
-};
-
 export const profileCopy = {
   media: lakeImage,
   caption: 'You don’t need all the answers to begin.',
   title: 'Set up your profile',
+  step: 'Step 1 of 3',
   signedInAs: 'You’re signed in as',
-  changeAccount: 'Use a different account',
+  enterDetails: 'Enter a few details for this account or',
+  changeAccount: 'use a different account',
   fields: {
     fullName: {
       label: 'Full name',
@@ -65,8 +59,21 @@ export const profileCopy = {
     },
     phone: {
       label: 'Phone number',
-      hint: 'Include the country code, for example +27.',
-      placeholder: '+27 82 000 0000',
+      placeholder: '82 000 0000',
+      codeLabel: 'Country code',
+      defaultCode: '+27',
+      codes: [
+        { code: '+27', label: 'ZA +27' },
+        { code: '+44', label: 'UK +44' },
+        { code: '+1', label: 'US +1' },
+        { code: '+353', label: 'IE +353' },
+        { code: '+61', label: 'AU +61' },
+        { code: '+64', label: 'NZ +64' },
+        { code: '+971', label: 'AE +971' },
+        { code: '+91', label: 'IN +91' },
+        { code: '+49', label: 'DE +49' },
+        { code: '+31', label: 'NL +31' },
+      ],
     },
     heightCm: { label: 'Height', unit: 'cm', placeholder: '170' },
     weightKg: { label: 'Weight', unit: 'kg', placeholder: '70' },
@@ -88,30 +95,15 @@ export const accountCopy = {
   greeting: 'Welcome back',
   help: { label: 'Help', href: '/faq' },
   menu: { profile: 'Your profile', signOut: 'Sign out', openLabel: 'Open account menu' },
+  loading: 'Loading your account',
   tiles: [
-    {
-      id: 'assessments',
-      icon: 'i-list-checks',
-      title: 'Assessments',
-      link: 'View all',
-      href: '/assessment',
-    },
-    {
-      id: 'consultations',
-      icon: 'i-calendar-check',
-      title: 'Consultations',
-      link: 'View all',
-      href: '/account#consultations',
-    },
-    {
-      id: 'prescription',
-      icon: 'i-clipboard-text',
-      title: 'Prescription',
-      link: 'View all',
-      href: '/account#prescription',
-    },
-    { id: 'orders', icon: 'i-pill', title: 'Orders', link: 'View all', href: '/account#orders' },
-  ],
+    { id: 'assessments', icon: 'acc-assessments', title: 'Assessments', href: '/assessment' },
+    { id: 'consultations', icon: 'acc-consultations', title: 'Consultations' },
+    { id: 'prescription', icon: 'acc-prescription', title: 'Prescriptions' },
+    { id: 'orders', icon: 'acc-orders', title: 'Orders' },
+  ] as { id: string; icon: string; title: string; href?: string }[],
+  /** Areas that open once coaching starts */
+  later: 'After your first call',
   upcoming: (n: number) => `(${n} upcoming)`,
   assessmentStatus: {
     notStarted: 'Not started',
@@ -121,10 +113,11 @@ export const accountCopy = {
   editTitle: 'Edit profile',
   editIntro: 'Update your personal and health details',
   edit: 'Edit profile',
-  save: 'Save changes',
+  save: 'Save profile',
   cancel: 'Cancel',
   saved: 'Your profile has been saved.',
   signOut: 'Sign out',
   email: 'Email',
   none: 'None added',
+  notAdded: 'Not added',
 };

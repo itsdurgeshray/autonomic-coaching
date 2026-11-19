@@ -41,26 +41,31 @@ export function LoginPanel({ copy }: LoginPanelProps) {
   return (
     <div className="flex flex-1 flex-col items-center text-center">
       <div className="my-auto flex w-full flex-col items-center py-10 lg:py-12">
-        <Heading as="h1" look="h2">
+        <Heading as="h1" look="page">
           {copy.title}
         </Heading>
-        <p className="ds-t-16 ds-c-2 mt-4 max-w-[42ch]">{copy.intro}</p>
+        <p className="ds-t-14 ds-c-2 mt-2 max-w-[44ch]">{copy.intro}</p>
 
         {signedIn ? (
-          <div className="ds-card ds-card-pad mt-8 w-full">
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <Button
+              size="xl"
+              onClick={() => router.push(nextRoute(account))}
+              className="min-w-[240px]"
+            >
+              {copy.continue} <Icon name="arrow" className="ds-ico" />
+            </Button>
             <p className="ds-t-14 ds-c-2">
               {copy.signedInAs}{' '}
-              <strong className="ds-w-500 text-ink">{account.session?.email}</strong>.
-            </p>
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-              <Button size="lg" onClick={() => router.push(nextRoute(account))}>
-                {copy.continue} <Icon name="arrow" className="ds-ico" />
-              </Button>
-              <Button variant="dangerSoft" size="lg" onClick={() => accountActions.signOut()}>
-                <Icon name="i-sign-out" className="ds-ico" />
+              <strong className="ds-w-500 text-ink">{account.session?.email}</strong>.{' '}
+              <button
+                type="button"
+                className="ds-link text-danger"
+                onClick={() => accountActions.signOut()}
+              >
                 {copy.signOut}
-              </Button>
-            </div>
+              </button>
+            </p>
           </div>
         ) : (
           <>
@@ -70,7 +75,7 @@ export function LoginPanel({ copy }: LoginPanelProps) {
               onClick={onContinue}
               isLoading={isBusy}
               aria-describedby={showError ? errorId : undefined}
-              className="mt-8 sm:w-auto sm:min-w-[300px]"
+              className="mt-8 sm:w-auto sm:min-w-[240px]"
             >
               {!isBusy && (
                 <span className="grid size-7 place-items-center rounded-[8px] bg-white">
@@ -84,20 +89,6 @@ export function LoginPanel({ copy }: LoginPanelProps) {
             </p>
           </>
         )}
-
-        {/* One line from 640px; on phones each sentence takes its own centred line */}
-        <p className="ds-t-12 ds-c-3 mt-6 sm:whitespace-nowrap">
-          <Icon
-            name="i-lock-simple"
-            className="ds-ico text-g-700 mr-1.5 inline-block align-[-2px] text-[14px]"
-          />
-          {copy.reassurance.map((line, i) => (
-            <span key={line} className={i > 0 ? 'block sm:inline' : undefined}>
-              {i > 0 && <span className="hidden sm:inline"> </span>}
-              {line}
-            </span>
-          ))}
-        </p>
       </div>
 
       {!signedIn && (

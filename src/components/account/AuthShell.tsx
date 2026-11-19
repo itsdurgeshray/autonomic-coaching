@@ -6,12 +6,8 @@ export type AuthShellProps = {
   media: ImageAsset;
   caption: string;
   header: React.ReactNode;
-  /** Replaces the caption on the photo from 1024px, for example the fit check journey */
-  panel?: React.ReactNode;
   /** Drops the photo band on phones and tablets so a question flow starts at the top */
   isBandHidden?: boolean;
-  /** Width of the form column's content */
-  width?: 'narrow' | 'wide';
   children: React.ReactNode;
 };
 
@@ -19,15 +15,7 @@ export type AuthShellProps = {
  * Split layout shared by sign-in, profile set-up and the fit check: a photo panel and a centred column.
  * Phones and tablets get a short photo band on top; from 1024px the photo stays in view beside the column.
  */
-export function AuthShell({
-  media,
-  caption,
-  header,
-  panel,
-  isBandHidden,
-  width = 'narrow',
-  children,
-}: AuthShellProps) {
+export function AuthShell({ media, caption, header, isBandHidden, children }: AuthShellProps) {
   return (
     <div className="mx-auto grid min-h-svh max-w-[1920px] grid-cols-1 grid-rows-[auto_1fr] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:grid-rows-1 lg:gap-6 lg:p-6">
       <aside
@@ -41,39 +29,20 @@ export function AuthShell({
           alt={media.alt}
           fill
           priority
-          sizes="(min-width: 1024px) 45vw, 100vw"
+          sizes="(min-width: 1024px) 50vw, 100vw"
           className="object-cover"
         />
         <div
           aria-hidden="true"
-          className={cn(
-            'absolute inset-0',
-            panel
-              ? 'bg-[linear-gradient(180deg,rgba(1,19,15,.55)_0%,rgba(1,19,15,.62)_50%,rgba(1,19,15,.86)_100%)]'
-              : 'bg-[linear-gradient(180deg,rgba(1,19,15,.08)_0%,rgba(1,19,15,0)_36%,rgba(1,19,15,.8)_100%)]',
-          )}
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(1,19,15,.08)_0%,rgba(1,19,15,0)_36%,rgba(1,19,15,.8)_100%)]"
         />
-        {panel ? (
-          <div className="absolute inset-0 hidden p-10 text-white lg:block xl:p-12">{panel}</div>
-        ) : null}
-        <p
-          className={cn(
-            'ds-t-16 absolute right-4 bottom-4 left-4 max-w-[34ch] text-white sm:right-8 sm:bottom-6 sm:left-8 sm:text-[20px] sm:leading-[28px] lg:right-12 lg:bottom-12 lg:left-12 lg:max-w-[18ch] lg:text-[40px] lg:leading-[48px] lg:tracking-[-0.02em]',
-            panel && 'lg:hidden',
-          )}
-        >
+        <p className="ds-t-16 absolute right-4 bottom-4 left-4 max-w-[34ch] text-white sm:right-8 sm:bottom-6 sm:left-8 sm:text-[20px] sm:leading-[28px] lg:right-12 lg:bottom-12 lg:left-12 lg:max-w-[20ch] lg:text-[32px] lg:leading-[40px] lg:tracking-[-0.02em]">
           {caption}
         </p>
       </aside>
       <div className="flex min-w-0 flex-col items-center px-4 sm:px-8">
-        <header className="flex w-full justify-center pt-6 lg:pt-4">{header}</header>
-        <main
-          id="main"
-          className={cn(
-            'flex w-full flex-1 flex-col',
-            width === 'narrow' ? 'max-w-[600px]' : 'max-w-[640px]',
-          )}
-        >
+        <header className="flex w-full max-w-[560px] justify-center pt-6 lg:pt-4">{header}</header>
+        <main id="main" className="flex w-full max-w-[560px] flex-1 flex-col">
           {children}
         </main>
       </div>

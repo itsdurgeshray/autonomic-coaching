@@ -17,100 +17,103 @@ export type ProfileCardProps = {
   onSignOut: () => void;
 };
 
-/** Design system card with the profile fields, read-only until Edit profile is pressed */
+const same = (a: Profile, b: Profile) => JSON.stringify(a) === JSON.stringify(b);
+
+/**
+ * Profile as in the account design: a tinted card head with Edit profile and Sign out,
+ * read-only fields until Edit is pressed, and Save profile below the card once something changes.
+ */
 export function ProfileCard({ profile, email, copy, profileText, onSignOut }: ProfileCardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [form, setForm] = useState(profile);
   const [errors, setErrors] = useState<ProfileErrors>({});
   const [status, setStatus] = useState('');
   const uid = useId();
+  const isDirty = isEditing && !same(form, profile);
 
   function save(e: React.FormEvent) {
     e.preventDefault();
+    if (!isDirty) return;
     const next = validateProfile(form, profileText.fields);
     setErrors(next);
     const first = Object.keys(next)[0];
     if (first) return document.getElementById(`${uid}-${first}`)?.focus();
-    accountActions.saveProfile(form);
+    accountActions.saveProfile({ ...form, fullName: form.fullName.trim() });
     setIsEditing(false);
     setStatus(copy.saved);
   }
 
+  function toggleEdit() {
+    setForm(profile);
+    setErrors({});
+    setStatus('');
+    setIsEditing((v) => !v);
+  }
+
   return (
-    <section id="profile" aria-labelledby="profile-title" className="ds-card scroll-mt-6">
-      <form noValidate onSubmit={save}>
-        <div className="ds-card-head flex-col !items-start !py-5 sm:flex-row sm:!items-center md:!px-6">
+    <form
+      id="profile"
+      noValidate
+      onSubmit={save}
+      className="scroll-mt-24"
+      aria-labelledby="profile-title"
+    >
+      <section className="ds-card overflow-hidden">
+        <div className="bg-page border-line-2 flex flex-col gap-4 border-b px-4 py-5 sm:flex-row sm:items-center sm:justify-between md:px-6">
           <div>
             <h2 id="profile-title" className="ds-t-title">
               {copy.editTitle}
             </h2>
             <p className="ds-t-14 ds-c-2 mt-1">{copy.editIntro}</p>
           </div>
-          <div className="flex w-full gap-2 sm:w-auto">
-            {isEditing ? (
-              <>
-                <Button
-                  variant="ghost"
-                  size="md"
-                  className="flex-1 sm:flex-none"
-                  onClick={() => {
-                    setForm(profile);
-                    setErrors({});
-                    setIsEditing(false);
-                  }}
-                >
-                  {copy.cancel}
-                </Button>
-                <Button type="submit" size="md" className="flex-1 sm:flex-none">
-                  {copy.save}
-                </Button>
-              </>
-            ) : (
-              <>
-                <Button
-                  variant="secondary"
-                  size="md"
-                  className="flex-1 sm:flex-none"
-                  onClick={() => {
-                    setForm(profile);
-                    setStatus('');
-                    setIsEditing(true);
-                  }}
-                >
-                  <Icon name="i-pencil-simple" className="ds-ico" />
-                  {copy.edit}
-                </Button>
-                <Button
-                  variant="dangerSoft"
-                  size="md"
-                  className="flex-1 sm:flex-none"
-                  onClick={onSignOut}
-                >
-                  <Icon name="i-sign-out" className="ds-ico" />
-                  {copy.signOut}
-                </Button>
-              </>
-            )}
+          <div className="flex gap-2">
+            <Button
+              variant="secondary"
+              size="md"
+              className="flex-1 sm:flex-none"
+              onClick={toggleEdit}
+            >
+              <Icon name={isEditing ? 'i-x' : 'i-pencil-simple'} className="ds-ico" />
+              {isEditing ? copy.cancel : copy.edit}
+            </Button>
+            <Button
+              variant="dangerSoft"
+              size="md"
+              className="flex-1 sm:flex-none"
+              onClick={onSignOut}
+            >
+              <Icon name="i-sign-out" className="ds-ico" />
+              {copy.signOut}
+            </Button>
           </div>
         </div>
-        <div className="ds-card-pad">
+        <div className="px-4 py-6 md:px-6">
           <ProfileFields
             uid={uid}
             form={form}
             errors={errors}
             fields={profileText.fields}
             optionalLabel={profileText.optional}
-            onChange={(k, v) => setForm((p) => ({ ...p, [k]: v }))}
+            onChange={(k, v) => {
+              setForm((p) => ({ ...p, [k]: v }));
+              if (errors[k]) setErrors((x) => ({ ...x, [k]: undefined }));
+            }}
             isReadOnly={!isEditing}
             email={{ label: copy.email, value: email }}
             emptyLabel={copy.none}
+            notAddedLabel={copy.notAdded}
             layout="account"
           />
-          <p role="status" aria-live="polite" className="ds-t-14 text-g-700 mt-4 empty:hidden">
-            {status}
-          </p>
         </div>
-      </form>
-    </section>
+      </section>
+      <div className="mt-4 flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end">
+        <p role="status" aria-live="polite" className="ds-t-14 text-g-700 empty:hidden sm:mr-auto">
+          {status}
+        </p>
+        <Button type="submit" size="lg" disabled={!isDirty} className="sm:min-w-[160px]">
+          {copy.save}
+        </Button>
+      </div>
+    </form>
   );
 }

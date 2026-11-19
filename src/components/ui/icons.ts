@@ -649,6 +649,22 @@ export const ICONS = {
     '0 0 256 256',
     '<path d="M164.24,100.24,136.48,128l27.76,27.76a6,6,0,1,1-8.48,8.48L128,136.48l-27.76,27.76a6,6,0,0,1-8.48-8.48L119.52,128,91.76,100.24a6,6,0,0,1,8.48-8.48L128,119.52l27.76-27.76a6,6,0,0,1,8.48,8.48ZM230,128A102,102,0,1,1,128,26,102.12,102.12,0,0,1,230,128Zm-12,0a90,90,0,1,0-90,90A90.1,90.1,0,0,0,218,128Z"/>',
   ],
+  'acc-assessments': [
+    '0 0 40 40',
+    '<g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 36.67h10c8.33 0 11.67-3.34 11.67-11.67V15c0-8.33-3.34-11.67-11.67-11.67H15C6.67 3.33 3.33 6.67 3.33 15v10c0 8.33 3.34 11.67 11.67 11.67Z"/><path d="M26.25 15h-12.5M26.25 25h-12.5"/></g>',
+  ],
+  'acc-consultations': [
+    '0 0 40 40',
+    '<g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.33 20c0-6.29 0-9.43 1.95-11.38 1.96-1.95 5.1-1.95 11.39-1.95h6.66c6.29 0 9.43 0 11.38 1.95 1.96 1.95 1.96 5.09 1.96 11.38v3.33c0 6.29 0 9.43-1.96 11.38-1.95 1.96-5.09 1.96-11.38 1.96h-6.66c-6.29 0-9.43 0-11.39-1.96C3.33 32.76 3.33 29.62 3.33 23.33V20Z"/><path d="M11.67 6.67v-2.5M28.33 6.67v-2.5M3.33 15h33.34"/><circle cx="27.5" cy="27.5" r="2.5"/></g>',
+  ],
+  'acc-prescription': [
+    '0 0 40 40',
+    '<g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23.75 3.75H12.5a3.75 3.75 0 0 0-3.75 3.75v25a3.75 3.75 0 0 0 3.75 3.75h15a3.75 3.75 0 0 0 3.75-3.75V11.25l-7.5-7.5Z"/><path d="M23.75 3.75v5a2.5 2.5 0 0 0 2.5 2.5h5M15 20h10M15 26.25h10M15 13.75h3.75"/></g>',
+  ],
+  'acc-orders': [
+    '0 0 40 40',
+    '<g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="11.25" y="3.75" width="17.5" height="8.75" rx="2.5"/><path d="M13.75 12.5v1.25a2.5 2.5 0 0 1-2.5 2.5 3.75 3.75 0 0 0-3.75 3.75v13.75a3.75 3.75 0 0 0 3.75 3.75h17.5a3.75 3.75 0 0 0 3.75-3.75V20a3.75 3.75 0 0 0-3.75-3.75 2.5 2.5 0 0 1-2.5-2.5V12.5"/><path d="M20 22.5v7.5M16.25 26.25h7.5"/></g>',
+  ],
 } as const satisfies Record<string, readonly [string, string]>;
 
 export type IconName = keyof typeof ICONS;

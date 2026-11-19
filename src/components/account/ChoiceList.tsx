@@ -34,7 +34,7 @@ export function ChoiceList({ question, selected, onChoose, labelledBy }: ChoiceL
             />
           </span>
           <span className="flex min-w-0 flex-col">
-            <span className={cn('ds-t-16 text-ink', o.hint && 'ds-w-500')}>{o.label}</span>
+            <span className="ds-t-16 text-ink">{o.label}</span>
             {o.hint && <span className="ds-t-14 ds-c-3">{o.hint}</span>}
           </span>
         </label>

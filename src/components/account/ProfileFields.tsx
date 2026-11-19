@@ -3,6 +3,7 @@
 import { Fragment } from 'react';
 import { cn } from '@/lib/cn';
 import { Field, describedBy } from '@/components/ui/Field';
+import { PhoneInput } from '@/components/ui/PhoneInput';
 import { SelectInput } from '@/components/ui/SelectInput';
 import { TagInput } from '@/components/ui/TagInput';
 import { TextInput } from '@/components/ui/TextInput';
@@ -22,6 +23,8 @@ export type ProfileFieldsProps = {
   /** Extra read-only email row on the account page */
   email?: { label: string; value: string };
   emptyLabel?: string;
+  /** Shown in empty read-only fields instead of the example placeholder */
+  notAddedLabel?: string;
   /** account: the wider grid from the account design (name and sex, email and phone, then weight, height and date of birth) */
   layout?: 'form' | 'account';
   className?: string;
@@ -29,7 +32,7 @@ export type ProfileFieldsProps = {
 
 const digits = (v: string) => v.replace(/[^\d.]/g, '');
 
-/** The profile fields, shared by sign-up and the account page */
+/** The profile fields, shared by sign-up and the account page: compact design system fields */
 export function ProfileFields({
   uid,
   form,
@@ -40,17 +43,20 @@ export function ProfileFields({
   isReadOnly,
   email,
   emptyLabel,
+  notAddedLabel,
   layout = 'form',
   className,
 }: ProfileFieldsProps) {
   const wide = layout === 'account';
-  const span = (form: string, account: string) => (wide ? account : form);
+  const span = (formCls: string, accountCls: string) => (wide ? accountCls : formCls);
   const id = (k: string) => `${uid}-${k}`;
   const opt = isReadOnly ? undefined : optionalLabel;
+  const ph = (example?: string) => (isReadOnly ? notAddedLabel : example);
   const err = (k: keyof Profile) => ({
     'aria-invalid': errors[k] ? true : undefined,
     'aria-describedby': describedBy(id(k), undefined, errors[k]),
   });
+
   const nodes: Record<string, React.ReactNode> = {
     fullName: (
       <Field
@@ -58,12 +64,14 @@ export function ProfileFields({
         label={f.fullName.label}
         error={errors.fullName}
         isRequired
+        isCompact
         className={span('sm:col-span-2', 'lg:col-span-3')}
       >
         <TextInput
           id={id('fullName')}
+          scale="md"
           autoComplete="name"
-          placeholder={f.fullName.placeholder}
+          placeholder={ph(f.fullName.placeholder)}
           readOnly={isReadOnly}
           value={form.fullName}
           onChange={(e) => onChange('fullName', e.target.value)}
@@ -76,9 +84,10 @@ export function ProfileFields({
       <Field
         id={id('email')}
         label={email.label}
+        isCompact
         className={span('sm:col-span-2', 'lg:col-span-3')}
       >
-        <TextInput id={id('email')} type="email" readOnly value={email.value} />
+        <TextInput id={id('email')} scale="md" type="email" readOnly value={email.value} />
       </Field>
     ) : null,
     dateOfBirth: (
@@ -87,10 +96,12 @@ export function ProfileFields({
         label={f.dateOfBirth.label}
         error={errors.dateOfBirth}
         isRequired
+        isCompact
         className={span('', 'lg:col-span-2')}
       >
         <TextInput
           id={id('dateOfBirth')}
+          scale="md"
           type="date"
           autoComplete="bday"
           readOnly={isReadOnly}
@@ -107,10 +118,12 @@ export function ProfileFields({
         label={f.sex.label}
         error={errors.sex}
         isRequired
+        isCompact
         className={span('', 'lg:col-span-3')}
       >
         <SelectInput
           id={id('sex')}
+          scale="md"
           options={f.sex.options}
           placeholder={f.sex.placeholder}
           isReadOnly={isReadOnly}
@@ -126,13 +139,15 @@ export function ProfileFields({
         id={id('heightCm')}
         label={f.heightCm.label}
         optionalLabel={opt}
+        isCompact
         className={span('', 'lg:col-span-2')}
       >
         <TextInput
           id={id('heightCm')}
+          scale="md"
           inputMode="decimal"
           unit={f.heightCm.unit}
-          placeholder={f.heightCm.placeholder}
+          placeholder={ph(f.heightCm.placeholder)}
           readOnly={isReadOnly}
           value={form.heightCm}
           onChange={(e) => onChange('heightCm', digits(e.target.value))}
@@ -144,13 +159,15 @@ export function ProfileFields({
         id={id('weightKg')}
         label={f.weightKg.label}
         optionalLabel={opt}
+        isCompact
         className={span('', 'lg:col-span-2')}
       >
         <TextInput
           id={id('weightKg')}
+          scale="md"
           inputMode="decimal"
           unit={f.weightKg.unit}
-          placeholder={f.weightKg.placeholder}
+          placeholder={ph(f.weightKg.placeholder)}
           readOnly={isReadOnly}
           value={form.weightKg}
           onChange={(e) => onChange('weightKg', digits(e.target.value))}
@@ -161,20 +178,19 @@ export function ProfileFields({
       <Field
         id={id('phone')}
         label={f.phone.label}
-        hint={isReadOnly ? undefined : f.phone.hint}
         optionalLabel={opt}
+        isCompact
         className={span('sm:col-span-2', 'lg:col-span-3')}
       >
-        <TextInput
+        <PhoneInput
           id={id('phone')}
-          type="tel"
-          autoComplete="tel"
-          inputMode="tel"
-          placeholder={f.phone.placeholder}
-          readOnly={isReadOnly}
           value={form.phone}
-          onChange={(e) => onChange('phone', e.target.value)}
-          aria-describedby={describedBy(id('phone'), isReadOnly ? undefined : f.phone.hint)}
+          onChange={(v) => onChange('phone', v)}
+          codes={f.phone.codes}
+          codeLabel={f.phone.codeLabel}
+          defaultCode={f.phone.defaultCode}
+          placeholder={ph(f.phone.placeholder)}
+          isReadOnly={isReadOnly}
         />
       </Field>
     ),
@@ -183,10 +199,12 @@ export function ProfileFields({
         id={id('conditions')}
         label={f.conditions.label}
         hint={isReadOnly ? undefined : f.conditions.hint}
+        isCompact
         className={span('sm:col-span-2', 'sm:col-span-2 lg:col-span-6')}
       >
         <TagInput
           id={id('conditions')}
+          scale="md"
           value={form.conditions}
           onChange={(v) => onChange('conditions', v)}
           placeholder={f.conditions.placeholder}
@@ -204,7 +222,11 @@ export function ProfileFields({
     : ['fullName', 'email', 'dateOfBirth', 'sex', 'heightCm', 'weightKg', 'phone', 'conditions'];
   return (
     <div
-      className={cn('grid grid-cols-1 gap-4 sm:grid-cols-2', wide && 'lg:grid-cols-6', className)}
+      className={cn(
+        'grid grid-cols-1 gap-x-4 gap-y-5 sm:grid-cols-2',
+        wide && 'lg:grid-cols-6',
+        className,
+      )}
     >
       {order.map((k) => nodes[k] && <Fragment key={k}>{nodes[k]}</Fragment>)}
     </div>

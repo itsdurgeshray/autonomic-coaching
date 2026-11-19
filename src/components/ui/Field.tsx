@@ -9,6 +9,8 @@ export type FieldProps = {
   error?: string;
   optionalLabel?: string;
   isRequired?: boolean;
+  /** 12px label above a 40px control, for app forms */
+  isCompact?: boolean;
   className?: string;
   children: React.ReactNode;
 };
@@ -25,11 +27,12 @@ export function Field({
   error,
   optionalLabel,
   isRequired,
+  isCompact,
   className,
   children,
 }: FieldProps) {
   return (
-    <div className={cn('ds-field', className)}>
+    <div className={cn('ds-field', isCompact && 'ds-compact', className)}>
       <label htmlFor={id}>
         {label}
         {optionalLabel && <span className="ds-opt"> {optionalLabel}</span>}
