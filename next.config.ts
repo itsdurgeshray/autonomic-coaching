@@ -14,8 +14,8 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
-    /* Serve images exactly as the static site did (Unsplash already sizes them by URL) */
-    unoptimized: true,
+    /* Resized AVIF or WebP per screen; the hero portrait alone is a 1.5MB PNG at full size */
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [{ protocol: 'https', hostname: 'images.unsplash.com' }],
   },
 };

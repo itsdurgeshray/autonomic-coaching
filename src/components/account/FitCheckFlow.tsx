@@ -116,97 +116,86 @@ export function FitCheckFlow() {
         aria-labelledby="fit-intro-title"
         className="my-auto flex w-full animate-[rise_.5s_var(--ease)_both] flex-col items-center py-10 text-center lg:py-12"
       >
-        <Eyebrow>{fitCheck.eyebrow}</Eyebrow>
-        <Heading as="h1" look="h2" id="fit-intro-title" className="mt-3">
+        <p className="ds-t-12 ds-c-3 ds-num">{fitCheck.step}</p>
+        <Heading as="h1" look="page" id="fit-intro-title" className="mt-1">
           {fitCheck.intro.title}
         </Heading>
-        <p className="ds-t-lead ds-c-2 mt-4 max-w-[46ch]">{fitCheck.intro.body}</p>
-        <ul role="list" className="mt-8 grid w-full grid-cols-3 gap-2 sm:gap-3">
+        <p className="ds-t-14 ds-c-2 mt-2 max-w-[46ch]">{fitCheck.intro.body}</p>
+        <ul
+          role="list"
+          className="ds-t-12 ds-c-2 mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2"
+        >
           {fitCheck.intro.points.map((p) => (
-            <li
-              key={p.label}
-              className="ds-card flex flex-col items-center gap-3 px-2 py-4 sm:px-4 sm:py-5"
-            >
-              <span className="ds-ico-tile">
-                <Icon name={p.icon as IconProps['name']} className="ds-ico" />
-              </span>
-              <span className="ds-t-14 ds-w-500 text-ink">{p.label}</span>
+            <li key={p.label} className="flex items-center gap-1.5">
+              <Icon name={p.icon as IconProps['name']} className="ds-ico text-g-700 text-[16px]" />
+              {p.label}
             </li>
           ))}
         </ul>
-        <div className="mt-10 flex w-full flex-col items-center gap-2 sm:w-auto">
-          <Button size="xl" isBlock onClick={start} className="sm:min-w-[300px]">
-            {fitCheck.intro.start} <Icon name="arrow" className="ds-ico" />
+        <div className="mt-8 flex w-full flex-col items-center gap-3 sm:w-auto">
+          <Button size="xl" isBlock onClick={start} className="sm:min-w-[240px]">
+            {fitCheck.intro.start}
           </Button>
-          <Button variant="ghost" size="lg" onClick={skip}>
+          <button type="button" className="ds-link ds-ink ds-t-14" onClick={skip}>
             {fitCheck.intro.skip}
-          </Button>
+          </button>
         </div>
       </section>
     );
   }
 
   return (
-    <section aria-labelledby="fit-q-title" className="flex w-full flex-1 flex-col pt-6 lg:pt-10">
+    <section aria-labelledby="fit-q-title" className="flex w-full flex-1 flex-col pt-8 lg:pt-10">
       <div className="flex items-center justify-between gap-4">
-        <p className="ds-t-14 ds-c-2 ds-num">
-          <span className="ds-w-500 text-ink">{fitCheck.nav.question(step + 1, Q.length)}</span>
-          <span aria-hidden="true"> · </span>
-          {q.kicker}
-        </p>
-        <Button variant="ghost" size="sm" onClick={skip}>
+        <p className="ds-t-12 ds-c-3 ds-num">{fitCheck.nav.question(step + 1, Q.length)}</p>
+        <button type="button" className="ds-link ds-ink ds-t-12" onClick={skip}>
           {fitCheck.nav.skip}
-        </Button>
+        </button>
       </div>
-      <ol
-        aria-hidden="true"
-        className="mt-3 grid gap-1.5"
-        style={{ gridTemplateColumns: `repeat(${Q.length}, minmax(0, 1fr))` }}
+      <span
+        className="ds-bar ds-sm mt-2"
+        role="progressbar"
+        aria-label={fitCheck.nav.progress}
+        aria-valuemin={0}
+        aria-valuemax={Q.length}
+        aria-valuenow={step + (canContinue ? 1 : 0)}
       >
-        {Q.map((x, i) => (
-          <li key={x.id} className="ds-bar ds-sm">
-            <i
-              style={{
-                width: i < step || (i === step && canContinue) ? '100%' : i === step ? '35%' : '0%',
-                transition: 'width .5s var(--ease)',
-              }}
-            />
-          </li>
-        ))}
-      </ol>
+        <i
+          style={{
+            width: `${((step + (canContinue ? 1 : 0)) / Q.length) * 100}%`,
+            transition: 'width .5s var(--ease)',
+          }}
+        />
+      </span>
 
-      <div key={q.id} className="my-auto animate-[rise_.5s_var(--ease)_both] py-8 lg:py-10">
+      <div key={q.id} className="my-auto animate-[rise_.4s_var(--ease)_both] py-8 lg:py-10">
+        <Eyebrow>{q.kicker}</Eyebrow>
         <Heading
           as="h1"
-          look="h2"
+          look="page"
           id="fit-q-title"
           ref={headingRef}
           tabIndex={-1}
-          className="outline-none lg:text-[40px] lg:leading-[48px]"
+          className="mt-2 outline-none"
         >
           {q.title}
         </Heading>
-        {q.help && <p className="ds-t-16 ds-c-2 mt-3">{q.help}</p>}
+        {q.help && <p className="ds-t-14 ds-c-2 mt-2">{q.help}</p>}
         <ChoiceList question={q} selected={picked} onChoose={choose} labelledBy="fit-q-title" />
       </div>
 
       <div className="bg-page/90 border-line-2 sticky bottom-0 -mx-4 flex items-center justify-between gap-3 border-t px-4 pt-3 pb-[max(12px,env(safe-area-inset-bottom))] backdrop-blur-md sm:-mx-8 sm:px-8 lg:static lg:mx-0 lg:border-0 lg:bg-transparent lg:px-0 lg:pt-0 lg:pb-6 lg:backdrop-blur-none">
-        <Button variant="secondary" size="lg" onClick={goBack}>
+        <Button variant="ghost" size="lg" onClick={goBack}>
           <Icon name="i-caret-left" className="ds-ico" />
           {fitCheck.nav.back}
         </Button>
-        <p className="ds-t-12 ds-c-3 hidden items-center gap-1.5 sm:flex">
-          <Icon name="check" className="ds-ico text-g-700" />
-          {fitCheck.nav.saved}
-        </p>
         <Button
           size="lg"
           onClick={() => goNext()}
           disabled={!canContinue}
-          className="min-w-[160px] flex-1 sm:flex-none"
+          className="min-w-[160px]"
         >
-          {isLast ? fitCheck.nav.finish : fitCheck.nav.next}{' '}
-          <Icon name="arrow" className="ds-ico" />
+          {isLast ? fitCheck.nav.finish : fitCheck.nav.next}
         </Button>
       </div>
     </section>

@@ -1,3 +1,5 @@
+import type { ImageAsset } from '@/types/content';
+
 /*
  * Fit check: a few questions after sign-up that decide whether coaching suits someone before the full assessment.
  * The statements reuse the client document's "Who coaching is for, and who it isn't" table and the Home "Is this for you?" list.
@@ -24,8 +26,18 @@ export type FitQuestion = {
   options: FitOption[];
 };
 
+const fitImage: ImageAsset = {
+  src: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=1200&h=1500&fit=crop&q=80&auto=format',
+  alt: 'A person sitting at the end of a wooden pier on a still mountain lake',
+  width: 1200,
+  height: 1500,
+};
+
 export const fitCheck = {
   eyebrow: 'Fit check',
+  media: fitImage,
+  caption: 'A few honest answers now save you time later.',
+  step: 'Step 2 of 3',
   intro: {
     title: 'Is coaching right for you?',
     body: 'Six short questions help us see whether one-to-one coaching fits what you need right now. It takes about two minutes, and you can skip it and come back later.',
@@ -149,6 +161,7 @@ export const fitCheck = {
     skip: 'Skip for now',
     saved: 'Progress saved',
     question: (n: number, total: number) => `Question ${n} of ${total}`,
+    progress: 'Fit check progress',
   },
   results: {
     fit: {

@@ -86,6 +86,7 @@ em, i, cite { font-style: normal; }
 .t-title { margin: 0; font-size: 20px; line-height: 28px; font-weight: 500; letter-spacing: -0.01em; color: var(--ink); text-wrap: balance; }
 .t-lead { margin: 0; font-size: 20px; line-height: 28px; letter-spacing: -0.01em; color: var(--ink); }
 @media (max-width: 720px) { .t-title, .t-lead { font-size: 18px; line-height: 26px; } }
+.t-page { margin: 0; font-size: 32px; line-height: 40px; font-weight: 400; letter-spacing: -0.02em; color: var(--g-900); text-wrap: balance; }
 .t-16, .t-14, .t-12 { margin: 0; }
 .t-16 { font-size: 16px; line-height: 24px; }
 .t-14 { font-size: 14px; line-height: 22px; }
@@ -143,6 +144,8 @@ em, i, cite { font-style: normal; }
 /* ============ Form controls ============ */
 .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .field > label, .f-label { font-size: 14px; line-height: 22px; font-weight: 500; color: var(--ink); }
+.field.compact { gap: 4px; }
+.field.compact > label { font-size: 12px; line-height: 20px; font-weight: 400; color: var(--ink-2); }
 .f-label .opt { font-weight: 400; color: var(--ink-3); }
 .f-help { font-size: 12px; line-height: 20px; color: var(--ink-3); }
 .f-error { display: flex; align-items: center; gap: 6px; font-size: 12px; line-height: 20px; color: var(--danger); }

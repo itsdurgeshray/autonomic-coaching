@@ -7,7 +7,7 @@ export function HeroSection() {
   return (
     <section className="hero" aria-labelledby="home-hero-title">
       {' '}
-      <div className="dots"></div> <div className="glow"></div>{' '}
+      <div className="hero-dots" aria-hidden="true"></div> <div className="glow"></div>{' '}
       <div className="hero-in">
         {' '}
         <div className="hero-copy">

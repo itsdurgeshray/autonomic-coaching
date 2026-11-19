@@ -146,6 +146,13 @@ export function optionsFor(q: Q): string[] {
   return q.options ?? [];
 }
 
+/** Plain-language meaning of each answer, shown as a tooltip: frequency scales and quick-round legends */
+export function meaningsFor(q: Q): (string | undefined)[] {
+  if (q.kind === 'freq') return FREQ.map((f) => f[1]);
+  if (q.kind === 'quick') return (q.legend ?? []).map((l) => l[1]);
+  return [];
+}
+
 /** Every row of a quick round set to its "none of these" answer */
 export const isAllSet = (s: AssessmentState, q: Q) => {
   const a = (s.answers[q.index] ?? {}) as Record<number, number>;

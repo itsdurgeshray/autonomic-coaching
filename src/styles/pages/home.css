@@ -7,15 +7,6 @@
   color: #fff;
   background: linear-gradient(180deg, #01130f 0%, #05302a 52%, #4d6b63 86%, #fafaf8 134%);
 }
-[data-page='home'] .hero .dots {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.18) 2px, transparent 2px);
-  background-size: 24px 24px;
-  opacity: 0.4;
-}
 [data-page='home'] .hero .glow {
   position: absolute;
   z-index: -1;
@@ -1941,9 +1932,5 @@
   [data-page='home'] .foot-mid {
     flex-direction: column-reverse;
     align-items: flex-start;
-  }
-  [data-page='home'] .mark-xl {
-    font-size: 64px;
-    line-height: 72px;
   }
 }

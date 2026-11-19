@@ -686,6 +686,49 @@ svg.i {
   display: flex;
   flex-direction: column;
 }
+/* Answer meaning on hover or keyboard focus, styled as the design system tooltip */
+.opt .tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  z-index: 6;
+  max-width: 260px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #020a1d;
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, 4px);
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
+}
+.opt .tip::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  margin-left: -5px;
+  border: 5px solid transparent;
+  border-top-color: #020a1d;
+}
+.opt:focus-visible .tip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+@media (hover: hover) {
+  .opt:hover .tip {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    transition-delay: 0.3s;
+  }
+}
 .opt .s {
   display: none;
   font-size: 14px;

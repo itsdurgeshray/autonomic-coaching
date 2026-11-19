@@ -57,13 +57,14 @@ export function QuickRound({ s, q, openTerm, onTerm, onRow, onAll }: QuickRoundP
               </span>
             </p>
             <div className="opts row" role="radiogroup" aria-labelledby={`qk${r}`}>
-              {legend.map(([o], j) => (
+              {legend.map(([o, meaning], j) => (
                 <button
                   key={o}
                   type="button"
                   className="opt"
                   role="radio"
                   aria-checked={a[r] === j}
+                  aria-describedby={meaning ? `tip-${q.index}-${r}-${j}` : undefined}
                   onClick={(e) => onRow(r, j, e.currentTarget)}
                 >
                   <span className="rd">
@@ -74,6 +75,11 @@ export function QuickRound({ s, q, openTerm, onTerm, onRow, onAll }: QuickRoundP
                   <span className="tx">
                     <span className="l">{o}</span>
                   </span>
+                  {meaning && (
+                    <span className="tip" role="tooltip" id={`tip-${q.index}-${r}-${j}`}>
+                      {meaning}
+                    </span>
+                  )}
                 </button>
               ))}
             </div>

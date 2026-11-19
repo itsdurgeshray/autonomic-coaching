@@ -8,6 +8,7 @@ import {
   QUICK_ROUND_BONUS,
   SEC,
   canContinue,
+  meaningsFor,
   optionsFor,
   type AssessmentState,
   type Q,
@@ -89,6 +90,7 @@ export function QuestionScreen({
   const v = s.answers[q.index];
   const isQuick = q.kind === 'quick';
   const opts = optionsFor(q);
+  const tips = meaningsFor(q);
   return (
     <main className="stage" id="main">
       <div className={isNew ? 'qz rise' : 'qz'} id="qz">
@@ -146,6 +148,7 @@ export function QuestionScreen({
                 className="opt"
                 role="radio"
                 aria-checked={v === j}
+                aria-describedby={tips[j] ? `tip-${q.index}-${j}` : undefined}
                 data-v={j}
                 onClick={(e) => onAnswer(j, e.currentTarget)}
               >
@@ -153,6 +156,11 @@ export function QuestionScreen({
                 <span className="tx">
                   <span className="l">{l}</span>
                 </span>
+                {tips[j] && (
+                  <span className="tip" role="tooltip" id={`tip-${q.index}-${j}`}>
+                    {tips[j]}
+                  </span>
+                )}
               </button>
             ))}
           </div>

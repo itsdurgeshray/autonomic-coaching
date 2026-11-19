@@ -213,6 +213,16 @@
       line-height: 26px;
     }
   }
+  /* Page title for app screens (sign-in, onboarding, account): one calm size on every screen */
+  .ds-t-page {
+    margin: 0;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--g-900);
+    text-wrap: balance;
+  }
   .ds-t-16,
   .ds-t-14,
   .ds-t-12 {
@@ -681,6 +691,11 @@
     background-image: none;
     padding-right: 16px;
     -webkit-text-fill-color: var(--ink);
+  }
+  .ds-addon .ds-pre.ds-is-readonly,
+  .ds-addon .ds-pre.ds-is-readonly + .ds-input[readonly] {
+    background: var(--page);
+    border-color: var(--line-2);
   }
   .ds-addon .ds-input[readonly] + .ds-post {
     background: var(--page);
@@ -2199,6 +2214,16 @@
   }
 
   /* ============ Additions used by the app screens (same tokens and sizes as the components above) ============ */
+  /* Compact field for app forms: 12/20 label in ink-2 above a 40px control */
+  .ds-field.ds-compact {
+    gap: 4px;
+  }
+  .ds-field.ds-compact > label {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--ink-2);
+  }
   .ds-field > label .ds-opt {
     font-weight: 400;
     color: var(--ink-3);

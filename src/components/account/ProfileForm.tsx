@@ -53,22 +53,27 @@ export function ProfileForm({ copy }: ProfileFormProps) {
 
   return (
     <form noValidate onSubmit={onSubmit} className="my-auto flex flex-col py-10 lg:py-12">
-      <Heading as="h1" look="h2" className="text-center">
-        {copy.title}
-      </Heading>
-      <p className="ds-t-16 ds-c-2 mx-auto mt-3 max-w-[48ch] text-center">
-        {copy.signedInAs} <strong className="ds-w-500 text-ink">{account.session?.email}</strong>.{' '}
-        <button
-          type="button"
-          className="ds-link"
-          onClick={() => {
-            accountActions.signOut();
-            router.push('/login');
-          }}
-        >
-          {copy.changeAccount}
-        </button>
-      </p>
+      <div className="flex flex-col items-center text-center">
+        <p className="ds-t-12 ds-c-3 ds-num">{copy.step}</p>
+        <Heading as="h1" look="page" className="mt-1">
+          {copy.title}
+        </Heading>
+        <p className="ds-t-14 ds-c-2 mt-2 max-w-[48ch]">
+          {copy.signedInAs} <strong className="ds-w-500 text-ink">{account.session?.email}</strong>.{' '}
+          {copy.enterDetails}{' '}
+          <button
+            type="button"
+            className="ds-link ds-ink"
+            onClick={() => {
+              accountActions.signOut();
+              router.push('/login');
+            }}
+          >
+            {copy.changeAccount}
+          </button>
+          .
+        </p>
+      </div>
 
       <ProfileFields
         uid={uid}
@@ -84,17 +89,15 @@ export function ProfileForm({ copy }: ProfileFormProps) {
       />
 
       {Object.values(errors).some(Boolean) && (
-        <div role="alert" className="ds-alert ds-danger mt-6">
+        <p role="alert" className="ds-f-error mt-6 justify-center">
           <Icon name="i-warning-circle" className="ds-ico" />
-          <div className="ds-grow">
-            <b>{copy.errorSummary}</b>
-          </div>
-        </div>
+          {copy.errorSummary}
+        </p>
       )}
 
-      <div className="mt-10 flex flex-col items-center gap-4">
-        <Button type="submit" size="xl" isBlock className="sm:w-auto sm:min-w-[320px]">
-          {copy.submit} <Icon name="arrow" className="ds-ico" />
+      <div className="mt-8 flex flex-col items-center gap-3">
+        <Button type="submit" size="xl" isBlock className="sm:w-auto sm:min-w-[280px]">
+          {copy.submit}
         </Button>
         <p className="ds-t-12 ds-c-3 flex items-center gap-1.5">
           <Icon name="i-lock-simple" className="ds-ico text-g-700 text-[14px]" />

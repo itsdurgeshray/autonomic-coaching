@@ -13,6 +13,7 @@ export type TagInputProps = {
   emptyLabel?: string;
   isReadOnly?: boolean;
   describedBy?: string;
+  scale?: 'md' | 'lg';
 };
 
 /** Free-text tags as design system chips: Enter or comma adds one, Backspace on an empty field removes the last */
@@ -25,6 +26,7 @@ export function TagInput({
   emptyLabel,
   isReadOnly,
   describedBy,
+  scale = 'lg',
 }: TagInputProps) {
   const [draft, setDraft] = useState('');
 
@@ -40,7 +42,13 @@ export function TagInput({
   }
 
   return (
-    <div className={cn('ds-input ds-input-lg ds-tags', isReadOnly && 'ds-is-readonly')}>
+    <div
+      className={cn(
+        'ds-input ds-tags',
+        scale === 'lg' && 'ds-input-lg',
+        isReadOnly && 'ds-is-readonly',
+      )}
+    >
       {value.length > 0 && (
         <ul role="list" className="contents">
           {value.map((t) => (

@@ -1,10 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { cn } from '@/lib/cn';
 import { ButtonLink } from '@/components/ui/Button';
-import { Eyebrow } from '@/components/ui/Eyebrow';
-import { Icon } from '@/components/ui/Icon';
 import { fitCheck } from '@/content/fitCheck';
 import type { AssessmentSummary } from '@/lib/assessment/summary';
 import type { IntakeState } from '@/lib/account/types';
@@ -86,12 +83,7 @@ export function NextStepCard({ intake, assessment }: NextStepCardProps) {
   return (
     <section
       aria-labelledby="next-step-title"
-      className={cn(
-        'ds-card ds-raised border-g-100 flex flex-col gap-6 overflow-hidden bg-[linear-gradient(120deg,var(--g-50)_0%,var(--card)_60%)] p-6 md:grid md:items-center md:gap-x-8 md:p-8',
-        s.art
-          ? 'md:grid-cols-[auto_minmax(0,1fr)] lg:grid-cols-[auto_minmax(0,1fr)_auto]'
-          : 'md:grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto]',
-      )}
+      className="ds-card flex flex-col gap-5 p-5 md:flex-row md:items-center md:gap-6 md:px-6"
     >
       {s.art && (
         <Image
@@ -99,24 +91,24 @@ export function NextStepCard({ intake, assessment }: NextStepCardProps) {
           alt=""
           width={96}
           height={96}
-          className="size-20 shrink-0 object-contain md:size-24"
+          className="size-14 shrink-0 object-contain"
         />
       )}
       <div className="min-w-0 flex-1">
-        <Eyebrow>{s.eyebrow}</Eyebrow>
-        <h2 id="next-step-title" className="ds-t-h2 mt-1 md:!text-[32px] md:!leading-[40px]">
+        <p className="ds-t-12 ds-c-3">{s.eyebrow}</p>
+        <h2 id="next-step-title" className="ds-t-title mt-0.5">
           {s.title}
         </h2>
-        <p className="ds-t-16 ds-c-2 mt-2 max-w-[60ch]">{s.body}</p>
+        <p className="ds-t-14 ds-c-2 mt-1 max-w-[64ch]">{s.body}</p>
         {s.progress !== undefined && (
-          <div className="mt-4 flex max-w-[420px] items-center gap-3">
+          <div className="mt-3 flex max-w-[360px] items-center gap-3">
             <span
-              className="ds-bar flex-1"
+              className="ds-bar ds-sm flex-1"
               role="progressbar"
               aria-valuenow={s.progress}
               aria-valuemin={0}
               aria-valuemax={100}
-              aria-label="Progress"
+              aria-label={s.title}
             >
               <i style={{ width: `${s.progress}%` }} />
             </span>
@@ -124,16 +116,8 @@ export function NextStepCard({ intake, assessment }: NextStepCardProps) {
           </div>
         )}
       </div>
-      <ButtonLink
-        href={s.href}
-        size="xl"
-        isBlock
-        className={cn(
-          'md:w-auto md:justify-self-start lg:col-start-auto',
-          s.art && 'md:col-start-2',
-        )}
-      >
-        {s.cta} <Icon name="arrow" className="ds-ico" />
+      <ButtonLink href={s.href} size="lg" isBlock className="md:w-auto md:shrink-0">
+        {s.cta}
       </ButtonLink>
     </section>
   );
