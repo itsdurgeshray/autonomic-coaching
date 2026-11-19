@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { buildMetadata } from '@/lib/seo';
 import { HeroSection } from '@/components/sections/blog/HeroSection';
 import { StartHereSection } from '@/components/sections/blog/StartHereSection';
-import { BrowseArticlesByTopicSection } from '@/components/sections/blog/BrowseArticlesByTopicSection';
 import { LatestArticlesSection } from '@/components/sections/blog/LatestArticlesSection';
 import { RequestCoachingSection } from '@/components/sections/blog/RequestCoachingSection';
 import { BlogFilter } from '@/components/patterns/enhance/BlogFilter';
@@ -20,7 +19,6 @@ export default function BlogPage() {
     <div data-page="blog" className="page-root">
       <HeroSection />
       <StartHereSection />
-      <BrowseArticlesByTopicSection />
       <LatestArticlesSection />
       <RequestCoachingSection />
       <BlogFilter />

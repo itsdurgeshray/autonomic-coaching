@@ -14,6 +14,48 @@ export function LatestArticlesSection() {
         </div>{' '}
         <div className="grid" id="grid">
           {' '}
+          <Link href="/blog/why-do-i-still-feel-tired" className="card-a" data-t="lab">
+            {' '}
+            <div className="ph">
+              <Image
+                src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=720&h=450&fit=crop&q=80&auto=format"
+                alt=""
+                width={720}
+                height={450}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            </div>{' '}
+            <div className="in">
+              <span className="label">Lab results</span>
+              <h3>“Normal” labs don’t mean you’re well</h3>
+              <div className="c-foot">
+                <span className="go">
+                  Read article <Icon name="arrow" />
+                </span>
+              </div>
+            </div>{' '}
+          </Link>{' '}
+          <Link href="/blog/why-do-i-still-feel-tired" className="card-a" data-t="ner">
+            {' '}
+            <div className="ph">
+              <Image
+                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=720&h=450&fit=crop&q=80&auto=format"
+                alt=""
+                width={720}
+                height={450}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            </div>{' '}
+            <div className="in">
+              <span className="label">Nervous system</span>
+              <h3>What is Responsive Living?</h3>
+              <div className="c-foot">
+                <span className="go">
+                  Read article <Icon name="arrow" />
+                </span>
+              </div>
+            </div>{' '}
+          </Link>{' '}
           <Link href="/blog/why-do-i-still-feel-tired" className="card-a" data-t="exh">
             {' '}
             <div className="ph">

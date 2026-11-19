@@ -2639,3 +2639,208 @@ svg.i {
     transition-duration: 0.15s !important;
   }
 }
+
+/* ===== Guided tour: dimmed page, green ring on the control, explanation card ===== */
+.tour {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+.tour-veil {
+  position: absolute;
+  inset: 0;
+}
+.tour-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(246, 247, 250, 0.6);
+}
+.tour-ring {
+  position: fixed;
+  border-radius: 14px;
+  box-shadow:
+    0 0 0 2px var(--green),
+    0 0 0 9999px rgba(246, 247, 250, 0.6);
+  pointer-events: none;
+  transition:
+    top 0.3s var(--ease),
+    left 0.3s var(--ease),
+    width 0.3s var(--ease),
+    height 0.3s var(--ease);
+}
+.tour-card {
+  position: fixed;
+  width: 336px;
+  max-width: calc(100vw - 32px);
+  padding: 20px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--line-q);
+  box-shadow: 0 24px 48px -16px rgba(2, 10, 29, 0.28);
+  color: var(--q);
+  animation: tour-in 0.25s var(--ease) both;
+  transition:
+    top 0.3s var(--ease),
+    left 0.3s var(--ease);
+}
+.tour-card.docked {
+  left: 16px;
+  right: 16px;
+  width: auto;
+  max-width: none;
+}
+.tour-card.docked.bottom {
+  bottom: max(16px, env(safe-area-inset-bottom));
+}
+.tour-card.docked.top {
+  top: 16px;
+}
+@keyframes tour-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+.tour-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tour-n {
+  margin: 0;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--g-700);
+}
+.tour-x {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-right: -6px;
+  border-radius: 8px;
+  color: var(--mute);
+}
+.tour-x:hover {
+  background: var(--n-50);
+  color: var(--q);
+}
+.tour-x svg {
+  width: 16px;
+  height: 16px;
+}
+.tour-card h2 {
+  margin: 12px 0 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.tour-card p#tour-b,
+.tour-tip {
+  margin: 6px 0 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--mute);
+}
+.tour-tip {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--g-50);
+  color: var(--g-800);
+}
+.tour-dots {
+  display: flex;
+  gap: 4px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.tour-dots li {
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background: var(--n-200);
+  transition:
+    width 0.3s var(--ease),
+    background 0.3s;
+}
+.tour-dots li.done {
+  background: var(--g-200);
+}
+.tour-dots li.on {
+  width: 20px;
+  background: var(--green);
+}
+.tour-foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.tour-sp {
+  flex: 1;
+}
+.tour-skip {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--mute);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tour-skip:hover {
+  color: var(--q);
+}
+.tour-back,
+.tour-next {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+}
+.tour-back {
+  color: var(--q);
+}
+.tour-back:hover {
+  background: var(--n-50);
+}
+.tour-next {
+  min-width: 88px;
+  background: var(--cta);
+  border: 2px solid var(--cta-border);
+  color: #fff;
+}
+.tour-card button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tour-ring,
+  .tour-card,
+  .tour-dots li {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Help button beside the leaves pill */
+.pill.help {
+  width: 32px;
+  padding: 0;
+  justify-content: center;
+  color: var(--mute);
+  cursor: pointer;
+}
+.pill.help:hover {
+  color: var(--q);
+  border-color: var(--n-300);
+}
+.pill.help svg {
+  width: 18px;
+  height: 18px;
+}

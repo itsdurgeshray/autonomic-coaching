@@ -1,6 +1,7 @@
 'use client';
 
 import { LucideIcon } from '@/components/assessment/LucideIcon';
+import { assessmentTour } from '@/content/assessmentTour';
 import { StageImage } from '@/components/assessment/StageImage';
 import {
   ASSESSMENT_SHORT_TITLE,
@@ -24,9 +25,15 @@ import {
 const pad = (n: number) => String(n).padStart(2, '0');
 const grow = (w: number) => (0.85 + (0.3 * w) / 100).toFixed(2);
 
-export type AssessmentHeaderProps = { s: AssessmentState; shownLeaves: number; onMenu: () => void };
+export type AssessmentHeaderProps = {
+  s: AssessmentState;
+  shownLeaves: number;
+  onMenu: () => void;
+  /** Opens the guided tour; the help button only shows on question screens */
+  onTour?: () => void;
+};
 
-export function AssessmentHeader({ s, shownLeaves, onMenu }: AssessmentHeaderProps) {
+export function AssessmentHeader({ s, shownLeaves, onMenu, onTour }: AssessmentHeaderProps) {
   const isFinal = s.screen === 'complete';
   const q = Qs[s.idx];
   const si = isFinal ? SEC.length - 1 : q.sectionIndex;
@@ -79,6 +86,18 @@ export function AssessmentHeader({ s, shownLeaves, onMenu }: AssessmentHeaderPro
                 <span className="lf-i" dangerouslySetInnerHTML={{ __html: LEAF_SVG }} />
                 <b>{shownLeaves.toLocaleString('en-GB')}</b> <span>{leafWord(shownLeaves)}</span>
               </span>
+              {onTour && (
+                <button
+                  type="button"
+                  className="pill help"
+                  id="tourBtn"
+                  onClick={onTour}
+                  aria-label={assessmentTour.open}
+                  title={assessmentTour.open}
+                >
+                  <LucideIcon name="help" />
+                </button>
+              )}
             </div>
             <p className="pct">
               <b>{percent(s)}%</b> completed
